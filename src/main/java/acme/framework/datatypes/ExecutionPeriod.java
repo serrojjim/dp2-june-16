@@ -12,9 +12,10 @@
 
 package acme.framework.datatypes;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Embeddable;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
@@ -32,10 +33,12 @@ public class ExecutionPeriod extends DomainDatatype {
 	// Attributes -------------------------------------------------------------
 
 	@NotNull
-	protected Date			initialDate;
+	@Future
+	protected LocalDateTime		initialDate;
 
 	@NotNull
-	protected Date			finalDate;
+	@Future
+	protected LocalDateTime			finalDate;
 
 	
 
