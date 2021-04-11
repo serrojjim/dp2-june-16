@@ -19,4 +19,80 @@
 
 	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
 
+	<!-- Spam -->
+
+	<bean id="spam" class="acme.entities.spam.Spam">
+		<property name="threshold" value="0.1"/>
+		<property name="spamWords">
+			<set>
+				<ref bean="spamWord1"/>
+				<ref bean="spamWord2"/>
+				<ref bean="spamWord3"/>
+				<ref bean="spamWord4"/>
+				<ref bean="spamWord5"/>
+				<ref bean="spamWord6"/>
+				<ref bean="spamWord7"/>
+				<ref bean="spamWord8"/>
+				<ref bean="spamWord9"/>
+				<ref bean="spamWord10"/>
+				<ref bean="spamWord11"/>
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="spamWord1" class="acme.entities.spam.SpamWord">
+		<property name="word" value="sex"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord2" class="acme.entities.spam.SpamWord">
+		<property name="word" value="hard code"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord3" class="acme.entities.spam.SpamWord">
+		<property name="word" value="viagra"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+
+	<bean id="spamWord4" class="acme.entities.spam.SpamWord">
+		<property name="word" value="cialis"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord5" class="acme.entities.spam.SpamWord">
+		<property name="word" value="nigeria"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord6" class="acme.entities.spam.SpamWord">
+		<property name="word" value="you've won"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord7" class="acme.entities.spam.SpamWord">
+		<property name="word" value="million dollars"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord8" class="acme.entities.spam.SpamWord">
+		<property name="word" value="sexo"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord9" class="acme.entities.spam.SpamWord">
+		<property name="word" value="código difícil"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord10" class="acme.entities.spam.SpamWord">
+		<property name="word" value="has ganado"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord11" class="acme.entities.spam.SpamWord">
+		<property name="word" value="millón de dólares"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
 </beans>
