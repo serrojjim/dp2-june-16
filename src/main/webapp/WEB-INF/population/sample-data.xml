@@ -95,4 +95,38 @@
 		<property name="spam" ref="spam"/>
 	</bean>
 	
+	<bean id="task1" class="acme.entities.task.Task">
+		<property name="title" value="sample test 1"/>
+		<property name="description" value="buenas tardes"/>
+		<property name="workload" value="2.0"/>
+		<property name="executionPeriod" ref="executionPeriod1"/>
+		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+		<property name="isPrivate" value="false"/>
+		<property name="workplan">
+			<list>
+				<ref bean="workplan1"/>
+			</list>
+		</property>
+	
+	</bean>
+		
+		<bean id="workplan1" class="acme.entities.workplan.Workplan">
+		<property name="title" value="sample test wp 1"/>
+		
+		<property name="executionPeriod" ref="executionPeriod1"/>
+		<property name="isPrivate" value="false"/>
+		<property name="task">
+			<list>
+				<ref bean="task1"/>
+				
+			</list>
+		</property>
+	
+	</bean>
+		
+	<bean id="executionPeriod1" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="2021/12/03 10:15"/>
+		<property name="finalDate" value="2021/12/04 15:30"/>
+	</bean>
+	
 </beans>

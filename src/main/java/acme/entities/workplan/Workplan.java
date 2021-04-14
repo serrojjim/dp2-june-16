@@ -1,11 +1,17 @@
-package acme.framework.entities;
+package acme.entities.workplan;
 
+
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import acme.framework.datatypes.ExecutionPeriod;
+import acme.datatypes.ExecutionPeriod;
+import acme.entities.task.Task;
+import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,9 +34,13 @@ public class Workplan extends DomainEntity{
 		protected ExecutionPeriod 	executionPeriod;
 		
 		@NotNull
-		protected boolean 			isPrivate;
+		protected Boolean 			isPrivate;
 
 
+		@NotNull
+		@Valid
+		@ManyToMany(mappedBy = "workplan")
+		protected List<Task> task;
 		
 
 }

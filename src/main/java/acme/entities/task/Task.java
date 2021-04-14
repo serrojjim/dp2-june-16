@@ -1,13 +1,19 @@
-package acme.framework.entities;
+package acme.entities.task;
+
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.framework.datatypes.ExecutionPeriod;
+import acme.datatypes.ExecutionPeriod;
+import acme.entities.workplan.Workplan;
+import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -43,9 +49,15 @@ public class Task extends DomainEntity{
 		protected String			url;
 
 		@NotNull
-		protected boolean isPrivate;
+		protected Boolean isPrivate;
 
-
+		
+		
+		@NotNull
+		@Valid
+		@ManyToMany
+		protected List<Workplan> workplan;
+		
 		
 
 }

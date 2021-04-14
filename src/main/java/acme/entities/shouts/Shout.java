@@ -20,7 +20,6 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-
 public class Shout extends DomainEntity{
 	
 	protected static final long serialVersionUID = 1L;
@@ -42,10 +41,11 @@ protected String text;
 @URL
 protected String link;
 
-@Override
-public String toString() {
-	return "Shout [creationMoment=" + this.creationMoment + ", author=" + this.author + ", text=" + this.text + ", link=" + this.link + "]";
-}
+
+//@Override
+//public String toString() {
+//	return "Shout [creationMoment=" + this.creationMoment + ", author=" + this.author + ", text=" + this.text + ", link=" + this.link + "]";
+//}
 
 
 }

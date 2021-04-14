@@ -10,14 +10,15 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.framework.datatypes;
+package acme.datatypes;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Embeddable;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
+import acme.framework.datatypes.DomainDatatype;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,11 +35,11 @@ public class ExecutionPeriod extends DomainDatatype {
 
 	@NotNull
 	@Future
-	protected LocalDateTime		initialDate;
+	protected Date		initialDate;
 
 	@NotNull
 	@Future
-	protected LocalDateTime			finalDate;
+	protected Date		finalDate;
 
 	
 
