@@ -5,8 +5,6 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -27,25 +25,19 @@ public class Shout extends DomainEntity{
 @Temporal(TemporalType.TIMESTAMP)
 @Past
 @NotNull
-protected Date creationMoment;
+protected Date moment;
 
 @NotBlank
-@Min(5)
-@Max(25)
 protected String author;
 
 @NotBlank
-@Max(100)
 protected String text;
 
 @URL
 protected String link;
 
 
-//@Override
-//public String toString() {
-//	return "Shout [creationMoment=" + this.creationMoment + ", author=" + this.author + ", text=" + this.text + ", link=" + this.link + "]";
-//}
+
 
 
 }
