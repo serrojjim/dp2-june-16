@@ -130,35 +130,35 @@
 	</bean>
 	
 		<bean id="shout5" class="acme.entities.shouts.Shout">
-		<property name="creationMoment" value="2021/02/13 19:39"/>
+		<property name="moment" value="2021/02/13 19:39"/>
 		<property name="author" value="John Doe"/>
 		<property name="text" value="I'm developer!"/>
 		<property name="link"> <null/></property>
 	</bean>
 	
 	<bean id="shout1" class="acme.entities.shouts.Shout">
-		<property name="creationMoment" value="2021/01/03 10:15"/>
+		<property name="moment" value="2021/04/16 10:15"/>
 		<property name="author" value="Antonio Campuzano"/>
 		<property name="text" value="I'm the creator!"/>
 		<property name="link" value="http://ejemplo.com"/>
 	</bean>
 	
 		<bean id="shout2" class="acme.entities.shouts.Shout">
-		<property name="creationMoment" value="2020/10/06 15:38"/>
+		<property name="moment" value="2020/10/06 15:38"/>
 		<property name="author" value="Miguel Ángel Valverde"/>
 		<property name="text" value="I'm the master of my Team!"/>
 		<property name="link" value="http://ejemplo1.com"/>
 	</bean>
 	
 		<bean id="shout3" class="acme.entities.shouts.Shout">
-		<property name="creationMoment" value="2019/11/25 18:32"/>
+		<property name="moment" value="2019/11/25 18:32"/>
 		<property name="author" value="Cayetano Nieva"/>
 		<property name="text" value="I'm analyst!"/>
 		<property name="link" value="http://ejemplo2.com"/>
 	</bean>
 	
 		<bean id="shout4" class="acme.entities.shouts.Shout">
-		<property name="creationMoment" value="2020/02/08 12:48"/>
+		<property name="moment" value="2020/02/08 12:48"/>
 		<property name="author" value="Diego Plaza"/>
 		<property name="text" value="I'm developer!"/>
 		<property name="link" value="http://ejemplo3.com"/>
