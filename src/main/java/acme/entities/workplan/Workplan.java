@@ -42,5 +42,13 @@ public class Workplan extends DomainEntity{
 		@ManyToMany(mappedBy = "workplan")
 		protected List<Task> task;
 		
+		
+		
+	// Derived attributes
+		
+		Double getTotalWorkload() {
+			return this.getTask().stream().mapToDouble(x -> x.getWorkload()).sum();
+		}
+		
 
 }
