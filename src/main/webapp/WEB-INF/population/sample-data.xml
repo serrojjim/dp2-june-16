@@ -19,4 +19,149 @@
 
 	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
 
+	<!-- Spam -->
+
+	<bean id="spam" class="acme.entities.spam.Spam">
+		<property name="threshold" value="0.1"/>
+		<property name="spamWords">
+			<set>
+				<ref bean="spamWord1"/>
+				<ref bean="spamWord2"/>
+				<ref bean="spamWord3"/>
+				<ref bean="spamWord4"/>
+				<ref bean="spamWord5"/>
+				<ref bean="spamWord6"/>
+				<ref bean="spamWord7"/>
+				<ref bean="spamWord8"/>
+				<ref bean="spamWord9"/>
+				<ref bean="spamWord10"/>
+				<ref bean="spamWord11"/>
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="spamWord1" class="acme.entities.spam.SpamWord">
+		<property name="word" value="sex"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord2" class="acme.entities.spam.SpamWord">
+		<property name="word" value="hard code"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord3" class="acme.entities.spam.SpamWord">
+		<property name="word" value="viagra"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+
+	<bean id="spamWord4" class="acme.entities.spam.SpamWord">
+		<property name="word" value="cialis"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord5" class="acme.entities.spam.SpamWord">
+		<property name="word" value="nigeria"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord6" class="acme.entities.spam.SpamWord">
+		<property name="word" value="you've won"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord7" class="acme.entities.spam.SpamWord">
+		<property name="word" value="million dollars"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord8" class="acme.entities.spam.SpamWord">
+		<property name="word" value="sexo"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord9" class="acme.entities.spam.SpamWord">
+		<property name="word" value="código difícil"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord10" class="acme.entities.spam.SpamWord">
+		<property name="word" value="has ganado"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord11" class="acme.entities.spam.SpamWord">
+		<property name="word" value="millón de dólares"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="task1" class="acme.entities.task.Task">
+		<property name="title" value="sample test 1"/>
+		<property name="description" value="buenas tardes"/>
+		<property name="workload" value="2.0"/>
+		<property name="executionPeriod" ref="executionPeriod1"/>
+		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+		<property name="isPrivate" value="false"/>
+		<property name="workplan">
+			<list>
+				<ref bean="workplan1"/>
+			</list>
+		</property>
+	
+	</bean>
+		
+		<bean id="workplan1" class="acme.entities.workplan.Workplan">
+		<property name="title" value="sample test wp 1"/>
+		
+		<property name="executionPeriod" ref="executionPeriod1"/>
+		<property name="isPrivate" value="false"/>
+		<property name="task">
+			<list>
+				<ref bean="task1"/>
+				
+			</list>
+		</property>
+	
+	</bean>
+		
+	<bean id="executionPeriod1" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="2021/12/03 10:15"/>
+		<property name="finalDate" value="2021/12/04 15:30"/>
+	</bean>
+	
+		<bean id="shout5" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/02/13 19:39"/>
+		<property name="author" value="John Doe"/>
+		<property name="text" value="I'm developer!"/>
+		<property name="link"> <null/></property>
+	</bean>
+	
+	<bean id="shout1" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/04/16 10:15"/>
+		<property name="author" value="Antonio Campuzano"/>
+		<property name="text" value="I'm the creator!"/>
+		<property name="link" value="http://ejemplo.com"/>
+	</bean>
+	
+		<bean id="shout2" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2020/10/06 15:38"/>
+		<property name="author" value="Miguel Ángel Valverde"/>
+		<property name="text" value="I'm the master of my Team!"/>
+		<property name="link" value="http://ejemplo1.com"/>
+	</bean>
+	
+		<bean id="shout3" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2019/11/25 18:32"/>
+		<property name="author" value="Cayetano Nieva"/>
+		<property name="text" value="I'm analyst!"/>
+		<property name="link" value="http://ejemplo2.com"/>
+	</bean>
+	
+		<bean id="shout4" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2020/02/08 12:48"/>
+		<property name="author" value="Diego Plaza"/>
+		<property name="text" value="I'm developer!"/>
+		<property name="link" value="http://ejemplo3.com"/>
+	</bean>
+	
 </beans>
