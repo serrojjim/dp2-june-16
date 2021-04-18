@@ -102,6 +102,8 @@
 		<property name="executionPeriod" ref="executionPeriod1"/>
 		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
 		<property name="isPrivate" value="false"/>
+		<property name="isFinished" value="false"/>
+		
 		<property name="workplan">
 			<list>
 				<ref bean="workplan1"/>
