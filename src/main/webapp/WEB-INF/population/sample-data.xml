@@ -107,7 +107,6 @@
 				<ref bean="workplan1"/>
 			</list>
 		</property>
-	
 	</bean>
 		
 		<bean id="workplan1" class="acme.entities.workplan.Workplan">
@@ -118,10 +117,8 @@
 		<property name="task">
 			<list>
 				<ref bean="task1"/>
-				
 			</list>
 		</property>
-	
 	</bean>
 		
 	<bean id="executionPeriod1" class="acme.datatypes.ExecutionPeriod">

@@ -27,7 +27,8 @@
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
-			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard"/>
+			<acme:menu-suboption code="master.menu.administrator.task.dashboard" action="/administrator/task/dashboard"/>
+			<acme:menu-suboption code="master.menu.administrator.workplan.dashboard" action="/administrator/workplan/dashboard"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/master/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/master/populate-sample"/>			

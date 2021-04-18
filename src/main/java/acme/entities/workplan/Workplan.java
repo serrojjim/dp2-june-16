@@ -34,8 +34,7 @@ public class Workplan extends DomainEntity{
 		protected ExecutionPeriod 	executionPeriod;
 		
 		@NotNull
-		protected Boolean 			isPrivate;
-
+		protected Boolean 			isPrivate; // Dejarla como atributo derivado ?
 
 		@NotNull
 		@Valid
@@ -46,9 +45,13 @@ public class Workplan extends DomainEntity{
 		
 	// Derived attributes
 		
-		Double getTotalWorkload() {
-			return this.getTask().stream().mapToDouble(x -> x.getWorkload()).sum();
+		public Double getTotalWorkload() {
+			return this.getTask().stream().mapToDouble(Task::getWorkload).sum();
 		}
+		
+//		public Boolean isPrivate() {
+//			return this.getTask().stream().anyMatch(Task::getIsPrivate);
+//		}
 		
 
 }
