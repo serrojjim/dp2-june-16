@@ -1,0 +1,7 @@
+authenticated.task.list.label.title = Title
+authenticated.task.list.label.url = Link
+authenticated.task.list.label.description = Description
+authenticated.task.list.label.execution_period_final_date = Execution period final date
+authenticated.task.list.label.execution_period_initial_date  = Execution period initial date
+authenticated.task.list.label.isFinished = Is finished
+authenticated.task.list.label.workload = workload

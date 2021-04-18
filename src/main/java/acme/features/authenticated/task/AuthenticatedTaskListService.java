@@ -1,7 +1,6 @@
-package acme.features.anonymous.task;
+package acme.features.authenticated.task;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,16 +8,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.task.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Anonymous;
+import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousTaskListService implements AbstractListService<Anonymous, Task> {
+public class AuthenticatedTaskListService implements AbstractListService<Authenticated, Task> {
 
 	
 	
 	@Autowired
-	protected AnonymousTaskRepository taskRepository;
+	protected AuthenticatedTaskRepository taskRepository;
 
 	
 	
@@ -46,24 +45,12 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 		Collection<Task> result;
 		
 		result = this.taskRepository.findMany();
-		result = result.stream().filter(x->x.getIsFinished() == true)
-//			.sorted(Comparator.comparing(x->x.getMoment(),Comparator.reverseOrder()))
-			.collect(Collectors.toList());
-
+	
 		return result;
 	}
 	
 	
-//	public Collection<Task> findNotFinished(final Request<Task> request){
-//		assert request != null;
-//		
-//		Collection<Task> result;
-//		
-//		result = this.taskRepository.findNotFinished();
-//		
-//
-//		return result;
-//	}
+
 
 	
 
