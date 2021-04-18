@@ -31,7 +31,9 @@ master.menu.sign-out = Salir
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.list-shouts = Listar shouts
-
+master.menu.anonymous.list-tasks = Listar tareas
+master.menu.authenticated.list-tasks = Listar tareas
+master.menu.authenticated = Autenticado
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador

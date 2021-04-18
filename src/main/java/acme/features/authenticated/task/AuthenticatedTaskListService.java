@@ -1,6 +1,7 @@
 package acme.features.authenticated.task;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public class AuthenticatedTaskListService implements AbstractListService<Authent
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload" );
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url" );
 	
 	}
 
@@ -45,7 +46,10 @@ public class AuthenticatedTaskListService implements AbstractListService<Authent
 		Collection<Task> result;
 		
 		result = this.taskRepository.findMany();
-	
+		
+		result = result.stream().filter(x->x.getIsFinished() == true && x.getIsPrivate()==false)
+//			.sorted(Comparator.comparing(x->x.getMoment(),Comparator.reverseOrder()))
+			.collect(Collectors.toList());
 		return result;
 	}
 	
