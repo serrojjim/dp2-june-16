@@ -35,7 +35,7 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload" );
+		request.unbind(entity, model, "description", "title", "url","executionPeriod.finalDate", "executionPeriod.initialDate","isFinished","workload" );
 	
 	}
 
@@ -46,7 +46,7 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 		Collection<Task> result;
 		
 		result = this.taskRepository.findMany();
-		result = result.stream().filter(x->x.getIsFinished() == true)
+		result = result.stream().filter(x->x.getIsFinished() == false && x.getIsPrivate()==false)
 //			.sorted(Comparator.comparing(x->x.getMoment(),Comparator.reverseOrder()))
 			.collect(Collectors.toList());
 
