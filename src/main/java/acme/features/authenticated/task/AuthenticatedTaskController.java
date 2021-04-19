@@ -18,11 +18,16 @@ public class AuthenticatedTaskController extends AbstractController<Authenticate
 
 	// Internal state ---------------------------------------------------------
 
+
 	@Autowired
 	protected AuthenticatedTaskListService listService;
 	
 	@Autowired
-	protected AuthenticatedTaskCreateService createService;
+	protected AuthenticatedTaskUpdateService updateService;
+	
+	
+//	@Autowired
+//	protected AuthenticatedTaskCreateService createService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -30,7 +35,8 @@ public class AuthenticatedTaskController extends AbstractController<Authenticate
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
-		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		//super.addBasicCommand(BasicCommand.CREATE, this.createService);
 	}
 
 }

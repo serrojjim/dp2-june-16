@@ -152,7 +152,11 @@
 				<ref bean="workplan2"/>
 			</list>
 		</property>
-	
+	<property name="userAccount">
+			<list>
+				<ref bean="authenticatedUserAccount"/>
+			</list>
+		</property>
 	</bean>
 		
 		<bean id="workplan2" class="acme.entities.workplan.Workplan">
@@ -266,7 +270,16 @@
 			</list>
 		</property>
 		
-		<property name="task" ref="task1"/>
+				<property name="task">
+					
+						<list>
+							<ref bean="task1"/>
+							<ref bean="task2"/>					
+						</list>
+	
+				 </property>
+		
+	
 			
 	</bean>
 

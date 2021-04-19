@@ -30,7 +30,7 @@
 
 	<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.list-tasks" action="/authenticated/task/list"/>
-			<acme:menu-suboption code="master.menu.authenticated.create-tasks" action="/authenticated/task/create"/>
+			<acme:menu-suboption code="master.menu.authenticated.update-task" action="/authenticated/task/update"/>
 			
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

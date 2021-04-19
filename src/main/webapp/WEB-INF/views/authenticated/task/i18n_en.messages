@@ -5,3 +5,6 @@ authenticated.task.list.label.execution_period_final_date = Execution period fin
 authenticated.task.list.label.execution_period_initial_date  = Execution period initial date
 authenticated.task.list.label.isFinished = Is finished
 authenticated.task.list.label.workload = workload
+authenticated.task.form.button.return = return
+authenticated.task.form.button.update = update
+authenticated.task.form.button.create = create
