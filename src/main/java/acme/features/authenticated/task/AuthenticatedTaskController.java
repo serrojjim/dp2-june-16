@@ -19,8 +19,9 @@ public class AuthenticatedTaskController extends AbstractController<Authenticate
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	
 	protected AuthenticatedTaskListService listService;
+	
+	@Autowired
 	protected AuthenticatedTaskCreateService createService;
 
 	// Constructors -----------------------------------------------------------

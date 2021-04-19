@@ -12,5 +12,9 @@
 	</definition>
 	
 	
+	<definition name="authenticated/task/create" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/task/form.jsp" />
+	</definition>
+	
 
 </tiles-definitions>

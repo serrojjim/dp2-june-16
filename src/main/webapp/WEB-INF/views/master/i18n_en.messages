@@ -32,6 +32,8 @@ master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.list-tasks = List tasks
 master.menu.authenticated.list-tasks = List tasks
+master.menu.authenticated.create-tasks = Create tasks
+
 master.menu.authenticated = Authenticated
 
 master.menu.anonymous.list-shouts = List shouts
