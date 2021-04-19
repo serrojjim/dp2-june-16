@@ -43,7 +43,7 @@ public class AuthenticatedTaskCreateService implements AbstractCreateService<Aut
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url");
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url","isFinished");
 	}
 	
 	@Override
