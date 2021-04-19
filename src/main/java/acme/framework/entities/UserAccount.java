@@ -15,6 +15,7 @@ package acme.framework.entities;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,6 +28,7 @@ import javax.validation.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Length;
 
 import acme.datatypes.UserIdentity;
+import acme.entities.task.Task;
 import acme.framework.helpers.PasswordHelper;
 import acme.framework.helpers.StringHelper;
 import lombok.Getter;
@@ -90,7 +92,9 @@ public class UserAccount extends DomainEntity {
 	@OneToMany(mappedBy = "userAccount")
 	protected Collection<@Valid UserRole> roles;
 
-
+	@OneToMany(mappedBy = "userAccount")
+	protected List<Task> task;
+	
 	@Transient
 	public boolean hasRole(final UserRole role) {
 		assert role != null;

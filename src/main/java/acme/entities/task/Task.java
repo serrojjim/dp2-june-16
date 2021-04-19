@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -14,6 +15,7 @@ import org.hibernate.validator.constraints.URL;
 import acme.datatypes.ExecutionPeriod;
 import acme.entities.workplan.Workplan;
 import acme.framework.entities.DomainEntity;
+import acme.framework.entities.UserAccount;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -54,11 +56,13 @@ public class Task extends DomainEntity{
 		@NotNull
 		protected Boolean isFinished;
 
-		@NotNull
 		@Valid
 		@ManyToMany
 		protected List<Workplan> workplan;
 		
+		@Valid
+		@ManyToOne
+		protected UserAccount userAccount;
 		
 
 }
