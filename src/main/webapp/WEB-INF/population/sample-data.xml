@@ -109,7 +109,12 @@
 				<ref bean="workplan1"/>
 			</list>
 		</property>
-	
+		
+		<property name="userAccount">
+			<list>
+				<ref bean="authenticatedUserAccount"/>
+			</list>
+		</property>
 	</bean>
 		
 		<bean id="workplan1" class="acme.entities.workplan.Workplan">
@@ -185,6 +190,7 @@
 			</list>
 		</property>
 	
+	
 	</bean>
 		
 		<bean id="workplan3" class="acme.entities.workplan.Workplan">
@@ -242,38 +248,7 @@
 	</bean>
 	
 		
-<!-- 		<bean id="useraccount1" class="acme.framework.entities.UserAccount"> -->
-<!-- 		<property name="username" value="admin2"/> -->
-<!-- 		<property name="password" value="admin2"/> -->
-<!-- 		<property name="enabled" value="true"/> -->
-<!-- 		<property name="identity"  ref="identity1"/> -->
-<!-- 		<property name="roles"> -->
-<!-- 			<list> -->
-<!-- 				<ref bean="userRole1"/> -->
-<!-- 			</list> -->
-<!-- 		</property>		 -->
-		
-<!-- 		<property name="task"> -->
-<!-- 			<list> -->
-<!-- 				<ref bean="task1"/> -->
-<!-- 			</list> -->
-<!-- 		</property> -->
-<!-- 		</bean> -->
-	
-	
-<!-- 	<bean id="userRole1" class="acme.framework.entities.UserRole"> -->
-		
-<!-- 	</bean> -->
-	
-<!-- 	<bean id="identity1" class="acme.datatypes.UserIdentity"> -->
-		
-<!-- 		<property name="name" value="Antonio"/> -->
-<!-- 		<property name="surname" value="Campuzano"/> -->
-<!-- 		<property name="email" value="antonio@gmail.com"/> -->
 
-
-<!-- 	</bean> -->
-	
 	<bean name="authenticatedUserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="Antonio" />
 		<property name="password" value="Campuzano" />
@@ -291,11 +266,8 @@
 			</list>
 		</property>
 		
-		<property name="task">
-			<list>
-				<ref bean="task1" />
-			</list>
-		</property>
+		<property name="task" ref="task1"/>
+			
 	</bean>
 
 	<bean name="authenticatedAuthenticated" class="acme.framework.entities.Authenticated">
