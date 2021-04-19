@@ -3,6 +3,12 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 <acme:form>
+
+
+		<acme:form-hidden path="task.id"/>
+		<acme:form-hidden path="id"/>
+		<acme:form-hidden path="taskId"/>
+	
 	<acme:form-textbox code="authenticated.task.form.label.title" path="title"/>
 	<acme:form-textarea code="authenticated.task.form.label.description" path="description"/>
 	<acme:form-textbox code="authenticated.task.form.label.url" path="url"/>

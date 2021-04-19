@@ -11,5 +11,5 @@
 	<acme:list-column code="authenticated.task.list.label.workload" path="workload" width="20%"/>
 	<acme:list-column code="authenticated.task.list.label.url" path="url" width="20%" sortable="false"/>
 	<acme:list-column code="authenticated.task.list.label.description" path="description" width="20%" sortable="false"/>
-	
+
 </acme:list>

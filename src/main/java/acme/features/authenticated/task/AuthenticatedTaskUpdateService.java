@@ -9,13 +9,13 @@ import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.components.Response;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Administrator;
 import acme.framework.entities.Principal;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AuthenticatedTaskUpdateService  implements AbstractUpdateService<Authenticated, Task>{
+public class AuthenticatedTaskUpdateService  implements AbstractUpdateService<Administrator, Task>{
 
 	@Autowired
 	protected AuthenticatedTaskRepository repository;
@@ -52,6 +52,7 @@ public class AuthenticatedTaskUpdateService  implements AbstractUpdateService<Au
 	public Task findOne(final Request<Task> request) {
 		assert request != null;
 
+		
 		Task result;
 		Principal principal;
 		int userAccountId;
@@ -60,7 +61,8 @@ public class AuthenticatedTaskUpdateService  implements AbstractUpdateService<Au
 		userAccountId = principal.getAccountId();
 
 		result = this.repository.findOneTaskByUserAccountId(userAccountId);
-
+		
+		
 		return result;
 	}
 
