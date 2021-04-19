@@ -12,7 +12,7 @@
 	</definition>
 	
 	
-	<definition name="authenticated/task/create" extends="master">
+	<definition name="authenticated/task/form" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/task/form.jsp" />
 	</definition>
 	

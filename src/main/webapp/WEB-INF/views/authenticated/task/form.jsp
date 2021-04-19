@@ -12,6 +12,10 @@
 	<acme:form-textbox code="authenticated.task.form.label.execution_period_initial_date" path="executionPeriod.initialDate"/>
 	<acme:form-textbox code="authenticated.task.form.label.execution_period_final_date" path="executionPeriod.finalDate"/>
 	
-	<acme:form-submit code="authenticated.task.form.button.create" action="/authenticated/task/create"/>
+	
+	
+	<acme:form-submit test="${command == 'create'}" code="authenticated.task.form.button.create" action="/authenticated/task/create"/>
+	<acme:form-submit test="${command == 'update'}" code="authenticated.task.form.button.update" action="/authenticated/task/update"/>
+	
 	<acme:form-return code="authenticated.task.form.button.return"/>
 </acme:form>
