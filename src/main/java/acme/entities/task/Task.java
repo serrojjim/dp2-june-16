@@ -51,8 +51,9 @@ public class Task extends DomainEntity{
 		@NotNull
 		protected Boolean isPrivate;
 
-		
-		
+		@NotNull
+		protected Boolean isFinished;
+
 		@NotNull
 		@Valid
 		@ManyToMany

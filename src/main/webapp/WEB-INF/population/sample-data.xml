@@ -102,6 +102,8 @@
 		<property name="executionPeriod" ref="executionPeriod1"/>
 		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
 		<property name="isPrivate" value="false"/>
+		<property name="isFinished" value="false"/>
+		
 		<property name="workplan">
 			<list>
 				<ref bean="workplan1"/>
@@ -129,6 +131,82 @@
 		<property name="finalDate" value="2021/12/04 15:30"/>
 	</bean>
 	
+
+
+	<bean id="task2" class="acme.entities.task.Task">
+		<property name="title" value="sample test 2"/>
+		<property name="description" value="buenas tardes 2"/>
+		<property name="workload" value="2.0"/>
+		<property name="executionPeriod" ref="executionPeriod2"/>
+		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+		<property name="isPrivate" value="false"/>
+		<property name="isFinished" value="true"/>
+		
+		<property name="workplan">
+			<list>
+				<ref bean="workplan2"/>
+			</list>
+		</property>
+	
+	</bean>
+		
+		<bean id="workplan2" class="acme.entities.workplan.Workplan">
+		<property name="title" value="sample test wp 2"/>
+		
+		<property name="executionPeriod" ref="executionPeriod2"/>
+		<property name="isPrivate" value="false"/>
+		<property name="task">
+			<list>
+				<ref bean="task2"/>
+				
+			</list>
+		</property>
+	
+	</bean>
+		
+	<bean id="executionPeriod2" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="2021/12/08 10:23"/>
+		<property name="finalDate" value="2021/12/09 15:45"/>
+	</bean>
+	
+	
+	<bean id="task3" class="acme.entities.task.Task">
+		<property name="title" value="sample test 3"/>
+		<property name="description" value="buenas tardes 3"/>
+		<property name="workload" value="2.0"/>
+		<property name="executionPeriod" ref="executionPeriod3"/>
+		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+		<property name="isPrivate" value="false"/>
+		<property name="isFinished" value="false"/>
+		
+		<property name="workplan">
+			<list>
+				<ref bean="workplan3"/>
+			</list>
+		</property>
+	
+	</bean>
+		
+		<bean id="workplan3" class="acme.entities.workplan.Workplan">
+		<property name="title" value="sample test wp 3"/>
+		
+		<property name="executionPeriod" ref="executionPeriod3"/>
+		<property name="isPrivate" value="false"/>
+		<property name="task">
+			<list>
+				<ref bean="task3"/>
+				
+			</list>
+		</property>
+	
+	</bean>
+		
+	<bean id="executionPeriod3" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="2021/12/05 10:15"/>
+		<property name="finalDate" value="2021/12/07 15:30"/>
+	</bean>
+</beans>
+
 		<bean id="shout5" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2021/02/13 19:39"/>
 		<property name="author" value="John Doe"/>
@@ -165,3 +243,4 @@
 	</bean>
 	
 </beans>
+

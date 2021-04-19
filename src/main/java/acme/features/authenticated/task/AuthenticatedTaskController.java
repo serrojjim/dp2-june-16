@@ -1,4 +1,4 @@
-package acme.features.anonymous.task;
+package acme.features.authenticated.task;
 
 
 import javax.annotation.PostConstruct;
@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import acme.entities.task.Task;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Anonymous;
+import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/anonymous/task/")
-public class AnonymousTaskController extends AbstractController<Anonymous, Task> {
+@RequestMapping("/authenticated/task/")
+public class AuthenticatedTaskController extends AbstractController<Authenticated, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	
-	protected AnonymousTaskListService listService;
+	protected AuthenticatedTaskListService listService;
 
 	// Constructors -----------------------------------------------------------
 

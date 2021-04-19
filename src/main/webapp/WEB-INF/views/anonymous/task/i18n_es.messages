@@ -1,0 +1,7 @@
+anonymous.task.list.label.title = Título
+anonymous.task.list.label.url = Enlace
+anonymous.task.list.label.description = Descripción
+anonymous.task.list.label.execution_period_final_date = Fecha final de ejecución
+anonymous.task.list.label.execution_period_initial_date  = Fecha inicial de ejecución
+anonymous.task.list.label.isFinished = Acabada
+anonymous.task.list.label.workload = Carga de trabajo

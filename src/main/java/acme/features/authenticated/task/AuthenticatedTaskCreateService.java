@@ -1,3 +1,4 @@
+package acme.features.authenticated.task;
 //package acme.features.anonymous.task;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
