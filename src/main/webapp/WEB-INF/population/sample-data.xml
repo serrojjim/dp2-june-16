@@ -205,7 +205,6 @@
 		<property name="initialDate" value="2021/12/05 10:15"/>
 		<property name="finalDate" value="2021/12/07 15:30"/>
 	</bean>
-</beans>
 
 		<bean id="shout5" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2021/02/13 19:39"/>
