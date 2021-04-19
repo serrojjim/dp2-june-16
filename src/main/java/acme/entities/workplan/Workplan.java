@@ -42,7 +42,7 @@ public class Workplan extends DomainEntity{
 		@ManyToMany(mappedBy = "workplan")
 		protected List<Task> task;
 		
-		
+		 
 		
 	// Derived attributes
 		
