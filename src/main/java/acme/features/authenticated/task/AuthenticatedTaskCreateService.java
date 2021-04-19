@@ -5,7 +5,9 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.ExecutionPeriod;
 import acme.entities.task.Task;
+import acme.entities.workplan.Workplan;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -49,9 +51,15 @@ public class AuthenticatedTaskCreateService implements AbstractCreateService<Aut
 		assert request != null;
 		
 		Task result;
-		Date moment;
-		
-		moment = new Date(System.currentTimeMillis() - 1);
+		Workplan workplan;
+		ExecutionPeriod execution;
+		execution = new ExecutionPeriod();
+		execution.setInitialDate(new Date(2021,5,10));
+		execution.setFinalDate(new Date(2021,5,12));
+
+		workplan = new Workplan();
+		workplan.setTitle("Execution prueba");
+		workplan.setExecutionPeriod(execution);
 		
 		result = new Task();
 		result.setTitle("Prueba de instanciar1");
@@ -59,7 +67,7 @@ public class AuthenticatedTaskCreateService implements AbstractCreateService<Aut
 		result.setIsPrivate(false);
 		result.setIsFinished(false);
 		result.setUrl("http://google.es/");
-		result.setLink("http://example5.org");
+		result.setExecutionPeriod(execution);
 		
 		return result;
 		
@@ -78,11 +86,11 @@ public class AuthenticatedTaskCreateService implements AbstractCreateService<Aut
 		assert request != null;
 		assert entity != null;
 		
-		Date moment;
+//		final Date moment;
 		
-		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setMoment(moment);
-		this.shoutRepository.save(entity);
+//		moment = new Date(System.currentTimeMillis() - 1);
+//		entity.setMoment(moment);
+		this.taskRepository.save(entity);
 		
 	}
 
