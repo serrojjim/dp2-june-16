@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.task;
+package acme.features.manager.task;
 
 import javax.annotation.PostConstruct;
 
@@ -18,23 +18,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/task/")
-public class AuthenticatedTaskController extends AbstractController<Authenticated, Task> {
+@RequestMapping("/manager/task/")
+public class ManagerTaskController extends AbstractController<Manager, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedTaskListService	listService;
+	protected ManagerTaskListService	listService;
 
+
+	@Autowired
+	protected ManagerTaskUpdateService	updateService;
+	
 	
 	@Autowired
-	protected AuthenticatedTaskShowService showService;
+	protected ManagerTaskCreateService createService;
+	
+	@Autowired
+	protected ManagerTaskShowService showService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -43,7 +50,8 @@ public class AuthenticatedTaskController extends AbstractController<Authenticate
 	protected void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 
 	}
 

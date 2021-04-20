@@ -1,24 +1,24 @@
 
 
 
-package acme.features.authenticated.task;
+package acme.features.manager.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedTaskShowService implements AbstractShowService<Authenticated, Task> {
+public class ManagerTaskShowService implements AbstractShowService<Manager, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedTaskRepository repository;
+	protected ManagerTaskRepository repository;
 
 	// AbstractShowService<Administrator, UserAccount> interface --------------
 
@@ -36,22 +36,9 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 		assert entity != null;
 		assert model != null;
 
-		final String rol =request.getPrincipal().getActiveRole().getSimpleName();
-		final int userAcountId = request.getPrincipal().getAccountId();
-		final int taskId = entity.getId();
-		
-		final Task task = this.repository.findOneTaskByIdAndUA(taskId, userAcountId);
-		
-		
-		
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url");
 		
 		
-		if (rol.equals("Authenticated") && task!=null) {
-			model.setAttribute("canUpdate", true);
-		} else {
-			model.setAttribute("canUpdate", false);
-		}
 	}
 
 

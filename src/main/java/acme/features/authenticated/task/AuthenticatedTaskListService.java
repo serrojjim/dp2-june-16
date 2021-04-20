@@ -13,19 +13,18 @@
 package acme.features.authenticated.task;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedTaskListService implements AbstractListService<Manager, Task> {
+public class AuthenticatedTaskListService implements AbstractListService<Authenticated, Task> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -49,7 +48,7 @@ public class AuthenticatedTaskListService implements AbstractListService<Manager
 		assert model != null;
 
 
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate");
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url");
 		
 
 
@@ -63,9 +62,7 @@ public class AuthenticatedTaskListService implements AbstractListService<Manager
 		Collection<Task> result;
 
 		result = this.repository.findAllTask();
-		result = result.stream().filter(x->x.getIsFinished() == true && x.getIsPrivate()==false)
-//			.sorted(Comparator.comparing(x->x.getMoment(),Comparator.reverseOrder()))
-			.collect(Collectors.toList());
+
 		return result;
 	}
 

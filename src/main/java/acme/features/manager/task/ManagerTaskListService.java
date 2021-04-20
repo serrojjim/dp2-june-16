@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.manager;
+package acme.features.manager.task;
 
 import java.util.Collection;
 
@@ -24,12 +24,12 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedManagerListTaskService implements AbstractListService<Manager, Task> {
+public class ManagerTaskListService implements AbstractListService<Manager, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedManagerRepository repository;
+	protected ManagerTaskRepository repository;
 
 	// AbstractListService<Authenticated, Task> interface --------------
 
@@ -48,7 +48,7 @@ public class AuthenticatedManagerListTaskService implements AbstractListService<
 		assert model != null;
 
 
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate");
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url");
 		
 
 
@@ -60,11 +60,9 @@ public class AuthenticatedManagerListTaskService implements AbstractListService<
 		assert request != null;
 
 		Collection<Task> result;
-		final int accountId =request.getPrincipal().getAccountId();
 
-		result = this.repository.findTaskByUA(accountId);
+		result = this.repository.findAllTask();
 
-		
 		return result;
 	}
 
