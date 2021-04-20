@@ -42,7 +42,7 @@ master.menu.anonymous.create-shout = ¡Dar un grito!
 
 master.menu.manager = Manager
 master.menu.manager.list-tasks = Listar tareas
-master.menu.manager.create-task = Crear tareas
+master.menu.manager.create-tasks = Crear tareas
 
 # master.menu.administrator ###################################################
 

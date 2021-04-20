@@ -10,26 +10,26 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.task;
+package acme.features.manager.task;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedTaskListService implements AbstractListService<Authenticated, Task> {
+public class ManagerTaskListService implements AbstractListService<Manager, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedTaskRepository repository;
+	protected ManagerTaskRepository repository;
 
 	// AbstractListService<Authenticated, Task> interface --------------
 

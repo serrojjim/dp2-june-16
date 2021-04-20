@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.task;
+package acme.features.manager.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,12 +23,12 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AuthenticatedTaskUpdateService implements AbstractUpdateService<Manager, Task> {
+public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedTaskRepository repository;
+	protected ManagerTaskRepository repository;
 
 	// AbstractUpdateService<Authenticated, Task> interface -------------
 

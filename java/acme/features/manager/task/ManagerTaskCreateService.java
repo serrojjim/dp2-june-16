@@ -1,6 +1,5 @@
-package acme.features.authenticated.task;
+package acme.features.manager.task;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +12,16 @@ import acme.entities.workplan.Workplan;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AuthenticatedTaskCreateService implements AbstractCreateService<Manager, Task> {
+public class ManagerTaskCreateService implements AbstractCreateService<Manager, Task> {
 	
 	@Autowired
-	protected AuthenticatedTaskRepository taskRepository;
+	protected ManagerTaskRepository taskRepository;
+	
+	
 	
 	@Override
 	public boolean authorise(final Request<Task> request) {
@@ -43,8 +45,9 @@ public class AuthenticatedTaskCreateService implements AbstractCreateService<Man
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
+
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url","isFinished");
+		
 	}
 	
 	@Override
@@ -54,12 +57,12 @@ public class AuthenticatedTaskCreateService implements AbstractCreateService<Man
 		Task result;
 		Workplan workplan;
 		ExecutionPeriod execution;
-		final Date hoy = new Date(LocalDate.now().getYear(), LocalDate.now().getMonthValue(),LocalDate.now().getDayOfMonth());
-		final Date mañana = new Date(LocalDate.now().getYear(), LocalDate.now().getMonthValue(),LocalDate.now().getDayOfMonth()+1);
+		final int userAcountId = request.getPrincipal().getAccountId();
+		final UserAccount userAccount = this.taskRepository.findOneUserAccountById(userAcountId);
 
 		execution = new ExecutionPeriod();
 		execution.setInitialDate(new Date());
-		execution.setFinalDate(mañana);
+		execution.setFinalDate(new Date());
 
 		workplan = new Workplan();
 		workplan.setTitle("Execution prueba");
@@ -72,7 +75,7 @@ public class AuthenticatedTaskCreateService implements AbstractCreateService<Man
 		result.setIsFinished(false);
 		result.setUrl("http://google.es/");
 		result.setExecutionPeriod(execution);
-		
+		result.setUserAccount(userAccount);
 		return result;
 		
 	}

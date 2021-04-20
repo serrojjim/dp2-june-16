@@ -45,7 +45,7 @@ public class AuthenticationService implements UserDetailsService {
 
 		Principal result;
 		UserAccount userAccount;
-
+ 
 		userAccount = this.authenticationRepository.findByUsername(username);
 		if (userAccount == null) {
 			throw new UsernameNotFoundException(username);
