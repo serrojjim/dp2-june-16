@@ -10,6 +10,7 @@ import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -27,7 +28,7 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 	public boolean authorise(final Request<Task> request) {
 		
 
-		final int uaId = request.getPrincipal().getAccountId();
+		final Principal uaId = request.getPrincipal();
 		final int taskId = request.getModel().getInteger("id");
 		final int userRequestId;
 		try {
@@ -37,8 +38,17 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 			return false;
 		}
 		
+		if(uaId.getAccountId()==userRequestId) {
+			if(uaId.getActiveRole().getSimpleName().equals("Manager")) {
+				return true;
+			}else {
+				return false;
+			}
+			
+		}else {
+			return false;
+		}
 
-		return uaId==userRequestId;
 	}
 
 	@Override
@@ -48,17 +58,7 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		assert model != null;
 
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url","isFinished","isPrivate");
-		final String rol =request.getPrincipal().getActiveRole().getSimpleName();
-		final int userAcountId = request.getPrincipal().getAccountId();
-		final int taskId = entity.getId();
 		
-		final Task task = this.repository.findOneTaskByIdAndUA(taskId, userAcountId);
-		
-		if (rol.equals("Manager") && task!=null) {
-			model.setAttribute("canUpdate", true);
-		} else {
-			model.setAttribute("canUpdate", false);
-		}
 		
 	}
 

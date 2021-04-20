@@ -12,6 +12,9 @@
 
 package acme.features.manager.task;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +40,17 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
 
-		return true;
+		final String rol =request.getPrincipal().getActiveRole().getSimpleName();
+		final int userAcountId = request.getPrincipal().getAccountId();
+		final int taskId = request.getModel().getInteger("id");
+		
+		final Task task = this.repository.findOneTaskByIdAndUA(taskId, userAcountId);
+		
+		if (rol.equals("Manager") && task!=null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	@Override
@@ -85,8 +98,35 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert request != null;
 		assert entity != null;
 
+		boolean conditionToSave = true;
+	
+
+        final LocalDateTime initialDate = entity.getExecutionPeriod().getInitialDate();
+        final LocalDateTime finalDate = entity.getExecutionPeriod().getFinalDate();
+ 
+        
+		if(initialDate.isBefore(LocalDateTime.now())) {
+			conditionToSave = false;
+		}
 		
-		this.repository.save(entity);
+		
+		if(finalDate.isBefore(initialDate)) {
+			conditionToSave = false;
+		}
+		
+		final double dur = Duration.between(initialDate, finalDate).toMinutes()/60;
+		
+		if(entity.getWorkload()>dur) {
+			conditionToSave = false;
+		}
+		
+		if(conditionToSave) {
+			this.repository.save(entity);
+
+		}
 	}
 
+	
+	
+	
 }

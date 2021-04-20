@@ -21,4 +21,4 @@ manager.task.form.label.isFinished = Acabada
 manager.task.form.label.workload = Carga de trabajo
 manager.task.form.label.update = Actualizar
 manager.task.form.label.create = Crear
-manager.task.list.label.isPrivate = Es privado
+manager.task.list.label.isPrivate = Privado

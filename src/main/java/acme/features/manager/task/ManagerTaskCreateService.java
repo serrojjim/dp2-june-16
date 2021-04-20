@@ -1,6 +1,7 @@
 package acme.features.manager.task;
 
-import java.util.Date;
+import java.time.Duration;
+import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,9 +50,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url","isFinished");
 		final String rol =request.getPrincipal().getActiveRole().getSimpleName();
 
-		if (rol.equals("Manager")) {
-			model.setAttribute("command", "create");
-		} 
+
 		
 	}
 	
@@ -66,8 +65,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		final UserAccount userAccount = this.taskRepository.findOneUserAccountById(userAcountId);
 
 		execution = new ExecutionPeriod();
-		execution.setInitialDate(new Date());
-		execution.setFinalDate(new Date());
+		execution.setInitialDate( LocalDateTime.now().plusMinutes(5));
+		execution.setFinalDate( LocalDateTime.now().plusDays(10));
  
 		workplan = new Workplan();
 		workplan.setTitle("Execution prueba");
@@ -91,20 +90,45 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 		assert errors != null;
 		
+		
+		
+		
 	}
 	
 	@Override
 	public void create(final Request<Task> request, final Task entity) {
 		assert request != null;
 		assert entity != null;
+
+		boolean conditionToSave = true;
+	
+
+        final LocalDateTime initialDate = entity.getExecutionPeriod().getInitialDate();
+        final LocalDateTime finalDate = entity.getExecutionPeriod().getFinalDate();
+ 
+        
+		if(initialDate.isBefore(LocalDateTime.now())) {
+			conditionToSave = false;
+		}
 		
-//		final Date moment;
 		
-//		moment = new Date(System.currentTimeMillis() - 1);
-//		entity.setMoment(moment);
-		this.taskRepository.save(entity);
+		if(finalDate.isBefore(initialDate)) {
+			conditionToSave = false;
+		}
+		
+		final double dur = Duration.between(initialDate, finalDate).toMinutes()/60;
+		
+		if(entity.getWorkload()>dur) {
+			conditionToSave = false;
+		}
+		
+		if(conditionToSave) {
+			this.taskRepository.save(entity);
+
+		}
 		
 	}
-
+	
+	
 
 }

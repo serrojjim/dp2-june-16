@@ -132,8 +132,8 @@
 	</bean>
 		
 	<bean id="executionPeriod1" class="acme.datatypes.ExecutionPeriod">
-		<property name="initialDate" value="2021/12/03 10:15"/>
-		<property name="finalDate" value="2021/12/04 15:30"/>
+		<property name="initialDate" value="2021/12/03 10:15 AM"/>
+		<property name="finalDate" value="2021/12/04  5:30 PM"/>
 	</bean>
 	
 
