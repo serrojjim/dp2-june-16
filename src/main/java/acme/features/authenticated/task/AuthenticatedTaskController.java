@@ -1,5 +1,16 @@
-package acme.features.authenticated.task;
+/*
+ * AdministratorUserAccountController.java
+ *
+ * Copyright (C) 2012-2021 Rafael Corchuelo.
+ *
+ * In keeping with the traditional purpose of furthering education and research, it is
+ * the policy of the copyright owner to permit non-commercial use and redistribution of
+ * this software. It has been tested carefully, but it is not guaranteed for any particular
+ * purposes. The copyright owner does not offer any warranties or representations, nor do
+ * they accept any liabilities with respect to them.
+ */
 
+package acme.features.authenticated.task;
 
 import javax.annotation.PostConstruct;
 
@@ -18,17 +29,14 @@ public class AuthenticatedTaskController extends AbstractController<Authenticate
 
 	// Internal state ---------------------------------------------------------
 
+	@Autowired
+	protected AuthenticatedTaskListService	listService;
 
 	@Autowired
-	protected AuthenticatedTaskListService listService;
-	
-//	@Autowired
-//	protected AuthenticatedTaskUpdateService updateService;
-	
+	protected AuthenticatedTaskShowService	showService;
+
 	@Autowired
-	protected AuthenticatedTaskShowService showService;
-//	@Autowired
-//	protected AuthenticatedTaskCreateService createService;
+	protected AuthenticatedTaskUpdateService	updateService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -37,8 +45,7 @@ public class AuthenticatedTaskController extends AbstractController<Authenticate
 	protected void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		//super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
-		//super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
-}	
+}

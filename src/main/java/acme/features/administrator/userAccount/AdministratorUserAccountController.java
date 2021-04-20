@@ -35,8 +35,8 @@ public class AdministratorUserAccountController extends AbstractController<Admin
 	@Autowired
 	protected AdministratorUserAccountShowService	showService;
 
-	@Autowired
-	protected AdministratorUserAccountUpdateService	updateService;
+//	@Autowired
+//	protected AdministratorUserAccountUpdateService	updateService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -45,7 +45,7 @@ public class AdministratorUserAccountController extends AbstractController<Admin
 	protected void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+//		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
 }

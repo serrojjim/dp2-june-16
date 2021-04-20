@@ -1,3 +1,15 @@
+/*
+ * AuthenticatedTaskShowService.java
+ *
+ * Copyright (C) 2012-2021 Rafael Corchuelo.
+ *
+ * In keeping with the traditional purpose of furthering education and research, it is
+ * the policy of the copyright owner to permit non-commercial use and redistribution of
+ * this software. It has been tested carefully, but it is not guaranteed for any particular
+ * purposes. The copyright owner does not offer any warranties or representations, nor do
+ * they accept any liabilities with respect to them.
+ */
+
 package acme.features.authenticated.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +24,12 @@ import acme.framework.services.AbstractShowService;
 @Service
 public class AuthenticatedTaskShowService implements AbstractShowService<Authenticated, Task> {
 
-
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AuthenticatedTaskRepository repository;
 
-	// AbstractShowService<Administrator, Task> interface --------------
+	// AbstractShowService<Authenticated, Task> interface --------------
 
 
 	@Override
@@ -34,7 +45,22 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url" );
+		final String rol =request.getPrincipal().getActiveRole().getSimpleName();
+		final int userAcountId = request.getPrincipal().getAccountId();
+		final int taskId = entity.getId();
+		
+		final Task task = this.repository.findOneTaskByIdAndUA(taskId, userAcountId);
+		
+		
+		
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url");
+		
+		
+		if (rol.equals("Authenticated") && task!=null) {
+			model.setAttribute("canUpdate", true);
+		} else {
+			model.setAttribute("canUpdate", false);
+		}
 	}
 
 	@Override
@@ -49,6 +75,5 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 
 		return result;
 	}
-
 
 }
