@@ -1,5 +1,6 @@
 package acme.features.authenticated.task;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,17 +54,20 @@ public class AuthenticatedTaskCreateService implements AbstractCreateService<Aut
 		Task result;
 		Workplan workplan;
 		ExecutionPeriod execution;
+		final Date hoy = new Date(LocalDate.now().getYear(), LocalDate.now().getMonthValue(),LocalDate.now().getDayOfMonth());
+		final Date mañana = new Date(LocalDate.now().getYear(), LocalDate.now().getMonthValue(),LocalDate.now().getDayOfMonth()+1);
+
 		execution = new ExecutionPeriod();
-		execution.setInitialDate(new Date(2021,5,10));
-		execution.setFinalDate(new Date(2021,5,12));
+		execution.setInitialDate(new Date());
+		execution.setFinalDate(mañana);
 
 		workplan = new Workplan();
 		workplan.setTitle("Execution prueba");
 		workplan.setExecutionPeriod(execution);
 		
 		result = new Task();
-		result.setTitle("Prueba de instanciar1");
-		result.setDescription("Prueba instanciar1");
+		result.setTitle("New task");
+		result.setDescription("New task");
 		result.setIsPrivate(false);
 		result.setIsFinished(false);
 		result.setUrl("http://google.es/");

@@ -20,5 +20,8 @@ public interface AuthenticatedTaskRepository extends AbstractRepository{
 	@Query("select t from Task t where t.userAccount.id = ?1")
 	Task findOneTaskByUserAccountId(int id);
 	
+	@Query("select t from Task t where t.id = ?1")
+	Task findTaskById(int id);
+	
 	}
 
