@@ -33,9 +33,11 @@ public class ExecutionPeriod extends DomainDatatype {
 	// Attributes -------------------------------------------------------------
 
 	@NotNull
+	@Future
 	protected LocalDateTime		initialDate;
 
 	@NotNull
+	@Future
 	protected LocalDateTime		finalDate;
 
 	
