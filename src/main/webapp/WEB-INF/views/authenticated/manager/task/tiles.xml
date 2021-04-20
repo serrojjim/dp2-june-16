@@ -7,11 +7,11 @@
 <tiles-definitions>
 	
 
-	<definition name="manager/task/list" extends="master">
+	<definition name="authenticated/manager/task/list" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/manager/task/list.jsp" />
 	</definition>
 
-	<definition name="manager/task/form" extends="master">
+	<definition name="authenticated/manager/task/form" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/manager/task/form.jsp" />
 	</definition>
 

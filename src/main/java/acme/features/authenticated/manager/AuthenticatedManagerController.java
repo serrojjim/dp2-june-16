@@ -12,13 +12,13 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/manager/")
+@RequestMapping("/authenticated/manager/task")
 public class AuthenticatedManagerController extends AbstractController<Authenticated, Manager> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedManagerCreateService	createService;
+	protected AuthenticatedManagerCreateTaskService	createService;
 
 	// Constructors -----------------------------------------------------------
 

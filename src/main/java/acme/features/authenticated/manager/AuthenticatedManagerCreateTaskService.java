@@ -16,7 +16,7 @@ import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AuthenticatedManagerCreateService implements AbstractCreateService<Authenticated, Manager> {
+public class AuthenticatedManagerCreateTaskService implements AbstractCreateService<Authenticated, Manager> {
 
 	// Internal state ---------------------------------------------------------
 

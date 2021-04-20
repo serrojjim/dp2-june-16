@@ -10,10 +10,9 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.task;
+package acme.features.authenticated.manager;
 
 import java.util.Collection;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,12 +24,12 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedTaskListService implements AbstractListService<Manager, Task> {
+public class AuthenticatedManagerListTaskService implements AbstractListService<Manager, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedTaskRepository repository;
+	protected AuthenticatedManagerRepository repository;
 
 	// AbstractListService<Authenticated, Task> interface --------------
 
@@ -61,11 +60,11 @@ public class AuthenticatedTaskListService implements AbstractListService<Manager
 		assert request != null;
 
 		Collection<Task> result;
+		final int accountId =request.getPrincipal().getAccountId();
 
-		result = this.repository.findAllTask();
-		result = result.stream().filter(x->x.getIsFinished() == true && x.getIsPrivate()==false)
-//			.sorted(Comparator.comparing(x->x.getMoment(),Comparator.reverseOrder()))
-			.collect(Collectors.toList());
+		result = this.repository.findTaskByUA(accountId);
+
+		
 		return result;
 	}
 

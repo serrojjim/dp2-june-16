@@ -47,7 +47,7 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Manager
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url");
 		
 		
-		if (rol.equals("Authenticated") && task!=null) {
+		if (rol.equals("Manager") && task!=null) {
 			model.setAttribute("canUpdate", true);
 		} else {
 			model.setAttribute("canUpdate", false);

@@ -24,7 +24,7 @@ import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/manager/task/")
+@RequestMapping("/authenticated/task/")
 public class AuthenticatedTaskController extends AbstractController<Manager, Task> {
 
 	// Internal state ---------------------------------------------------------
@@ -33,12 +33,6 @@ public class AuthenticatedTaskController extends AbstractController<Manager, Tas
 	protected AuthenticatedTaskListService	listService;
 
 
-	@Autowired
-	protected AuthenticatedTaskUpdateService	updateService;
-	
-	
-	@Autowired
-	protected AuthenticatedTaskCreateService createService;
 	
 	@Autowired
 	protected AuthenticatedTaskShowService showService;
@@ -50,8 +44,6 @@ public class AuthenticatedTaskController extends AbstractController<Manager, Tas
 	protected void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
-		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 
 	}
 
