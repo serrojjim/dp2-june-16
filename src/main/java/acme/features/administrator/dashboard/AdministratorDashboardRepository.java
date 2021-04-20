@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.dashboard.Dashboard;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
 import acme.framework.repositories.AbstractRepository;
@@ -40,11 +39,11 @@ public interface AdministratorDashboardRepository extends AbstractRepository{
 	@Query("select t from Task t")
 	List<Task> findAllTasks();
 	
-	@Query("select w from Workload w")
+	@Query("select w from Workplan w")
 	List<Workplan> findAllWorkplans();
 
-	@Query("select d from Dashboard d where d.id = 1")
-	Dashboard getDashboard();
+//	@Query("select d from Dashboard d where d.id = 1")
+//	Dashboard getDashboard();
 
 
 }

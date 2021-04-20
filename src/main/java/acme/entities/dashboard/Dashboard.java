@@ -46,4 +46,5 @@ public class Dashboard implements Serializable {
 	
 	Integer totalNumberOfWorkplans;
 	Integer totalNumberOfPublishedWorkplans;
+	Integer totalNumberOfNonPublishedWorkplans;
 }

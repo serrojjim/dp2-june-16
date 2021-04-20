@@ -47,7 +47,7 @@ public class ExecutionPeriod extends DomainDatatype implements Comparable<Execut
 
 	@Transient
 	public long getWorkloadHours() {
-		return ChronoUnit.DAYS.between(this.finalDate, this.initialDate);
+		return ChronoUnit.DAYS.between(this.initialDate, this.finalDate);
 	}
 
 	@Override

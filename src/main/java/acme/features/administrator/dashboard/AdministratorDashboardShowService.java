@@ -21,7 +21,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	@Autowired
 	protected AdministratorDashboardRepository repository;
 
-
 	@Override
 	public boolean authorise(final Request<Dashboard> request) {
 		assert request != null;
@@ -73,7 +72,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	public Dashboard findOne(final Request<Dashboard> request) {
 		assert request != null;
 
-		final Dashboard result = this.repository.getDashboard();
+		final Dashboard result = new Dashboard();
 
 		final List<Task> allTasks = this.repository.findAllTasks();
 		final Integer numberOfTasks = allTasks.size();
@@ -209,6 +208,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		result.setTotalNumberOfWorkplans(numberOfWorkplans);
 		result.setTotalNumberOfPublishedWorkplans(1);
+		result.setTotalNumberOfNonPublishedWorkplans(1);
 
 		return result;
 	}
