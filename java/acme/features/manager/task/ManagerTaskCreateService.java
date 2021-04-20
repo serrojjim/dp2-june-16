@@ -63,7 +63,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		execution = new ExecutionPeriod();
 		execution.setInitialDate(new Date());
 		execution.setFinalDate(new Date());
-
+ 
 		workplan = new Workplan();
 		workplan.setTitle("Execution prueba");
 		workplan.setExecutionPeriod(execution);
