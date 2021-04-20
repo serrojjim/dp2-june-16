@@ -8,7 +8,7 @@ manager.task.list.label.workload = Carga de trabajo
 manager.task.form.button.return = Volver
 manager.task.form.button.update = Actualizar
 manager.task.form.button.create = Crear
-manager.task.form.label.delete = Borrar
+manager.task.form.button.delete = Borrar
 
 manager.task.form.label.title = Título
 manager.task.form.label.url = Enlace
@@ -17,3 +17,4 @@ manager.task.form.label.execution_period_final_date = Fecha final de ejecución
 manager.task.form.label.execution_period_initial_date  = Fecha inicial de ejecución
 manager.task.form.label.isFinished = Acabada
 manager.task.form.label.workload = Carga de trabajo
+manager.task.form.label.isPrivate = Privada

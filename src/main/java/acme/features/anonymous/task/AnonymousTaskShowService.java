@@ -1,7 +1,7 @@
 
 
 
-package acme.features.authenticated.task;
+package acme.features.anonymous.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,16 +9,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.task.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Anonymous;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedTaskShowService implements AbstractShowService<Authenticated, Task> {
+public class AnonymousTaskShowService implements AbstractShowService<Anonymous, Task> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedTaskRepository repository;
+	protected AnonymousTaskRepository repository;
 
 	// AbstractShowService<Administrator, UserAccount> interface --------------
 
@@ -38,7 +38,7 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url");
 		
-	
+		
 	}
 
 
