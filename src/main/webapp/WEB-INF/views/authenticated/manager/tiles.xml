@@ -18,7 +18,10 @@
 
 <tiles-definitions>
 
-	<definition name="authenticated/task/list" extends="master">
+	<definition name="authenticated/manager/form" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/manager/form.jsp" />
+	</definition>
+	<definition name="authenticated/manager/list" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/manager/list.jsp" />
 	</definition>
 	
