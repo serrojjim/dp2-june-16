@@ -37,7 +37,17 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		assert model != null;
 
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url");
+		final String rol =request.getPrincipal().getActiveRole().getSimpleName();
+		final int userAcountId = request.getPrincipal().getAccountId();
+		final int taskId = entity.getId();
 		
+		final Task task = this.repository.findOneTaskByIdAndUA(taskId, userAcountId);
+		
+		if (rol.equals("Manager") && task!=null) {
+			model.setAttribute("canUpdate", true);
+		} else {
+			model.setAttribute("canUpdate", false);
+		}
 		
 	}
 

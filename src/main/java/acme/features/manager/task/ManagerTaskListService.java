@@ -61,7 +61,9 @@ public class ManagerTaskListService implements AbstractListService<Manager, Task
 
 		Collection<Task> result;
 
-		result = this.repository.findAllTask();
+		final int userAccId = request.getPrincipal().getAccountId();
+		
+		result = this.repository.findAllMyTask(userAccId);
 
 		return result;
 	}

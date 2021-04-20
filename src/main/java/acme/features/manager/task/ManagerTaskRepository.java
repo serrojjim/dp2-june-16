@@ -13,6 +13,7 @@
 package acme.features.manager.task;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -37,4 +38,8 @@ public interface ManagerTaskRepository extends AbstractRepository {
 	Task findTaskById(int id);
 	@Query("select ua from UserAccount ua where ua.id = ?1")
 	UserAccount findOneUserAccountById(int id);
+	
+	
+	@Query("select t from Task t where t.userAccount.id = ?1")
+	List<Task> findAllMyTask(int id);
 	}

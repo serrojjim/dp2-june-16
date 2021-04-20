@@ -47,6 +47,11 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert model != null;
 
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url","isFinished");
+		final String rol =request.getPrincipal().getActiveRole().getSimpleName();
+
+		if (rol.equals("Manager")) {
+			model.setAttribute("command", "create");
+		} 
 		
 	}
 	

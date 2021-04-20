@@ -16,3 +16,5 @@ manager.task.form.label.execution_period_final_date = Fecha final de ejecución
 manager.task.form.label.execution_period_initial_date  = Fecha inicial de ejecución
 manager.task.form.label.isFinished = Acabada
 manager.task.form.label.workload = Carga de trabajo
+manager.task.form.label.update = Actualizar
+manager.task.form.label.create = Crear
