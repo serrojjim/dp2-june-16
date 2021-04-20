@@ -8,6 +8,9 @@ manager.task.list.label.workload = workload
 manager.task.form.button.return = Return
 manager.task.form.button.update = Update
 manager.task.form.button.create = Create
+manager.task.form.button.update = Update
+manager.task.form.button.create = Create
+manager.task.form.label.delete = Delete
 
 manager.task.form.label.title = Title
 manager.task.form.label.url = Link

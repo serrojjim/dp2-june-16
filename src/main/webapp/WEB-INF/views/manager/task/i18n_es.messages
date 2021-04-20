@@ -8,6 +8,7 @@ manager.task.list.label.workload = Carga de trabajo
 manager.task.form.button.return = Volver
 manager.task.form.button.update = Actualizar
 manager.task.form.button.create = Crear
+manager.task.form.label.delete = Borrar
 
 manager.task.form.label.title = Título
 manager.task.form.label.url = Enlace

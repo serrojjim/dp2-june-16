@@ -23,6 +23,7 @@
 	<acme:form-textbox code="manager.task.form.label.execution_period_initial_date" path="executionPeriod.initialDate" readonly="false"/>
 	<acme:form-textbox code="manager.task.form.label.execution_period_final_date" path="executionPeriod.finalDate" readonly="false"/>
 	<acme:form-submit code="manager.task.form.label.update" action="/manager/task/update"/>
+	<acme:form-submit code="manager.task.form.label.delete" action="/manager/task/delete"/>
 	
 	</jstl:if>
 	
