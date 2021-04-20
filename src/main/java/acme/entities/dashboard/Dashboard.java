@@ -24,23 +24,25 @@ public class Dashboard implements Serializable {
 	Integer numberOfFinishedWorkplans;
 	Integer numberOfNonFinishedWorkplans;
 	
-	Double minWorkloadTasks;
-	Double maxWorkloadTasks;
-	Double avgWorkloadTasks;
-	Double dvtWorkloadTasks;
-	Long minExecutionPeriodTasks;
-	Long maxExecutionPeriodTasks;
-	Double avgExecutionPeriodTasks;
-	Double dvtExecutionPeriodTasks;
+	Double 	minWorkloadTasks;
+	Double 	maxWorkloadTasks;
+	Double 	avgWorkloadTasks;
+	Double 	dvtWorkloadTasks;
 	
-	Double minWorkloadWorkplans;
-	Double maxWorkloadWorkplans;
-	Double avgWorkloadWorkplans;
-	Double dvtWorkloadWorkplans;
-	Long minExecutionPeriodWorkplans;
-	Long maxExecutionPeriodWorkplans;
-	Double avgExecutionPeriodWorkplans;
-	Double dvtExecutionPeriodWorkplans;
+	Long 	minExecutionPeriodTasks;
+	Long 	maxExecutionPeriodTasks;
+	Double 	avgExecutionPeriodTasks;
+	Double 	dvtExecutionPeriodTasks;
+	
+	Double 	minWorkloadWorkplans;
+	Double 	maxWorkloadWorkplans;
+	Double 	avgWorkloadWorkplans;
+	Double 	dvtWorkloadWorkplans;
+	
+	Long 	minExecutionPeriodWorkplans;
+	Long 	maxExecutionPeriodWorkplans;
+	Double 	avgExecutionPeriodWorkplans;
+	Double 	dvtExecutionPeriodWorkplans;
 	
 	Integer totalNumberOfWorkplans;
 	Integer totalNumberOfPublishedWorkplans;

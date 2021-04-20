@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Transient;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
