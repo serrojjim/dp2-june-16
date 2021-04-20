@@ -38,7 +38,7 @@ master.menu.authenticated = Authenticated
 
 master.menu.anonymous.list-shouts = List shouts
 master.menu.anonymous.create-shout = Shout!
-
+master.menu.manager = Manager
 
 # master.menu.administrator ###################################################
 

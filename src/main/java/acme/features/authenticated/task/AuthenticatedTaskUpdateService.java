@@ -15,15 +15,15 @@ package acme.features.authenticated.task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AuthenticatedTaskUpdateService implements AbstractUpdateService<Authenticated, Task> {
+public class AuthenticatedTaskUpdateService implements AbstractUpdateService<Manager, Task> {
 
 	// Internal state ---------------------------------------------------------
 

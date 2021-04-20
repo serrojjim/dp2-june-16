@@ -38,6 +38,7 @@ master.menu.authenticated = Autenticado
 
 master.menu.anonymous.list-shouts = Ver gritos
 master.menu.anonymous.create-shout = ¡Dar un grito!
+master.menu.manager = Manager
 
 
 # master.menu.administrator ###################################################

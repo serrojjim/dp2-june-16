@@ -7,16 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.datatypes.ExecutionPeriod;
+import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AuthenticatedTaskCreateService implements AbstractCreateService<Authenticated, Task> {
+public class AuthenticatedTaskCreateService implements AbstractCreateService<Manager, Task> {
 	
 	@Autowired
 	protected AuthenticatedTaskRepository taskRepository;

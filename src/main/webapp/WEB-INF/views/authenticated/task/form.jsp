@@ -17,7 +17,7 @@
 	<acme:form-double code="authenticated.task.form.label.workload" path="workload" readonly="false"/>
 	<acme:form-textbox code="authenticated.task.form.label.execution_period_initial_date" path="executionPeriod.initialDate" readonly="false"/>
 	<acme:form-textbox code="authenticated.task.form.label.execution_period_final_date" path="executionPeriod.finalDate" readonly="false"/>
-				<acme:form-submit code="authenticated.task.form.label.execution_period_final_date" action="/authenticated/task/update"/>
+				<acme:form-submit code="authenticated.task.form.label.execution_period_final_date" action="/manager/task/update"/>
 	
 	</jstl:if>
 	
