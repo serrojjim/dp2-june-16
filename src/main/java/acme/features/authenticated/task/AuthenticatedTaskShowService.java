@@ -31,9 +31,12 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 		
 		final boolean isPrivate =this.repository.findTaskById(taskId).getIsPrivate();
 		
+
+		final boolean isFinished =this.repository.findTaskById(taskId).getIsFinished();
+
+		final boolean res = isPrivate ==false && isFinished ==true;
 		
-		
-		return !isPrivate;
+		return res;
 	}
 
 	@Override

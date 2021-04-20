@@ -25,9 +25,20 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 
 	@Override
 	public boolean authorise(final Request<Task> request) {
-		assert request != null;
+		
 
-		return true;
+		final int uaId = request.getPrincipal().getAccountId();
+		final int taskId = request.getModel().getInteger("id");
+		final int userRequestId;
+		try {
+			 userRequestId =this.repository.findTaskById(taskId).getUserAccount().getId();
+
+		}catch(final NullPointerException e) {
+			return false;
+		}
+		
+
+		return uaId==userRequestId;
 	}
 
 	@Override

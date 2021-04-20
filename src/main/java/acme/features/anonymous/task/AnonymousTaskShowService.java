@@ -31,9 +31,10 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		
 		final boolean isPrivate =this.repository.findTaskById(taskId).getIsPrivate();
 		
-		
-		
-		return !isPrivate;
+		final boolean isFinished =this.repository.findTaskById(taskId).getIsFinished();
+
+		final boolean res = isPrivate ==false && isFinished ==false;
+		return res;
 	}
 
 	@Override
