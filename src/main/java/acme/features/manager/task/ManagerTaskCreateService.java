@@ -59,8 +59,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert request != null;
 		
 		Task result;
-		Workplan workplan;
-		ExecutionPeriod execution;
+		final Workplan workplan;
+		final ExecutionPeriod execution;
 		final int userAcountId = request.getPrincipal().getAccountId();
 		final UserAccount userAccount = this.taskRepository.findOneUserAccountById(userAcountId);
 

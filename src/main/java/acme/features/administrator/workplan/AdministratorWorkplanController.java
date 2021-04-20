@@ -35,7 +35,7 @@ public class AdministratorWorkplanController extends AbstractController<Administ
 		
 		@GetMapping("dashboard")
 		public String dashboard(final Model model) {
-			this.workplanService.statistics(model);
+//			this.workplanService.statistics(model);
 			return "administrator/workplan/dashboard";
 		}
 		

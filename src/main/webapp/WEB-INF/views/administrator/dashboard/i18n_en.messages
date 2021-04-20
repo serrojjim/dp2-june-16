@@ -1,0 +1,29 @@
+administrator.dashboard.entities.title.show = Dashboard
+
+administrator.dashboard.entities.title.general-indicators = General indicators
+administrator.dashboard.entities.label.numberOfPublicTasks = Number of public tasks
+administrator.dashboard.entities.label.numberOfPrivateTasks =  Number of private tasks
+administrator.dashboard.entities.label.numberOfFinishedTasks = Number of finished tasks
+administrator.dashboard.entities.label.numberOfNonFinishedTasks = Number of non-finished tasks
+administrator.dashboard.entities.label.averageOfTaskExecutionPeriods = Average of task execution period
+administrator.dashboard.entities.label.deviationOfTaskExecutionPeriods = Deviation of task execution period
+administrator.dashboard.entities.label.minOfTaskExecutionPeriods = Minimum of task execution period
+administrator.dashboard.entities.label.maxOfTaskExecutionPeriods = Maximum of task execution period
+administrator.dashboard.entities.label.averageOfTaskWorkloads = Average of tasks Workload
+administrator.dashboard.entities.label.deviationOfTaskWorkloads = Deviation of tasks workload
+administrator.dashboard.entities.label.minOfTaskWorkloads = Minimum of tasks workload 
+administrator.dashboard.entities.label.maxOfTaskWorkloads = Maximum of task workload
+administrator.dashboard.entities.label.numberOfPublicWorkPlans = Number of public Workplans
+administrator.dashboard.entities.label.numberOfFinishedWorkPlans = Number of finished Workplans
+administrator.dashboard.entities.label.numberOfNonFinishedWorkPlans = Number of non-finished Workplans
+administrator.dashboard.entities.label.averageOfWorkPlanPeriods = Average of Workplan periods
+administrator.dashboard.entities.label.minOfWorkPlanPeriods = Minimum of Workplan periods
+administrator.dashboard.entities.label.averageOfWorkplanWorkloads = Average of Workplan workload
+administrator.dashboard.entities.label.deviationOfWorkplanWorkloads = Deviation of Workplan workload
+administrator.dashboard.entities.label.minOfWorkplanWorkloads = Minimum of Workplan workload
+administrator.dashboard.entities.label.maxOfWorkplanWorkloads = Maximun of Workplan work
+administrator.dashboard.entities.label.numberOfWorkPlans = Number of Workplans
+administrator.dashboard.entities.label.numberOfPublishedWorkPlan = Number of published Workplans
+administrator.dashboard.entities.label.numberOfNonPublishedWorkPlans = Number of non-published Workplans
+
+administrator.dashboard.entities.title.application-statuses = Application statuses

@@ -13,8 +13,11 @@
 package acme.datatypes;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Transient;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
 import acme.framework.datatypes.DomainDatatype;
@@ -24,7 +27,7 @@ import lombok.Setter;
 @Embeddable
 @Getter
 @Setter
-public class ExecutionPeriod extends DomainDatatype {
+public class ExecutionPeriod extends DomainDatatype implements Comparable<ExecutionPeriod> {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -32,22 +35,24 @@ public class ExecutionPeriod extends DomainDatatype {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotNull
 	@Future
-	protected LocalDateTime		initialDate;
-
 	@NotNull
+	protected LocalDateTime initialDate;
+
 	@Future
-	protected LocalDateTime		finalDate;
+	@NotNull
+	protected LocalDateTime finalDate;
 
-	
+	// Derived attributes -----------------------------------------------------
 
-	// Object interface -------------------------------------------------------
-
-	@Override
-	public String toString() {
-		return "ExecutionPeriod [initialDate=" + this.initialDate + ", finalDate=" + this.finalDate + "]";
+	@Transient
+	public long getWorkloadHours() {
+		return ChronoUnit.DAYS.between(this.finalDate, this.initialDate);
 	}
 
+	@Override
+	public int compareTo(final ExecutionPeriod o) {
+		return (int) (this.getWorkloadHours() - o.getWorkloadHours());
+	}
 
 }

@@ -35,7 +35,7 @@ public class AdministratorTaskController extends AbstractController<Administrato
 		
 		@GetMapping("dashboard")
 		public String dashboard(final Model model) {
-			this.taskService.statistics(model);
+//			this.taskService.statistics(model);
 			return "administrator/task/dashboard";
 		}
 		
