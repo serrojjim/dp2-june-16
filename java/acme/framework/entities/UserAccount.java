@@ -85,6 +85,14 @@ public class UserAccount extends DomainEntity {
 		return result;
 	}
 
+	@Transient
+	public boolean isManager() {
+		boolean result;
+
+		result = this.username.equals("manager");
+
+		return result;
+	}
 	// Relationships ----------------------------------------------------------
 
 

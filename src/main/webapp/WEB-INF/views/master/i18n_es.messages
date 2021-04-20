@@ -32,14 +32,17 @@ master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.list-shouts = Listar shouts
 master.menu.anonymous.list-tasks = Listar tareas
-master.menu.authenticated.list-tasks = Listar tareas
-master.menu.authenticated.create-tasks = Crear tareas
+
 master.menu.authenticated = Autenticado
 
 master.menu.anonymous.list-shouts = Ver gritos
 master.menu.anonymous.create-shout = ¡Dar un grito!
-master.menu.manager = Manager
 
+# master.menu.manager ###################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-tasks = Listar tareas
+master.menu.manager.create-task = Crear tareas
 
 # master.menu.administrator ###################################################
 
