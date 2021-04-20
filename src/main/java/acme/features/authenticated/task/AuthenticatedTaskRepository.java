@@ -28,8 +28,8 @@ public interface AuthenticatedTaskRepository extends AbstractRepository {
 	@Query("select ua from Task ua")
 	Collection<Task> findAllTask();
 	
-	@Query("select ua from Task ua where ua.isFinished = true")
-	Collection<Task> findAllTaskFinished();
+	@Query("select ua from Task ua where ua.isFinished = true AND ua.isPrivate = false")
+	Collection<Task> findAllTaskFinishedAndNotPrivate();
 	
 
 	

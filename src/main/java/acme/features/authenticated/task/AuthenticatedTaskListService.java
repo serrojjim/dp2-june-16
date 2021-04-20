@@ -48,7 +48,7 @@ public class AuthenticatedTaskListService implements AbstractListService<Authent
 		assert model != null;
 
 
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url");
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","isPrivate");
 		
 
 
@@ -61,7 +61,7 @@ public class AuthenticatedTaskListService implements AbstractListService<Authent
 
 		Collection<Task> result;
 
-		result = this.repository.findAllTaskFinished();
+		result = this.repository.findAllTaskFinishedAndNotPrivate();
 
 		return result;
 	}
