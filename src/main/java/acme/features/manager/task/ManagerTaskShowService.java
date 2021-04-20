@@ -36,7 +36,7 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url");
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url","isFinished","isPrivate");
 		final String rol =request.getPrincipal().getActiveRole().getSimpleName();
 		final int userAcountId = request.getPrincipal().getAccountId();
 		final int taskId = entity.getId();
