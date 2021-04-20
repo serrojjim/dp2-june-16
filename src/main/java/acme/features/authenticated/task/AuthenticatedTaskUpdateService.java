@@ -68,7 +68,7 @@ public class AuthenticatedTaskUpdateService implements AbstractUpdateService<Aut
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneTaskById(id);
+		result = this.repository.findTaskById(id);
 
 		return result;
 	}

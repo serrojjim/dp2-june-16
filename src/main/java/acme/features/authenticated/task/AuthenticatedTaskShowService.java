@@ -1,14 +1,5 @@
-/*
- * AuthenticatedTaskShowService.java
- *
- * Copyright (C) 2012-2021 Rafael Corchuelo.
- *
- * In keeping with the traditional purpose of furthering education and research, it is
- * the policy of the copyright owner to permit non-commercial use and redistribution of
- * this software. It has been tested carefully, but it is not guaranteed for any particular
- * purposes. The copyright owner does not offer any warranties or representations, nor do
- * they accept any liabilities with respect to them.
- */
+
+
 
 package acme.features.authenticated.task;
 
@@ -29,7 +20,7 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 	@Autowired
 	protected AuthenticatedTaskRepository repository;
 
-	// AbstractShowService<Authenticated, Task> interface --------------
+	// AbstractShowService<Administrator, UserAccount> interface --------------
 
 
 	@Override
@@ -63,6 +54,7 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 		}
 	}
 
+
 	@Override
 	public Task findOne(final Request<Task> request) {
 		assert request != null;
@@ -71,9 +63,16 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneTaskById(id);
-
+		result = this.repository.findTaskById(id);
 		return result;
 	}
 
 }
+
+
+
+
+
+
+	
+

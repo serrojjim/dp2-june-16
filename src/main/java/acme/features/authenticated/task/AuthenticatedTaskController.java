@@ -32,11 +32,16 @@ public class AuthenticatedTaskController extends AbstractController<Authenticate
 	@Autowired
 	protected AuthenticatedTaskListService	listService;
 
-	@Autowired
-	protected AuthenticatedTaskShowService	showService;
 
 	@Autowired
 	protected AuthenticatedTaskUpdateService	updateService;
+	
+	
+	@Autowired
+	protected AuthenticatedTaskCreateService createService;
+	
+	@Autowired
+	protected AuthenticatedTaskShowService showService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -46,6 +51,8 @@ public class AuthenticatedTaskController extends AbstractController<Authenticate
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+
 	}
 
 }
