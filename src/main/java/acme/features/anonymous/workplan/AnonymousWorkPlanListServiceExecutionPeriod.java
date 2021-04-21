@@ -1,8 +1,7 @@
 package acme.features.anonymous.workplan;
 
 
-import java.sql.Date;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.stream.Collectors;
@@ -44,7 +43,7 @@ public class AnonymousWorkPlanListServiceExecutionPeriod implements AbstractList
 		
 		result = this.workPlanRepository.findPublicWorkPlans();
 		
-		result = result.stream().filter(x->x.getExecutionPeriod().getFinalDate().after(Date.valueOf(LocalDate.now())))
+		result = result.stream().filter(x->x.getExecutionPeriod().getFinalDate().isAfter(LocalDateTime.now()))
 			.sorted(Comparator.comparing(x->x.getExecutionPeriod().getFinalDate(), Comparator.reverseOrder()))
 			.collect(Collectors.toList());
 		
