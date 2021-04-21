@@ -65,7 +65,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			"dvtExecutionPeriodWorkplans",
 		
 			"totalNumberOfWorkplans",
-			"totalNumberOfPublishedWorkplans");
+			"totalNumberOfPublishedWorkplans",
+			"totalNumberOfNonPublishedWorkplans");
 	}
 
 	@Override
@@ -207,8 +208,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setDvtExecutionPeriodWorkplans(dvtExecutionPeriodWorkplans);
 
 		result.setTotalNumberOfWorkplans(numberOfWorkplans);
-		result.setTotalNumberOfPublishedWorkplans(1);
-		result.setTotalNumberOfNonPublishedWorkplans(1);
+		
+		final int totalNumberOfPublishedWorkplans = 1;
+		result.setTotalNumberOfPublishedWorkplans(totalNumberOfPublishedWorkplans);
+		result.setTotalNumberOfNonPublishedWorkplans(numberOfWorkplans - totalNumberOfPublishedWorkplans);
 
 		return result;
 	}

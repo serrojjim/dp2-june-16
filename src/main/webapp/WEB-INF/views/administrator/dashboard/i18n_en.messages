@@ -1,6 +1,8 @@
 administrator.dashboard.entities.title.show = Dashboard
 
 administrator.dashboard.entities.title.general-indicators = General indicators
+administrator.dashboard.entities.title.task-indicators = Task indicators
+administrator.dashboard.entities.title.workplan-indicators = Workplan indicators
 administrator.dashboard.entities.label.numberOfPublicTasks = Number of public tasks
 administrator.dashboard.entities.label.numberOfPrivateTasks =  Number of private tasks
 administrator.dashboard.entities.label.numberOfFinishedTasks = Number of finished tasks
@@ -25,8 +27,9 @@ administrator.dashboard.entities.label.averageOfWorkplanWorkloads = Average of W
 administrator.dashboard.entities.label.deviationOfWorkplanWorkloads = Deviation of Workplan workload
 administrator.dashboard.entities.label.minOfWorkplanWorkloads = Minimum of Workplan workload
 administrator.dashboard.entities.label.maxOfWorkplanWorkloads = Maximun of Workplan work
-administrator.dashboard.entities.label.numberOfWorkPlans = Number of Workplans
-administrator.dashboard.entities.label.numberOfPublishedWorkPlan = Number of published Workplans
-administrator.dashboard.entities.label.numberOfNonPublishedWorkPlans = Number of non-published Workplans
+administrator.dashboard.entities.label.numberOfWorkPlans = Total amount of Workplans
+administrator.dashboard.entities.label.numberOfPublishedWorkPlans = Published Workplans
+administrator.dashboard.entities.label.numberOfNonPublishedWorkPlans = Non-published Workplans
 
 administrator.dashboard.entities.title.application-statuses = Application statuses
+administrator.dashboard.entities.title.figcaption = A bar diagram that shows information about the amount of workplans

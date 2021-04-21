@@ -3,13 +3,49 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
+<style>
+	.bar {
+	  fill: #aaa;
+	  height: 21px;
+	  transition: fill .3s ease;
+	  cursor: pointer;
+	  font-family: Helvetica, sans-serif;
+	}
+	
+	.bar text {
+	    fill: #000000;
+	  }
+	
+	.chart:hover,
+	.chart:focus {
+	  .bar {
+	    fill: #aaa;
+	  }
+	}
+	
+	.bar:hover,
+	.bar:focus {
+	  fill: red !important;
+	}
+	
+	.bar:hover text,
+	.bar:focus text {
+	    fill: red;
+	  }
+	
+	figcaption {
+	  font-weight: bold;
+	  color: #000;
+	  margin-bottom: 20px;
+	}
+</style>
 <h2>
 	<acme:message code="administrator.dashboard.entities.title.general-indicators"/>
 </h2>
 
 <table class="table table-sm">
 	<caption>
-		<acme:message code="administrator.dashboard.entities.title.general-indicators"/>
+		<acme:message code="administrator.dashboard.entities.title.task-indicators"/>
 	</caption>	
 	<tr>
 		<th scope="row">
@@ -106,7 +142,13 @@
 		<td>
 			<acme:print value="${maxWorkloadTasks}"/>
 		</td>
-	</tr>	
+	</tr>
+</table>
+
+<table class="table table-sm">
+	<caption>
+		<acme:message code="administrator.dashboard.entities.title.workplan-indicators"/>
+	</caption>
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.entities.label.numberOfPublicWorkPlans"/>
@@ -204,126 +246,24 @@
 		</td>
 	</tr>
 	</table>
-	<table class="table table-sm">
-		<tr>
-			<th scope="row">
-				<acme:message code="administrator.dashboard.entities.label.numberOfWorkPlans"/>
-			</th>
-			<td>
-				<acme:print value="${totalNumberOfWorkplans}"/>
-			</td>
-		</tr>	
-		<tr>
-			<th scope="row">
-				<acme:message code="administrator.dashboard.entities.label.numberOfPublishedWorkPlan"/>
-			</th>
-			<td>
-				<acme:print value="${totalNumberOfPublishedWorkplans}"/>
-			</td>
-		</tr>	
-		<tr>
-			<th scope="row">
-				<acme:message code="administrator.dashboard.entities.label.numberOfNonPublishedWorkPlans"/>
-			</th>
-			<td>
-				<acme:print value="${totalNumberOfNonPublishedWorkPlans}"/>
-			</td>
-		</tr>										
-	</table>
 <h2>
 	<acme:message code="administrator.dashboard.entities.title.application-statuses"/>
 </h2>
 
 <div>
-	<canvas id="myCanvas"></canvas>
+	<figcaption><acme:message code="administrator.dashboard.entities.title.figcaption"/></figcaption>
+	<svg class="chart" width="1300" height="150" aria-labelledby="title desc" role="img">
+	  <g class="bar">
+	    <text x="0" y="20" dy=".35em"><acme:message code="administrator.dashboard.entities.label.numberOfWorkPlans"/>: ${totalNumberOfWorkplans}</text>
+   	    <rect width="1000" height="40" x="300"></rect>
+	  </g>
+	  <g class="bar">
+  	    <text x="0" y="70" dy=".35em"><acme:message code="administrator.dashboard.entities.label.numberOfPublishedWorkPlans"/>: ${totalNumberOfPublishedWorkplans}</text>
+	    <rect width="${1000 * totalNumberOfPublishedWorkplans/totalNumberOfWorkplans}" height="40" x="300" y="50"></rect>
+	  </g>
+	  <g class="bar">
+  	    <text x="0" y="120" dy=".35em"><acme:message code="administrator.dashboard.entities.label.numberOfNonPublishedWorkPlans"/>: ${totalNumberOfNonPublishedWorkplans}</text>
+	    <rect width="${1000 * totalNumberOfNonPublishedWorkplans/totalNumberOfWorkplans}" height="40" x="300" y="100"></rect>
+	  </g>
+	</svg>
 </div>
-
-<script> 
-<script>
-var myCanvas = document.getElementById("myCanvas");
-myCanvas.width = 300;
-myCanvas.height = 300;
- 
-var ctx = myCanvas.getContext("2d");
- 
-function drawLine(ctx, startX, startY, endX, endY){
-    ctx.beginPath();
-    ctx.moveTo(startX,startY);
-    ctx.lineTo(endX,endY);
-    ctx.stroke();
- 
-}
-
-function drawArc(ctx, centerX, centerY, radius, startAngle, endAngle){
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-    ctx.stroke();
-}
- 
-function drawPieSlice(ctx,centerX, centerY, radius, startAngle, endAngle, color ){
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(centerX,centerY);
-    ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-    ctx.closePath();
-    ctx.fill();
-}
-
-var Piechart = function (options) {
-      this.options = options;
-      this.canvas = options.canvas;
-      this.ctx = this.canvas.getContext("2d");
-      this.colors = options.colors;
-      
-      this.draw = function () {
-        var total_value = 0;
-        var color_index = 0;
-
-        for (var categ in this.options.data) {
-          var val = this.options.data[categ];
-          total_value += val;
-        }
-
-        var start_angle = 0;
-
-        for (categ in this.options.data) {
-          val = this.options.data[categ];
-          var slice_angle = (2 * Math.PI * val) / total_value;
-          drawPieSlice(
-            this.ctx,
-            this.canvas.width / 2,
-            this.canvas.height / 2,
-            Math.min(this.canvas.width / 2, this.canvas.height / 2),
-            start_angle,
-            start_angle + slice_angle,
-            this.colors[color_index % this.colors.length]
-          );
-
-          start_angle += slice_angle;
-          color_index++;
-        }
-      };
-    };
-    
-    var myVinyls = {
-             
-            "Classical music": 10,
-         
-            "Alternative rock": 14,
-         
-            "Pop": 2,
-         
-            "Jazz": 12
-         
-        };
-
-    var myPiechart = new Piechart(
-        {
-            canvas: myCanvas,
-            data:myVinyls,
-            
-            colors:["#fde23e","#f16e23", "#57d9ff","#937e88"]
-        }
-    );
-    myPiechart.draw();
-    </script>
