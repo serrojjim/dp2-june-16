@@ -40,7 +40,7 @@ public class Workplan extends DomainEntity{
 		@Valid
 		@ManyToMany(mappedBy = "workplan")
 		protected List<Task> task;
-		
+	
 	// Derived attributes
 		
 		public Double getTotalWorkload() {
