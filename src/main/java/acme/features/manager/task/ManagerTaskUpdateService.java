@@ -46,11 +46,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		final Task task = this.repository.findOneTaskByIdAndUA(taskId, userAcountId);
 		
-		if (rol.equals("Manager") && task!=null) {
-			return true;
-		} else {
-			return false;
-		}
+		return (rol.equals("Manager") && task != null);
 	}
 
 	@Override

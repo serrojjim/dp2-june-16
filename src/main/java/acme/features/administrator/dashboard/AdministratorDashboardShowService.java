@@ -24,7 +24,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	@Override
 	public boolean authorise(final Request<Dashboard> request) {
 		assert request != null;
-		return true;
+		final String rol =request.getPrincipal().getActiveRole().getSimpleName();
+		return rol.equals("Administrator");
 	}
 
 	@Override
@@ -208,6 +209,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setDvtExecutionPeriodWorkplans(dvtExecutionPeriodWorkplans);
 
 		result.setTotalNumberOfWorkplans(numberOfWorkplans);
+		
+		//Añadir los workplan non published (con spam)
 		
 		final int totalNumberOfPublishedWorkplans = 1;
 		result.setTotalNumberOfPublishedWorkplans(totalNumberOfPublishedWorkplans);

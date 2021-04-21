@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -13,6 +14,7 @@ import javax.validation.constraints.NotNull;
 import acme.datatypes.ExecutionPeriod;
 import acme.entities.task.Task;
 import acme.framework.entities.DomainEntity;
+import acme.framework.entities.UserAccount;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,6 +38,10 @@ public class Workplan extends DomainEntity{
 		
 		@NotNull
 		protected Boolean 			isPrivate; // Dejarla como atributo derivado ?
+		
+		@Valid
+		@ManyToOne
+		protected UserAccount userAccount;
 
 		@NotNull
 		@Valid
