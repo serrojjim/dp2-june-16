@@ -16,7 +16,7 @@ master.banner.background = #FFE97F
 
 master.welcome.title = ¡Bienvenidos!
 master.welcome.text = \
-	Bienvenidos a Acme Stater!  Nunca antes ha sido tan sencillo desarrollar un \
+	Bienvenidos a Acme Planner!  Nunca antes ha sido tan sencillo desarrollar un \
 	proyecto y hacerlo funcionar.
 
 # master.menu #################################################################
@@ -32,12 +32,17 @@ master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.list-shouts = Listar shouts
 master.menu.anonymous.list-tasks = Listar tareas
-master.menu.authenticated.list-tasks = Listar tareas
+
 master.menu.authenticated = Autenticado
 
 master.menu.anonymous.list-shouts = Ver gritos
 master.menu.anonymous.create-shout = ¡Dar un grito!
 
+# master.menu.manager ###################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-tasks = Listar tareas
+master.menu.manager.create-tasks = Crear tareas
 
 # master.menu.administrator ###################################################
 

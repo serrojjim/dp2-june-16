@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--
-- sample-data.xml
--
-- Copyright (C) 2012-2021 Rafael Corchuelo.
--
-- In keeping with the traditional purpose of furthering education and research, it is
-- the policy of the copyright owner to permit non-commercial use and redistribution of
-- this software. It has been tested carefully, but it is not guaranteed for any particular
-- purposes.  The copyright owner does not offer any warranties or representations, nor do
-- they accept any liabilities with respect to them.
--->
-
 <beans 
 	xmlns="http://www.springframework.org/schema/beans" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -109,7 +97,12 @@
 				<ref bean="workplan1"/>
 			</list>
 		</property>
-	
+		
+		<property name="userAccount">
+			<list>
+				<ref bean="authenticatedUserAccount"/>
+			</list>
+		</property>
 	</bean>
 		
 		<bean id="workplan1" class="acme.entities.workplan.Workplan">
@@ -127,8 +120,8 @@
 	</bean>
 		
 	<bean id="executionPeriod1" class="acme.datatypes.ExecutionPeriod">
-		<property name="initialDate" value="2021/12/03 10:15"/>
-		<property name="finalDate" value="2021/12/04 15:30"/>
+		<property name="initialDate" value="12/03/21 10:15 AM"/>
+		<property name="finalDate" value="12/04/21 5:30 PM"/>
 	</bean>
 	
 
@@ -147,7 +140,11 @@
 				<ref bean="workplan2"/>
 			</list>
 		</property>
-	
+<!-- 	<property name="userAccount"> -->
+<!-- 			<list> -->
+<!-- 				<ref bean="authenticatedUserAccount"/> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
 	</bean>
 		
 		<bean id="workplan2" class="acme.entities.workplan.Workplan">
@@ -165,8 +162,8 @@
 	</bean>
 		
 	<bean id="executionPeriod2" class="acme.datatypes.ExecutionPeriod">
-		<property name="initialDate" value="2021/12/08 10:23"/>
-		<property name="finalDate" value="2021/12/09 15:45"/>
+		<property name="initialDate" value="12/08/21 10:23 AM"/>
+		<property name="finalDate" value="12/09/21 3:45 PM"/>
 	</bean>
 	
 	
@@ -185,6 +182,7 @@
 			</list>
 		</property>
 	
+	
 	</bean>
 		
 		<bean id="workplan3" class="acme.entities.workplan.Workplan">
@@ -202,8 +200,8 @@
 	</bean>
 		
 	<bean id="executionPeriod3" class="acme.datatypes.ExecutionPeriod">
-		<property name="initialDate" value="2021/12/05 10:15"/>
-		<property name="finalDate" value="2021/12/07 15:30"/>
+		<property name="initialDate" value="12/05/21 10:15 AM"/>
+		<property name="finalDate" value="12/07/21 3:30 PM"/>
 	</bean>
 
 		<bean id="shout5" class="acme.entities.shouts.Shout">
@@ -240,6 +238,36 @@
 		<property name="text" value="I'm developer!"/>
 		<property name="link" value="http://ejemplo3.com"/>
 	</bean>
+	
+		
+
+	<bean name="authenticatedUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="Antonio" />
+		<property name="password" value="Campuzano" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Antonio" />
+				<property name="surname" value="Campuzano" />
+				<property name="email" value="antonio@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="authenticatedAuthenticated" />
+			</list>
+		</property>
+				<property name="task">
+						<list>
+							<ref bean="task1"/>
+						</list>
+				 </property>
+	</bean>
+
+	<bean name="authenticatedAuthenticated" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="authenticatedUserAccount" />
+	</bean>
+	
 	
 </beans>
 

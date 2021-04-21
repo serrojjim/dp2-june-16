@@ -12,13 +12,11 @@ public interface AnonymousTaskRepository extends AbstractRepository{
 
 	@Query("select t from Task t")
 	Collection<Task> findMany();
+	@Query("select ua from Task ua where ua.isFinished = false and ua.isPrivate = false")
+	Collection<Task> findAllTaskNonFinished();
+	@Query("select t from Task t where t.id = ?1")
+	Task findTaskById(int id);
 
-	
-//
-//
-//	@Query("select t from Task t where t.isFinished == true")
-//	Collection<Task> findNotFinished();
-	
 	
 	}
 
