@@ -3,6 +3,7 @@ package acme.entities.task;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
@@ -57,7 +58,7 @@ public class Task extends DomainEntity{
 		protected Boolean isFinished;
 
 		@Valid
-		@ManyToMany
+		@ManyToMany(fetch = FetchType.EAGER) //Eager necesario para showWorkplan
 		protected List<Workplan> workplan;
 		
 		@Valid

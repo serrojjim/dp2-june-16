@@ -1,5 +1,7 @@
 package acme.features.anonymous.workplan;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,12 +27,13 @@ public class AnonymousWorkPlanShowService implements AbstractShowService<Anonymo
 		assert request != null;
 		
 		final int workplanId = request.getModel().getInteger("id");
+		final Workplan workplan = this.repository.findWorkPlanById(workplanId);
 		
-		final boolean isPrivate = this.repository.findWorkPlanById(workplanId).getIsPrivate();
+		final boolean isPrivate = workplan.getIsPrivate();
 		
-		//final boolean isFinished = this.repository.findWorkPlanById(workplanId).getIsFinished();
+		final boolean isFinished = workplan.getExecutionPeriod().getFinalDate().isAfter(LocalDateTime.now());
 		
-		return !isPrivate ;//&& !isFinished;
+		return !isPrivate && isFinished;
 	}
 
 	@Override
@@ -40,7 +43,7 @@ public class AnonymousWorkPlanShowService implements AbstractShowService<Anonymo
 		assert model != null;
 
 		model.setAttribute("workload", entity.getTotalWorkload());
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate");
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate", "task");
 	}
 
 	@Override
