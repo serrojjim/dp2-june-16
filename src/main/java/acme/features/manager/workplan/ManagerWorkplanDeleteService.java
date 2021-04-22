@@ -46,13 +46,14 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		assert entity != null;
 		assert model != null;
 
+		model.setAttribute("workload", entity.getTotalWorkload());
+
 		request.unbind(entity, model, 
 			"title", 
 			"executionPeriod.finalDate",
 			"executionPeriod.initialDate",
 			"isPrivate",
-			"task",
-			"userAccount");
+			"task");
 	}
 
 	@Override

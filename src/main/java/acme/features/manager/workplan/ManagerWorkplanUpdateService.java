@@ -12,13 +12,16 @@
 
 package acme.features.manager.workplan;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
+import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
+import acme.features.manager.task.ManagerTaskRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -31,6 +34,9 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 	@Autowired
 	protected ManagerWorkplanRepository repository;
+
+	@Autowired
+	protected ManagerTaskRepository taskRepository;
 
 	// AbstractUpdateService<Authenticated, Workplan> interface -------------
 
@@ -63,13 +69,14 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert entity != null;
 		assert model != null;
 
+		model.setAttribute("workload", entity.getTotalWorkload());
+		
 		request.unbind(entity, model, 
 			"title", 
 			"executionPeriod.finalDate",
 			"executionPeriod.initialDate",
 			"isPrivate",
-			"task",
-			"userAccount");
+			"task");
 	}
 
 	@Override
@@ -77,7 +84,14 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert request != null;
 
 		final int id = request.getModel().getInteger("id");
-		return this.repository.findById(id).get();
+		final Object taskDebug = request.getModel().getAttribute("task");
+		System.out.println(taskDebug);
+		
+		final Workplan result = this.repository.findById(id).get();
+		final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
+		result.setTask(Arrays.asList(parsedTask));
+		System.out.println(Arrays.asList(parsedTask));
+		return result;
 	}
 
 	@Override
@@ -86,13 +100,11 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert entity != null;
 		assert errors != null;
 		
+		System.out.println(entity.getTask());
 		final boolean errorCondition = !entity.getIsPrivate().booleanValue() &&
 			entity.getTask().stream().anyMatch(x -> x.getIsPrivate().equals(true));
 		
-		errors.state(request, errorCondition, "isPrivate",
-			"Un workplan publico no puede contener tareas privadas");
-		
-			
+		errors.state(request, !errorCondition, "isPrivate", "Un workplan publico no puede contener tareas privadas");
 	}
 
 	@Override
@@ -100,6 +112,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert request != null;
 		assert entity != null;
 		
+		System.out.println(entity.getTask());
 		this.repository.save(entity);
 
 	}

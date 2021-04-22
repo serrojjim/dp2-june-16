@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.workplan.Workplan;
+import acme.features.manager.task.ManagerTaskRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractShowService;
@@ -18,6 +19,9 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 
 	@Autowired
 	protected ManagerWorkplanRepository repository;
+
+	@Autowired
+	protected ManagerTaskRepository taskRepository;
 
 	// AbstractShowService<Administrator, UserAccount> interface --------------
 
@@ -42,13 +46,14 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		assert entity != null;
 		assert model != null;
 
+		model.setAttribute("workload", entity.getTotalWorkload());
+		model.setAttribute("allTasks", this.taskRepository.findAllTask());
 		request.unbind(entity, model, 
 			"title", 
 			"executionPeriod.finalDate",
 			"executionPeriod.initialDate",
 			"isPrivate",
-			"task",
-			"userAccount");
+			"task");
 		
 	}
 

@@ -1,7 +1,7 @@
 package acme.features.manager.workplan;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +10,7 @@ import acme.datatypes.ExecutionPeriod;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
+import acme.features.manager.task.ManagerTaskRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -24,6 +25,9 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 	
 	@Autowired
 	protected AuthenticationRepository authRepository;
+	
+	@Autowired
+	protected ManagerTaskRepository taskRepository;
 	
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
@@ -48,13 +52,15 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert entity != null;
 		assert model != null;
 
+		model.setAttribute("workload", entity.getTotalWorkload());
+		model.setAttribute("allTasks", this.taskRepository.findAllTask());
+
 		request.unbind(entity, model, 
 			"title", 
 			"executionPeriod.finalDate",
 			"executionPeriod.initialDate",
 			"isPrivate",
-			"task",
-			"userAccount");
+			"task");
 	}
 	
 	@Override
@@ -71,7 +77,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		result.setTitle("New task");
 		result.setIsPrivate(false);
 		result.setExecutionPeriod(execution);
-		result.setTask(new ArrayList<Task>());
+		result.setTask((List<Task>) this.taskRepository.findAllTask());
 		
 		final int id = request.getPrincipal().getAccountId();
 		result.setUserAccount(this.authRepository.findOne(id));

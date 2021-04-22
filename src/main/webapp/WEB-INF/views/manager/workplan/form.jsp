@@ -7,6 +7,11 @@
 	<acme:form-checkbox code="manager.workplan.form.label.isPrivate" path="isPrivate" readonly="false"/>
 	<acme:form-textbox code="manager.workplan.form.label.execution_period_initial_date" path="executionPeriod.initialDate" readonly="false"/>
 	<acme:form-textbox code="manager.workplan.form.label.execution_period_final_date" path="executionPeriod.finalDate" readonly="false"/>
+	<acme:form-select-multiple code="manager.workplan.form.label.taskSelect" path="task">
+	<jstl:forEach items="${allTasks}" var="tsk">
+		<acme:form-option code="${tsk.title}" value="${tsk.id}"/>
+	</jstl:forEach>
+	</acme:form-select-multiple>
 	<acme:form-submit test="${command != 'create'}" code="manager.workplan.form.button.update" action="/manager/workplan/update"/>
 	<acme:form-submit test="${command != 'create'}" code="manager.workplan.form.button.delete" action="/manager/workplan/delete"/>
 	<acme:form-submit test="${command == 'create'}" code="manager.workplan.form.button.create" action="/manager/workplan/create"/>

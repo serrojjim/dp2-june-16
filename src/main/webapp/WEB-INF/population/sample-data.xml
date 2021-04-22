@@ -113,7 +113,11 @@
 		<property name="task">
 			<list>
 				<ref bean="task1"/>
-				
+			</list>
+		</property>
+		<property name="userAccount">
+			<list>
+				<ref bean="authenticatedUserAccount"/>
 			</list>
 		</property>
 	
@@ -155,7 +159,11 @@
 		<property name="task">
 			<list>
 				<ref bean="task2"/>
-				
+			</list>
+		</property>
+		<property name="userAccount">
+			<list>
+				<ref bean="authenticatedUserAccount"/>
 			</list>
 		</property>
 	
@@ -193,10 +201,13 @@
 		<property name="task">
 			<list>
 				<ref bean="task3"/>
-				
 			</list>
 		</property>
-	
+		<property name="userAccount">
+			<list>
+				<ref bean="authenticatedUserAccount"/>
+			</list>
+		</property>
 	</bean>
 		
 	<bean id="executionPeriod3" class="acme.datatypes.ExecutionPeriod">
@@ -257,11 +268,18 @@
 				<ref bean="authenticatedAuthenticated" />
 			</list>
 		</property>
-				<property name="task">
-						<list>
-							<ref bean="task1"/>
-						</list>
-				 </property>
+		<property name="task">
+			<list>
+				<ref bean="task1" />
+			</list>
+		</property>
+		<property name="workplan">
+			<list>
+				<ref bean="workplan1" />
+				<ref bean="workplan2" />
+				<ref bean="workplan3" />
+			</list>
+		</property>
 	</bean>
 
 	<bean name="authenticatedAuthenticated" class="acme.entities.roles.Manager">
