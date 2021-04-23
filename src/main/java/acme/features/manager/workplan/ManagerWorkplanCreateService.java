@@ -1,7 +1,7 @@
 package acme.features.manager.workplan;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -77,7 +77,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		result.setTitle("New task");
 		result.setIsPrivate(false);
 		result.setExecutionPeriod(execution);
-		result.setTask((List<Task>) this.taskRepository.findAllTask());
+		result.setTask(new HashSet<Task>());
 		
 		final int id = request.getPrincipal().getAccountId();
 		result.setUserAccount(this.authRepository.findOne(id));
@@ -91,6 +91,8 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		entity.getTask().clear();
 	}
 	
 	@Override
@@ -98,10 +100,18 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert request != null;
 		assert entity != null;
 		
+		final Object taskDebug = request.getModel().getAttribute("task");
+		System.out.println(taskDebug);
+		final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
+		entity.addTask(parsedTask);
+		parsedTask.addWorkplan(entity);
+		
+		System.out.println("Antes del save: " + entity.getTask());
+		
 //		if (entity.getIsPrivate().booleanValue() ||
 //				(!entity.getIsPrivate().booleanValue() &&
 //					entity.getTask().stream().noneMatch(x -> x.getIsPrivate().equals(true))))
-			this.workplanRepository.save(entity);
+		this.workplanRepository.save(entity);
 		
 	}
 	

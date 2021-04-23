@@ -2,7 +2,10 @@ package acme.entities.workplan;
 
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
@@ -45,8 +48,8 @@ public class Workplan extends DomainEntity{
 
 		@NotNull
 		@Valid
-		@ManyToMany(mappedBy = "workplan", fetch = FetchType.EAGER) //Eager necesario para showWorkplan
-		protected List<Task> task;
+		@ManyToMany(mappedBy = "workplan", fetch = FetchType.EAGER, cascade = CascadeType.ALL) //Eager necesario para showWorkplan
+		protected Set<Task> task;
 	
 	// Derived attributes
 		
@@ -58,5 +61,18 @@ public class Workplan extends DomainEntity{
 //			return this.getTask().stream().anyMatch(Task::getIsPrivate);
 //		}
 		
+		public void addTask(final Task task) {
+			this.task.add(task);
+		}
+		
+		public List<Task> getTaskList() {
+			return this.task.stream().collect(Collectors.toList());
+		}
 
+		@Override
+		public String toString() {
+			return "Workplan [title=" + this.title + ", executionPeriod=" + this.executionPeriod + ", isPrivate=" + this.isPrivate + 
+				", userAccount=" + this.userAccount + ", task=" + this.task + ", id=" + this.id + "]";
+		}
+		
 }

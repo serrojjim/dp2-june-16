@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
+import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -78,6 +79,13 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		assert request != null;
 		assert entity != null;
 
+		for (final Task task : entity.getTask()){
+			task.getWorkplan().remove(entity);
+			this.repository.save(task);
+		}
+		
+		entity.getTask().clear();
+		
 		this.repository.delete(entity);
 	}
 
