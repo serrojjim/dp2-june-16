@@ -1,7 +1,5 @@
 package acme.features.anonymous.workplan;
 
-
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.stream.Collectors;
@@ -16,11 +14,13 @@ import acme.framework.entities.Anonymous;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousWorkPlanListServiceExecutionPeriod implements AbstractListService<Anonymous, Workplan>{
+public class AnonymousWorkPlanListServiceWorkLoad implements AbstractListService<Anonymous, Workplan>{
+
 	
 	@Autowired
 	protected AnonymousWorkPlanRepository workPlanRepository;
-
+	
+	
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
 		assert request != null;
@@ -34,6 +34,7 @@ public class AnonymousWorkPlanListServiceExecutionPeriod implements AbstractList
 		assert model != null;
 		
 		request.unbind(entity, model, "title", "executionPeriod.finalDate",  "executionPeriod.initialDate");
+		
 	}
 
 	@Override
@@ -44,13 +45,9 @@ public class AnonymousWorkPlanListServiceExecutionPeriod implements AbstractList
 		
 		result = this.workPlanRepository.findPublicWorkPlans();
 		
-		result = result.stream().filter(x->x.getExecutionPeriod().getFinalDate().isAfter(LocalDateTime.now()))
-			.sorted(Comparator.comparing(x->x.getExecutionPeriod().getFinalDate(), Comparator.reverseOrder()))
+		result = result.stream().sorted(Comparator.comparing(x->x.getTotalWorkload(), Comparator.reverseOrder()))
 			.collect(Collectors.toList());
-		
 		return result;
 	}
-	
-	
 
 }

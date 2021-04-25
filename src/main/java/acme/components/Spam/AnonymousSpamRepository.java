@@ -1,4 +1,4 @@
-package acme.features.anonymous.spam;
+package acme.components.Spam;
 
 import java.util.List;
 

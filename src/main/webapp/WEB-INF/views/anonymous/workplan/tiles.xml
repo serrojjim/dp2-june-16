@@ -14,5 +14,9 @@
 	<definition name="anonymous/workplan/form" extends="master">
 		<put-attribute name="body" type="template" value="../anonymous/workplan/form.jsp" />
 	</definition>
+	
+	<definition name="anonymous/workplan/ListWorkload" extends="master">
+		<put-attribute name="body" type="template" value="../anonymous/workplan/ListWorkload.jsp" />
+	</definition>
 
 </tiles-definitions>
