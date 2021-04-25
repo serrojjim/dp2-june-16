@@ -1,4 +1,4 @@
-package acme.features.anonymous.spam;
+package acme.components.Spam;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -45,5 +45,7 @@ public class AnonymousSpamService implements AbstractListService<Anonymous, Spam
 		
 		return result;
 	}
+	
+	
 	
 }
