@@ -34,7 +34,7 @@
 	</bean>
 	
 	<bean id="spamWord2" class="acme.entities.spam.SpamWord">
-		<property name="word" value="hard code"/>
+		<property name="word" value="hard core"/>
 		<property name="spam" ref="spam"/>
 	</bean>
 	
@@ -69,7 +69,7 @@
 	</bean>
 	
 	<bean id="spamWord9" class="acme.entities.spam.SpamWord">
-		<property name="word" value="código difícil"/>
+		<property name="word" value="duro"/>
 		<property name="spam" ref="spam"/>
 	</bean>
 	
