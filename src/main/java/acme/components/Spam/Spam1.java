@@ -18,7 +18,7 @@ public  class Spam1 {
 	public static boolean isSpam(  final String text,  final List<Spam> spam) {
 		
 		boolean salida = true;
-		
+		 
 		final StringTokenizer st = new StringTokenizer(text);
 				
 		
