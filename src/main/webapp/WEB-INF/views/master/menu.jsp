@@ -21,8 +21,8 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-tasks" action="/anonymous/task/list"/>
-			
-
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.anonymous.list-workplans" action="/anonymous/workplan/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.list-shouts" action="/anonymous/shout/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.create-shout" action="/anonymous/shout/create"/>
@@ -46,6 +46,7 @@
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 <%-- 			<acme:menu-suboption code="master.menu.administrator.task.dashboard" action="/administrator/task/dashboard"/> --%>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.spam" action="/administrator/spam/update"/>	
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/master/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/master/populate-sample"/>	

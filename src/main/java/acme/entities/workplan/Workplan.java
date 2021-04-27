@@ -4,6 +4,7 @@ package acme.entities.workplan;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -38,7 +39,7 @@ public class Workplan extends DomainEntity{
 
 		@NotNull
 		@Valid
-		@ManyToMany(mappedBy = "workplan")
+		@ManyToMany(mappedBy = "workplan", fetch = FetchType.EAGER) //Eager necesario para showWorkplan
 		protected List<Task> task;
 	
 	// Derived attributes

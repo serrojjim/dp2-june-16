@@ -1,18 +1,18 @@
 package acme.features.anonymous.shout;
 
+
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
-import java.util.StringTokenizer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.Spam.AnonymousSpamRepository;
+import acme.components.Spam.Spam1;
 import acme.entities.shouts.Shout;
 import acme.entities.spam.Spam;
-import acme.entities.spam.SpamWord;
-import acme.features.anonymous.spam.AnonymousSpamRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -85,46 +85,21 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	public void create(final Request<Shout> request, final Shout entity) {
 		assert request != null;
 		assert entity != null;
-		
-		final StringTokenizer st = new StringTokenizer(entity.getText());
-		
-		List<Spam> spam = new ArrayList<>();
 		Date moment;
 		
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
 		
+		List<Spam> spam = new ArrayList<>();
+
 		spam = this.spamRepository.findSpam();
 		
-		 final Set<SpamWord> palabras = spam.get(0).getSpamWords();
+		final boolean salida = Spam1.isSpam(entity.getText(),  spam);
 		
-		 final List<SpamWord> palabras1 = new ArrayList<>();
-		 
-		
-		for (final SpamWord x : palabras)
-		     palabras1.add(x);
-		
-		
-		
-		String texto = entity.getText();
-		final Double contador = 0.0;
-		
-		for(int i = 0; i<palabras1.size(); i++) {
-			
-		final String palabra = palabras1.get(i).getWord();
-		
-		
-		while (texto.indexOf(palabra) > -1) {
-		      texto = texto.substring(texto.indexOf(
-		    	  palabra)+ palabra.length(),texto.length());
-		}
-		}
-	
-		
-		if((contador/st.countTokens()) <= spam.get(0).getThreshold()) {
+		if(salida == false) {
 		this.shoutRepository.save(entity);
-			
 		}
+		
 		
 	}
 	

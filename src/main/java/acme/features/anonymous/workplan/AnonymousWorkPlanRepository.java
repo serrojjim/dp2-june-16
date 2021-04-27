@@ -11,5 +11,8 @@ public interface AnonymousWorkPlanRepository extends AbstractRepository{
 	
 	@Query("select s from Workplan s where s.isPrivate = 'false'")
 	Collection<Workplan> findPublicWorkPlans();
+	
+	@Query("select w from Workplan w where w.id LIKE ?1")
+	Workplan findWorkPlanById(int id);
 
 }

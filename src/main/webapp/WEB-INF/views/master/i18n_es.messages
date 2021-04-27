@@ -32,6 +32,7 @@ master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.list-shouts = Listar shouts
 master.menu.anonymous.list-tasks = Listar tareas
+master.menu.anonymous.list-workplans = Listar planes de trabajo
 
 master.menu.authenticated = Autenticado
 
@@ -48,6 +49,7 @@ master.menu.manager.create-tasks = Crear tareas
 
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
+master.menu.administrator.spam = Parámetros de personalización
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)

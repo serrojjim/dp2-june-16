@@ -8,6 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+anonymous.workplan.form.label.title = Title:
+anonymous.workplan.form.label.execution_period_initial_date = Initial Date:
+anonymous.workplan.form.label.execution_period_final_date = Final Date:
+anonymous.workplan.form.label.workload = Workload:
+anonymous.workplan.form.label.task = Tasks:
+
+anonymous.workplan.form.button.return = Return
 
 anonymous.workplan.list.label.title = Title
 anonymous.workplan.list.label.execution_period_initial_date = Initial Date

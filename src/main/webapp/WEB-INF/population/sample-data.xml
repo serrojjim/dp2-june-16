@@ -24,6 +24,9 @@
 				<ref bean="spamWord9"/>
 				<ref bean="spamWord10"/>
 				<ref bean="spamWord11"/>
+				<ref bean="spamWord12"/>
+				<ref bean="spamWord13"/>
+				<ref bean="spamWord14"/>
 			</set>
 		</property>
 	</bean>
@@ -34,7 +37,7 @@
 	</bean>
 	
 	<bean id="spamWord2" class="acme.entities.spam.SpamWord">
-		<property name="word" value="hard code"/>
+		<property name="word" value="hard core"/>
 		<property name="spam" ref="spam"/>
 	</bean>
 	
@@ -69,7 +72,7 @@
 	</bean>
 	
 	<bean id="spamWord9" class="acme.entities.spam.SpamWord">
-		<property name="word" value="código difícil"/>
+		<property name="word" value="duro"/>
 		<property name="spam" ref="spam"/>
 	</bean>
 	
@@ -80,6 +83,21 @@
 	
 	<bean id="spamWord11" class="acme.entities.spam.SpamWord">
 		<property name="word" value="millón de dólares"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord12" class="acme.entities.spam.SpamWord">
+		<property name="word" value="millon de dólares"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord13" class="acme.entities.spam.SpamWord">
+		<property name="word" value="millón de dolares"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
+	<bean id="spamWord14" class="acme.entities.spam.SpamWord">
+		<property name="word" value="millon de dolares"/>
 		<property name="spam" ref="spam"/>
 	</bean>
 	
