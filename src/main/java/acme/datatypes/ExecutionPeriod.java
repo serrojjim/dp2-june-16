@@ -46,13 +46,13 @@ public class ExecutionPeriod extends DomainDatatype implements Comparable<Execut
 	// Derived attributes -----------------------------------------------------
 
 	@Transient
-	public long getWorkloadHours() {
+	public long getDays() {
 		return ChronoUnit.DAYS.between(this.initialDate, this.finalDate);
 	}
 
 	@Override
 	public int compareTo(final ExecutionPeriod o) {
-		return (int) (this.getWorkloadHours() - o.getWorkloadHours());
+		return (int) (this.getDays() - o.getDays());
 	}
 
 }
