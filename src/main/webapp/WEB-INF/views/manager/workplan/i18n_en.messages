@@ -13,4 +13,6 @@ manager.workplan.form.label.execution_period_final_date = Execution period final
 manager.workplan.form.label.execution_period_initial_date  = Execution period initial date
 manager.workplan.form.label.workload = Workload
 manager.workplan.form.label.isPrivate = Private
-manager.workplan.form.label.taskSelect = Composed by tasks:
+manager.workplan.form.label.taskSelect = Select new task
+
+manager.task.form.label.title = Tasks already in this workplan

@@ -72,6 +72,8 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 		model.setAttribute("workload", entity.getTotalWorkload());
 		
+		model.setAttribute("Tasks", model);
+		
 		request.unbind(entity, model, 
 			"title", 
 			"executionPeriod.finalDate",

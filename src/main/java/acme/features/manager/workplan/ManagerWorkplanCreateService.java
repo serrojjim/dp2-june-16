@@ -108,9 +108,6 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		
 		System.out.println("Antes del save: " + entity.getTask());
 		
-//		if (entity.getIsPrivate().booleanValue() ||
-//				(!entity.getIsPrivate().booleanValue() &&
-//					entity.getTask().stream().noneMatch(x -> x.getIsPrivate().equals(true))))
 		this.workplanRepository.save(entity);
 		
 	}
