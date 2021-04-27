@@ -112,7 +112,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		final double dur = Duration.between(initialDate, finalDate).toMinutes()/60;
 		
-		if(entity.getWorkload()>dur) {
+		if(entity.getWorkload()>dur || entity.getWorkload() < 0) {
 			conditionToSave = false;
 		}
 		

@@ -1,3 +1,4 @@
+
 package acme.entities.shouts;
 
 import java.util.Date;
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.entities.DomainEntity;
@@ -18,26 +20,24 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Shout extends DomainEntity{
-	
-	protected static final long serialVersionUID = 1L;
+public class Shout extends DomainEntity {
 
-@Temporal(TemporalType.TIMESTAMP)
-@Past
-@NotNull
-protected Date moment;
+	protected static final long	serialVersionUID	= 1L;
 
-@NotBlank
-protected String author;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Past
+	@NotNull
+	protected Date				moment;
 
-@NotBlank
-protected String text;
+	@NotBlank
+	@Length(min = 5, max = 25)
+	protected String			author;
 
-@URL
-protected String link;
+	@NotBlank
+	@Length(max = 100)
+	protected String			text;
 
-
-
-
+	@URL
+	protected String			link;
 
 }

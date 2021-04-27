@@ -1389,6 +1389,7 @@ ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]] at org.sprin
 at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
 at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
 at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.task.Task.workplan, could not initialize proxy - no Session
+<<<<<<< HEAD
 INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on Alvaro with PID 15120 (C:\Users\alvar\Desktop\Workspace-21.1\Projects\Acme-Planner\target\classes started by alvar in C:\Users\alvar\Desktop\Workspace-21.1\Projects\Acme-Planner)
 INFO [acme.Launcher] The following profiles are active: development,populator
 INFO [acme.Launcher] Started Launcher in 15.201 seconds (JVM running for 16.673)
@@ -1711,11 +1712,48 @@ at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil
 at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
 ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
 ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
+=======
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'showService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamShowService': Unsatisfied dependency expressed through field 'spamRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpamWords()!
+ERROR [org.springframework.boot.SpringApplication] at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643): Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'showService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamShowService': Unsatisfied dependency expressed through field 'spamRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpamWords()!
+at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643): Error creating bean with name 'administratorSpamShowService': Unsatisfied dependency expressed through field 'spamRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpamWords()!
+at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788): Error creating bean with name 'administratorSpamRepository' defined in acme.features.administrator.spam.AdministratorSpamRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpamWords()!
+at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:93): Validation failed for query for method public abstract java.util.List acme.features.administrator.spam.AdministratorSpamRepository.findAllSpamWords()!
+at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:138): org.hibernate.QueryException: could not resolve property: spamwords of: acme.entities.spam.Spam [select s.spamwords from acme.entities.spam.Spam s]
+at org.hibernate.QueryException.generateQueryException(QueryException.java:120): could not resolve property: spamwords of: acme.entities.spam.Spam [select s.spamwords from acme.entities.spam.Spam s]
+at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:77): could not resolve property: spamwords of: acme.entities.spam.Spam
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'administratorSpamController': Unsatisfied dependency expressed through field 'updateService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'acme.features.administrator.spam.AdministratorSpamUpdateService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter] ***************************
+APPLICATION FAILED TO START
+***************************
+Description:
+Field updateService in acme.features.administrator.spam.AdministratorSpamController required a bean of type 'acme.features.administrator.spam.AdministratorSpamUpdateService' that could not be found.
+The injection point has the following annotations:
+- @org.springframework.beans.factory.annotation.Autowired(required=true)
+Action:
+Consider defining a bean of type 'acme.features.administrator.spam.AdministratorSpamUpdateService' in your configuration.
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Acceso no autorizado
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+>>>>>>> master
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
 org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
 org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+<<<<<<< HEAD
 org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
 ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
 ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
@@ -1725,11 +1763,23 @@ at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil
 at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
 ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
 ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
+=======
+org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]] at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+>>>>>>> master
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
 org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
 org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+<<<<<<< HEAD
 org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
 ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
 ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.framework.entities.UserAccount.roles, could not initialize proxy - no Session
@@ -1755,6 +1805,7 @@ ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
 org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
 org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+=======
 org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
 ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
 ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
@@ -1762,6 +1813,24 @@ ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]] at org.sprin
 at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
 at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
 at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/form.jsp'.
+at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: JSPException including path '../administrator/spam/form.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): JSPException including path '../administrator/spam/form.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '../administrator/spam/form.jsp'.
+>>>>>>> master
+org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost]] at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+at org.hibernate.collection.internal.AbstractPersistentCollection.throwLazyInitializationException(AbstractPersistentCollection.java:606): failed to lazily initialize a collection of role: acme.entities.spam.Spam.spamWords, could not initialize proxy - no Session
+<<<<<<< HEAD
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.util.stream.MatchOps$1MatchSink.accept(MatchOps.java:90): java.lang.String cannot be cast to acme.entities.task.Task
@@ -2453,3 +2522,138 @@ ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Pla
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:371): Multiple representations of the same entity [acme.entities.workplan.Workplan#31] are being merged. Managed: [Workplan [title=New task, executionPeriod=acme.datatypes.ExecutionPeriod@b628879, isPrivate=false, userAccount=acme.framework.entities.UserAccount{id=29, version=0}, task=[Task [title=sample test 1, description=buenas tardes, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@5c65d14f, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=false, userAccount=acme.framework.entities.UserAccount{id=29, version=0}], Task [title=sample test 2, description=buenas tardes 2, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@671618d2, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=true, userAccount=null], Task [title=sample test 3, description=buenas tardes 3, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@c8cd6ae, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=false, userAccount=null]], id=31]]; Detached: [Workplan [title=New task, executionPeriod=acme.datatypes.ExecutionPeriod@1bc34943, isPrivate=false, userAccount=acme.framework.entities.UserAccount{id=29, version=0}, task=[Task [title=sample test 2, description=buenas tardes 2, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@671618d2, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=true, userAccount=null]], id=31]]; nested exception is java.lang.IllegalStateException: Multiple representations of the same entity [acme.entities.workplan.Workplan#31] are being merged. Managed: [Workplan [title=New task, executionPeriod=acme.datatypes.ExecutionPeriod@b628879, isPrivate=false, userAccount=acme.framework.entities.UserAccount{id=29, version=0}, task=[Task [title=sample test 1, description=buenas tardes, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@5c65d14f, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=false, userAccount=acme.framework.entities.UserAccount{id=29, version=0}], Task [title=sample test 2, description=buenas tardes 2, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@671618d2, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=true, userAccount=null], Task [title=sample test 3, description=buenas tardes 3, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@c8cd6ae, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=false, userAccount=null]], id=31]]; Detached: [Workplan [title=New task, executionPeriod=acme.datatypes.ExecutionPeriod@1bc34943, isPrivate=false, userAccount=acme.framework.entities.UserAccount{id=29, version=0}, task=[Task [title=sample test 2, description=buenas tardes 2, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@671618d2, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=true, userAccount=null]], id=31]]
 org.hibernate.event.internal.EntityCopyNotAllowedObserver.entityCopyDetected(EntityCopyNotAllowedObserver.java:45): Multiple representations of the same entity [acme.entities.workplan.Workplan#31] are being merged. Managed: [Workplan [title=New task, executionPeriod=acme.datatypes.ExecutionPeriod@b628879, isPrivate=false, userAccount=acme.framework.entities.UserAccount{id=29, version=0}, task=[Task [title=sample test 1, description=buenas tardes, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@5c65d14f, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=false, userAccount=acme.framework.entities.UserAccount{id=29, version=0}], Task [title=sample test 2, description=buenas tardes 2, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@671618d2, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=true, userAccount=null], Task [title=sample test 3, description=buenas tardes 3, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@c8cd6ae, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=false, userAccount=null]], id=31]]; Detached: [Workplan [title=New task, executionPeriod=acme.datatypes.ExecutionPeriod@1bc34943, isPrivate=false, userAccount=acme.framework.entities.UserAccount{id=29, version=0}, task=[Task [title=sample test 2, description=buenas tardes 2, workload=2.0, executionPeriod=acme.datatypes.ExecutionPeriod@671618d2, url=https://github.com/serrojjim/dp2-june-16.com, isPrivate=false, isFinished=true, userAccount=null]], id=31]]
+=======
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.NullPointerException
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.core.convert.support.ConversionUtils.invokeConverter(ConversionUtils.java:47): Failed to convert from type [java.lang.String] to type [java.lang.Integer] for value 'kkk'; nested exception is java.lang.NumberFormatException: For input string: "kkk"
+java.lang.NumberFormatException.forInputString(NumberFormatException.java:65): For input string: "kkk"
+WARN [com.zaxxer.hikari.pool.HikariPool] {} - Thread starvation or clock leap detected (housekeeper delta={}).
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported
+WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] SQL Error: 1406, SQLState: 22001
+ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] Data truncation: Data too long for column 'text' at row 1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:280): could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:52): could not execute statement
+com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104): Data truncation: Data too long for column 'text' at row 1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.NullPointerException
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Acceso no autorizado
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Acceso no autorizado
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+>>>>>>> master

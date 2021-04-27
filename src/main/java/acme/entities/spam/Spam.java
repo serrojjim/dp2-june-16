@@ -3,6 +3,7 @@ package acme.entities.spam;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -31,7 +32,7 @@ public class Spam extends DomainEntity{
 	
 	@NotNull
 	@Valid
-	@OneToMany(mappedBy = "spam")
+	@OneToMany(mappedBy = "spam", fetch = FetchType.EAGER)
 	protected Set<SpamWord> spamWords;
 	
 }
