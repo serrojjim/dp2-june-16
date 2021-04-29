@@ -1,6 +1,7 @@
 package acme.entities.workplan;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -68,7 +69,33 @@ public class Workplan extends DomainEntity{
 		public List<Task> getTaskList() {
 			return this.task.stream().collect(Collectors.toList());
 		}
+		
+		public LocalDateTime getInitialExecutionPeriod() {
+			LocalDateTime res = null;
+			if(!this.task.isEmpty()) {
+				final LocalDateTime min = this.task.stream().map(t -> t.getExecutionPeriod().getInitialDate()).min(LocalDateTime::compareTo).orElse(LocalDateTime.now());
+				res = LocalDateTime.of(min.getYear(),min.getMonth(),min.getDayOfMonth()-1,8,0);
 
+			}
+			return res;
+		}
+
+		public LocalDateTime getFinalExecutionPeriod() {
+			LocalDateTime res = null;
+			if(!this.task.isEmpty()) {
+				final LocalDateTime max = this.task.stream().map(t -> t.getExecutionPeriod().getFinalDate()).max(LocalDateTime::compareTo).orElse(LocalDateTime.now());
+				res = LocalDateTime.of(max.getYear(),max.getMonth(),max.getDayOfMonth()+1,17,00);
+			}
+			return res;
+		}
+		
+		public ExecutionPeriod getSuggestedExecutionPeriod() {
+			final ExecutionPeriod ep = new ExecutionPeriod();
+			ep.setInitialDate(this.getInitialExecutionPeriod());
+			ep.setFinalDate(this.getFinalExecutionPeriod());
+			return ep;
+ 		}
+ 
 		@Override
 		public String toString() {
 			return "Workplan [title=" + this.title + ", executionPeriod=" + this.executionPeriod + ", isPrivate=" + this.isPrivate + 

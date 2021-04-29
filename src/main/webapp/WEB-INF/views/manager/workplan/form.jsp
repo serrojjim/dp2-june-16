@@ -16,7 +16,8 @@
   				</tr>
 				<jstl:forEach items="${allTasksAlreadySelected}" var="tsk">
 				<tr>
-					<td> <jstl:out value="${tsk.title}"></jstl:out></td>
+					<td><jstl:out value="${tsk.title}"></jstl:out></td>
+					<td><acme:form-submit code="manager.task.form.button.delete" action="/manager/workplan/delete_task_workplan?workplanId=${id}&taskId=${tsk.id}"/></td>
 				</tr>
 				</jstl:forEach>
 			</table>
