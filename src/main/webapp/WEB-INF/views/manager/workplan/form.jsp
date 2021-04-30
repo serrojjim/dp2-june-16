@@ -5,7 +5,13 @@
 <acme:form>
 	<acme:form-textbox code="manager.workplan.form.label.title" path="title" readonly="false"/> 
 	<acme:form-checkbox code="manager.workplan.form.label.isPrivate" path="isPrivate" readonly="false"/>
+	
+	<acme:message code="manager.workplan.form.label.suggested_execution_period_initial_date"/>
+		<jstl:out value="${suggestedExecutionPeriod.initialDate}" />
 	<acme:form-textbox code="manager.workplan.form.label.execution_period_initial_date" path="executionPeriod.initialDate" readonly="false"/>
+	
+	<acme:message code="manager.workplan.form.label.suggested_execution_period_final_date"/>
+		<jstl:out value="${suggestedExecutionPeriod.finalDate}" />
 	<acme:form-textbox code="manager.workplan.form.label.execution_period_final_date" path="executionPeriod.finalDate" readonly="false"/>
 	
 	<jstl:choose>

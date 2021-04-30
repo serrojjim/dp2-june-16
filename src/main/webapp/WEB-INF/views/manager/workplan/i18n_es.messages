@@ -15,4 +15,7 @@ manager.workplan.form.label.workload = Carga de trabajo
 manager.workplan.form.label.isPrivate = Privado
 manager.workplan.form.label.taskSelect = Seleccionar nueva tarea
 
+manager.workplan.form.label.suggested_execution_period_final_date = Fecha final de ejecución sugerida:
+manager.workplan.form.label.suggested_execution_period_initial_date  = Fecha inicial de ejecución sugerida:
+
 manager.task.form.label.title = Compuesto por las tareas

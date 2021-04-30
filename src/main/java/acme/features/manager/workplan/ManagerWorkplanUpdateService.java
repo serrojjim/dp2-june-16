@@ -13,8 +13,10 @@
 package acme.features.manager.workplan;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,16 +33,11 @@ import acme.framework.services.AbstractUpdateService;
 @Service
 public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manager, Workplan> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	protected ManagerWorkplanRepository repository;
 
 	@Autowired
 	protected ManagerTaskRepository taskRepository;
-
-	// AbstractUpdateService<Authenticated, Workplan> interface -------------
-
 
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
@@ -97,23 +94,55 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert entity != null;
 		assert errors != null;
 		
-		final Object taskDebug = request.getModel().getAttribute("task");
-		System.out.println(taskDebug);
-		final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
-		entity.getTask().clear();
-		final Set<Task> set = new HashSet<>();
-		set.add(parsedTask);
-		entity.setTask(set);
+		final Boolean condition1 = entity.getTaskList().stream().filter(t -> t.getIsPrivate()).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
+		errors.state(request, !condition1, "isPrivate", "Un workplan publico no puede contener tareas privadas");
 		
-		final Set<Workplan> set2 = parsedTask.getWorkplan();
-		set2.add(entity);
-		parsedTask.setWorkplan(set2);
-		
-		System.out.println(entity.getTask());
-		final boolean errorCondition1 = !entity.getIsPrivate().booleanValue();
-		final boolean errorCondition2 =	entity.getTask().stream().anyMatch(x -> x.getIsPrivate().equals(true));
-		
-		errors.state(request, !(errorCondition1 && errorCondition2), "isPrivate", "Un workplan publico no puede contener tareas privadas");
+		if (errors.hasErrors()) {
+			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
+
+			request.getModel().setAttribute("allTasksAvailable", 
+				myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
+			
+			request.getModel().setAttribute("allTasksAlreadySelected", 
+				myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
+			
+			request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+		} else {
+			Object taskDebug = null;
+
+			try {
+				taskDebug = request.getModel().getAttribute("task");
+			} catch (final Throwable t) {
+			}
+			
+			if (taskDebug != null) {
+				
+				final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
+				final Boolean condition2 = entity.getIsPrivate().booleanValue() || !parsedTask.getIsPrivate();
+				errors.state(request, condition2, "isPrivate", "Un workplan publico no puede contener tareas privadas");
+
+				if (errors.hasErrors()) {
+					final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
+
+					request.getModel().setAttribute("allTasksAvailable", 
+						myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
+					
+					request.getModel().setAttribute("allTasksAlreadySelected", 
+						myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
+					
+					request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+					
+					entity.getTask().clear();
+					final Set<Task> set = new HashSet<>();
+					set.add(parsedTask);
+					entity.setTask(set);
+					
+					final Set<Workplan> set2 = parsedTask.getWorkplan();
+					set2.add(entity);
+					parsedTask.setWorkplan(set2);
+				}
+			}
+		}
 	}
 
 	@Override
@@ -121,9 +150,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert request != null;
 		assert entity != null;
 		
-		System.out.println("Antes del save: " + entity.getTask());
 		this.repository.save(entity);
-
 	}
 
 	

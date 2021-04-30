@@ -59,6 +59,8 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		model.setAttribute("allTasksAlreadySelected", 
 			myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
 		
+		model.setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+		
 		request.unbind(entity, model, 
 			"title", 
 			"executionPeriod.finalDate",

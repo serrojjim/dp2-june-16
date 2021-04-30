@@ -63,6 +63,18 @@ public class Workplan extends DomainEntity{
 //		}
 		
 		public void addTask(final Task task) {
+			
+			final LocalDateTime initialDate = task.getExecutionPeriod().getInitialDate();
+			final LocalDateTime finalDate = task.getExecutionPeriod().getFinalDate();
+			
+			if (initialDate.isBefore(this.getExecutionPeriod().getInitialDate())) {
+				this.getExecutionPeriod().setInitialDate(LocalDateTime.of(initialDate.getYear(), initialDate.getMonth(), initialDate.getDayOfMonth()-1,8,0));
+			}
+			
+			if (task.getExecutionPeriod().getFinalDate().isBefore(this.getExecutionPeriod().getFinalDate())) {
+				this.getExecutionPeriod().setFinalDate(LocalDateTime.of(finalDate.getYear(), finalDate.getMonth(), finalDate.getDayOfMonth()+1,17,00));
+			}
+			
 			this.task.add(task);
 		}
 		
@@ -70,29 +82,26 @@ public class Workplan extends DomainEntity{
 			return this.task.stream().collect(Collectors.toList());
 		}
 		
-		public LocalDateTime getInitialExecutionPeriod() {
-			LocalDateTime res = null;
-			if(!this.task.isEmpty()) {
-				final LocalDateTime min = this.task.stream().map(t -> t.getExecutionPeriod().getInitialDate()).min(LocalDateTime::compareTo).orElse(LocalDateTime.now());
-				res = LocalDateTime.of(min.getYear(),min.getMonth(),min.getDayOfMonth()-1,8,0);
-
-			}
+		public LocalDateTime getSuggestedInitialExecutionPeriod() {
+			final LocalDateTime min = this.task.stream().map(t -> t.getExecutionPeriod().getInitialDate()).min(LocalDateTime::compareTo).orElse(LocalDateTime.now());
+			LocalDateTime res = min.minusDays(1);
+			res = LocalDateTime.of(res.getYear(), res.getMonth(), res.getDayOfMonth(),8,0);
+			
 			return res;
 		}
 
-		public LocalDateTime getFinalExecutionPeriod() {
-			LocalDateTime res = null;
-			if(!this.task.isEmpty()) {
-				final LocalDateTime max = this.task.stream().map(t -> t.getExecutionPeriod().getFinalDate()).max(LocalDateTime::compareTo).orElse(LocalDateTime.now());
-				res = LocalDateTime.of(max.getYear(),max.getMonth(),max.getDayOfMonth()+1,17,00);
-			}
+		public LocalDateTime getSuggestedFinalExecutionPeriod() {
+			final LocalDateTime max = this.task.stream().map(t -> t.getExecutionPeriod().getFinalDate()).max(LocalDateTime::compareTo).orElse(LocalDateTime.now());
+			LocalDateTime res = max.plusDays(1);
+			res = LocalDateTime.of(res.getYear(), res.getMonth(), res.getDayOfMonth(),17,00);
+			
 			return res;
 		}
 		
 		public ExecutionPeriod getSuggestedExecutionPeriod() {
 			final ExecutionPeriod ep = new ExecutionPeriod();
-			ep.setInitialDate(this.getInitialExecutionPeriod());
-			ep.setFinalDate(this.getFinalExecutionPeriod());
+			ep.setInitialDate(this.getSuggestedInitialExecutionPeriod());
+			ep.setFinalDate(this.getSuggestedFinalExecutionPeriod());
 			return ep;
  		}
  

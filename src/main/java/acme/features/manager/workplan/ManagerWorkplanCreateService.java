@@ -1,12 +1,10 @@
 package acme.features.manager.workplan;
 
-import java.time.LocalDateTime;
 import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.ExecutionPeriod;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
@@ -54,6 +52,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 
 		model.setAttribute("workload", entity.getTotalWorkload());
 		model.setAttribute("allTasks", this.taskRepository.findAllTask());
+		model.setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
 
 		request.unbind(entity, model, 
 			"title", 
@@ -68,15 +67,10 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert request != null;
 		
 		final Workplan result = new Workplan();;
-		final ExecutionPeriod execution;
-
-		execution = new ExecutionPeriod();
-		execution.setInitialDate(LocalDateTime.now().plusMinutes(5));
-		execution.setFinalDate(LocalDateTime.now().plusDays(10));
  
 		result.setTitle("New task");
 		result.setIsPrivate(false);
-		result.setExecutionPeriod(execution);
+		result.setExecutionPeriod(result.getSuggestedExecutionPeriod());
 		result.setTask(new HashSet<Task>());
 		
 		final int id = request.getPrincipal().getAccountId();
