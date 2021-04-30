@@ -43,6 +43,9 @@ public class Workplan extends DomainEntity{
 		@NotNull
 		protected Boolean 			isPrivate; // Dejarla como atributo derivado ?
 		
+		@NotNull
+		protected Boolean 			isPublished; 
+		
 		@Valid
 		@ManyToOne
 		protected UserAccount userAccount;
