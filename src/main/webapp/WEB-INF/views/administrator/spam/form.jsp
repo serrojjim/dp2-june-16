@@ -10,8 +10,7 @@
 <acme:form>
 	<acme:form-textbox code="administrator.spam.form.label.threshold" path="threshold"/>
 	<acme:form-submit code="administrator.spam.form.button.update" action="/administrator/spam/update"/>
-</acme:form>
-<acme:form>
+	
 	<h4>
 		<acme:message code="administrator.spam.form.label.spamWords"/>
 	</h4>	
@@ -20,13 +19,12 @@
 		<tr>
 			<td><acme:print value="${sw.word}"/></td>
 			<td>
-				<acme:form-submit code="administrator.spamword.form.button.delete" action="/administrator/spamword/delete?id=${sw.id}"/>
+				<acme:form-submit code="administrator.spamword.form.button.delete" action="/administrator/spam-word/delete?id=${sw.id}"/>
 			</td> 
 		</tr>
 		</jstl:forEach>
 	</table>
 	
-	<acme:form-textbox code="administrator.spamword.form.label.spamword" path="word" readonly="false"/> 
-	<acme:form-submit code="administrator.spamword.form.button.create" action="/administrator/spamword/create"/>
+	<acme:form-return code="administrator.spamword.form.button.create" action="/administrator/spam-word/create"/>
   	<acme:form-return code="administrator.spam.form.button.return"/>
 </acme:form>

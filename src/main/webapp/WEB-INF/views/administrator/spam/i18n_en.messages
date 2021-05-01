@@ -6,7 +6,6 @@ administrator.spam.form.label.spamWords = Spam Words:
 administrator.spamword.form.button.delete = Delete
 administrator.spamword.form.button.update = Update
 administrator.spamword.form.button.create = Create new Spam Word
-administrator.spamword.form.label.spamword = New Spam Word:
 
 administrator.spam.form.button.update = Update
 administrator.spam.form.button.return = Return
