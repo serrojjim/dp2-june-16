@@ -6,10 +6,12 @@ import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.Spam.Spam1;
 import acme.datatypes.ExecutionPeriod;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -21,6 +23,10 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	
 	@Autowired
 	protected ManagerTaskRepository taskRepository;
+	
+
+	@Autowired
+	private AdministratorSpamRepository	spamRepository;
 	
 	
 	
@@ -89,6 +95,12 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		final boolean condition1 = !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
+		final boolean condition2 = !Spam1.isSpam(entity.getDescription(), this.spamRepository.findSpam());
+
+		errors.state(request, condition1, "title", "Una task no puede contener palabras spam en su titulo");
+		errors.state(request, condition2, "description", "Una task no puede contener palabras spam en la descripción");
+
 		
 		
 		
