@@ -18,7 +18,7 @@
 		<jstl:when test="${command != 'create'}">
 			<table class="table table-sm">
 				<tr>
-    				<th><acme:message code="manager.task.form.label.title"/></th>
+    				<th><acme:message code="manager.workplan.form.label.tareasseleccionadas"/></th>
   				</tr>
 				<jstl:forEach items="${allTasksAlreadySelected}" var="tsk">
 				<tr>
