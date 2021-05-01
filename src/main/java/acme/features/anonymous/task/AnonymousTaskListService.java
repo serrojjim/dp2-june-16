@@ -1,6 +1,9 @@
 package acme.features.anonymous.task;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +37,7 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "description", "title", "url","executionPeriod.finalDate", "executionPeriod.initialDate","isFinished","workload" );
+		request.unbind(entity, model, "description", "title", "url","executionPeriod.finalDate", "executionPeriod.initialDate","workload" );
 	
 	}
 
@@ -42,12 +45,19 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 	public Collection<Task> findMany(final Request<Task> request){
 		assert request != null;
 		
-		Collection<Task> result;
+		final Collection<Task> result;
+		final List<Task> result2 = new ArrayList<Task>();
 		
-		result = this.taskRepository.findAllTaskNonFinished();
-	
+		result = this.taskRepository.findMany();
+		
+		
+		for( final Task t:result) {
+			if(t.getExecutionPeriod().getFinalDate().isAfter(LocalDateTime.now())){
+				result2.add(t);
+			}
+		}
 
-		return result;
+		return result2;
 	}
 	
 	

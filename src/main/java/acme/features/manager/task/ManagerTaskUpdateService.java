@@ -14,12 +14,16 @@ package acme.features.manager.task;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.Spam.Spam1;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
+import acme.entities.workplan.Workplan;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -32,6 +36,9 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 
 	@Autowired
 	protected ManagerTaskRepository repository;
+	
+	@Autowired
+	private AdministratorSpamRepository	spamRepository;
 
 	// AbstractUpdateService<Authenticated, Task> interface -------------
 
@@ -46,11 +53,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		final Task task = this.repository.findOneTaskByIdAndUA(taskId, userAcountId);
 		
-		if (rol.equals("Manager") && task!=null) {
-			return true;
-		} else {
-			return false;
-		}
+		return (rol.equals("Manager") && task != null);
 	}
 
 	@Override
@@ -91,6 +94,43 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		  
+		final LocalDateTime initialDate = entity.getExecutionPeriod().getInitialDate();
+	    final LocalDateTime finalDate = entity.getExecutionPeriod().getFinalDate();
+		final double dur = Duration.between(initialDate, finalDate).toMinutes()/60;
+
+		final boolean condition1 = !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
+		final boolean condition2 = !Spam1.isSpam(entity.getDescription(), this.spamRepository.findSpam());
+		final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()) && !entity.getExecutionPeriod().getInitialDate().equals(this.repository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()));
+		final boolean condition4 = !finalDate.isBefore(initialDate);
+		if(entity.getWorkload()!=null) {
+			final boolean condition5 = entity.getWorkload()>dur;
+			final boolean condition6 = entity.getWorkload() < 0;
+			errors.state(request, !(condition5 || condition6), "workload", "Una task no puede tener  workload incorrecto");
+
+		}
+		final boolean condition7 = entity.getWorkload()==null;
+
+		
+		final Set<Workplan> workplans =  entity.getWorkplan();
+		if(entity.getIsPrivate()==true) {
+			final boolean condition8 = workplans.stream().anyMatch(x -> x.getIsPrivate()==false);
+			errors.state(request, !condition8, "isPrivate", "Una task no puede ser privada si pertenece a un workplan público");
+
+		}
+		
+		
+		
+		
+		errors.state(request, condition1, "title", "Una task no puede contener palabras spam en su titulo");
+		errors.state(request, condition2, "description", "Una task no puede contener palabras spam en la descripción");
+		errors.state(request, condition3, "executionPeriod.initialDate", "Una task no puede empezar antes de hoy");
+		errors.state(request, condition4, "executionPeriod.finalDate", "Una task no puede terminar antes de empezar");
+		errors.state(request, !(condition7), "workload", "Una task no puede tener mas workload que horas ni estar vacio");
+
+		
+		
+		
 	}
 
 	@Override
@@ -98,32 +138,10 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert request != null;
 		assert entity != null;
 
-		boolean conditionToSave = true;
-	
-
-        final LocalDateTime initialDate = entity.getExecutionPeriod().getInitialDate();
-        final LocalDateTime finalDate = entity.getExecutionPeriod().getFinalDate();
- 
-        
-		if(initialDate.isBefore(LocalDateTime.now())) {
-			conditionToSave = false;
-		}
 		
-		
-		if(finalDate.isBefore(initialDate)) {
-			conditionToSave = false;
-		}
-		
-		final double dur = Duration.between(initialDate, finalDate).toMinutes()/60;
-		
-		if(entity.getWorkload()>dur || entity.getWorkload() < 0) {
-			conditionToSave = false;
-		}
-		
-		if(conditionToSave) {
 			this.repository.save(entity);
 
-		}
+		
 	}
 
 	

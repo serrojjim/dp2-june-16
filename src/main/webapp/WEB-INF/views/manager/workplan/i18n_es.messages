@@ -1,0 +1,21 @@
+manager.workplan.list.label.title = Título
+manager.workplan.list.label.execution_period_final_date = Fecha final de ejecución
+manager.workplan.list.label.execution_period_initial_date  = Fecha inicial de ejecución
+manager.workplan.list.label.workload = Carga de trabajo
+
+manager.workplan.form.button.return = Volver
+manager.workplan.form.button.update = Actualizar
+manager.workplan.form.button.create = Crear
+manager.workplan.form.button.delete = Borrar
+
+manager.workplan.form.label.title = Título
+manager.workplan.form.label.execution_period_final_date = Fecha final de ejecución
+manager.workplan.form.label.execution_period_initial_date  = Fecha inicial de ejecución
+manager.workplan.form.label.workload = Carga de trabajo
+manager.workplan.form.label.isPrivate = Privado
+manager.workplan.form.label.taskSelect = Seleccionar nueva tarea
+
+manager.workplan.form.label.suggested_execution_period_final_date = Fecha final de ejecución sugerida:
+manager.workplan.form.label.suggested_execution_period_initial_date  = Fecha inicial de ejecución sugerida:
+
+manager.workplan.form.label.tareasseleccionadas = Compuesto por las tareas

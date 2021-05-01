@@ -10,33 +10,27 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.task;
+package acme.features.manager.workplan;
 
-import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.task.Task;
+import acme.entities.workplan.Workplan;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedTaskRepository extends AbstractRepository {
+public interface ManagerWorkplanRepository extends AbstractRepository {
+	
+	@Query("SELECT w FROM Workplan w WHERE w.id = ?1")
+	Optional<Workplan> findById(int id);
+	
+	@Query("SELECT w FROM Workplan w WHERE w.userAccount.id = ?1")
+	List<Workplan> findAll(int id);
 
-
-
-	@Query("select ua from Task ua")
-	Collection<Task> findAllTask();
+	@Query("SELECT w FROM Workplan w WHERE w.id = ?1 and w.userAccount.id = ?2")
+	Optional<Workplan> findOneWorkplanByIdAndUA(int workplanId, int userAcountId);
 	
-	@Query("select ua from Task ua where ua.isPrivate = false")
-	Collection<Task> findAllTaskNotPrivate();
-	
-
-	
-	@Query("select ua from Task ua where ua.id = ?1 and ua.userAccount.id = ?2")
-	Task findOneTaskByIdAndUA(int idTask,int idUA);
-	
-	@Query("select t from Task t where t.id = ?1")
-	Task findTaskById(int id);
-	
-	}
+}

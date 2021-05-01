@@ -39,14 +39,13 @@
 	  margin-bottom: 20px;
 	}
 </style>
-<h2>
-	<acme:message code="administrator.dashboard.entities.title.general-indicators"/>
-</h2>
+
+<h3>
+		<acme:message code="administrator.dashboard.entities.title.task-indicators"/>
+</h3>
 
 <table class="table table-sm">
-	<caption>
-		<acme:message code="administrator.dashboard.entities.title.task-indicators"/>
-	</caption>	
+		
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.entities.label.numberOfPublicTasks"/>
@@ -145,10 +144,12 @@
 	</tr>
 </table>
 
+<h3>
+	<acme:message code="administrator.dashboard.entities.title.workplan-indicators"/>
+</h3>
+
 <table class="table table-sm">
-	<caption>
-		<acme:message code="administrator.dashboard.entities.title.workplan-indicators"/>
-	</caption>
+	
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.entities.label.numberOfPublicWorkPlans"/>
