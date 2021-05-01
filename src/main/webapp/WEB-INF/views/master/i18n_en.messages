@@ -31,7 +31,8 @@ master.menu.sign-out = Sign out
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.list-tasks = List tasks
-master.menu.anonymous.list-workplans = List workplans
+master.menu.anonymous.list-workplans = List workplans by Execution Period
+master.menu.anonymous.list-all-workplans = List workplans by Workload
 
 master.menu.authenticated = Authenticated
 

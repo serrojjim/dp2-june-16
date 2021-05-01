@@ -18,4 +18,4 @@ manager.workplan.form.label.taskSelect = Select new task
 manager.workplan.form.label.suggested_execution_period_final_date = Suggested execution period final date:
 manager.workplan.form.label.suggested_execution_period_initial_date  = Suggested execution period initial date:
 
-manager.task.form.label.title = Tasks already in this workplan
+manager.workplan.form.label.tareasseleccionadas = Tasks already in this workplan

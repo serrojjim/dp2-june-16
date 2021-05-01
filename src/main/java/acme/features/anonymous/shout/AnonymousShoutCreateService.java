@@ -79,6 +79,16 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert errors != null;
 		
+		final boolean condition1 =  !Spam1.isSpam(entity.getAuthor(), this.spamRepository.findSpam());
+
+		errors.state(request, condition1, "author", "Nombre de Autor con Spam");
+		
+		final boolean condition2 =  !Spam1.isSpam(entity.getText(), this.spamRepository.findSpam());
+
+		errors.state(request, condition2, "text", "Este texto es Spam");
+		
+		
+		
 	}
 	
 	@Override
@@ -102,6 +112,8 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		
 	}
+	
+	
 	
 
 

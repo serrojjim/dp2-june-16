@@ -15,5 +15,5 @@ package acme.components;
 import acme.framework.components.Command;
 
 public enum CustomCommand implements Command {
-	LIST_ALL, LIST_RECENT, LIST_MINE, PUBLISH, APPLY, DELETE_TASK_WORKPLAN
+	LIST_ALL, LIST_RECENT, LIST_MINE, DELETE_TASK_WORKPLAN
 }

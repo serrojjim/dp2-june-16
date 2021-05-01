@@ -12,7 +12,10 @@
 
 package acme.features.authenticated.task;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,9 +64,17 @@ public class AuthenticatedTaskListService implements AbstractListService<Authent
 
 		Collection<Task> result;
 
-		result = this.repository.findAllTaskFinishedAndNotPrivate();
-
-		return result;
+		final List<Task> result2 = new ArrayList<Task>();
+		
+		result = this.repository.findAllTaskNotPrivate();
+		
+		
+		for( final Task t:result) {
+			if(t.getExecutionPeriod().getFinalDate().isBefore(LocalDateTime.now())){
+				result2.add(t);
+			}
+		}
+		return result2;
 	}
 
 }
