@@ -18,7 +18,11 @@
 		<jstl:when test="${command != 'create'}">
 			<table class="table table-sm">
 				<tr>
-    				<th><acme:message code="manager.workplan.form.label.tareasseleccionadas"/></th>
+    				<th>
+    				<acme:message code="manager.workplan.form.label.tareasseleccionadas"/> 
+    				<jstl:out value="${workload}"></jstl:out> 
+    				<acme:message code="manager.workplan.form.label.horas"/>
+    				</th>
   				</tr>
 				<jstl:forEach items="${allTasksAlreadySelected}" var="tsk">
 				<tr>
@@ -27,15 +31,19 @@
 				</tr>
 				</jstl:forEach>
 			</table>
+			
 			<acme:form-select code="manager.workplan.form.label.taskSelect" path="task">
+				<acme:form-option code="" value=""/>
 				<jstl:forEach items="${allTasksAvailable}" var="tsk">
 					<acme:form-option code="${tsk.title}" value="${tsk.id}"/>
 				</jstl:forEach>
 			</acme:form-select>
+			
 		</jstl:when>
 		
 		<jstl:otherwise>
 			<acme:form-select code="manager.workplan.form.label.taskSelect" path="task">
+			<acme:form-option code="" value=""/>
 				<jstl:forEach items="${allTasks}" var="tsk">
 					<acme:form-option code="${tsk.title}" value="${tsk.id}"/>
 			</jstl:forEach>
