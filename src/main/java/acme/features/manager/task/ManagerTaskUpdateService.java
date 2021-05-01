@@ -14,6 +14,7 @@ package acme.features.manager.task;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Service;
 import acme.components.Spam.Spam1;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
+import acme.entities.workplan.Workplan;
 import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -99,21 +101,33 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 
 		final boolean condition1 = !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
 		final boolean condition2 = !Spam1.isSpam(entity.getDescription(), this.spamRepository.findSpam());
-		final boolean condition3 = !initialDate.isBefore(LocalDateTime.now());
+		final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()) && !entity.getExecutionPeriod().getInitialDate().equals(this.repository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()));
 		final boolean condition4 = !finalDate.isBefore(initialDate);
 		if(entity.getWorkload()!=null) {
 			final boolean condition5 = entity.getWorkload()>dur;
 			final boolean condition6 = entity.getWorkload() < 0;
-			errors.state(request, !(condition5 || condition6), "workload", "Una task no puede tener  workload vacio");
+			errors.state(request, !(condition5 || condition6), "workload", "Una task no puede tener  workload incorrecto");
 
 		}
 		final boolean condition7 = entity.getWorkload()==null;
 
+		
+		final Set<Workplan> workplans =  entity.getWorkplan();
+		if(entity.getIsPrivate()==true) {
+			final boolean condition8 = workplans.stream().anyMatch(x -> x.getIsPrivate()==false);
+			errors.state(request, !condition8, "isPrivate", "Una task no puede ser privada si pertenece a un workplan público");
+
+		}
+		
+		
+		
+		
 		errors.state(request, condition1, "title", "Una task no puede contener palabras spam en su titulo");
 		errors.state(request, condition2, "description", "Una task no puede contener palabras spam en la descripción");
 		errors.state(request, condition3, "executionPeriod.initialDate", "Una task no puede empezar antes de hoy");
 		errors.state(request, condition4, "executionPeriod.finalDate", "Una task no puede terminar antes de empezar");
 		errors.state(request, !(condition7), "workload", "Una task no puede tener mas workload que horas ni estar vacio");
+
 		
 		
 		
