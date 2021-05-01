@@ -45,6 +45,6 @@ public class Dashboard implements Serializable {
 	Double 	dvtExecutionPeriodWorkplans;
 	
 	Integer totalNumberOfWorkplans;
-	Integer totalNumberOfPublishedWorkplans;
-	Integer totalNumberOfNonPublishedWorkplans;
+	Long totalNumberOfPublishedWorkplans;
+	Long totalNumberOfNonPublishedWorkplans;
 }

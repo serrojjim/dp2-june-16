@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.dashboard.Dashboard;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
@@ -18,6 +19,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 	@Autowired
 	protected AdministratorDashboardRepository repository;
+	
+	@Autowired
+	private AdministratorSpamRepository spamRepository;
 
 	@Override
 	public boolean authorise(final Request<Dashboard> request) {
@@ -168,7 +172,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		//Añadir los workplan non published (con spam)
 		
-		final int totalNumberOfPublishedWorkplans = 1;
+		final Long totalNumberOfPublishedWorkplans = allWorkplans.stream().filter(w -> w.isPublished(this.spamRepository.findSpam())).count();
 		result.setTotalNumberOfPublishedWorkplans(totalNumberOfPublishedWorkplans);
 		result.setTotalNumberOfNonPublishedWorkplans(numberOfWorkplans - totalNumberOfPublishedWorkplans);
 

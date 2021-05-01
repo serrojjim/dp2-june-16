@@ -15,7 +15,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import acme.components.Spam.Spam1;
 import acme.datatypes.ExecutionPeriod;
+import acme.entities.spam.Spam;
 import acme.entities.task.Task;
 import acme.framework.entities.DomainEntity;
 import acme.framework.entities.UserAccount;
@@ -41,10 +43,7 @@ public class Workplan extends DomainEntity{
 		protected ExecutionPeriod 	executionPeriod;
 		
 		@NotNull
-		protected Boolean 			isPrivate; // Dejarla como atributo derivado ?
-		
-		@NotNull
-		protected Boolean 			isPublished; 
+		protected Boolean 			isPrivate; 
 		
 		@Valid
 		@ManyToOne
@@ -61,10 +60,6 @@ public class Workplan extends DomainEntity{
 			return this.getTask().stream().mapToDouble(Task::getWorkload).sum();
 		}
 		
-//		public Boolean isPrivate() {
-//			return this.getTask().stream().anyMatch(Task::getIsPrivate);
-//		}
-		
 		public void addTask(final Task task) {
 			
 			final LocalDateTime initialDate = task.getExecutionPeriod().getInitialDate();
@@ -74,7 +69,7 @@ public class Workplan extends DomainEntity{
 				this.getExecutionPeriod().setInitialDate(LocalDateTime.of(initialDate.getYear(), initialDate.getMonth(), initialDate.getDayOfMonth()-1,8,0));
 			}
 			
-			if (task.getExecutionPeriod().getFinalDate().isBefore(this.getExecutionPeriod().getFinalDate())) {
+			if (task.getExecutionPeriod().getFinalDate().isAfter(this.getExecutionPeriod().getFinalDate())) {
 				this.getExecutionPeriod().setFinalDate(LocalDateTime.of(finalDate.getYear(), finalDate.getMonth(), finalDate.getDayOfMonth()+1,17,00));
 			}
 			
@@ -107,6 +102,10 @@ public class Workplan extends DomainEntity{
 			ep.setFinalDate(this.getSuggestedFinalExecutionPeriod());
 			return ep;
  		}
+		
+		public boolean isPublished(List<Spam> spam) {
+			return !(this.isPrivate || Spam1.isSpam(this.title, spam));
+		}
  
 		@Override
 		public String toString() {
