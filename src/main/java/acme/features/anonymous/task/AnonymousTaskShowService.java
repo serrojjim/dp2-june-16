@@ -3,6 +3,8 @@
 
 package acme.features.anonymous.task;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,9 +33,20 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		
 		final boolean isPrivate =this.repository.findTaskById(taskId).getIsPrivate();
 		
-		final boolean isFinished =this.repository.findTaskById(taskId).getIsFinished();
+		final Task task = this.repository.findTaskById(taskId);
 
-		final boolean res = isPrivate ==false && isFinished ==false;
+		final LocalDateTime finalDate = task.getExecutionPeriod().getFinalDate();
+ 
+		boolean res;
+
+		
+		if(finalDate.isAfter(LocalDateTime.now())) {
+			res = true;
+		}else{
+			res = false;
+		}
+		
+		res = isPrivate ==false && res;
 		return res;
 	}
 
@@ -43,7 +56,7 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url","isFinished","isPrivate");
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url","isPrivate");
 		
 		
 	}
