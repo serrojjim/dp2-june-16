@@ -5,8 +5,10 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.spam.SpamWord;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.components.Response;
 import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractDeleteService;
 
@@ -28,8 +30,6 @@ public class AdministratorSpamWordDeleteService implements AbstractDeleteService
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
-		System.out.println("bind");
 		
 		request.bind(entity, errors);
 		
@@ -40,8 +40,6 @@ public class AdministratorSpamWordDeleteService implements AbstractDeleteService
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
-		System.out.println(entity.getWord());
 		
 		request.unbind(entity, model, "word");
 	}
@@ -49,14 +47,11 @@ public class AdministratorSpamWordDeleteService implements AbstractDeleteService
 	@Override
 	public SpamWord findOne(final Request<SpamWord> request) {
 		assert request != null;
-
-		
 		
 		SpamWord result;
 		int id;
 		
 		id = request.getModel().getInteger("id");
-		System.out.println(id);
 		result = this.repository.findSpamWordById(id);
 
 		return result;
@@ -74,9 +69,12 @@ public class AdministratorSpamWordDeleteService implements AbstractDeleteService
 	public void delete(final Request<SpamWord> request, final SpamWord entity) {
 		assert request != null;
 		assert entity != null;
-
-		System.out.println("deleting");
 		
 		this.repository.delete(entity);
+	}
+	
+	@Override
+	public void onSuccess(final Request<SpamWord> request, final Response<SpamWord> response) {
+		if(request.getMethod().equals(HttpMethod.POST)) response.setView("redirect:/administrator/spam/update");
 	}
 }

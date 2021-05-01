@@ -1598,3 +1598,561 @@ ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.fra
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
 ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Access is not authorised
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.NullPointerException
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at javax.servlet.ServletRequestWrapper.getRemoteAddr(ServletRequestWrapper.java:239): java.lang.StackOverflowError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:238): Servlet execution threw an exception
+java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at org.apache.coyote.Request.getAttribute(Request.java:473): java.lang.StackOverflowError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1083): Handler processing failed; nested exception is java.lang.StackOverflowError
+java.lang.StackOverflowError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): End-point not available
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:250): Request method 'POST' not supported

@@ -8,6 +8,8 @@ import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Range;
+
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +26,7 @@ public class Spam extends DomainEntity{
 	// Attributes -------------------------------------------------------------
 	
 	@NotNull
+	@Range(min = 0, max = 1)
 	protected Double threshold;
 	
 	// Derived attributes -----------------------------------------------------

@@ -6,8 +6,10 @@ import org.springframework.stereotype.Service;
 import acme.entities.spam.Spam;
 import acme.entities.spam.SpamWord;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.components.Response;
 import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractCreateService;
 
@@ -70,12 +72,12 @@ public class AdministratorSpamWordCreateService implements AbstractCreateService
 		assert request != null;
 		assert entity != null;
 		
-		boolean conditionToSave = true;
-		
-		if(entity.getWord().isEmpty()) conditionToSave = false;
-		
-		if(conditionToSave) {
-			this.spamWordRepository.save(entity);
-		}
+		this.spamWordRepository.save(entity);
 	}
+	
+	@Override
+	public void onSuccess(final Request<SpamWord> request, final Response<SpamWord> response) {
+		if(request.getMethod().equals(HttpMethod.POST)) response.setView("redirect:/administrator/spam/update");
+	}
+	
 }

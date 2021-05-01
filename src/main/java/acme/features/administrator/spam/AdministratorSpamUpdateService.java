@@ -5,8 +5,10 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.spam.Spam;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.components.Response;
 import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractUpdateService;
 
@@ -62,6 +64,8 @@ public class AdministratorSpamUpdateService implements AbstractUpdateService<Adm
 			assert request != null;
 			assert entity != null;
 			assert errors != null;
+			
+			assert entity.getThreshold() >= 0 && entity.getThreshold() <= 1;
 		}
 
 		@Override
@@ -69,15 +73,11 @@ public class AdministratorSpamUpdateService implements AbstractUpdateService<Adm
 			assert request != null;
 			assert entity != null;
 
-			boolean conditionToSave = true;
-	 
-			if(entity.getThreshold() < 0 || entity.getThreshold() > 1) {
-				conditionToSave = false;
-			}
-			
-			if(conditionToSave) {
-				this.spamRepository.save(entity);
-
-			}
+			this.spamRepository.save(entity);
+		}
+		
+		@Override
+		public void onSuccess(final Request<Spam> request, final Response<Spam> response) {
+			if(request.getMethod().equals(HttpMethod.POST)) response.setView("redirect:/administrator/spam/update");
 		}
 }
