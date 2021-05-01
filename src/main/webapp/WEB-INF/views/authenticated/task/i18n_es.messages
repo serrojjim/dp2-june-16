@@ -5,6 +5,7 @@ manager.task.list.label.execution_period_final_date = Fecha final de ejecución
 manager.task.list.label.execution_period_initial_date  = Fecha inicial de ejecución
 manager.task.list.label.isFinished = Acabada
 manager.task.list.label.workload = Carga de trabajo
+manager.task.list.label.isPrivate = Es privada
 manager.task.form.button.return = Volver
 manager.task.form.button.update = Actualizar
 manager.task.form.button.create = Crear
