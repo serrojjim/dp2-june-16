@@ -25,21 +25,24 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface ManagerTaskRepository extends AbstractRepository {
 
-
-
-	@Query("select ua from Task ua")
+	@Query("select t from Task t")
 	Collection<Task> findAllTask();
 	
-	
-	@Query("select ua from Task ua where ua.id = ?1 and ua.userAccount.id = ?2")
+	@Query("select t from Task t where t.id = ?1 and t.userAccount.id = ?2")
 	Task findOneTaskByIdAndUA(int idTask,int idUA);
 	
 	@Query("select t from Task t where t.id = ?1")
 	Task findTaskById(int id);
+	
 	@Query("select ua from UserAccount ua where ua.id = ?1")
 	UserAccount findOneUserAccountById(int id);
 	
-	
 	@Query("select t from Task t where t.userAccount.id = ?1")
 	List<Task> findAllMyTask(int id);
-	}
+	
+//	@Query("SELECT t.workplan FROM Task t AND t.uaId = ?2")
+//	List<Task> findAlreadySelectedByWorkplanId(Workplan w, int uaId);
+//	
+//	@Query("SELECT t.workplan FROM Task t AND t.uaId = ?2")
+//	List<Task> findNotSelectedByWorkplanId(Workplan w, int uaId);
+}

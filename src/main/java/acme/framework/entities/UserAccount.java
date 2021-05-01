@@ -29,6 +29,7 @@ import org.hibernate.validator.constraints.Length;
 
 import acme.datatypes.UserIdentity;
 import acme.entities.task.Task;
+import acme.entities.workplan.Workplan;
 import acme.framework.helpers.PasswordHelper;
 import acme.framework.helpers.StringHelper;
 import lombok.Getter;
@@ -102,6 +103,9 @@ public class UserAccount extends DomainEntity {
 
 	@OneToMany(mappedBy = "userAccount")
 	protected List<Task> task;
+	
+	@OneToMany(mappedBy = "userAccount")
+	protected List<Workplan> workplan;
 	
 	@Transient
 	public boolean hasRole(final UserRole role) {

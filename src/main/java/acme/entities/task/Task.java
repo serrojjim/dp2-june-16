@@ -1,7 +1,8 @@
 package acme.entities.task;
 
-import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
@@ -58,12 +59,22 @@ public class Task extends DomainEntity{
 		protected Boolean isFinished;
 
 		@Valid
-		@ManyToMany(fetch = FetchType.EAGER) //Eager necesario para showWorkplan
-		protected List<Workplan> workplan;
+		@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL) //Eager necesario para showWorkplan
+		protected Set<Workplan> workplan;
 		
 		@Valid
 		@ManyToOne
 		protected UserAccount userAccount;
 		
+		public void addWorkplan(final Workplan workplan) {
+			this.workplan.add(workplan);
+		}
 
+		@Override
+		public String toString() {
+			return "Task [title=" + this.title + ", description=" + this.description + ", workload=" + this.workload + 
+				", executionPeriod=" + this.executionPeriod + ", url=" + this.url + ", isPrivate=" + this.isPrivate + 
+				", isFinished=" + this.isFinished + ", userAccount=" + this.userAccount + "]";
+		}
+		
 }

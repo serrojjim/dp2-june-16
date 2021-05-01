@@ -44,6 +44,8 @@ master.menu.anonymous.create-shout = ¡Dar un grito!
 master.menu.manager = Manager
 master.menu.manager.list-tasks = Listar tareas
 master.menu.manager.create-tasks = Crear tareas
+master.menu.manager.list-workplan = Listar planes de trabajo
+master.menu.manager.create-workplan = Crear planes de trabajo
 
 # master.menu.administrator ###################################################
 
