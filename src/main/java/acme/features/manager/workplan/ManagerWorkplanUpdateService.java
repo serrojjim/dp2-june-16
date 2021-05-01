@@ -123,7 +123,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			} catch (final Throwable t) {
 			}
 
-			if (taskDebug != null) {
+			if (taskDebug != null && !taskDebug.equals("")) {
 
 				final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
 				final Boolean condition3 = entity.getIsPrivate().booleanValue() || !parsedTask.getIsPrivate();

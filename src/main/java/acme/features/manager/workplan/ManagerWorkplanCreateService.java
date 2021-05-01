@@ -102,15 +102,18 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 	public void create(final Request<Workplan> request, final Workplan entity) {
 		assert request != null;
 		assert entity != null;
-		try {
-			final Object taskDebug = request.getModel().getAttribute("task");
-			final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
-			entity.addTask(parsedTask);
-			parsedTask.addWorkplan(entity);
-		} catch (Throwable t) {
+		final Object taskDebug = request.getModel().getAttribute("task");
+		
+		if (!taskDebug.equals("")) {
+			try {
+				final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
+				entity.addTask(parsedTask);
+				parsedTask.addWorkplan(entity);
+			} catch (Throwable t) {
 
+			}
 		}
-
+		
 		this.workplanRepository.save(entity);
 
 	}
