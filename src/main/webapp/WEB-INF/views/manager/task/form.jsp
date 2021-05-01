@@ -6,7 +6,6 @@
 	<acme:form-textbox code="manager.task.form.label.title" path="title" readonly="false"/> 
 	<acme:form-textarea code="manager.task.form.label.description" path="description" readonly="false"/>
 	<acme:form-textbox code="manager.task.form.label.url" path="url" readonly="false"/>
-	<acme:form-checkbox code="manager.task.form.label.isFinished" path="isFinished" readonly="false" />
 	<acme:form-checkbox code="manager.task.form.label.isPrivate" path="isPrivate" readonly="false"/>
 	<acme:form-double code="manager.task.form.label.workload" path="workload" readonly="false"/>
 	<acme:form-textbox code="manager.task.form.label.execution_period_initial_date" path="executionPeriod.initialDate" readonly="false"/>

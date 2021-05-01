@@ -55,8 +55,6 @@ public class Task extends DomainEntity{
 		@NotNull
 		protected Boolean isPrivate;
 
-		@NotNull
-		protected Boolean isFinished;
 
 		@Valid
 		@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL) //Eager necesario para showWorkplan
@@ -74,7 +72,7 @@ public class Task extends DomainEntity{
 		public String toString() {
 			return "Task [title=" + this.title + ", description=" + this.description + ", workload=" + this.workload + 
 				", executionPeriod=" + this.executionPeriod + ", url=" + this.url + ", isPrivate=" + this.isPrivate + 
-				", isFinished=" + this.isFinished + ", userAccount=" + this.userAccount + "]";
+				 ", userAccount=" + this.userAccount + "]";
 		}
 		
 }

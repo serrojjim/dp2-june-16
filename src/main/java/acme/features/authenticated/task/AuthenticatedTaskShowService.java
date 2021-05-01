@@ -3,6 +3,8 @@
 
 package acme.features.authenticated.task;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,12 +31,24 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 
 		final int taskId = request.getModel().getInteger("id");
 		
-		final boolean isPrivate =this.repository.findTaskById(taskId).getIsPrivate();
+		final Task task = this.repository.findTaskById(taskId);
 		
+		final boolean isPrivate =task.getIsPrivate();
+		
+		boolean res;
 
-		final boolean isFinished =this.repository.findTaskById(taskId).getIsFinished();
-
-		final boolean res = isPrivate ==false && isFinished ==true;
+		final LocalDateTime finalDate = task.getExecutionPeriod().getFinalDate();
+ 
+        
+		if(finalDate.isBefore(LocalDateTime.now())) {
+			res = true;
+		}else{
+			res = false;
+		}
+		
+	
+		
+		res = isPrivate ==false && res;
 		
 		return res;
 	}
@@ -45,7 +59,7 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url","isFinished","isPrivate");
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate","workload","description","url","isPrivate");
 		
 	
 	}
@@ -60,7 +74,13 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 
 		id = request.getModel().getInteger("id");
 		result = this.repository.findTaskById(id);
+		
+
 		return result;
+		
+
+	
+		
 	}
 
 }
