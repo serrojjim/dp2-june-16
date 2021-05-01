@@ -9,3 +9,6 @@
 # they accept any liabilities with respect to them.
 
 This is the Acme-Planner project of the june#16 development team.
+
+Link GitHub repository: https://github.com/serrojjim/dp2-june-16
+Link GitHub release:
