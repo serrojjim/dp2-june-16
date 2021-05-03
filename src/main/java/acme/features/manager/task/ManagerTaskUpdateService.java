@@ -97,19 +97,44 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		  
 		final LocalDateTime initialDate = entity.getExecutionPeriod().getInitialDate();
 	    final LocalDateTime finalDate = entity.getExecutionPeriod().getFinalDate();
-		final double dur = Duration.between(initialDate, finalDate).toMinutes()/60;
+		final double dur = Duration.between(initialDate, finalDate).toMinutes();
+		
+		final boolean condition7 = entity.getWorkload()==null;
+		if(condition7) {
+			errors.state(request, !(condition7), "workload", "Workload no puede estar vacio");
 
+		}else {
+			final int minutos2 = (int) ((double)entity.getWorkload());
+			
+
+			final double minutosC = entity.getWorkload() - minutos2;
+			
+			final int minutos = (int) (entity.getWorkload() -minutosC);
+
+			
+			final double minutos_totales = (minutos*60 +minutosC*100);
+			
+			if(entity.getWorkload()!=null) {
+				final boolean condition5 = minutos_totales>dur;
+				final boolean condition6 = minutos_totales<0;
+				errors.state(request, !(condition5 || condition6), "workload", "El workload tiene que ser menor que el tiempo de ejecucion y mayor que 0");
+
+			}
+		}
+
+	
+		
+		
+		
+		
+
+		
+		
 		final boolean condition1 = !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
 		final boolean condition2 = !Spam1.isSpam(entity.getDescription(), this.spamRepository.findSpam());
 		final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()) && !entity.getExecutionPeriod().getInitialDate().equals(this.repository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()));
 		final boolean condition4 = !finalDate.isBefore(initialDate);
-		if(entity.getWorkload()!=null) {
-			final boolean condition5 = entity.getWorkload()>dur;
-			final boolean condition6 = entity.getWorkload() < 0;
-			errors.state(request, !(condition5 || condition6), "workload", "Una task no puede tener  workload incorrecto");
-
-		}
-		final boolean condition7 = entity.getWorkload()==null;
+		
 
 		
 		final Set<Workplan> workplans =  entity.getWorkplan();
@@ -126,7 +151,6 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		errors.state(request, condition2, "description", "Una task no puede contener palabras spam en la descripción");
 		errors.state(request, condition3, "executionPeriod.initialDate", "Una task no puede empezar antes de hoy");
 		errors.state(request, condition4, "executionPeriod.finalDate", "Una task no puede terminar antes de empezar");
-		errors.state(request, !(condition7), "workload", "Una task no puede tener mas workload que horas ni estar vacio");
 
 		
 		

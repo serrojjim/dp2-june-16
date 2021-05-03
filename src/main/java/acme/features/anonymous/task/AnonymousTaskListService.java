@@ -48,7 +48,7 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 		final Collection<Task> result;
 		final List<Task> result2 = new ArrayList<Task>();
 		
-		result = this.taskRepository.findMany();
+		result = this.taskRepository.findAllTaskNotPrivate();
 		
 		
 		for( final Task t:result) {
