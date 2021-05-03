@@ -75,7 +75,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 		model.setAttribute("Tasks", model);
 		
-		if (entity.getIsPrivate()) {
+		if (entity.getIsPrivate().booleanValue()) {
 			model.setAttribute("allTasks", this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId()));
 		} else {
 			model.setAttribute("allTasks", this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId()));

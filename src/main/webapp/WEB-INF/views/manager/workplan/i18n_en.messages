@@ -7,6 +7,9 @@ manager.workplan.form.button.return = Return
 manager.workplan.form.button.update = Update
 manager.workplan.form.button.create = Create
 manager.workplan.form.button.delete = Delete
+manager.workplan.form.button.changePrivacytoPublic = Change privacy to public
+manager.workplan.form.button.changePrivacytoPrivate = Change privacy to private
+manager.workplan.form.button.error = Remember, a public workplan cannot contain private tasks!
 
 manager.workplan.form.label.title = Title
 manager.workplan.form.label.execution_period_final_date = Execution period final date

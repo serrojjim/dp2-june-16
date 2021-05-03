@@ -48,6 +48,9 @@ public class ManagerWorkplanController extends AbstractController<Manager, Workp
 	@Autowired
 	protected ManagerWorkplanDeleteTaskService	deleteTaskService;
 	
+	@Autowired
+	protected ManagerWorkplanChangePrivacyService	changePrivacyService;
+	
 	// Constructors -----------------------------------------------------------
 
 
@@ -59,6 +62,7 @@ public class ManagerWorkplanController extends AbstractController<Manager, Workp
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 		super.addCustomCommand(CustomCommand.DELETE_TASK_WORKPLAN, BasicCommand.DELETE, this.deleteTaskService);
+		super.addCustomCommand(CustomCommand.CHANGE_PRIVACY, BasicCommand.DELETE, this.changePrivacyService);
 	}
 
 }
