@@ -65,7 +65,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		result = new Shout();
 		result.setAuthor("John Doe");
-		result.setText("I'm the best!");
+		result.setText("this is an example");
 		result.setMoment(moment);
 		result.setLink("http://example5.org");
 		
@@ -79,15 +79,18 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert errors != null;
 		
+		if(!entity.getAuthor().isEmpty()) {
 		final boolean condition1 =  !Spam1.isSpam(entity.getAuthor(), this.spamRepository.findSpam());
 
 		errors.state(request, condition1, "author", "Nombre de Autor con Spam");
 		
+		}
+		if(!entity.getText().isEmpty()) {
 		final boolean condition2 =  !Spam1.isSpam(entity.getText(), this.spamRepository.findSpam());
 
 		errors.state(request, condition2, "text", "Este texto es Spam");
 		
-		
+		}
 		
 	}
 	
