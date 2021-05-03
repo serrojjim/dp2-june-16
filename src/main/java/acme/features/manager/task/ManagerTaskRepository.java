@@ -40,6 +40,9 @@ public interface ManagerTaskRepository extends AbstractRepository {
 	@Query("select t from Task t where t.userAccount.id = ?1")
 	List<Task> findAllMyTask(int id);
 	
+	@Query("select t from Task t where t.userAccount.id = ?1 and t.isPrivate = false")
+	List<Task> findAllMyTaskOnlyPublic(int id);
+	
 //	@Query("SELECT t.workplan FROM Task t AND t.uaId = ?2")
 //	List<Task> findAlreadySelectedByWorkplanId(Workplan w, int uaId);
 //	

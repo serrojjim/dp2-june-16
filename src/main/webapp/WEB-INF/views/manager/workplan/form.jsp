@@ -56,8 +56,3 @@
 	<acme:form-submit test="${command == 'create'}" code="manager.workplan.form.button.create" action="/manager/workplan/create"/>
 	<acme:form-return code="manager.workplan.form.button.return"/>
 </acme:form>
-
-	
-	
-	
-

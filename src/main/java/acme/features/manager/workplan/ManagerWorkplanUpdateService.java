@@ -74,6 +74,12 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		model.setAttribute("workload", entity.getTotalWorkload());
 
 		model.setAttribute("Tasks", model);
+		
+		if (entity.getIsPrivate()) {
+			model.setAttribute("allTasks", this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId()));
+		} else {
+			model.setAttribute("allTasks", this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId()));
+		}
 
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate", "isPrivate", "task");
 	}
@@ -96,7 +102,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		try {
 			final Object id = request.getModel().getAttribute("task");
 			entity.getTask().remove(id);
-		} catch (Throwable t) {
+		} catch (final Throwable t) {
 
 		}
 

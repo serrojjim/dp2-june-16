@@ -40,6 +40,7 @@ public class Workplan extends DomainEntity{
 		protected String			title;
 		
 		@NotNull
+		@Valid
 		protected ExecutionPeriod 	executionPeriod;
 		
 		@NotNull
@@ -103,7 +104,7 @@ public class Workplan extends DomainEntity{
 			return ep;
  		}
 		
-		public boolean isPublished(List<Spam> spam) {
+		public boolean isPublished(final List<Spam> spam) {
 			return !(this.isPrivate || Spam1.isSpam(this.title, spam));
 		}
  

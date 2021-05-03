@@ -47,7 +47,7 @@ public class ManagerWorkplanController extends AbstractController<Manager, Workp
 	
 	@Autowired
 	protected ManagerWorkplanDeleteTaskService	deleteTaskService;
-
+	
 	// Constructors -----------------------------------------------------------
 
 
