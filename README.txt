@@ -13,6 +13,10 @@ This is the Acme-Planner project of the june#16 development team.
 Link GitHub repository: https://github.com/serrojjim/dp2-june-16
 Link GitHub release:https://github.com/serrojjim/dp2-june-16/releases/tag/1.0.0
 
+Inicio sesión git y clever cloud:
+user: serrojjim
+pass:dp2-june-16
+
 A continuación, detallaremos las distintas decisiones que hemos tomado sobre aspectos que no quedaban del todo claro en el documento de requisitos:
 
 -Consideramos una entidad (shout, task o workplan) como spam si en algún campo de texto que posea se supera el umbral de spam. Otra foma de verlo seria contar la entidad con todos sus campos de texto y luego aplicarle el filtro de spam en general. Nos hemos decantado por la primera opción ya que vemos que es más lógico pensar que algo se considera spam si, por ejemplo, el título supera el umbral (por lo tanto es spam ese campo) pero la descripción contine palabras válidas que hacen que en conjunto se equilibre y no pase el umbral, nosotros consideramos que no se debería permitir su creación.
