@@ -75,8 +75,7 @@
 					</container>
 					<configuration>
 					<properties>
-							<cargo.protocol>http</cargo.protocol>
-							<cargo.servlet.port>80</cargo.servlet.port>
+							
 						</properties>
 					</configuration>
 					<deployables>
