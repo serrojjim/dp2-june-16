@@ -13,9 +13,6 @@ This is the Acme-Planner project of the june#16 development team.
 Link GitHub repository: https://github.com/serrojjim/dp2-june-16
 Link GitHub release:https://github.com/serrojjim/dp2-june-16/releases/tag/1.0.1
 
-Inicio sesión git y clever cloud:
-user: serrojjim
-pass:dp2-june-16
 
 A continuación, detallaremos las distintas decisiones que hemos tomado sobre aspectos que no quedaban del todo claro en el documento de requisitos:
 
