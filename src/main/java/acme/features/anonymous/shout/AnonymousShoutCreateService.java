@@ -2,7 +2,6 @@ package acme.features.anonymous.shout;
 
 
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -102,14 +101,12 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
-		
-		List<Spam> spam = new ArrayList<>();
 
-		spam = this.spamRepository.findSpam();
+		final List<Spam> spam = this.spamRepository.findSpam();
 		
 		final boolean salida = Spam1.isSpam(entity.getText(),  spam);
 		
-		if(salida == false) {
+		if(!salida) {
 		this.shoutRepository.save(entity);
 		}
 		

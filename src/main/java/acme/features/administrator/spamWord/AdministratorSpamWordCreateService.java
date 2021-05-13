@@ -68,7 +68,7 @@ public class AdministratorSpamWordCreateService implements AbstractCreateService
 		assert entity != null;
 		assert errors != null;
 		
-		final List<String> words = this.spamWordRepository.findAllSpamWords().stream().map(x->x.getWord()).collect(Collectors.toList());
+		final List<String> words = this.spamWordRepository.findAllSpamWords().stream().map(SpamWord::getWord).collect(Collectors.toList());
 
 		errors.state(request, !words.contains(entity.getWord()), "word", "This word is already considered spam");
 		

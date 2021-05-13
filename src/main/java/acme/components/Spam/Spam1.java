@@ -10,10 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.entities.spam.Spam;
 import acme.entities.spam.SpamWord;
 
-public  class Spam1 {
+public class Spam1 {
 	
 	@Autowired
-	public static AnonymousSpamRepository spamRepository;
+	public AnonymousSpamRepository spamRepository;
+	
+	protected Spam1(final AnonymousSpamRepository spamRepository) {
+		this.spamRepository = spamRepository;
+	}
 	
 	public static boolean isSpam(  final String text,  final List<Spam> spam) {
 		
