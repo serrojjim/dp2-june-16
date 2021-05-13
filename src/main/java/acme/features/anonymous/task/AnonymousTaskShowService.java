@@ -46,7 +46,7 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 			res = false;
 		}
 		
-		res = isPrivate ==false && res;
+		res = !isPrivate && res;
 		return res;
 	}
 

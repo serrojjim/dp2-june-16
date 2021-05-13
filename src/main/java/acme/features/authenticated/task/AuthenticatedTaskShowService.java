@@ -35,22 +35,11 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 		
 		final boolean isPrivate =task.getIsPrivate();
 		
-		boolean res;
-
 		final LocalDateTime finalDate = task.getExecutionPeriod().getFinalDate();
- 
-        
-		if(finalDate.isBefore(LocalDateTime.now())) {
-			res = true;
-		}else{
-			res = false;
-		}
 		
-	
+		return !isPrivate && finalDate.isBefore(LocalDateTime.now());
 		
-		res = isPrivate ==false && res;
 		
-		return res;
 	}
 
 	@Override

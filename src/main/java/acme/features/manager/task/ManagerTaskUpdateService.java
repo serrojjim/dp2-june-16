@@ -138,8 +138,8 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 
 		
 		final Set<Workplan> workplans =  entity.getWorkplan();
-		if(entity.getIsPrivate()==true) {
-			final boolean condition8 = workplans.stream().anyMatch(x -> x.getIsPrivate()==false);
+		if(entity.getIsPrivate().booleanValue()) {
+			final boolean condition8 = workplans.stream().anyMatch(x -> !x.getIsPrivate().booleanValue());
 			errors.state(request, !condition8, "isPrivate", "Una task no puede ser privada si pertenece a un workplan público");
 
 		}
