@@ -1,5 +1,6 @@
 package acme.features.manager.workplan;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,7 +64,7 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		
 		final int id = request.getModel().getInteger("id");
 
-		return this.repository.findById(id).get();
+		return this.repository.findById(id).orElseThrow(NoSuchElementException::new);
 	}
 
 	@Override
