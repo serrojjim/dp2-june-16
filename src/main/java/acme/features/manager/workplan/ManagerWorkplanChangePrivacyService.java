@@ -2,6 +2,7 @@
 package acme.features.manager.workplan;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -65,8 +66,7 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 		assert request != null;
 
 		final int id = request.getModel().getInteger("id");
-
-		return this.repository.findById(id).get();
+		return this.repository.findById(id).orElseThrow(NoSuchElementException::new);
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 		assert entity != null;
 		assert errors != null;
 
-		final Boolean condition1 = entity.getTaskList().stream().filter(t -> t.getIsPrivate()).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(true));
+		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(true));
 		errors.state(request, !condition1, "isPrivate", "Un workplan publico no puede contener tareas privadas"); // Para cambiar de privado a publico no puede tener tareass privadas
 		
 		if(errors.hasErrors()) {
@@ -86,14 +86,14 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 			
 			if (entity.getIsPrivate().booleanValue()) {
-				List<Task> l = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId())
+				final List<Task> l = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId())
 					.stream()
 					.filter(x -> !x.getWorkplan().contains(entity))
 					.collect(Collectors.toList());
 				
 				request.getModel().setAttribute("allTasksAvailable", l);
 			} else {
-				List<Task> l = this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId())
+				final List<Task> l = this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId())
 					.stream()
 					.filter(x -> !x.getWorkplan().contains(entity))
 					.collect(Collectors.toList());
@@ -116,7 +116,7 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 		assert request != null;
 		assert entity != null;
 
-		final Boolean condition1 = entity.getTaskList().stream().filter(t -> t.getIsPrivate()).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(true));
+		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(true));
 
 		if (!condition1.booleanValue()) {
 			entity.setIsPrivate(!entity.getIsPrivate());

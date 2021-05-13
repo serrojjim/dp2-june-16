@@ -2,6 +2,7 @@
 package acme.features.manager.workplan;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -57,14 +58,14 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 		
 		if (entity.getIsPrivate().booleanValue()) {
-			List<Task> l = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId())
+			final List<Task> l = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId())
 				.stream()
 				.filter(x -> !x.getWorkplan().contains(entity))
 				.collect(Collectors.toList());
 			
 			model.setAttribute("allTasksAvailable", l);
 		} else {
-			List<Task> l = this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId())
+			final List<Task> l = this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId())
 				.stream()
 				.filter(x -> !x.getWorkplan().contains(entity))
 				.collect(Collectors.toList());
@@ -91,7 +92,7 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		assert request != null;
 
 		final int id = request.getModel().getInteger("id");
-		return this.repository.findById(id).get();
+		return this.repository.findById(id).orElseThrow(NoSuchElementException::new);
 	}
 
 }

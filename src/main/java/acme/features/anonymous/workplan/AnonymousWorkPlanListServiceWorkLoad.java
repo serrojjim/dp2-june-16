@@ -45,7 +45,7 @@ public class AnonymousWorkPlanListServiceWorkLoad implements AbstractListService
 		
 		result = this.workPlanRepository.findPublicWorkPlans();
 		
-		result = result.stream().sorted(Comparator.comparing(x->x.getTotalWorkload(), Comparator.reverseOrder()))
+		result = result.stream().sorted(Comparator.comparing(Workplan::getTotalWorkload, Comparator.reverseOrder()))
 			.collect(Collectors.toList());
 		return result;
 	}

@@ -13,6 +13,7 @@
 package acme.features.manager.workplan;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -88,8 +89,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert request != null;
 
 		final int id = request.getModel().getInteger("id");
-		final Workplan result = this.repository.findById(id).get();
-		return result;
+		return this.repository.findById(id).orElseThrow(NoSuchElementException::new);
 	}
 
 	@Override
@@ -105,7 +105,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 		}
 
-		final Boolean condition1 = entity.getTaskList().stream().filter(t -> t.getIsPrivate()).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
+		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
 		errors.state(request, !condition1, "isPrivate", "Un workplan publico no puede contener tareas privadas"); // Para cambiar de privado a publico no puede tener tareass privadas
 
 		final boolean condition2 = entity.isPublished(this.spamRepository.findSpam());
