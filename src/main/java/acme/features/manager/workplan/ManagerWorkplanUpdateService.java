@@ -19,7 +19,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.components.Spam.Spam1;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
@@ -74,6 +73,12 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		model.setAttribute("workload", entity.getTotalWorkload());
 
 		model.setAttribute("Tasks", model);
+		
+		if (entity.getIsPrivate().booleanValue()) {
+			model.setAttribute("allTasks", this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId()));
+		} else {
+			model.setAttribute("allTasks", this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId()));
+		}
 
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate", "isPrivate", "task");
 	}
@@ -96,14 +101,14 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		try {
 			final Object id = request.getModel().getAttribute("task");
 			entity.getTask().remove(id);
-		} catch (Throwable t) {
+		} catch (final Throwable t) {
 
 		}
 
 		final Boolean condition1 = entity.getTaskList().stream().filter(t -> t.getIsPrivate()).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
 		errors.state(request, !condition1, "isPrivate", "Un workplan publico no puede contener tareas privadas"); // Para cambiar de privado a publico no puede tener tareass privadas
 
-		final boolean condition2 = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
+		final boolean condition2 = entity.isPublished(this.spamRepository.findSpam());
 
 		errors.state(request, condition2, "title", "Para publicar tu workplan este no debe contener palabras spam");
 

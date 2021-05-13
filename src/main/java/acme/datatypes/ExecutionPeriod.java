@@ -17,7 +17,6 @@ import java.time.temporal.ChronoUnit;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Transient;
-import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
 import acme.framework.datatypes.DomainDatatype;
@@ -35,11 +34,9 @@ public class ExecutionPeriod extends DomainDatatype implements Comparable<Execut
 
 	// Attributes -------------------------------------------------------------
 
-	@Future
 	@NotNull
 	protected LocalDateTime initialDate;
 
-	@Future
 	@NotNull
 	protected LocalDateTime finalDate;
 

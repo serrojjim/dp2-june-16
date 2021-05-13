@@ -1,3 +1,4 @@
+
 package acme.features.manager.workplan;
 
 import java.util.List;
@@ -21,10 +22,10 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected ManagerWorkplanRepository repository;
+	protected ManagerWorkplanRepository	repository;
 
 	@Autowired
-	protected ManagerTaskRepository taskRepository;
+	protected ManagerTaskRepository		taskRepository;
 
 	// AbstractShowService<Administrator, UserAccount> interface --------------
 
@@ -36,9 +37,9 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		final String rol = request.getPrincipal().getActiveRole().getSimpleName();
 		final int userAcountId = request.getPrincipal().getAccountId();
 		final int taskId = request.getModel().getInteger("id");
-		
+
 		final Optional<Workplan> workplan = this.repository.findOneWorkplanByIdAndUA(taskId, userAcountId);
-		
+
 		return (rol.equals("Manager") && workplan.isPresent());
 
 	}
@@ -51,10 +52,25 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 
 		model.setAttribute("workload", entity.getTotalWorkload());
 		
+		model.setAttribute("isPrivate", entity.getIsPrivate());
+		
 		final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 		
-		model.setAttribute("allTasksAvailable", 
-			myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
+		if (entity.getIsPrivate().booleanValue()) {
+			List<Task> l = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId())
+				.stream()
+				.filter(x -> !x.getWorkplan().contains(entity))
+				.collect(Collectors.toList());
+			
+			model.setAttribute("allTasksAvailable", l);
+		} else {
+			List<Task> l = this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId())
+				.stream()
+				.filter(x -> !x.getWorkplan().contains(entity))
+				.collect(Collectors.toList());
+			
+			model.setAttribute("allTasksAvailable", l);
+		}
 		
 		model.setAttribute("allTasksAlreadySelected", 
 			myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
@@ -70,7 +86,6 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		
 	}
 
-
 	@Override
 	public Workplan findOne(final Request<Workplan> request) {
 		assert request != null;
@@ -80,11 +95,3 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 	}
 
 }
-
-
-
-
-
-
-	
-

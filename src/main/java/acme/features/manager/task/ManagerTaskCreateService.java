@@ -2,7 +2,6 @@ package acme.features.manager.task;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -132,17 +131,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		final boolean condition2 = !Spam1.isSpam(entity.getDescription(), this.spamRepository.findSpam());
 		final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()) && !entity.getExecutionPeriod().getInitialDate().equals(this.taskRepository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()));
 		final boolean condition4 = !finalDate.isBefore(initialDate);
-		
-
-		
-		final Set<Workplan> workplans =  entity.getWorkplan();
-		if(entity.getIsPrivate()==true) {
-			final boolean condition8 = workplans.stream().anyMatch(x -> x.getIsPrivate()==false);
-			errors.state(request, !condition8, "isPrivate", "Una task no puede ser privada si pertenece a un workplan público");
-
-		}
-		
-		
 		
 		
 		errors.state(request, condition1, "title", "Una task no puede contener palabras spam en su titulo");

@@ -9,6 +9,5 @@
 	<acme:list-column code="manager.workplan.list.label.execution_period_final_date" path="executionPeriod.finalDate" width="20%"/>
 	<acme:list-column code="manager.workplan.list.label.execution_period_initial_date" path="executionPeriod.initialDate" width="20%"/>
 	<acme:list-column code="manager.workplan.list.label.workload" path="workload" width="20%"/>
-	
 
 </acme:list>

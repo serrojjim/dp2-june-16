@@ -6,7 +6,6 @@ import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.components.Spam.Spam1;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
@@ -88,7 +87,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert errors != null;
 
 		entity.getTask().clear(); //El framework añade sin motivo alguno el id de la task en forma de string
-		final boolean condition1 = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
+		final boolean condition1 = entity.isPublished(this.spamRepository.findSpam());
 
 		errors.state(request, condition1, "title", "Un workplan no puede contener palabras spam en su titulo");
 
@@ -102,17 +101,6 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 	public void create(final Request<Workplan> request, final Workplan entity) {
 		assert request != null;
 		assert entity != null;
-		final Object taskDebug = request.getModel().getAttribute("task");
-		
-		if (!taskDebug.equals("")) {
-			try {
-				final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
-				entity.addTask(parsedTask);
-				parsedTask.addWorkplan(entity);
-			} catch (Throwable t) {
-
-			}
-		}
 		
 		this.workplanRepository.save(entity);
 
