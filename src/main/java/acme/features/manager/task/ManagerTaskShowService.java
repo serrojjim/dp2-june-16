@@ -39,11 +39,8 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		}
 		
 		if(uaId.getAccountId()==userRequestId) {
-			if(uaId.getActiveRole().getSimpleName().equals("Manager")) {
-				return true;
-			}else {
-				return false;
-			}
+		
+			return uaId.getActiveRole().getSimpleName().equals("Manager");
 			
 		}else {
 			return false;
