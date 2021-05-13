@@ -1,8 +1,6 @@
 package acme.components.Spam;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -38,12 +36,7 @@ public class AnonymousSpamService implements AbstractListService<Anonymous, Spam
 	public Collection<Spam> findMany(final Request<Spam> request){
 		assert request != null;
 		
-		List<Spam> result = new ArrayList<>();
-		
-		result = this.anonymousSpamRepository.findSpam();
-		
-		
-		return result;
+		return this.anonymousSpamRepository.findSpam();
 	}
 	
 	
