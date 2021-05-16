@@ -56,7 +56,7 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 		assert entity != null;
 		assert model != null;
 
-		model.setAttribute("workload", entity.getTotalWorkload());
+		model.setAttribute("workload", Workplan.getTotalWorkload(entity));
 
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate", "isPrivate", "task");
 	}
@@ -79,7 +79,7 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 		errors.state(request, !condition1, "isPrivate", "Un workplan publico no puede contener tareas privadas"); // Para cambiar de privado a publico no puede tener tareass privadas
 		
 		if(errors.hasErrors()) {
-			request.getModel().setAttribute("workload", entity.getTotalWorkload());
+			request.getModel().setAttribute("workload", Workplan.getTotalWorkload(entity));
 			
 			request.getModel().setAttribute("isPrivate", entity.getIsPrivate());
 			
