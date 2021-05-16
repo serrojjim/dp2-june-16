@@ -84,6 +84,22 @@
         <property name="finalDate" value="07/12/21 3:30 PM"/>
     </bean>
     
+    <!-- Spam -->
+    
+    <bean id="spam" class="acme.entities.spam.Spam">
+		<property name="threshold" value="0.1"/>
+		<property name="spamWords">
+			<set>
+				<ref bean="spamWord1"/>
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="spamWord1" class="acme.entities.spam.SpamWord">
+		<property name="word" value="sex"/>
+		<property name="spam" ref="spam"/>
+	</bean>
+	
     <!-- Task -->
 
     <bean id="task1" class="acme.entities.task.Task">
