@@ -52,5 +52,42 @@ public class ExecutionPeriod extends DomainDatatype implements Comparable<Execut
 		return (int) (this.getDays() - o.getDays());
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((this.finalDate == null) ? 0 : this.finalDate.hashCode());
+		result = prime * result + ((this.initialDate == null) ? 0 : this.initialDate.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (this.getClass() != obj.getClass())
+			return false;
+		ExecutionPeriod other = (ExecutionPeriod) obj;
+		
+		
+		
+		if (this.finalDate == null) {
+			if (other.finalDate != null)
+				return false;
+		} else if (!this.finalDate.equals(other.finalDate))
+			return false;
+		
+		
+		
+		if (this.initialDate == null) {
+			if (other.initialDate != null)
+				return false;
+		} else if (!this.initialDate.equals(other.initialDate))
+			return false;
+		return true;
+	}
+
 }
 
