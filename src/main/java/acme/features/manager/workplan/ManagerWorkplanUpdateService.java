@@ -106,8 +106,8 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		}
 		
 		final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
-		errors.state(request, !condition0, "executionPeriod.initialDate", "La fecha de inicio debe ser previa a la fecha de fin");
-		errors.state(request, !condition0, "executionPeriod.finalDate", "La fecha de fin debe ser posterior a la fecha de inicio");
+		errors.state(request, !condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+		errors.state(request, !condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
 
 		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
 		errors.state(request, !condition1, "isPrivate", "Un workplan publico no puede contener tareas privadas"); // Para cambiar de privado a publico no puede tener tareass privadas
@@ -120,10 +120,9 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 
 			request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-
 			request.getModel().setAttribute("allTasksAlreadySelected", myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-
 			request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+			
 		} else {
 			Object taskDebug = null;
 
@@ -142,10 +141,9 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 					final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 
 					request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-
 					request.getModel().setAttribute("allTasksAlreadySelected", myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-
 					request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+					
 				} else {
 					entity.addTask(parsedTask);
 
