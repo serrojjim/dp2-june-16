@@ -485,39 +485,6 @@
 		</property>
 	</bean>
 	
-	<bean id="workplan2" class="acme.entities.workplan.Workplan">
-		<property name="title" value="sample test wp 2"/>
-		<property name="executionPeriod" ref="noFinalizado"/>
-		<property name="isPrivate" value="false"/>
-		<property name="task">
-			<list>
-				<ref bean="task2"/>
-			</list>
-		</property>
-		<property name="userAccount">
-			<list>
-				<ref bean="authenticatedUserAccount"/>
-			</list>
-		</property>
-	
-	</bean>
-	
-	<bean id="workplan3" class="acme.entities.workplan.Workplan">
-		<property name="title" value="sample test wp 3"/>
-		<property name="executionPeriod" ref="noFinalizado"/>
-		<property name="isPrivate" value="false"/>
-		<property name="task">
-			<list>
-				<ref bean="task3"/>
-			</list>
-		</property>
-		<property name="userAccount">
-			<list>
-				<ref bean="authenticatedUserAccount"/>
-			</list>
-		</property>
-	</bean>
-	
 	<bean id="workplan4" class="acme.entities.workplan.Workplan">
 		<property name="title" value="sample test wp 1"/>
 		<property name="executionPeriod" ref="noFinalizado"/>
@@ -630,6 +597,39 @@
 		</property>
 	</bean>
 		
+	<bean id="workplan2" class="acme.entities.workplan.Workplan">
+		<property name="title" value="sample test wp 2"/>
+		<property name="executionPeriod" ref="noFinalizado"/>
+		<property name="isPrivate" value="false"/>
+		<property name="task">
+			<list>
+				<ref bean="task2"/>
+			</list>
+		</property>
+		<property name="userAccount">
+			<list>
+				<ref bean="authenticatedUserAccount"/>
+			</list>
+		</property>
+	
+	</bean>
+	
+	<bean id="workplan3" class="acme.entities.workplan.Workplan">
+		<property name="title" value="sample test wp 3"/>
+		<property name="executionPeriod" ref="noFinalizado"/>
+		<property name="isPrivate" value="false"/>
+		<property name="task">
+			<list>
+				<ref bean="task3"/>
+			</list>
+		</property>
+		<property name="userAccount">
+			<list>
+				<ref bean="authenticatedUserAccount"/>
+			</list>
+		</property>
+	</bean>
+
 	<!-- Shout -->
 	
 	<bean id="shout1" class="acme.entities.shouts.Shout">

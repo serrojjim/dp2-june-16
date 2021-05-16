@@ -1,16 +1,14 @@
 package acme.testing.workplan;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.openqa.selenium.By;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.features.manager.workplan.ManagerWorkplanRepository;
-import acme.testing.AcmeTest;
+import acme.testing.AcmePlannerTest;
 
-public class ManagerWorkplanTest extends AcmeTest {
+public class ManagerWorkplanTest extends AcmePlannerTest{
 
 	// Internal state ---------------------------------------------------------
 
@@ -18,21 +16,6 @@ public class ManagerWorkplanTest extends AcmeTest {
 	ManagerWorkplanRepository managerWorkplanRepository;
 	
 	// Lifecycle management ---------------------------------------------------
-
-	@Override
-	@BeforeAll
-	public void beforeAll() {
-		super.beforeAll();
-
-		super.setBaseCamp("http", "localhost", "8080", "/Acme-Planner", "/master/welcome", "?language=en&debug=true");
-		super.setAutoPausing(false);
-
-		this.signIn("administrator", "administrator");
-		super.clickAndGo(By.linkText("Administrator"));
-		super.clickAndGo(By.linkText("Populate DB (initial)"));
-		super.checkAlertExists(true);
-		this.signOut();
-	}
 
 	// Test cases -------------------------------------------------------------
 
@@ -121,6 +104,8 @@ public class ManagerWorkplanTest extends AcmeTest {
 		
 		super.signOut();
 	}
+	
+	
 	// Ancillary methods ------------------------------------------------------
 
 }

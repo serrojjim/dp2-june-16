@@ -110,11 +110,11 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		errors.state(request, !condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
 
 		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
-		errors.state(request, !condition1, "isPrivate", "Un workplan publico no puede contener tareas privadas"); // Para cambiar de privado a publico no puede tener tareass privadas
+		errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
 
 		final boolean condition2 = entity.isPublished(this.spamRepository.findSpam());
 
-		errors.state(request, condition2, "title", "Para publicar tu workplan este no debe contener palabras spam");
+		errors.state(request, condition2, "title", "manager.workplan.form.error.spam");
 
 		if (errors.hasErrors()) {
 			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
@@ -135,7 +135,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 				final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
 				final Boolean condition3 = entity.getIsPrivate().booleanValue() || !parsedTask.getIsPrivate();
-				errors.state(request, condition3, "isPrivate", "Un workplan publico no puede contener tareas privadas");
+				errors.state(request, condition3, "isPrivate", "manager.workplan.form.button.error");
 
 				if (errors.hasErrors()) {
 					final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
