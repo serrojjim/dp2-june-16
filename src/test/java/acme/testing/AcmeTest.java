@@ -52,15 +52,12 @@ public abstract class AcmeTest extends AbstractTest {
 	}
 
 	protected void checkPanicExists() {
-		
-		By locator = By.xpath(String.format("//h1[normalize-space()'Unexpected error']"));
+		By locator = By.xpath(String.format("/html/body/div[2]/div/h1[@id='unexpected-error']"));
 		assert super.exists(locator) : "Errors were expected in current query";
 	}
 
 	protected void checkNotPanicExists() {
-		By locator;
-
-		locator = By.linkText("Unexpected error");
+		By locator = By.xpath(String.format("/html/body/div[2]/div/h1[@id='unexpected-error']"));
 		assert !super.exists(locator) : "Errors were not expected in current query";
 	}
 

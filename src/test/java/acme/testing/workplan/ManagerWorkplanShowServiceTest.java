@@ -27,7 +27,7 @@ public class ManagerWorkplanShowServiceTest extends AcmePlannerTest {
 		super.checkColumnHasValue(id, 2, execution_period_initial_date);
 		super.checkColumnHasValue(id, 3, "0.00");
 		
-		super.clickOnListingRecord(10);
+		super.clickOnListingRecord(id);
 
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("executionPeriod.initialDate", execution_period_initial_date);
