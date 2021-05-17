@@ -89,8 +89,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double avgExecutionPeriodTasks = allTasks.stream().mapToLong(x -> x.getExecutionPeriod().getDays()).average().orElse(0.);
 		Double dvtExecutionPeriodTasks = 0.;
 
-		Double minWorkloadWorkplans = numberOfWorkplans == 0? 0. : allWorkplans.get(0).getTotalWorkload();
-		Double maxWorkloadWorkplans = numberOfWorkplans == 0? 0. : allWorkplans.get(0).getTotalWorkload();
+		Double minWorkloadWorkplans = numberOfWorkplans == 0? 0. : Workplan.getTotalWorkload(allWorkplans.get(0));
+		Double maxWorkloadWorkplans = numberOfWorkplans == 0? 0. : Workplan.getTotalWorkload(allWorkplans.get(0));
 		final Double avgWorkloadWorkplans = allWorkplans.stream().mapToDouble(Workplan::getTotalWorkload).average().orElse(0.);
 		Double dvtWorkloadWorkplans = 0.;
 
@@ -100,7 +100,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Double dvtExecutionPeriodWorkplans = 0.;
 
 		for (final Workplan w : allWorkplans) {
-			final Double workload = w.getTotalWorkload();
+			final Double workload = Workplan.getTotalWorkload(w);
 
 			if (workload < minWorkloadWorkplans)
 				minWorkloadWorkplans = workload;

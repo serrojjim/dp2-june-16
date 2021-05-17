@@ -11,6 +11,9 @@ manager.workplan.form.button.changePrivacytoPublic = Cambiar privacidad actual a
 manager.workplan.form.button.changePrivacytoPrivate = Cambiar privacidad actual a privada
 manager.workplan.form.button.error = Recuerda, un plan de trabajo publico no puede contener tareas privadas 
 
+manager.workplan.form.error.initialDate = La fecha de inicio debe ser previa a la fecha de fin
+manager.workplan.form.error.finalDate = La fecha de fin debe ser posterior a la fecha de inicio
+
 manager.workplan.form.label.title = Título
 manager.workplan.form.label.execution_period_final_date = Fecha final de ejecución
 manager.workplan.form.label.execution_period_initial_date  = Fecha inicial de ejecución

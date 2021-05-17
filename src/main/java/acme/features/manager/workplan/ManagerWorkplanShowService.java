@@ -51,7 +51,7 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 		assert entity != null;
 		assert model != null;
 
-		model.setAttribute("workload", entity.getTotalWorkload());
+		model.setAttribute("workload", Workplan.getTotalWorkload(entity));
 		
 		model.setAttribute("isPrivate", entity.getIsPrivate());
 		

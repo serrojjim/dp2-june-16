@@ -52,7 +52,7 @@ public class ManagerWorkplanDeleteTaskService implements AbstractDeleteService<M
 		assert entity != null;
 		assert model != null;
 
-		model.setAttribute("workload", entity.getTotalWorkload());
+		model.setAttribute("workload", Workplan.getTotalWorkload(entity));
 
 		request.unbind(entity, model, 
 			"title", 
