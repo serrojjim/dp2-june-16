@@ -50,13 +50,14 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 	}
 
 	/**
-	 * Signs in as a manager, tries to create a public workplan with spam in the title and the initial date after the final date
+	 * Signs in as a manager, tries to modify a public workplan with spam in the title, initial and final date with invalid format
 	 * and check that it has errors on the title and on the dates. Thus, it wont be created.
 	 */
 	@ParameterizedTest
-	@CsvFileSource(resources = "/workplan/update/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(40)
-	void updateWorkplanManagerNegative(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date, final Boolean isPrivate, final String title, final int user_account_id, final String workload) {
+	@CsvFileSource(resources = "/workplan/update/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(30)
+	void updateWorkplanManagerNegativeSpamTitleInvalidDateFormat(final int id, final int version, final String execution_period_final_date, 
+		final String execution_period_initial_date, final Boolean isPrivate, final String title, final int user_account_id, final String workload) {
 		super.signIn("Antonio", "Campuzano");
 
 		super.clickOnMenu("Manager", "List workplans");
@@ -67,15 +68,41 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 		super.fillInputBoxIn("executionPeriod.initialDate", "invalid format date");
 		super.fillInputBoxIn("executionPeriod.finalDate", "invalid format date");
 		
-//		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[11]"));
-//		final WebElement option = super.locateOne(optionLocator);
-//		option.click();
-		
 		super.clickOnSubmitButton("Update");
 		
 		super.checkErrorsExist("title");
 		super.checkErrorsExist("executionPeriod.initialDate");
 		super.checkErrorsExist("executionPeriod.finalDate");
+		
+		super.signOut();
+	}
+	
+	/**
+	 * Signs in as a manager, tries to modify a private workplan adding a private task.
+	 * Then tries to convert it into a public workplan, which is illegal.
+	 * Raises the expected error and the workplan is not updated.
+	 */
+	@ParameterizedTest
+	@CsvFileSource(resources = "/workplan/update/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(40)
+	void updateWorkplanManagerNegativePrivateTaskPublicWorkplan(final int id, final int version, final String execution_period_final_date, 
+		final String execution_period_initial_date, final Boolean isPrivate, final String title, final int user_account_id, final String workload) {
+		super.signIn("Antonio", "Campuzano");
+
+		super.clickOnMenu("Manager", "List workplans");
+
+		super.clickOnListingRecord(id);
+
+		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[21]"));
+		final WebElement option = super.locateOne(optionLocator);
+		option.click();
+		
+		super.clickOnSubmitButton("Update");
+
+		super.clickOnListingRecord(id);
+
+		super.clickOnSubmitButton("Change privacy to public");
+		super.checkErrorsExist();
 		
 		super.signOut();
 	}

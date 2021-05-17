@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.Spam.Spam1;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
@@ -67,21 +68,8 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 	@Override
 	public void unbind(final Request<Workplan> request, final Workplan entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
-
-		model.setAttribute("workload", Workplan.getTotalWorkload(entity));
-
-		model.setAttribute("Tasks", model);
-
-		if (entity.getIsPrivate().booleanValue()) {
-			model.setAttribute("allTasks", this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId()));
-		} else {
-			model.setAttribute("allTasks", this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId()));
-		}
-
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate", "isPrivate", "task");
+		//Este metodo está vacio puesto que no se utiliza. 
+		//Para encontrar su definicion previa se puede acudir a un commit anterior
 	}
 
 	@Override
@@ -111,7 +99,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
 		errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
 
-		final boolean condition2 = entity.isPublished(this.spamRepository.findSpam());
+		final boolean condition2 = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
 		errors.state(request, condition2, "title", "manager.workplan.form.error.spam");
 
 		if (errors.hasErrors()) {
