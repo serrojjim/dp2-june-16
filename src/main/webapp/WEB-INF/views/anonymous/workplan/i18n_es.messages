@@ -19,5 +19,5 @@ anonymous.workplan.form.button.return = Volver
 anonymous.workplan.list.label.title = Título
 anonymous.workplan.list.label.execution_period_initial_date = Fecha de Inicio
 anonymous.workplan.list.label.execution_period_final_date = Fecha de Fin
-
+anonymous.workplan.list.label.workload = Carga De Trabajo
 
