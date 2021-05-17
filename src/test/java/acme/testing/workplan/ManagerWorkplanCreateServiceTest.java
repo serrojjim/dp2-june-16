@@ -15,7 +15,7 @@ public class ManagerWorkplanCreateServiceTest extends AcmePlannerTest {
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/workplan/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
+	@Order(40)
 	void createWorkplanManagerPositive(final int id, final int version, final String execution_period_initial_date, final String execution_period_final_date, final Boolean isPrivate, final String title,
 		final int user_account_id, final String workload) {
 		super.signIn("Antonio", "Campuzano");
@@ -44,12 +44,13 @@ public class ManagerWorkplanCreateServiceTest extends AcmePlannerTest {
 	}
 	
 	/**
-	 * Sign in as a manager, try create a workplan with some erroneous fields
-	 * and check that it has errors, so it wont be created.
+	 * Signs in as a manager, tries to create a workplan with spam in the title and the initial date after the final date
+	 * and check that it only has errors on the dates, because initially the workplan is private so it admits spam in the title.
+	 * Thus, it wont be created.
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/workplan/createNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
+	@Order(40)
 	void createWorkplanManagerNegative(final int id, final int version, final String execution_period_initial_date, final String execution_period_final_date, final Boolean isPrivate, final String title,
 		final int user_account_id, final String workload) {
 		super.signIn("Antonio", "Campuzano");
@@ -61,8 +62,10 @@ public class ManagerWorkplanCreateServiceTest extends AcmePlannerTest {
 		super.fillInputBoxIn("executionPeriod.finalDate", execution_period_final_date);
 		super.clickOnSubmitButton("Create");
 		
-		super.checkErrorsExist();
-		
+		super.checkNotErrorsExist("title");
+		super.checkErrorsExist("executionPeriod.initialDate");
+		super.checkErrorsExist("executionPeriod.finalDate");
+
 		super.signOut();
 	}
 

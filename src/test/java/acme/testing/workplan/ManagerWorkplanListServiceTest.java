@@ -26,7 +26,7 @@ public class ManagerWorkplanListServiceTest extends AcmePlannerTest{
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/workplan/listMinePositive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(20)
+	@Order(30)
 	void listMineWorkplanManagerPositive(final int id, final int version, final String execution_period_initial_date, final String execution_period_final_date, final Boolean isPrivate, final String title,
 		final int user_account_id, final String workload) {
 		super.signIn("Antonio", "Campuzano");

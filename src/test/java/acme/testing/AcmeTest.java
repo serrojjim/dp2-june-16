@@ -364,9 +364,4 @@ public abstract class AcmeTest extends AbstractTest {
 		super.clickAndGo(By.className("btn-primary"));
 	}
 
-//	@Override
-//	protected void shortSleep() {
-//		this.sleep(1, false);
-//	}
-
 }
