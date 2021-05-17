@@ -32,9 +32,9 @@ public class ManagerWorkplanCreateServiceTest extends AcmePlannerTest {
 		super.checkColumnHasValue(id, 0, title);
 		super.checkColumnHasValue(id, 1, execution_period_final_date);
 		super.checkColumnHasValue(id, 2, execution_period_initial_date);
-		super.checkColumnHasValue(id, 3, "0.00");
+		super.checkColumnHasValue(id, 3, workload);
 		
-		super.clickOnListingRecord(10);
+		super.clickOnListingRecord(id);
 
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("executionPeriod.initialDate", execution_period_initial_date);
@@ -44,9 +44,8 @@ public class ManagerWorkplanCreateServiceTest extends AcmePlannerTest {
 	}
 	
 	/**
-	 * Signs in as a manager, tries to create a workplan with spam in the title and the initial date after the final date
-	 * and check that it only has errors on the dates, because initially the workplan is private so it admits spam in the title.
-	 * Thus, it wont be created.
+	 * Signs in as a manager, tries to create a public workplan with spam in the title and the initial date after the final date
+	 * and check that it has errors on the title and on the dates. Thus, it wont be created.
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/workplan/createNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
