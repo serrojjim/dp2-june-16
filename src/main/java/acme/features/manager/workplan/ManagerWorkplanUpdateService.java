@@ -106,8 +106,8 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		}
 		
 		final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
-		errors.state(request, !condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
-		errors.state(request, !condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
+		errors.state(request, condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+		errors.state(request, condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
 
 		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
 		errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
