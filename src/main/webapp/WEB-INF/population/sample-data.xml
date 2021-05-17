@@ -732,6 +732,8 @@
 		<property name="roles">
 			<list>
 				<ref bean="authenticatedAuthenticated" />
+				<ref bean="authenticatedManager" />
+				
 			</list>
 		</property>
 		<property name="task">
@@ -747,6 +749,8 @@
 			</list>
 		</property>
 	</bean>
+	
+	
 	
 	
 	<bean name="authenticatedUserAccount2" class="acme.framework.entities.UserAccount">
@@ -782,7 +786,11 @@
 		</property>
 	</bean>
 
-	<bean name="authenticatedAuthenticated" class="acme.entities.roles.Manager">
+	<bean name="authenticatedManager" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="authenticatedUserAccount" />
+	</bean>
+	
+	<bean name="authenticatedAuthenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="authenticatedUserAccount" />
 	</bean>
 	
