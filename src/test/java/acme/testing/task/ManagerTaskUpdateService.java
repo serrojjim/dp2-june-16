@@ -1,4 +1,4 @@
-package task;
+package acme.testing.task;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;

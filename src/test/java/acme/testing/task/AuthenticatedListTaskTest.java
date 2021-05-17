@@ -1,4 +1,4 @@
-package task;
+package acme.testing.task;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;

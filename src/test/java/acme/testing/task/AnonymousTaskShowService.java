@@ -1,4 +1,4 @@
-package task;
+package acme.testing.task;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -19,8 +19,8 @@ public class AnonymousTaskShowService extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/task/showPositiveAnonymous.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	void ShowTaskAnonymousPositive(final int id, final int version,final String description, final String execution_period_initial_date
-		, final String execution_period_final_date
+	void ShowTaskAnonymousPositive(final int id, final int version,final String description, final String execution_period_final_date
+		, final String execution_period_initial_date
 		, final Boolean isPrivate, final String title,
 		final String url, final String workload,
 		final int user_account_id) {
@@ -38,6 +38,21 @@ public class AnonymousTaskShowService extends AcmePlannerTest {
 			super.checkInputBoxHasValue("executionPeriod.finalDate", execution_period_final_date);
 
 		}
+	
+	// Wont work until super.checkPanicExists() is implemented in the framework
+//	/**
+//	 * Signs in as a anonymous, tries to show a non existing task and expect a panic.
+//	 */
+//	@ParameterizedTest
+//	@CsvFileSource(resources = "/task/anonymousShowNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
+//	@Order(20)
+//	void showWorkplanManagerNegative(final int id, final int version, final String execution_period_initial_date, final String execution_period_final_date, final Boolean isPrivate, final String title,
+//		final int user_account_id, final String workload) {
+//		
+//		super.navigate("/anonymous/task/show?", "id=" + id);
+//		super.checkPanicExists();
+//		
+//	}
 	
 	
 	
