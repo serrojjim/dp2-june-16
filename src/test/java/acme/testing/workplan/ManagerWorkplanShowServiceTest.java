@@ -36,21 +36,20 @@ public class ManagerWorkplanShowServiceTest extends AcmePlannerTest {
 		super.signOut();
 	}
 	
-	// Wont work until super.checkPanicExists() is implemented in the framework
-//	/**
-//	 * Signs in as a manager, tries to show a non existing workplan and expect a panic.
-//	 */
-//	@ParameterizedTest
-//	@CsvFileSource(resources = "/workplan/createNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
-//	@Order(20)
-//	void showWorkplanManagerNegative(final int id, final int version, final String execution_period_initial_date, final String execution_period_final_date, final Boolean isPrivate, final String title,
-//		final int user_account_id, final String workload) {
-//		super.signIn("Antonio", "Campuzano");
-//		
-//		super.navigate("/manager/workplan/show", "id=" + id);
-//		super.checkPanicExists();
-//		
-//		super.signOut();
-//	}
+	/**
+	 * Signs in as a manager, tries to show a non existing workplan and expect a panic.
+	 */
+	@ParameterizedTest
+	@CsvFileSource(resources = "/workplan/show/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(20)
+	void showWorkplanManagerNegative(final int id, final int version, final String execution_period_initial_date, final String execution_period_final_date, final Boolean isPrivate, final String title,
+		final int user_account_id, final String workload) {
+		super.signIn("Antonio", "Campuzano");
+		
+		super.navigate("/manager/workplan/show", "id=" + id);
+		super.checkPanicExists();
+		
+		super.signOut();
+	}
 
 }

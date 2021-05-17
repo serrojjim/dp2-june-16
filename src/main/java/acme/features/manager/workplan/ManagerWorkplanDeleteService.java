@@ -36,7 +36,7 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 	}
 
 	
-	//Este metodo está vacio puesto que no es utilizado. 
+	//Estos metodos están vacios puesto que no se utilizan. 
 	//Para encontrar su definicion previa se puede acudir a un commit anterior
 	@Override
 	public void bind(final Request<Workplan> request, final Workplan entity, final Errors errors) {

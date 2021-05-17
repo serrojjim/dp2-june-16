@@ -5,19 +5,21 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import acme.testing.AcmePlannerTest;
 
 public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 
 	/**
-	 * Sign in as a manager, create a workplan, list all my workplans, show the recently created one
-	 * and check that every value is correct.
-	 * No errors expected.
+	 * Sign in as a manager, show a workplan, modify some fields, update them
+	 * and check that every value is correct. No errors expected.
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/workplan/update/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	void updateWorkplanManagerPositive(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date, final Boolean isPrivate, final String title, final int user_account_id, final String workload) {
+	@Order(20)
+	void updateWorkplanManagerPositive(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date,
+		final Boolean isPrivate, final String title, final int user_account_id, final String workload) {
 		super.signIn("Antonio", "Campuzano");
 
 		super.clickOnMenu("Manager", "List workplans");
@@ -29,15 +31,21 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 
 		super.clickOnListingRecord(id);
 
-		
-		//Rellenar con valores 
 		super.fillInputBoxIn("title", "Prueba de actualizacion");
-		super.fillInputBoxIn("executionPeriod.initialDate", "");
-		super.fillInputBoxIn("executionPeriod.finalDate", "");
+		super.fillInputBoxIn("executionPeriod.initialDate", "8/12/22 1:00 AM");
+		super.fillInputBoxIn("executionPeriod.finalDate", "12/12/22 2:00 AM");
 		
-		//No estoy seguro de que sea asi
-		super.fill(By.id("task"), "3");
-
+		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[11]"));
+		final WebElement option = super.locateOne(optionLocator);
+		option.click();
+		
+		super.clickOnSubmitButton("Update");
+		
+		super.checkColumnHasValue(id, 0, "Prueba de actualizacion");
+		super.checkColumnHasValue(id, 1, "12/12/22 2:00 AM");
+		super.checkColumnHasValue(id, 2, "5/11/21 8:00 AM");
+		super.checkColumnHasValue(id, 3, "42.00");
+		
 		super.signOut();
 	}
 
@@ -53,21 +61,22 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 
 		super.clickOnMenu("Manager", "List workplans");
 
-		super.checkColumnHasValue(id, 0, title);
-		super.checkColumnHasValue(id, 1, execution_period_final_date);
-		super.checkColumnHasValue(id, 2, execution_period_initial_date);
-		super.checkColumnHasValue(id, 3, workload);
-
 		super.clickOnListingRecord(id);
 
-		//Podemos probar o vacio o con palabras spam
-		super.fillInputBoxIn("title", " ");
-		// Una fecha de inicio posterior a la de fin para que salta error
-		super.fillInputBoxIn("executionPeriod.initialDate", "");
-		super.fillInputBoxIn("executionPeriod.finalDate", "");
-		// Una tarea random que sea privada para que al intentar meterselo a una publica reviente tambien
-		super.fill(By.id("task"), "3");
-
+		super.fillInputBoxIn("title", "sex sex sex");
+		super.fillInputBoxIn("executionPeriod.initialDate", "invalid format date");
+		super.fillInputBoxIn("executionPeriod.finalDate", "invalid format date");
+		
+//		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[11]"));
+//		final WebElement option = super.locateOne(optionLocator);
+//		option.click();
+		
+		super.clickOnSubmitButton("Update");
+		
+		super.checkErrorsExist("title");
+		super.checkErrorsExist("executionPeriod.initialDate");
+		super.checkErrorsExist("executionPeriod.finalDate");
+		
 		super.signOut();
 	}
 
