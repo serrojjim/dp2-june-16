@@ -52,7 +52,7 @@
 			HttpStatus.valueOf(response.getStatus()).getReasonPhrase() : "Unknown failure");
 %>
 
-<h1>
+<h1 id="unexpected-error">
 	<acme:message code="master.panic.title"/>			
 </h1>
 
