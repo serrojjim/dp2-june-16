@@ -14,9 +14,9 @@ public class ManagerWorkplanShowServiceTest extends AcmePlannerTest {
 	 * No errors expected.
 	 */
 	@ParameterizedTest
-	@CsvFileSource(resources = "/workplan/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/workplan/showPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	void showWorkplanManagerPositive(final int id, final int version, final String execution_period_initial_date, final String execution_period_final_date, final Boolean isPrivate, final String title,
+	void showWorkplanManagerPositive(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date, final Boolean isPrivate, final String title,
 		final int user_account_id, final String workload) {
 		super.signIn("Antonio", "Campuzano");
 		
@@ -25,9 +25,9 @@ public class ManagerWorkplanShowServiceTest extends AcmePlannerTest {
 		super.checkColumnHasValue(id, 0, title);
 		super.checkColumnHasValue(id, 1, execution_period_final_date);
 		super.checkColumnHasValue(id, 2, execution_period_initial_date);
-		super.checkColumnHasValue(id, 3, "0.00");
+		super.checkColumnHasValue(id, 3, workload);
 		
-		super.clickOnListingRecord(10);
+		super.clickOnListingRecord(id);
 
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("executionPeriod.initialDate", execution_period_initial_date);
