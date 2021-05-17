@@ -71,7 +71,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert entity != null;
 		assert model != null;
 
-		model.setAttribute("workload", entity.getTotalWorkload());
+		model.setAttribute("workload", Workplan.getTotalWorkload(entity));
 
 		model.setAttribute("Tasks", model);
 		
@@ -104,22 +104,25 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		} catch (final Throwable t) {
 
 		}
+		
+		final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
+		errors.state(request, !condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+		errors.state(request, !condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
 
 		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
-		errors.state(request, !condition1, "isPrivate", "Un workplan publico no puede contener tareas privadas"); // Para cambiar de privado a publico no puede tener tareass privadas
+		errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
 
 		final boolean condition2 = entity.isPublished(this.spamRepository.findSpam());
 
-		errors.state(request, condition2, "title", "Para publicar tu workplan este no debe contener palabras spam");
+		errors.state(request, condition2, "title", "manager.workplan.form.error.spam");
 
 		if (errors.hasErrors()) {
 			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 
 			request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-
 			request.getModel().setAttribute("allTasksAlreadySelected", myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-
 			request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+			
 		} else {
 			Object taskDebug = null;
 
@@ -132,16 +135,15 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 				final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
 				final Boolean condition3 = entity.getIsPrivate().booleanValue() || !parsedTask.getIsPrivate();
-				errors.state(request, condition3, "isPrivate", "Un workplan publico no puede contener tareas privadas");
+				errors.state(request, condition3, "isPrivate", "manager.workplan.form.button.error");
 
 				if (errors.hasErrors()) {
 					final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 
 					request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-
 					request.getModel().setAttribute("allTasksAlreadySelected", myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-
 					request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+					
 				} else {
 					entity.addTask(parsedTask);
 

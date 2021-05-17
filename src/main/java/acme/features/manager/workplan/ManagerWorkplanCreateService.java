@@ -87,8 +87,11 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert errors != null;
 
 		entity.getTask().clear(); //El framework añade sin motivo alguno el id de la task en forma de string
+		final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
 		final boolean condition1 = entity.isPublished(this.spamRepository.findSpam());
 
+		errors.state(request, !condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+		errors.state(request, !condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
 		errors.state(request, condition1, "title", "Un workplan no puede contener palabras spam en su titulo");
 
 		if (errors.hasErrors()) {
@@ -103,7 +106,6 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert entity != null;
 		
 		this.workplanRepository.save(entity);
-
 	}
 
 }

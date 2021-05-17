@@ -6,10 +6,15 @@ manager.workplan.list.label.workload = Carga de trabajo
 manager.workplan.form.button.return = Volver
 manager.workplan.form.button.update = Actualizar
 manager.workplan.form.button.create = Crear
-manager.workplan.form.button.delete = Borrar
+manager.workplan.form.button.delete.task = Borrar tarea
+manager.workplan.form.button.delete.workplan = Borrar plan de trabajo
 manager.workplan.form.button.changePrivacytoPublic = Cambiar privacidad actual a pública
 manager.workplan.form.button.changePrivacytoPrivate = Cambiar privacidad actual a privada
 manager.workplan.form.button.error = Recuerda, un plan de trabajo publico no puede contener tareas privadas 
+
+manager.workplan.form.error.initialDate = La fecha de inicio debe ser previa a la fecha de fin
+manager.workplan.form.error.finalDate = La fecha de fin debe ser posterior a la fecha de inicio
+manager.workplan.form.error.spam = Un plan de trabajo no puede tener tal cantidad de palabras prohibidas
 
 manager.workplan.form.label.title = Título
 manager.workplan.form.label.execution_period_final_date = Fecha final de ejecución
