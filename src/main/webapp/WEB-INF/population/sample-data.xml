@@ -190,7 +190,7 @@
         <property name="isPrivate" value="false"/>
         <property name="userAccount">
             <list>
-                <ref bean="authenticatedUserAccount"/>
+                <ref bean="authenticatedUserAccount2"/>
             </list>
         </property>
     </bean>
@@ -205,7 +205,7 @@
         <property name="isPrivate" value="false"/>
         <property name="userAccount">
             <list>
-                <ref bean="authenticatedUserAccount"/>
+                <ref bean="authenticatedUserAccount2"/>
             </list>
         </property>
     </bean>
@@ -219,7 +219,7 @@
         <property name="isPrivate" value="false"/>
         <property name="userAccount">
             <list>
-                <ref bean="authenticatedUserAccount"/>
+                <ref bean="authenticatedUserAccount2"/>
             </list>
         </property>
     </bean>
@@ -744,6 +744,40 @@
 				<ref bean="workplan1" />
 				<ref bean="workplan2" />
 				<ref bean="workplan3" />
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean name="authenticatedUserAccount2" class="acme.framework.entities.UserAccount">
+		<property name="username" value="Authenticated" />
+		<property name="password" value="Authenticated" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Authenticated" />
+				<property name="surname" value="Authenticated" />
+				<property name="email" value="authenticated@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="authenticatedAuthenticated" />
+			</list>
+		</property>
+		<property name="task">
+			<list>
+				<ref bean="task4" />
+				<ref bean="task5" />
+				<ref bean="task6" />
+				
+			</list>
+		</property>
+		<property name="workplan">
+			<list>
+				<ref bean="workplan4" />
+				<ref bean="workplan5" />
+				<ref bean="workplan6" />
 			</list>
 		</property>
 	</bean>

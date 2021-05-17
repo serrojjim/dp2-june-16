@@ -13,7 +13,7 @@ public class ManagerTaskTest  extends AcmePlannerTest  {
 
 		
 		/**
-		 * Sign in as a manager, list all my workplans and check that every value is correct.
+		 * Sign in as a manager, list all my tasks and check that every value is correct.
 		 * No errors expected.
 		 */
 		@ParameterizedTest
