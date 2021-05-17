@@ -92,16 +92,6 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		} catch (final Throwable t) {
 		}
 
-		final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
-		errors.state(request, condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
-		errors.state(request, condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
-
-		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
-		errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
-
-		final boolean condition2 = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
-		errors.state(request, condition2, "title", "manager.workplan.form.error.spam");
-
 		if (errors.hasErrors()) {
 			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 			request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
@@ -109,20 +99,38 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
 
 		} else {
-			Object taskDebug = null;
-			
-			try {
-				taskDebug = request.getModel().getAttribute("task");
-			} catch (final Throwable t) {
+
+			final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
+			errors.state(request, condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+			errors.state(request, condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
+
+			final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
+			errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
+
+			final boolean condition2 = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
+			errors.state(request, condition2, "title", "manager.workplan.form.error.spam");
+
+			if (errors.hasErrors()) {
+				final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
+				request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
+				request.getModel().setAttribute("allTasksAlreadySelected", myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
+				request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+
+			} else {
+				Object taskDebug = null;
+
+				try {
+					taskDebug = request.getModel().getAttribute("task");
+				} catch (final Throwable t) {
+				}
+
+				if (taskDebug != null && !taskDebug.equals("")) {
+					final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
+
+					entity.addTask(parsedTask);
+					parsedTask.addWorkplan(entity);
+				}
 			}
-
-			if (taskDebug != null && !taskDebug.equals("")) {
-				final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
-
-				entity.addTask(parsedTask);
-				parsedTask.addWorkplan(entity);
-			}
-
 		}
 	}
 
