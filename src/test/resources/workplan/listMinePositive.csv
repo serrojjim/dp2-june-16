@@ -1,8 +1,0 @@
-id,version,execution_period_final_date,execution_period_initial_date,is_private,title,user_account_id,workload
-0,1,8/12/22 7:00 AM,6/12/22 11:00 AM,0,Workplan 1,67,42.00
-1,1,4/21/21 3:30 PM,4/12/21 10:15 AM,0,Workplan 3,67,21.00
-2,1,12/23/21 5:30 PM,10/24/21 8:15 AM,0,Workplan 5,67,0.00
-3,1,8/12/22 7:00 AM,6/12/22 11:00 AM,0,Workplan 9,67,0.00
-4,1,11/1/20 5:30 PM,9/1/20 8:15 AM,0,Workplan 10,67,0.00
-5,1,7/12/21 4:30 PM,4/29/21 8:00 AM,1,Workplan 12,67,0.00
-6,1,12/23/21 5:30 PM,10/24/21 8:15 AM,1,Workplan 13,67,0.00

@@ -14,7 +14,7 @@ public class ManagerWorkplanShowServiceTest extends AcmePlannerTest {
 	 * No errors expected.
 	 */
 	@ParameterizedTest
-	@CsvFileSource(resources = "/workplan/showPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/workplan/show/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
 	void showWorkplanManagerPositive(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date, final Boolean isPrivate, final String title,
 		final int user_account_id, final String workload) {
