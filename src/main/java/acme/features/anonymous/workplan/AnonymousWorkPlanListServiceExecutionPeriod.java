@@ -33,6 +33,7 @@ public class AnonymousWorkPlanListServiceExecutionPeriod implements AbstractList
 		assert entity != null;
 		assert model != null;
 		
+		model.setAttribute("workload", Workplan.getTotalWorkload(entity));
 		request.unbind(entity, model, "title", "executionPeriod.finalDate",  "executionPeriod.initialDate");
 	}
 
@@ -45,7 +46,7 @@ public class AnonymousWorkPlanListServiceExecutionPeriod implements AbstractList
 		result = this.workPlanRepository.findPublicWorkPlans();
 		
 		result = result.stream().filter(x->x.getExecutionPeriod().getFinalDate().isAfter(LocalDateTime.now()))
-			.sorted(Comparator.comparing(x->x.getExecutionPeriod().getFinalDate(), Comparator.reverseOrder()))
+			.sorted(Comparator.comparing(x->x.getExecutionPeriod().getFinalDate()))
 			.collect(Collectors.toList());
 		
 		return result;
