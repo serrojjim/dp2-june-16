@@ -142,23 +142,7 @@
 		<property name="initialDate" value="08/2/22 11:00 AM" />
 		<property name="finalDate" value="09/5/22 7:00 AM" />
 	</bean>
-    
-    	<bean id="noFinalizado2" class="acme.datatypes.ExecutionPeriod">
-        <property name="initialDate" value="04/29/21 8:00 AM"/>
-        <property name="finalDate" value="07/12/21 4:30 PM"/>
-    </bean>
-    
-    <bean id="noFinalizado3" class="acme.datatypes.ExecutionPeriod">
-        <property name="initialDate" value="06/12/22 11:00 AM"/>
-        <property name="finalDate" value="08/12/22 7:00 AM"/>
-    </bean>
-    
-    <bean id="noFinalizado4" class="acme.datatypes.ExecutionPeriod">
-        <property name="initialDate" value="08/2/22 11:00 AM"/>
-        <property name="finalDate" value="09/5/22 7:00 AM"/>
-    </bean>
-    
-    
+     
     <!-- Task -->
 
     <bean id="task1" class="acme.entities.task.Task">
