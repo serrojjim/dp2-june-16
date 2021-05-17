@@ -59,7 +59,7 @@
 			<jstl:forEach items="${allTasksAlreadySelected}" var="tsk">
 				<tr>
 					<td><jstl:out value="${tsk.title}"></jstl:out></td>
-					<td><acme:form-submit code="manager.task.form.button.delete"
+					<td><acme:form-submit code="manager.workplan.form.button.delete.task"
 							action="/manager/workplan/delete_task_workplan?workplanId=${id}&taskId=${tsk.id}" /></td>
 				</tr>
 			</jstl:forEach>
@@ -80,7 +80,7 @@
 		action="/manager/workplan/update" />
 
 	<acme:form-submit test="${command != 'create'}"
-		code="manager.workplan.form.button.delete"
+		code="manager.workplan.form.button.delete.workplan"
 		action="/manager/workplan/delete" />
 
 	<acme:form-submit test="${command == 'create'}"

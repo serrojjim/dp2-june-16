@@ -76,7 +76,7 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 		assert errors != null;
 
 		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(true));
-		errors.state(request, !condition1, "isPrivate", "Un workplan publico no puede contener tareas privadas"); // Para cambiar de privado a publico no puede tener tareass privadas
+		errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
 		
 		if(errors.hasErrors()) {
 			request.getModel().setAttribute("workload", Workplan.getTotalWorkload(entity));
