@@ -142,7 +142,7 @@
 		<property name="initialDate" value="08/2/22 11:00 AM" />
 		<property name="finalDate" value="09/5/22 7:00 AM" />
 	</bean>
-    
+     
     <!-- Task -->
 
     <bean id="task1" class="acme.entities.task.Task">
