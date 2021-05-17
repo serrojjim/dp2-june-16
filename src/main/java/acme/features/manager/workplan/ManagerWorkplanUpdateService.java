@@ -119,18 +119,8 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			if (taskDebug != null && !taskDebug.equals("")) {
 				final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
 
-				final Boolean condition3 = entity.getIsPrivate().booleanValue() || !parsedTask.getIsPrivate();
-				errors.state(request, condition3, "isPrivate", "manager.workplan.form.button.error");
-
-				if (errors.hasErrors()) {
-					final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
-					request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-					request.getModel().setAttribute("allTasksAlreadySelected", myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-					request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
-				} else {
-					entity.addTask(parsedTask);
-					parsedTask.addWorkplan(entity);
-				}
+				entity.addTask(parsedTask);
+				parsedTask.addWorkplan(entity);
 			}
 
 		}
