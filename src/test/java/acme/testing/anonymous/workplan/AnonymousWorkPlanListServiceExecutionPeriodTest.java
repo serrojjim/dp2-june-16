@@ -16,7 +16,7 @@ public class AnonymousWorkPlanListServiceExecutionPeriodTest extends AcmePlanner
 	 * and check that the order is correct.
 	 * No errors expected.
 	 */
-	
+	 
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/workplan/ListWorkPlanExecutionPeriod.csv", encoding = "utf-8", numLinesToSkip = 1)
