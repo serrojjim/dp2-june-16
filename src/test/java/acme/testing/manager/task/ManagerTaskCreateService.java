@@ -1,4 +1,4 @@
-package acme.testing.task;
+package acme.testing.manager.task;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -43,7 +43,7 @@ public class ManagerTaskCreateService extends AcmePlannerTest {
 		super.checkColumnHasValue(id, 1, execution_period_final_date);
 		super.checkColumnHasValue(id, 2, execution_period_initial_date);
 		
-		super.clickOnListingRecord(17);
+		super.clickOnListingRecord(11);
 
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("executionPeriod.initialDate", execution_period_initial_date);
