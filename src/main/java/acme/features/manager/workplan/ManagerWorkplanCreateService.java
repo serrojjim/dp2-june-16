@@ -90,10 +90,10 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		if (errors.hasErrors()) {
 			request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
 		} else {
-			final boolean initialDateBeforefinalDate = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
+			final boolean initialDateBeforeFinalDate = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
 			final boolean notAllowedTitle = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
 
-			errors.state(request, initialDateBeforefinalDate, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+			errors.state(request, initialDateBeforeFinalDate, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
 			errors.state(request, notAllowedTitle, "title", "manager.workplan.form.error.spam");
 
 			if (errors.hasErrors()) {
