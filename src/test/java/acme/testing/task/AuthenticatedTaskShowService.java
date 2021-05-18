@@ -50,13 +50,12 @@ public class AuthenticatedTaskShowService extends AcmePlannerTest {
 //	@ParameterizedTest
 //	@CsvFileSource(resources = "/task/authenticatedShowNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
 //	@Order(20)
-//	void showWorkplanManagerNegative(final int id, final int version, final String execution_period_initial_date, final String execution_period_final_date, final Boolean isPrivate, final String title,
-//		final int user_account_id, final String workload) {
+//	void showWorkplanManagerNegative(final int id,final int id_bd) {
 //		
-	//super.signIn("Antonio", "Campuzano");
-//		super.navigate("/authenticated/task/show?", "id=" + id);
-//		super.checkPanicExists();
-	//super.signOut();
+//	super.signIn("Antonio", "Campuzano");
+//	super.navigate("authenticated/task/show", "id=34");
+//	super.checkErrorsExist();
+//	super.signOut();
 //		
 //	}
 	
