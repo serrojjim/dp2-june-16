@@ -235,7 +235,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-				
+				<ref bean="workplan1" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
@@ -271,7 +271,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-				
+				<ref bean="workplan3" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
@@ -304,7 +304,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-				
+				<ref bean="workplan3" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
@@ -336,7 +336,8 @@
 		<property name="isPrivate" value="true" />
 		<property name="workplan">
 			<list>
-				
+				<ref bean="workplan13" />
+				<ref bean="workplan5" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
@@ -369,7 +370,7 @@
 		<property name="isPrivate" value="true" />
 		<property name="workplan">
 			<list>
-				
+				<ref bean="workplan11" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
@@ -401,7 +402,8 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-				
+				<ref bean="workplan7" />
+				<ref bean="workplan11" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
@@ -433,7 +435,8 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-				
+				<ref bean="workplan1" />
+				<ref bean="workplan7" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
@@ -466,7 +469,6 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-				
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
@@ -498,7 +500,7 @@
 		<property name="isPrivate" value="true" />
 		<property name="workplan">
 			<list>
-				
+				<ref bean="workplan5" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
@@ -529,7 +531,7 @@
 		<property name="isPrivate" value="true" />
 		<property name="workplan">
 			<list>
-				
+				<ref bean="workplan11" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
@@ -558,15 +560,19 @@
 
 	<bean id="workplan2" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 2" />
-		<property name="executionPeriod" ref="noFinalizado4" />
+		<property name="executionPeriod" ref="workplan2Ex" />
 		<property name="isPrivate" value="false" />
 		<property name="task">
 			<list>
-			
+			<ref bean="task7" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
-
+	</bean>
+	
+	<bean id="workplan2Ex" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="4/12/21 8:26 AM" />
+		<property name="finalDate" value="9/5/22 7:00 AM" />
 	</bean>
 
 	<bean id="workplan3" class="acme.entities.workplan.Workplan">
@@ -589,14 +595,20 @@
 
 	<bean id="workplan4" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 4" />
-		<property name="executionPeriod" ref="noFinalizado2" />
+		<property name="executionPeriod" ref="workplan4Ex" />
 		<property name="isPrivate" value="false" />
 		<property name="task">
 			<list>
-				
+				<ref bean="task3" />
+				<ref bean="task17" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
+	</bean>
+	
+	<bean id="workplan4Ex" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="4/11/21 8:15 AM" />
+		<property name="finalDate" value="5/26/22 5:27 PM" />
 	</bean>
 
 	<bean id="workplan5" class="acme.entities.workplan.Workplan">
@@ -649,14 +661,19 @@
 
 	<bean id="workplan8" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 8" />
-		<property name="executionPeriod" ref="noFinalizado2" />
+		<property name="executionPeriod" ref="workplan8Ex" />
 		<property name="isPrivate" value="false" />
 		<property name="task">
 			<list>
-				
+				<ref bean="task15" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
+	</bean>
+	
+	<bean id="workplan8Ex" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="4/29/21 8:00 AM" />
+		<property name="finalDate" value="9/6/22 5:00 PM" />
 	</bean>
 
 	<bean id="workplan9" class="acme.entities.workplan.Workplan">
@@ -702,13 +719,20 @@
 
 	<bean id="workplan12" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 12" />
-		<property name="executionPeriod" ref="noFinalizado2" />
+		<property name="executionPeriod" ref="workplan12Ex" />
 		<property name="isPrivate" value="true" />
 		<property name="task">
 			<list>
+			<ref bean="task9" />
+			<ref bean="task5" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
+	</bean>
+	
+	<bean id="workplan12Ex" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="3/12/21 8:14 AM" />
+		<property name="finalDate" value="7/12/21 4:30 PM" />
 	</bean>
 
 	<bean id="workplan13" class="acme.entities.workplan.Workplan">
@@ -730,13 +754,21 @@
 
 	<bean id="workplan14" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 14" />
-		<property name="executionPeriod" ref="finalizado4" />
+		<property name="executionPeriod" ref="workplan14Ex" />
 		<property name="isPrivate" value="true" />
 		<property name="task">
 			<list>
+			<ref bean="task19" />
+			<ref bean="task11" />
+			<ref bean="task13" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
+	</bean>
+	
+	<bean id="workplan14Ex" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="5/11/21 8:15 AM" />
+		<property name="finalDate" value="9/8/22 5:57 PM" />
 	</bean>
 
 	<!-- Shout -->
@@ -857,20 +889,26 @@
 		</property>
 		<property name="task">
 			<list>
-				<ref bean="task1" />
-				<ref bean="task3" />
-				<ref bean="task5" />
+				<ref bean="task2" />
+				<ref bean="task4" />
+				<ref bean="task6" />
+				<ref bean="task8" />
+				<ref bean="task10" />
+				<ref bean="task12" />
+				<ref bean="task14" />
+				<ref bean="task16" />
+				<ref bean="task18" />
+				<ref bean="task20" />
 			</list>
 		</property>
 		<property name="workplan">
 			<list>
 				<ref bean="workplan1" />
-				<ref bean="workplan4" />
+				<ref bean="workplan3" />
 				<ref bean="workplan5" />
 				<ref bean="workplan7" />
-				<ref bean="workplan10" />
 				<ref bean="workplan11" />
-				<ref bean="workplan14" />
+				<ref bean="workplan13" />
 			</list>
 		</property>
 	</bean>
@@ -895,19 +933,26 @@
 		</property>
 		<property name="task">
 			<list>
-				<ref bean="task2" />
-				<ref bean="task4" />
+				<ref bean="task1" />
+				<ref bean="task3" />
+				<ref bean="task5" />
+				<ref bean="task7" />
+				<ref bean="task9" />
+				<ref bean="task11" />
+				<ref bean="task13" />
+				<ref bean="task15" />
+				<ref bean="task17" />
+				<ref bean="task19" />
 			</list>
 		</property>
 		<property name="workplan">
 			<list>
 				<ref bean="workplan2" />
-				<ref bean="workplan3" />
+				<ref bean="workplan4" />
 				<ref bean="workplan6" />
 				<ref bean="workplan8" />
-				<ref bean="workplan9" />
+				<ref bean="workplan10" />
 				<ref bean="workplan12" />
-				<ref bean="workplan13" />
 			</list>
 		</property>
 	</bean>
@@ -932,21 +977,6 @@
 				<ref bean="authenticatedAuthenticated2" />
 			</list>
 		</property>
-		<property name="task">
-			<list>
-				<ref bean="task4" />
-				<ref bean="task5" />
-				<ref bean="task6" />
-
-			</list>
-		</property>
-		<property name="workplan">
-			<list>
-				<ref bean="workplan4" />
-				<ref bean="workplan5" />
-				<ref bean="workplan6" />
-			</list>
-		</property>
 	</bean>
 
 
@@ -965,23 +995,6 @@
 		<property name="roles">
 			<list>
 				<ref bean="authenticatedAuthenticated3" />
-			</list>
-		</property>
-		<property name="task">
-			<list>
-				<ref bean="task7" />
-				<ref bean="task8" />
-				<ref bean="task9" />
-				<ref bean="task14" />
-				<ref bean="task15" />
-				<ref bean="task16" />
-
-			</list>
-		</property>
-		<property name="workplan">
-			<list>
-				<ref bean="workplan4" />
-
 			</list>
 		</property>
 	</bean>
