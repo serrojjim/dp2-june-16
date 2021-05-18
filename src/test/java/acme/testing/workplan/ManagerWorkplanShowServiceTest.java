@@ -10,7 +10,7 @@ public class ManagerWorkplanShowServiceTest extends AcmePlannerTest {
 
 	/**
 	 * Sign in as a manager, list all my workplans, show one
-	 * and check that every value is correct.
+	 * and check that every value is right.
 	 * No errors expected.
 	 */
 	@ParameterizedTest
