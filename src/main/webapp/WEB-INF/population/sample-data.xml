@@ -571,14 +571,20 @@
 
 	<bean id="workplan3" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 3" />
-		<property name="executionPeriod" ref="finalizado1" />
+		<property name="executionPeriod" ref="workplan3Ex" />
 		<property name="isPrivate" value="false" />
 		<property name="task">
 			<list>
-				<ref bean="task1" />
+				<ref bean="task4" />
+				<ref bean="task6" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" /> 
+	</bean>
+	
+	<bean id="workplan3Ex" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="2/20/21 8:14 AM" />
+		<property name="finalDate" value="5/18/21 5:15 PM" />
 	</bean>
 
 	<bean id="workplan4" class="acme.entities.workplan.Workplan">
@@ -595,14 +601,20 @@
 
 	<bean id="workplan5" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 5" />
-		<property name="executionPeriod" ref="finalizado3" />
-		<property name="isPrivate" value="false" />
+		<property name="executionPeriod" ref="workplan5Ex" />
+		<property name="isPrivate" value="true" />
 		<property name="task">
 			<list>
-				
+				<ref bean="task8" />
+				<ref bean="task18" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
+	</bean>
+	
+	<bean id="workplan5Ex" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="1/4/21 8:14 AM" />
+		<property name="finalDate" value="3/22/22 5:32 PM" />
 	</bean>
 
 	<bean id="workplan6" class="acme.entities.workplan.Workplan">
@@ -619,14 +631,20 @@
 
 	<bean id="workplan7" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 7" />
-		<property name="executionPeriod" ref="noFinalizado1" />
+		<property name="executionPeriod" ref="workplan7Ex" />
 		<property name="isPrivate" value="false" />
 		<property name="task">
 			<list>
-				
+				<ref bean="task14" />
+				<ref bean="task12" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
+	</bean>
+	
+	<bean id="workplan7Ex" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="5/12/21 10:15 AM" />
+		<property name="finalDate" value="12/24/22 5:30 PM" />
 	</bean>
 
 	<bean id="workplan8" class="acme.entities.workplan.Workplan">
@@ -665,13 +683,21 @@
 
 	<bean id="workplan11" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 11" />
-		<property name="executionPeriod" ref="noFinalizado1" />
+		<property name="executionPeriod" ref="workplan11Ex" />
 		<property name="isPrivate" value="true" />
 		<property name="task">
 			<list>
+			<ref bean="task20" />
+			<ref bean="task12" />
+			<ref bean="task10" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
+	</bean>
+	
+	<bean id="workplan11Ex" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="3/14/21 8:00 AM" />
+		<property name="finalDate" value="6/30/21 3:30 PM" />
 	</bean>
 
 	<bean id="workplan12" class="acme.entities.workplan.Workplan">
@@ -687,13 +713,19 @@
 
 	<bean id="workplan13" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 13" />
-		<property name="executionPeriod" ref="finalizado3" />
+		<property name="executionPeriod" ref="workplan13Ex" />
 		<property name="isPrivate" value="true" />
 		<property name="task">
 			<list>
+			<ref bean="task8" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerAntonio" />
+	</bean>
+	
+	<bean id="workplan13Ex" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="1/4/21 8:14 AM" />
+		<property name="finalDate" value="4/21/21 11:15 AM" />
 	</bean>
 
 	<bean id="workplan14" class="acme.entities.workplan.Workplan">
