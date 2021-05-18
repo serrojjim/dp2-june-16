@@ -52,11 +52,16 @@ public abstract class AcmeTest extends AbstractTest {
 	}
 
 	protected void checkPanicExists() {
-		assert false;
+		
+		By locator = By.xpath(String.format("//h1[normalize-space()'Unexpected error']"));
+		assert super.exists(locator) : "Errors were expected in current query";
 	}
 
 	protected void checkNotPanicExists() {
-		assert false;
+		By locator;
+
+		locator = By.linkText("Unexpected error");
+		assert !super.exists(locator) : "Errors were not expected in current query";
 	}
 
 	protected void checkErrorsExist() {
@@ -335,6 +340,33 @@ public abstract class AcmeTest extends AbstractTest {
 		result = row.findElements(columnLocator);
 
 		return result;
+	}
+	
+	protected void signIn(final String username, final String password) {
+		super.navigateHome();
+		super.clickAndGo(By.linkText("Sign in"));
+		super.fill(By.id("username"), username);
+		super.fill(By.id("password"), password);
+		super.clickAndGo(By.id("remember$proxy"));
+		super.clickAndGo(By.className("btn-primary"));
+	}
+
+	protected void signOut() {
+		super.navigateHome();
+		super.clickAndGo(By.linkText("Sign out"));
+	}
+
+	protected void signUp(final String username, final String password, final String name, final String surname, final String email) {
+		super.navigateHome();
+		super.clickAndGo(By.linkText("Sign up"));
+		super.fill(By.id("username"), username);
+		super.fill(By.id("password"), password);
+		super.fill(By.id("confirmation"), password);
+		super.fill(By.id("identity.name"), name);
+		super.fill(By.id("identity.surname"), surname);
+		super.fill(By.id("identity.email"), email);
+		super.clickAndGo(By.id("accept$proxy"));
+		super.clickAndGo(By.className("btn-primary"));
 	}
 
 }

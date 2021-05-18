@@ -33,4 +33,6 @@ public interface ManagerWorkplanRepository extends AbstractRepository {
 	@Query("SELECT w FROM Workplan w WHERE w.id = ?1 and w.userAccount.id = ?2")
 	Optional<Workplan> findOneWorkplanByIdAndUA(int workplanId, int userAcountId);
 	
+	@Query("SELECT w FROM Workplan w")
+	List<Workplan> findMany();
 }

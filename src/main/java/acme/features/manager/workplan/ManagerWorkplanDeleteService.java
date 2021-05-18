@@ -1,3 +1,4 @@
+
 package acme.features.manager.workplan;
 
 import java.util.NoSuchElementException;
@@ -15,11 +16,12 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manager, Workplan>  {
+public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manager, Workplan> {
 
 	@Autowired
 	protected ManagerWorkplanRepository repository;
-	
+
+
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
 		assert request != null;
@@ -27,41 +29,28 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		final String rol = request.getPrincipal().getActiveRole().getSimpleName();
 		final int userAcountId = request.getPrincipal().getAccountId();
 		final int taskId = request.getModel().getInteger("id");
-		
+
 		final Optional<Workplan> workplan = this.repository.findOneWorkplanByIdAndUA(taskId, userAcountId);
-		
+
 		return (rol.equals("Manager") && workplan.isPresent());
 	}
 
 	@Override
 	public void bind(final Request<Workplan> request, final Workplan entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
-
-		request.bind(entity, errors);
+		//Este metodo está vacio puesto que no es utilizado. 
+		//Para encontrar su definicion previa se puede acudir a un commit anterior
 	}
 
 	@Override
 	public void unbind(final Request<Workplan> request, final Workplan entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
-
-		model.setAttribute("workload", entity.getTotalWorkload());
-
-		request.unbind(entity, model, 
-			"title", 
-			"executionPeriod.finalDate",
-			"executionPeriod.initialDate",
-			"isPrivate",
-			"task");
+		//Este metodo está vacio puesto que no es utilizado. 
+		//Para encontrar su definicion previa se puede acudir a un commit anterior
 	}
 
 	@Override
 	public Workplan findOne(final Request<Workplan> request) {
 		assert request != null;
-		
+
 		final int id = request.getModel().getInteger("id");
 
 		return this.repository.findById(id).orElseThrow(NoSuchElementException::new);
@@ -72,7 +61,7 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
+
 	}
 
 	@Override
@@ -80,13 +69,13 @@ public class ManagerWorkplanDeleteService implements AbstractDeleteService<Manag
 		assert request != null;
 		assert entity != null;
 
-		for (final Task task : entity.getTask()){
+		for (final Task task : entity.getTask()) {
 			task.getWorkplan().remove(entity);
 			this.repository.save(task);
 		}
-		
+
 		entity.getTask().clear();
-		
+
 		this.repository.delete(entity);
 	}
 

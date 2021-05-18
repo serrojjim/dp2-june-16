@@ -64,8 +64,6 @@ public class AdministratorSpamUpdateService implements AbstractUpdateService<Adm
 			assert request != null;
 			assert entity != null;
 			assert errors != null;
-			
-			assert entity.getThreshold() >= 0 && entity.getThreshold() <= 1;
 		}
 
 		@Override

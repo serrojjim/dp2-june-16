@@ -57,8 +57,8 @@ public class Workplan extends DomainEntity{
 	
 	// Derived attributes
 		
-		public Double getTotalWorkload() {
-			return this.getTask().stream().mapToDouble(Task::getWorkload).sum();
+		public static Double getTotalWorkload(final Workplan workplan) {
+			return workplan.getTask().stream().mapToDouble(Task::getWorkload).sum();
 		}
 		
 		public void addTask(final Task task) {
@@ -105,7 +105,10 @@ public class Workplan extends DomainEntity{
  		}
 		
 		public boolean isPublished(final List<Spam> spam) {
-			return !(this.isPrivate || Spam1.isSpam(this.title, spam) && this.getTitle().trim().isEmpty());
+			return !(
+				this.isPrivate ||
+				Spam1.isSpam(this.title, spam) &&
+				!this.getTitle().trim().isEmpty());
 		}
  
 		@Override
