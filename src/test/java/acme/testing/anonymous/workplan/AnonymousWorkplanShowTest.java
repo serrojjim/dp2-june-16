@@ -19,9 +19,9 @@ public class AnonymousWorkplanShowTest extends AcmePlannerTest{
     * No errors expected.
     */
     @ParameterizedTest
-    @CsvFileSource(resources = "/anonymous/workplan/show.csv", encoding = "utf-8", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/anonymous/workplan/showPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)
-    void showWorkplanManagerPositive(final int recordIndex, final String execution_period_final_date, final String execution_period_initial_date, final String title, final String workload) {
+    void showPositive(final int recordIndex, final String execution_period_final_date, final String execution_period_initial_date, final String title, final String workload) {
         super.clickOnMenu("Anonymous", "List workplans by Workload");
 
         super.clickOnListingRecord(recordIndex);
@@ -32,4 +32,17 @@ public class AnonymousWorkplanShowTest extends AcmePlannerTest{
         super.checkInputBoxHasValue("executionPeriod.finalDate", execution_period_final_date);
         super.checkInputBoxHasValue("workload", workload);
     }
+    
+    /**
+	 * As an anonymous user, tries to show a non-existing, private or finished workplan and expect a panic.
+	 */
+	@ParameterizedTest
+	@CsvFileSource(resources = "/anonymous/workplan/showNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(20)
+	void showNegative(final int id) {
+		super.navigate("/anonymous/workplan/show", "id=" + id);
+		
+		super.checkPanicExists();
+	}
+
 }

@@ -8,6 +8,10 @@ import acme.testing.AcmePlannerTest;
 
 public class AdministratorSpamUpdateTest extends AcmePlannerTest{
 	
+	/**
+	 * Sign in as a administrator and update the threshold value.
+	 * No errors expected.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/spam/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -24,6 +28,10 @@ public class AdministratorSpamUpdateTest extends AcmePlannerTest{
 		super.signOut();
 	}
 	
+	/**
+	 * Sign in as a administrator and update the threshold value with invalid values.
+	 * Errors expected.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/spam/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
