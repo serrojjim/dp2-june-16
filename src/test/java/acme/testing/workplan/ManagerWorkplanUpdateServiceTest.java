@@ -5,19 +5,21 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import acme.testing.AcmePlannerTest;
 
 public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 
 	/**
-	 * Sign in as a manager, create a workplan, list all my workplans, show the recently created one
-	 * and check that every value is correct.
-	 * No errors expected.
+	 * Sign in as a manager, show a workplan, modify some fields, update them
+	 * and check that every value is correct. No errors expected.
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/workplan/update/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	void updateWorkplanManagerPositive(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date, final Boolean isPrivate, final String title, final int user_account_id, final String workload) {
+	@Order(20)
+	void updateWorkplanManagerPositive(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date,
+		final Boolean isPrivate, final String title, final int user_account_id, final String workload) {
 		super.signIn("Antonio", "Campuzano");
 
 		super.clickOnMenu("Manager", "List workplans");
@@ -29,45 +31,79 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 
 		super.clickOnListingRecord(id);
 
-		
-		//Rellenar con valores 
 		super.fillInputBoxIn("title", "Prueba de actualizacion");
-		super.fillInputBoxIn("executionPeriod.initialDate", "");
-		super.fillInputBoxIn("executionPeriod.finalDate", "");
+		super.fillInputBoxIn("executionPeriod.initialDate", "8/12/22 1:00 AM");
+		super.fillInputBoxIn("executionPeriod.finalDate", "12/12/22 2:00 AM");
 		
-		//No estoy seguro de que sea asi
-		super.fill(By.id("task"), "3");
-
+		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[11]"));
+		final WebElement option = super.locateOne(optionLocator);
+		option.click();
+		
+		super.clickOnSubmitButton("Update");
+		
+		super.checkColumnHasValue(id, 0, "Prueba de actualizacion");
+		super.checkColumnHasValue(id, 1, "12/12/22 2:00 AM");
+		super.checkColumnHasValue(id, 2, "5/11/21 8:00 AM");
+		super.checkColumnHasValue(id, 3, "42.00");
+		
 		super.signOut();
 	}
 
 	/**
-	 * Signs in as a manager, tries to create a public workplan with spam in the title and the initial date after the final date
+	 * Signs in as a manager, tries to modify a public workplan with spam in the title, initial and final date with invalid format
 	 * and check that it has errors on the title and on the dates. Thus, it wont be created.
 	 */
 	@ParameterizedTest
-	@CsvFileSource(resources = "/workplan/update/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(40)
-	void updateWorkplanManagerNegative(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date, final Boolean isPrivate, final String title, final int user_account_id, final String workload) {
+	@CsvFileSource(resources = "/workplan/update/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(30)
+	void updateWorkplanManagerNegativeSpamTitleInvalidDateFormat(final int id, final int version, final String execution_period_final_date, 
+		final String execution_period_initial_date, final Boolean isPrivate, final String title, final int user_account_id, final String workload) {
 		super.signIn("Antonio", "Campuzano");
 
 		super.clickOnMenu("Manager", "List workplans");
 
-		super.checkColumnHasValue(id, 0, title);
-		super.checkColumnHasValue(id, 1, execution_period_final_date);
-		super.checkColumnHasValue(id, 2, execution_period_initial_date);
-		super.checkColumnHasValue(id, 3, workload);
+		super.clickOnListingRecord(id);
+
+		super.fillInputBoxIn("title", "sex sex sex");
+		super.fillInputBoxIn("executionPeriod.initialDate", "invalid format date");
+		super.fillInputBoxIn("executionPeriod.finalDate", "invalid format date");
+		
+		super.clickOnSubmitButton("Update");
+		
+		super.checkErrorsExist("title");
+		super.checkErrorsExist("executionPeriod.initialDate");
+		super.checkErrorsExist("executionPeriod.finalDate");
+		
+		super.signOut();
+	}
+	
+	/**
+	 * Signs in as a manager, tries to modify a private workplan adding a private task.
+	 * Then tries to convert it into a public workplan, which is illegal.
+	 * Raises the expected error and the workplan is not updated.
+	 */
+	@ParameterizedTest
+	@CsvFileSource(resources = "/workplan/update/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(40)
+	void updateWorkplanManagerNegativePrivateTaskPublicWorkplan(final int id, final int version, final String execution_period_final_date, 
+		final String execution_period_initial_date, final Boolean isPrivate, final String title, final int user_account_id, final String workload) {
+		super.signIn("Antonio", "Campuzano");
+
+		super.clickOnMenu("Manager", "List workplans");
 
 		super.clickOnListingRecord(id);
 
-		//Podemos probar o vacio o con palabras spam
-		super.fillInputBoxIn("title", " ");
-		// Una fecha de inicio posterior a la de fin para que salta error
-		super.fillInputBoxIn("executionPeriod.initialDate", "");
-		super.fillInputBoxIn("executionPeriod.finalDate", "");
-		// Una tarea random que sea privada para que al intentar meterselo a una publica reviente tambien
-		super.fill(By.id("task"), "3");
+		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[21]"));
+		final WebElement option = super.locateOne(optionLocator);
+		option.click();
+		
+		super.clickOnSubmitButton("Update");
 
+		super.clickOnListingRecord(id);
+
+		super.clickOnSubmitButton("Change privacy to public");
+		super.checkErrorsExist();
+		
 		super.signOut();
 	}
 

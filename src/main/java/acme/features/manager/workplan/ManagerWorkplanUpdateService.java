@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.Spam.Spam1;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
@@ -67,21 +68,8 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 	@Override
 	public void unbind(final Request<Workplan> request, final Workplan entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
-
-		model.setAttribute("workload", Workplan.getTotalWorkload(entity));
-
-		model.setAttribute("Tasks", model);
-
-		if (entity.getIsPrivate().booleanValue()) {
-			model.setAttribute("allTasks", this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId()));
-		} else {
-			model.setAttribute("allTasks", this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId()));
-		}
-
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate", "isPrivate", "task");
+		//Este metodo está vacio puesto que no se utiliza. 
+		//Para encontrar su definicion previa se puede acudir a un commit anterior
 	}
 
 	@Override
@@ -104,16 +92,6 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		} catch (final Throwable t) {
 		}
 
-		final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
-		errors.state(request, condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
-		errors.state(request, condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
-
-		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
-		errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
-
-		final boolean condition2 = entity.isPublished(this.spamRepository.findSpam());
-		errors.state(request, condition2, "title", "manager.workplan.form.error.spam");
-
 		if (errors.hasErrors()) {
 			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 			request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
@@ -121,30 +99,38 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 			request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
 
 		} else {
-			Object taskDebug = null;
-			
-			try {
-				taskDebug = request.getModel().getAttribute("task");
-			} catch (final Throwable t) {
-			}
 
-			if (taskDebug != null && !taskDebug.equals("")) {
-				final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
+			final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
+			errors.state(request, condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+			errors.state(request, condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
 
-				final Boolean condition3 = entity.getIsPrivate().booleanValue() || !parsedTask.getIsPrivate();
-				errors.state(request, condition3, "isPrivate", "manager.workplan.form.button.error");
+			final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
+			errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
 
-				if (errors.hasErrors()) {
-					final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
-					request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-					request.getModel().setAttribute("allTasksAlreadySelected", myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-					request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
-				} else {
+			final boolean condition2 = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
+			errors.state(request, condition2, "title", "manager.workplan.form.error.spam");
+
+			if (errors.hasErrors()) {
+				final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
+				request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
+				request.getModel().setAttribute("allTasksAlreadySelected", myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
+				request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+
+			} else {
+				Object taskDebug = null;
+
+				try {
+					taskDebug = request.getModel().getAttribute("task");
+				} catch (final Throwable t) {
+				}
+
+				if (taskDebug != null && !taskDebug.equals("")) {
+					final Task parsedTask = this.taskRepository.findTaskById(Integer.parseInt(taskDebug.toString()));
+
 					entity.addTask(parsedTask);
 					parsedTask.addWorkplan(entity);
 				}
 			}
-
 		}
 	}
 
