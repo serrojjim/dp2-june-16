@@ -6,7 +6,7 @@ import org.springframework.core.annotation.Order;
 
 import acme.testing.AcmePlannerTest;
 
-public class ManagerTaskShowService extends AcmePlannerTest {
+public class ManagerTaskShowServiceTest extends AcmePlannerTest {
 
 	// Test cases -------------------------------------------------------------
 

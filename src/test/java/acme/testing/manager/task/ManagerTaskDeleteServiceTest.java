@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.AcmePlannerTest;
 
-public class ManagerTaskDeleteService extends AcmePlannerTest{
+public class ManagerTaskDeleteServiceTest extends AcmePlannerTest{
 	/**
 	 * Sign in as a manager and delete a task.
 	 * No errors expected.
