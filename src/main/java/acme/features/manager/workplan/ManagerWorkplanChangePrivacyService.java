@@ -43,22 +43,14 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 
 	@Override
 	public void bind(final Request<Workplan> request, final Workplan entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
-
-		request.bind(entity, errors);
+		//Este metodo está vacio puesto que no es utilizado. 
+		//Para encontrar su definicion previa se puede acudir a un commit anterior
 	}
 
 	@Override
 	public void unbind(final Request<Workplan> request, final Workplan entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
-
-		model.setAttribute("workload", Workplan.getTotalWorkload(entity));
-
-		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate", "isPrivate", "task");
+		//Este metodo está vacio puesto que no es utilizado. 
+		//Para encontrar su definicion previa se puede acudir a un commit anterior
 	}
 
 	@Override
@@ -77,35 +69,15 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 
 		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(true));
 		errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
-		
-		if(errors.hasErrors()) {
+
+		if (errors.hasErrors()) {
 			request.getModel().setAttribute("workload", Workplan.getTotalWorkload(entity));
-			
 			request.getModel().setAttribute("isPrivate", entity.getIsPrivate());
-			
-			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
-			
-			if (entity.getIsPrivate().booleanValue()) {
-				final List<Task> l = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId())
-					.stream()
-					.filter(x -> !x.getWorkplan().contains(entity))
-					.collect(Collectors.toList());
-				
-				request.getModel().setAttribute("allTasksAvailable", l);
-			} else {
-				final List<Task> l = this.taskRepository.findAllMyTaskOnlyPublic(request.getPrincipal().getAccountId())
-					.stream()
-					.filter(x -> !x.getWorkplan().contains(entity))
-					.collect(Collectors.toList());
-				
-				request.getModel().setAttribute("allTasksAvailable", l);
-			}
-			
-			request.getModel().setAttribute("allTasksAlreadySelected", 
-				myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
-			
 			request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
-			
+
+			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
+			request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
+			request.getModel().setAttribute("allTasksAlreadySelected", myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
 			
 		}
 
@@ -116,12 +88,8 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 		assert request != null;
 		assert entity != null;
 
-		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(true));
-
-		if (!condition1.booleanValue()) {
-			entity.setIsPrivate(!entity.getIsPrivate());
-			this.repository.save(entity);
-		}
+		entity.setIsPrivate(!entity.getIsPrivate());
+		this.repository.save(entity);
 
 	}
 

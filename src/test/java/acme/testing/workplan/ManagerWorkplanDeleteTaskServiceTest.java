@@ -15,7 +15,7 @@ public class ManagerWorkplanDeleteTaskServiceTest extends AcmePlannerTest {
 	 * has been updated succesfully. No errors expected.
 	 */
 	@ParameterizedTest
-	@CsvFileSource(resources = "/workplan/deleteTaskFromWorkplanPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/workplan/deleteTaskFromWorkplan/delete-task-from-workplan-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
 	void deleteTaskFromWorkplanManagerPositive(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date, final Boolean isPrivate, final String title,
 		final int user_account_id, final String workload, final Double workloadDiff) {
@@ -45,20 +45,20 @@ public class ManagerWorkplanDeleteTaskServiceTest extends AcmePlannerTest {
 		super.signOut();
 	}
 	
-//	/**
-//	 * Sign in as a manager and try to delete a task from a workplan that I do not own. A panic is expected.
-//	 */
-//	@ParameterizedTest
-//	@CsvFileSource(resources = "/workplan/deleteTaskFromWorkplanPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
-//	@Order(20)
-//	void deleteTaskFromWorkplanManagerNegative(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date, final Boolean isPrivate, final String title,
-//		final int user_account_id, final String workload, final Double workloadDiff) {
-//		super.signIn("Sergio", "Rojas");
-//		
-//		super.navigate("/manager/workplan/delete_task_workplan", "workplanId=22&taskId=34");
-//		super.checkPanicExists();
-//		
-//		super.signOut();
-//	}
+	/**
+	 * Sign in as a manager and try to delete a task from a workplan that I do not own. A panic is expected.
+	 */
+	@ParameterizedTest
+	@CsvFileSource(resources = "/workplan/deleteTaskFromWorkplan/delete-task-from-workplan-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(20)
+	void deleteTaskFromWorkplanManagerNegative(final int id, final int version, final String execution_period_final_date, final String execution_period_initial_date, final Boolean isPrivate, final String title,
+		final int user_account_id, final String workload, final Double workloadDiff) {
+		super.signIn("Sergio", "Rojas");
+		
+		super.navigate("/manager/workplan/delete_task_workplan", "workplanId=22&taskId=34");
+		super.checkPanicExists();
+		
+		super.signOut();
+	}
 	
 }

@@ -46,6 +46,7 @@ public class Task extends DomainEntity{
 		protected Double			workload;
 
 		@NotNull
+		@Valid
 		protected ExecutionPeriod executionPeriod;
 		
 		

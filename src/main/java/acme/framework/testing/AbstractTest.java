@@ -328,6 +328,7 @@ public abstract class AbstractTest {
 		navigator.run();
 		wait = new WebDriverWait(this.driver, this.defaultTimeout);
 		wait.until(WaitConditions.stalenessOf(oldHtml, htmlLocator));
+	
 	}
 	
 	// Click methods ----------------------------------------------------------
