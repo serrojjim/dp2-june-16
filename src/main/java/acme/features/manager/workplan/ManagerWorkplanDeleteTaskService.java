@@ -37,14 +37,16 @@ public class ManagerWorkplanDeleteTaskService implements AbstractDeleteService<M
 		return (rol.equals("Manager") && workplan.isPresent());
 	}
 
-	//Estos metodos están vacios puesto que no se utilizan. 
-	//Para encontrar su definicion previa se puede acudir a un commit anterior
 	@Override
 	public void bind(final Request<Workplan> request, final Workplan entity, final Errors errors) {
+		//Estos metodos están vacios puesto que no se utilizan. 
+		//Para encontrar su definicion previa se puede acudir a un commit anterior
 	}
 
 	@Override
 	public void unbind(final Request<Workplan> request, final Workplan entity, final Model model) {
+		//Estos metodos están vacios puesto que no se utilizan. 
+		//Para encontrar su definicion previa se puede acudir a un commit anterior
 	}
 
 	@Override
