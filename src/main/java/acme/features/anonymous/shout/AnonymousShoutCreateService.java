@@ -81,13 +81,13 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		if(!entity.getAuthor().isEmpty()) {
 		final boolean condition1 =  !Spam1.isSpam(entity.getAuthor(), this.spamRepository.findSpam());
 
-		errors.state(request, condition1, "author", "Nombre de Autor con Spam");
+		errors.state(request, condition1, "author", "anonymous.shout.form.error.author");
 		
 		}
 		if(!entity.getText().isEmpty()) {
 		final boolean condition2 =  !Spam1.isSpam(entity.getText(), this.spamRepository.findSpam());
 
-		errors.state(request, condition2, "text", "Este texto es Spam");
+		errors.state(request, condition2, "text", "anonymous.shout.form.error.text");
 		
 		}
 		

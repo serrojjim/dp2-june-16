@@ -19,3 +19,7 @@ anonymous.shout.list.label.moment = Momento
 anonymous.shout.list.label.author = Autor
 anonymous.shout.list.label.text = Texto
 anonymous.shout.list.label.link = Información
+
+
+anonymous.shout.form.error.author = Nombre de Autor con Spam
+anonymous.shout.form.error.text = Este texto es Spam
