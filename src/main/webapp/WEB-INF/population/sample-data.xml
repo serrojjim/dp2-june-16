@@ -103,6 +103,83 @@
 	
 	<!-- ExecutionPeriod -->
 	
+	<bean id="finalizadoTask3" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="04/12/21 10:15 AM" />
+		<property name="finalDate" value="04/21/21 11:15 AM" />
+	</bean>
+	
+	<bean id="finalizadoTask4" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="05/17/21 10:15 AM" />
+		<property name="finalDate" value="05/17/21 3:15 PM" />
+	</bean>
+	
+	<bean id="finalizadoTask5" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="03/13/21 11:14 AM" />
+		<property name="finalDate" value="03/15/21 9:33 AM" />
+	</bean>
+	
+		<bean id="finalizadoTask6" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="02/21/21 3:14 PM" />
+		<property name="finalDate" value="02/26/21 6:14 PM" />
+	</bean>
+	
+	<bean id="finalizadoTask7" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="04/13/21 11:26 AM" />
+		<property name="finalDate" value="04/15/21 9:13 PM" />
+	</bean>
+	
+	<bean id="finalizadoTask8" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="01/05/21 11:14 AM" />
+		<property name="finalDate" value="03/07/21 12:14 AM" />
+	</bean>
+	
+	<bean id="finalizadoTask9" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="04/13/21 11:14 AM" />
+		<property name="finalDate" value="04/15/21 2:14 PM" />
+	</bean>
+	
+	<bean id="finalizadoTask10" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="03/15/21 3:00 AM" />
+		<property name="finalDate" value="05/17/21 7:00 AM" />
+	</bean>
+	
+	
+	<bean id="noFinalizado13" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="04/29/22 8:00 AM" />
+		<property name="finalDate" value="07/12/22 4:30 PM" />
+	</bean>
+	
+	<bean id="noFinalizado14" class="acme.datatypes.ExecutionPeriod">
+	<property name="initialDate" value="10/24/22 8:15 AM" />
+		<property name="finalDate" value="12/23/22 5:30 PM" />
+	</bean>
+	
+	<bean id="noFinalizado15" class="acme.datatypes.ExecutionPeriod">
+			<property name="initialDate" value="08/2/22 11:00 AM" />
+		<property name="finalDate" value="09/5/22 7:00 AM" />
+	</bean>
+	
+	<bean id="noFinalizado16" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="05/12/22 10:15 AM" />
+		<property name="finalDate" value="06/30/22 3:30 PM" />
+	</bean>
+	
+	<bean id="noFinalizado17" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="04/12/22 11:25 AM" />
+		<property name="finalDate" value="05/25/22 3:27 PM" />
+	</bean>
+	
+	<bean id="noFinalizado18" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="01/11/22 11:14 AM" />
+		<property name="finalDate" value="03/21/22 4:32 PM" />
+	</bean>
+	
+	<bean id="noFinalizado19" class="acme.datatypes.ExecutionPeriod">
+		<property name="initialDate" value="07/01/22 9:11 AM" />
+		<property name="finalDate" value="09/07/22 5:57 PM" />
+	</bean>
+	
+	
 	<bean id="finalizado1" class="acme.datatypes.ExecutionPeriod">
 		<property name="initialDate" value="04/12/21 10:15 AM" />
 		<property name="finalDate" value="04/21/21 3:30 PM" />
@@ -122,6 +199,8 @@
 		<property name="initialDate" value="09/01/20 8:15 AM" />
 		<property name="finalDate" value="11/1/20 5:30 PM" />
 	</bean>
+	
+	
 
 	<bean id="noFinalizado1" class="acme.datatypes.ExecutionPeriod">
 		<property name="initialDate" value="05/12/21 10:15 AM" />
@@ -148,7 +227,7 @@
     <bean id="task1" class="acme.entities.task.Task">
         <property name="title" value="anonymous 1"/>
         <property name="description" value="anonymous "/>
-        <property name="workload" value="24.0"/>
+        <property name="workload" value="0.0"/>
         <property name="executionPeriod" ref="finalizado1"/>
         <property name="url" value="https://github.com/serrojjim/dp2-june-16"/>
         <property name="isPrivate" value="false"/>
@@ -193,9 +272,9 @@
 
 
     <bean id="task3" class="acme.entities.task.Task">
-        <property name="title" value="anonymous 3"/>
-        <property name="description" value="anonymous "/>
-        <property name="workload" value="21.0"/>
+        <property name="title" value="Clone github repository"/>
+        <property name="description" value="Clone the repository whose URL is located at the URL field "/>
+        <property name="workload" value="0.5"/>
         <property name="executionPeriod" ref="finalizado1"/>
         <property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
         <property name="isPrivate" value="false"/>
@@ -213,14 +292,15 @@
 
 
     <bean id="task4" class="acme.entities.task.Task">
-        <property name="title" value="anonymous 4"/>
-        <property name="description" value="anonymous "/>
-        <property name="workload" value="6.0"/>
-        <property name="executionPeriod" ref="finalizado1"/>
-        <property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+        <property name="title" value="Deploy App"/>
+        <property name="description" value="Deploy our App in clevercloud "/>
+        <property name="workload" value="2.0"/>
+        <property name="executionPeriod" ref="finalizadoTask4"/>
+        <property name="url" value="https://www.clevercloud.com"/>
         <property name="isPrivate" value="false"/>
         <property name="userAccount">
             <list>
+                <ref bean="authenticatedUserAccount2"/>
                 <ref bean="managerAntonio"/>
             </list>
         </property>
@@ -228,82 +308,84 @@
 
 
     <bean id="task5" class="acme.entities.task.Task">
-        <property name="title" value="anonymous 5"/>
-        <property name="description" value="anonymous "/>
-        <property name="workload" value="16.0"/>
-        <property name="executionPeriod" ref="finalizado1"/>
-        <property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+        <property name="title" value="Maintenance"/>
+        <property name="description" value="Listen to our clients and solve their requests"/>
+        <property name="workload" value="30.0"/>
+        <property name="executionPeriod" ref="finalizadoTask5"/>
+        <property name="url" value=""/>
         <property name="isPrivate" value="false"/>
         <property name="userAccount">
             <list>
+                <ref bean="authenticatedUserAccount2"/>
                 <ref bean="managerAntonio"/>
             </list>
         </property>
     </bean>
 
    <bean id="task6" class="acme.entities.task.Task">
-        <property name="title" value="anonymous 6"/>
-        <property name="description" value="anonymous "/>
-        <property name="workload" value="1.0"/>
-        <property name="executionPeriod" ref="finalizado1"/>
-        <property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+        <property name="title" value="Create causes functionallity"/>
+        <property name="description" value="Create this functionallity to allow our clients donate to the organisations "/>
+        <property name="workload" value="60.0"/>
+        <property name="executionPeriod" ref="finalizadoTask6"/>
+        <property name="url" value=""/>
         <property name="isPrivate" value="false"/>
         <property name="userAccount">
             <list>
+                <ref bean="authenticatedUserAccount2"/>
                 <ref bean="managerAntonio"/>
             </list>
         </property>
     </bean>
 
    <bean id="task7" class="acme.entities.task.Task">
-        <property name="title" value="anonymous 7"/>
-        <property name="description" value="anonymous "/>
-        <property name="workload" value="14.0"/>
-        <property name="executionPeriod" ref="finalizado1"/>
-        <property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+        <property name="title" value="SLA"/>
+        <property name="description" value="Create a doc called SLA. Follow the instructions in the link"/>
+        <property name="workload" value="30.0"/>
+        <property name="executionPeriod" ref="finalizadoTask7"/>
+        <property name="url" value="https://www.mysla.com"/>
         <property name="isPrivate" value="false"/>
         <property name="userAccount">
             <list>
-                <ref bean="managerAntonio"/>
+                <ref bean="authenticatedUserAccount3"/>
             </list>
         </property>
     </bean>
 
    <bean id="task8" class="acme.entities.task.Task">
-        <property name="title" value="anonymous 8"/>
-        <property name="description" value="anonymous "/>
-        <property name="workload" value="19.0"/>
-        <property name="executionPeriod" ref="finalizado1"/>
-        <property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
-        <property name="isPrivate" value="false"/>
+        <property name="title" value="Sprint S2"/>
+        <property name="description" value="Check the product backlog in the link"/>
+        <property name="workload" value="750"/>
+        <property name="executionPeriod" ref="finalizadoTask8"/>
+        <property name="url" value="https://www.g1-1213.pb.com"/>
+        <property name="isPrivate" value="true"/>
         <property name="userAccount">
             <list>
-                <ref bean="managerAntonio"/>
+                <ref bean="authenticatedUserAccount3"/>
             </list>
         </property>
     </bean>
 
    <bean id="task9" class="acme.entities.task.Task">
-        <property name="title" value="anonymous 9"/>
-        <property name="description" value="anonymous "/>
+        <property name="title" value="This is not a task"/>
+        <property name="description" value="This has no sense anymore "/>
         <property name="workload" value="12.0"/>
-        <property name="executionPeriod" ref="finalizado1"/>
-        <property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
-        <property name="isPrivate" value="false"/>
+        <property name="executionPeriod" ref="finalizadoTask9"/>
+        <property name="url" value="https://www.this.is.not.a.link.com"/>
+        <property name="isPrivate" value="true"/>
         <property name="userAccount">
             <list>
-                <ref bean="managerAntonio"/>
+                <ref bean="authenticatedUserAccount3"/>
             </list>
         </property>
     </bean>
 
    <bean id="task10" class="acme.entities.task.Task">
-        <property name="title" value="anonymous 10"/>
-        <property name="description" value="anonymous "/>
+        <property name="title" value="Assign tasks to the development team members"/>
+        <property name="description" value="Dont forget!"/>
         <property name="workload" value="8.0"/>
-        <property name="executionPeriod" ref="finalizado1"/>
-        <property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
-        <property name="isPrivate" value="false"/>
+        <property name="executionPeriod" ref="finalizadoTask10"/>
+        <property name="url" value=""/>
+        <property name="isPrivate" value="true"/>
         <property name="userAccount">
             <list>
                 <ref bean="managerAntonio"/>
@@ -314,7 +396,7 @@
 	<bean id="task11" class="acme.entities.task.Task">
 		<property name="title" value="sample test 1"/>
 		<property name="description" value="sample description"/>
-		<property name="workload" value="2.0"/>
+		<property name="workload" value="0.0"/>
 		<property name="executionPeriod" ref="noFinalizado1"/>
 		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
 		<property name="isPrivate" value="false"/>
@@ -364,11 +446,11 @@
 	</bean>
 	
 	<bean id="task14" class="acme.entities.task.Task">
-		<property name="title" value="sample task 4"/>
-		<property name="description" value="sample description"/>
-		<property name="workload" value="2.0"/>
-		<property name="executionPeriod" ref="noFinalizado1"/>
-		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+		<property name="title" value="Create a new proyect"/>
+		<property name="description" value="Create a proyect. More details in the link"/>
+		<property name="workload" value="500.0"/>
+		<property name="executionPeriod" ref="noFinalizado14"/>
+		<property name="url" value="https://newproyect.howto.com"/>
 		<property name="isPrivate" value="false"/>
 		<property name="workplan">
 			<list>
@@ -377,17 +459,17 @@
 		</property>
 		<property name="userAccount">
 			<list>
-				<ref bean="managerAntonio"/>
+				<ref bean="authenticatedUserAccount3"/>
 			</list>
 		</property>
 	</bean>
 	
 	<bean id="task15" class="acme.entities.task.Task">
-		<property name="title" value="sample task 5"/>
-		<property name="description" value="sample description"/>
-		<property name="workload" value="2.0"/>
-		<property name="executionPeriod" ref="noFinalizado1"/>
-		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+		<property name="title" value="Create a REST API for the proyect"/>
+		<property name="description" value="Create an API to provide to our clients a better service"/>
+		<property name="workload" value="50.5"/>
+		<property name="executionPeriod" ref="noFinalizado15"/>
+		<property name="url" value=""/>
 		<property name="isPrivate" value="false"/>
 		<property name="workplan">
 			<list>
@@ -396,17 +478,17 @@
 		</property>
 		<property name="userAccount">
 			<list>
-				<ref bean="managerAntonio"/>
+				<ref bean="authenticatedUserAccount3"/>
 			</list>
 		</property>
 	</bean>
 	
 	<bean id="task16" class="acme.entities.task.Task">
-		<property name="title" value="sample task 7"/>
-		<property name="description" value="sample description"/>
-		<property name="workload" value="2.0"/>
-		<property name="executionPeriod" ref="noFinalizado1"/>
-		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+		<property name="title" value="Create a new domain"/>
+		<property name="description" value="Host is located at 192.12.13.23"/>
+		<property name="workload" value="76.0"/>
+		<property name="executionPeriod" ref="noFinalizado16"/>
+		<property name="url" value=""/>
 		<property name="isPrivate" value="false"/>
 		<property name="workplan">
 			<list>
@@ -415,18 +497,18 @@
 		</property>
 		<property name="userAccount">
 			<list>
-				<ref bean="managerAntonio"/>
+				<ref bean="authenticatedUserAccount3"/>
 			</list>
 		</property>
 	</bean>
 	
 	
 	<bean id="task17" class="acme.entities.task.Task">
-		<property name="title" value="sample task 7"/>
-		<property name="description" value="sample description"/>
-		<property name="workload" value="2.0"/>
-		<property name="executionPeriod" ref="noFinalizado1"/>
-		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
+		<property name="title" value="Learn Spanish"/>
+		<property name="description" value="Spanish has became so important so it is necessary to learn it."/>
+		<property name="workload" value="300.0"/>
+		<property name="executionPeriod" ref="noFinalizado17"/>
+		<property name="url" value="https://www.rae.com"/>
 		<property name="isPrivate" value="false"/>
 		<property name="workplan">
 			<list>
@@ -441,12 +523,12 @@
 	</bean>
 	
 	<bean id="task18" class="acme.entities.task.Task">
-		<property name="title" value="sample task 8"/>
-		<property name="description" value="sample description"/>
-		<property name="workload" value="2.0"/>
-		<property name="executionPeriod" ref="noFinalizado1"/>
-		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
-		<property name="isPrivate" value="false"/>
+		<property name="title" value="New goals"/>
+		<property name="description" value="N/A"/>
+		<property name="workload" value="0.0"/>
+		<property name="executionPeriod" ref="noFinalizado18"/>
+		<property name="url" value="https://mygoals.com"/>
+		<property name="isPrivate" value="true"/>
 		<property name="workplan">
 			<list>
 				<ref bean="workplan1"/>
@@ -460,12 +542,12 @@
 	</bean>
 	
 	<bean id="task19" class="acme.entities.task.Task">
-		<property name="title" value="sample task 9"/>
-		<property name="description" value="sample description"/>
-		<property name="workload" value="2.0"/>
-		<property name="executionPeriod" ref="noFinalizado1"/>
-		<property name="url" value="https://github.com/serrojjim/dp2-june-16.com"/>
-		<property name="isPrivate" value="false"/>
+		<property name="title" value="Improve the framework"/>
+		<property name="description" value="Fix some bugs"/>
+		<property name="workload" value="50.0"/>
+		<property name="executionPeriod" ref="noFinalizado19"/>
+		<property name="url" value=""/>
+		<property name="isPrivate" value="true"/>
 		<property name="workplan">
 			<list>
 				<ref bean="workplan1"/>
@@ -833,6 +915,7 @@
 		</property>
 		<property name="roles">
 			<list>
+				<ref bean="authenticatedAuthenticatedAntonio" />
 				<ref bean="authenticatedManagerAntonio" />
 			</list>
 		</property>
@@ -869,6 +952,7 @@
 		</property>
 		<property name="roles">
 			<list>
+			<ref bean="authenticatedAuthenticatedSergio" />
 				<ref bean="authenticatedManagerSergio" />
 			</list>
 		</property>
@@ -890,9 +974,95 @@
 			</list>
 		</property>
 	</bean>
+	
+	
+	
+	
+	<bean name="authenticatedUserAccount2" class="acme.framework.entities.UserAccount">
+		<property name="username" value="Authenticated" />
+		<property name="password" value="Authenticated" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Authenticated" />
+				<property name="surname" value="Authenticated" />
+				<property name="email" value="authenticated@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="authenticatedAuthenticated2" />
+			</list>
+		</property>
+		<property name="task">
+			<list>
+				<ref bean="task4" />
+				<ref bean="task5" />
+				<ref bean="task6" />
+				
+			</list>
+		</property>
+		<property name="workplan">
+			<list>
+				<ref bean="workplan4" />
+				<ref bean="workplan5" />
+				<ref bean="workplan6" />
+			</list>
+		</property>
+	</bean>
+
+	
+	<bean name="authenticatedUserAccount3" class="acme.framework.entities.UserAccount">
+		<property name="username" value="Miscel" />
+		<property name="password" value="miscelthebest" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Authenticated" />
+				<property name="surname" value="Authenticated" />
+				<property name="email" value="authenticated@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="authenticatedAuthenticated3" />
+			</list>
+		</property>
+		<property name="task">
+			<list>
+				<ref bean="task7" />
+				<ref bean="task8" />
+				<ref bean="task9" />
+				<ref bean="task14" />
+				<ref bean="task15" />
+				<ref bean="task16" />
+				
+			</list>
+		</property>
+		<property name="workplan">
+			<list>
+				<ref bean="workplan4" />
+			
+			</list>
+		</property>
+	</bean>
+
+	
 
 	<!--  Roles -->
+		<bean name="authenticatedAuthenticatedSergio" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="managerSergio" />
+	</bean>
 	
+	<bean name="authenticatedAuthenticated2" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="authenticatedUserAccount2" />
+	</bean>
+	<bean name="authenticatedAuthenticated3" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="authenticatedUserAccount3" />
+	</bean>
+	<bean name="authenticatedAuthenticatedAntonio" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="managerAntonio" />
+	</bean>
 	<bean name="authenticatedManagerAntonio" class="acme.entities.roles.Manager">
 		<property name="userAccount" ref="managerAntonio" />
 	</bean>
