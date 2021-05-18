@@ -44,7 +44,8 @@ public class ManagerWorkplanChangePrivacyServiceTest extends AcmePlannerTest {
 	}
 	
 	/**
-	 * Sign in as a manager and try to delete a workplan not owned by the principal
+	 * Sign in as a manager and try to change a private work plan with private tasks to
+	 * public showing errors 
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/workplan/changePrivacy/change-privacy-to-public-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
