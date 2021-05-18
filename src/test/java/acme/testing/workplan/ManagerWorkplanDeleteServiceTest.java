@@ -24,7 +24,8 @@ public class ManagerWorkplanDeleteServiceTest extends AcmePlannerTest {
 	}
 
 	/**
-	 * Sign in as an non-manager and try to delete a workplan
+	 * Try to delete a workplan being anonymous.
+	 * Error expected because active role is not manager.
 	 */
 	@Test
 	public void deleteWorkplanThatIDontOwn() {
@@ -33,7 +34,8 @@ public class ManagerWorkplanDeleteServiceTest extends AcmePlannerTest {
 	}
 
 	/**
-	 * Sign in as a manager and try to delete a workplan not owned by the principal
+	 * Sign in as a manager and try to delete a workplan not owned by the principal.
+	 * Error expected.
 	 */
 	@Test
 	public void deleteAWorkplanThatDoesntExist() {

@@ -6,6 +6,7 @@ import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.Spam.Spam1;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
@@ -86,25 +87,27 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert entity != null;
 		assert errors != null;
 
-		entity.getTask().clear(); //El framework añade sin motivo alguno el id de la task en forma de string
-		final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
-		final boolean condition1 = entity.isPublished(this.spamRepository.findSpam());
-
-		errors.state(request, condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
-		errors.state(request, condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
-		errors.state(request, condition1, "title", "Un workplan no puede contener palabras spam en su titulo");
-
 		if (errors.hasErrors()) {
-			request.getModel().setAttribute("allTasks", this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId()));
 			request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+		} else {
+			final boolean initialDateBeforefinalDate = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
+			final boolean notAllowedTitle = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
+
+			errors.state(request, initialDateBeforefinalDate, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+			errors.state(request, notAllowedTitle, "title", "manager.workplan.form.error.spam");
+
+			if (errors.hasErrors()) {
+				request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+			}
 		}
+
 	}
 
 	@Override
 	public void create(final Request<Workplan> request, final Workplan entity) {
 		assert request != null;
 		assert entity != null;
-		
+
 		this.workplanRepository.save(entity);
 	}
 
