@@ -34,8 +34,8 @@ public class ManagerWorkplanListServiceTest extends AcmePlannerTest {
 		super.clickOnMenu("Manager", "List workplans");
 		
 		super.checkColumnHasValue(id, 0, title);
-		super.checkColumnHasValue(id, 1, execution_period_initial_date);
-		super.checkColumnHasValue(id, 2, execution_period_final_date);
+		super.checkColumnHasValue(id, 1, execution_period_final_date);
+		super.checkColumnHasValue(id, 2, execution_period_initial_date);
 		super.checkColumnHasValue(id, 3, workload);
 
 		super.signOut();
