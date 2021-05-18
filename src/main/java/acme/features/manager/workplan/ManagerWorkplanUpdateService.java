@@ -86,12 +86,16 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 		assert entity != null;
 		assert errors != null;
 
+		// Porque el framework añade el id 
 		try {
 			final Object id = request.getModel().getAttribute("task");
 			entity.getTask().remove(id);
 		} catch (final Throwable t) {
 		}
 
+		final boolean notAllowedTitle = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
+		errors.state(request, notAllowedTitle, "title", "manager.workplan.form.error.spam");
+		
 		if (errors.hasErrors()) {
 			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 			request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
@@ -102,13 +106,6 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 			final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
 			errors.state(request, condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
-			errors.state(request, condition0, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
-
-			final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(false));
-			errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
-
-			final boolean condition2 = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
-			errors.state(request, condition2, "title", "manager.workplan.form.error.spam");
 
 			if (errors.hasErrors()) {
 				final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
@@ -118,7 +115,8 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 			} else {
 				Object taskDebug = null;
-
+				
+				//Obtener la task que queremos añadir del modelo
 				try {
 					taskDebug = request.getModel().getAttribute("task");
 				} catch (final Throwable t) {
