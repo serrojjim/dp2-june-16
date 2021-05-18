@@ -220,7 +220,6 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-				<ref bean="workplan1" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -256,7 +255,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-
+	<ref bean="workplan4" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -290,7 +289,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-
+<ref bean="workplan12" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -322,7 +321,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-
+<ref bean="workplan2" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -356,7 +355,7 @@
 		<property name="isPrivate" value="true" />
 		<property name="workplan">
 			<list>
-
+				<ref bean="workplan12" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -388,7 +387,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-
+				<ref bean="workplan14" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -421,7 +420,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-
+				<ref bean="workplan14" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -455,7 +454,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-
+				<ref bean="workplan8" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -487,7 +486,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-
+				<ref bean="workplan4" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -517,7 +516,7 @@
 		<property name="isPrivate" value="true" />
 		<property name="workplan">
 			<list>
-
+				<ref bean="workplan14" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
