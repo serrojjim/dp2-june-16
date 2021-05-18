@@ -121,7 +121,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 		final boolean condition1 = !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
 		final boolean condition2 = !Spam1.isSpam(entity.getDescription(), this.spamRepository.findSpam());
-		final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()) && !entity.getExecutionPeriod().getInitialDate().equals(this.taskRepository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()));
+		final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()));
 		final boolean condition4 = !finalDate.isBefore(initialDate);
 	
 		errors.state(request, condition1, "title", "Una task no puede contener palabras spam en su titulo");

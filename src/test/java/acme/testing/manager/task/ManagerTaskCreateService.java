@@ -43,7 +43,7 @@ public class ManagerTaskCreateService extends AcmePlannerTest {
 		super.checkColumnHasValue(id, 1, execution_period_final_date);
 		super.checkColumnHasValue(id, 2, execution_period_initial_date);
 		
-		super.clickOnListingRecord(11);
+		super.clickOnListingRecord(10);
 
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("executionPeriod.initialDate", execution_period_initial_date);

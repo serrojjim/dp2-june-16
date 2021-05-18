@@ -135,7 +135,12 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		final boolean condition1 = !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
 		final boolean condition2 = !Spam1.isSpam(entity.getDescription(), this.spamRepository.findSpam());
-		final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()) && !entity.getExecutionPeriod().getInitialDate().equals(this.repository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()));
+		
+		if(this.repository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()!=null) {
+			final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()) && !entity.getExecutionPeriod().getInitialDate().equals(this.repository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()));
+			errors.state(request, condition3, "executionPeriod.initialDate", "manager.task.form.error.initialDate");
+
+		}
 		final boolean condition4 = !finalDate.isBefore(initialDate);
 		
 
@@ -153,7 +158,6 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		errors.state(request, condition1, "title", "manager.task.form.error.spam");
 		errors.state(request, condition2, "description", "manager.task.form.error.spam");
-		errors.state(request, condition3, "executionPeriod.initialDate", "manager.task.form.error.initialDate");
 		errors.state(request, condition4, "executionPeriod.finalDate", "manager.task.form.error.finalDate");
 
 		

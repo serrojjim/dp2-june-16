@@ -32,7 +32,7 @@ public class ManagerWorkplanChangePrivacyServiceTest extends AcmePlannerTest {
 	@CsvFileSource(resources = "/workplan/changePrivacy/change-privacy-to-public-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void changeWorkplanToPublicPositive(final int id, final int version, final String execution_period_initial_date, final String execution_period_final_date, final Boolean isPrivate, final String title,
 		final int user_account_id, final String workload) {
-		super.signIn("Antonio", "Campuzano");
+		super.signIn("Sergio", "Rojas");
 
 		super.clickOnMenu("Manager", "List workplans");
 
