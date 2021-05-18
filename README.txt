@@ -25,3 +25,6 @@ A continuación, detallaremos las distintas decisiones que hemos tomado sobre as
 -Respecto al campo título en la entidad workplan, aunque no viene especificado en el docuemento de requisistos que lo tenga. Hemos visto conveniente la inclusión de este campo de texto ya que así permitimos que cualquier persona que use la aplicación pueda identificar a un workplan de manera sencilla.
 
 -El criterio para que un workplan esté publicado es que no contenga tareas que sean consideradas spam, que su título tampoco sea considerado spam y que el propio workplan sea público. Se permite la adición de tareas un workplan una vez está publicado, ya que si se ha realizado una mala estimación de tareas a comienzos de sprint y una tarea resulta ser demasiado grande y se necesita dividir en dos, se deberían poder modificar las tareas del workplan.
+
+-El criterio para que se publique una tarea es que en dicha tarea tanto el titulo como la descripcion no sean consideradas spam. Además se tiene
+que cumplir que la carga de trabajo de dicha tarea no supere al total de horas compredidas entre la fecha inicial y la fecha final de la tarea. Por última instancia las fecha fin tiene que ser superior a la fecha de inicio cumpliendose que la de inicio no esté en el pasado.
