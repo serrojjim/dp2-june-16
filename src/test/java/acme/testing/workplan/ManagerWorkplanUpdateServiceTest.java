@@ -35,7 +35,7 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 		super.fillInputBoxIn("executionPeriod.initialDate", "8/12/22 1:00 AM");
 		super.fillInputBoxIn("executionPeriod.finalDate", "12/12/22 2:00 AM");
 		
-		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[11]"));
+		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[2]"));
 		final WebElement option = super.locateOne(optionLocator);
 		option.click();
 		
@@ -43,8 +43,8 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 		
 		super.checkColumnHasValue(id, 0, "Prueba de actualizacion");
 		super.checkColumnHasValue(id, 1, "12/12/22 2:00 AM");
-		super.checkColumnHasValue(id, 2, "5/11/21 8:00 AM");
-		super.checkColumnHasValue(id, 3, "42.00");
+		super.checkColumnHasValue(id, 2, "5/16/21 8:15 AM");
+		super.checkColumnHasValue(id, 3, "506.00");
 		
 		super.signOut();
 	}
@@ -78,8 +78,8 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 	}
 	
 	/**
-	 * Signs in as a manager, tries to modify a private workplan adding a private task.
-	 * Then tries to convert it into a public workplan, which is illegal.
+	 * Signs in as a manager and adds a private task to a private workplan.
+	 * Then tries to convert the workplan into a public one, which is illegal.
 	 * Raises the expected error and the workplan is not updated.
 	 */
 	@ParameterizedTest
@@ -93,7 +93,7 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 
 		super.clickOnListingRecord(id);
 
-		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[21]"));
+		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[6]"));
 		final WebElement option = super.locateOne(optionLocator);
 		option.click();
 		

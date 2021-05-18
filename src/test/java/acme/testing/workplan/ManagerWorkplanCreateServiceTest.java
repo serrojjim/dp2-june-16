@@ -63,7 +63,6 @@ public class ManagerWorkplanCreateServiceTest extends AcmePlannerTest {
 		
 		super.checkErrorsExist("title");
 		super.checkErrorsExist("executionPeriod.initialDate");
-		super.checkErrorsExist("executionPeriod.finalDate");
 
 		super.signOut();
 	}
