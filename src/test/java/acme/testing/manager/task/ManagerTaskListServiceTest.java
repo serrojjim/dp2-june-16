@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.AcmePlannerTest;
 
-public class ManagerTaskTest  extends AcmePlannerTest  {
+public class ManagerTaskListServiceTest  extends AcmePlannerTest  {
 
 	
 		// Test cases -------------------------------------------------------------
