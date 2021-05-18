@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.features.manager.workplan.ManagerWorkplanRepository;
 import acme.testing.AcmePlannerTest;
 
-public class ManagerWorkplanListServiceTest extends AcmePlannerTest{
+public class ManagerWorkplanListServiceTest extends AcmePlannerTest {
 
 	// Internal state ---------------------------------------------------------
 

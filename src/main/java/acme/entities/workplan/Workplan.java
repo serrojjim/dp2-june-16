@@ -55,23 +55,22 @@ public class Workplan extends DomainEntity{
 		@ManyToMany(mappedBy = "workplan", fetch = FetchType.EAGER, cascade = CascadeType.ALL) //Eager necesario para showWorkplan
 		protected Set<Task> task;
 	
-	// Derived attributes
+		// Derived attributes
 		
 		public static Double getTotalWorkload(final Workplan workplan) {
 			return workplan.getTask().stream().mapToDouble(Task::getWorkload).sum();
 		}
 		
 		public void addTask(final Task task) {
-			
 			final LocalDateTime initialDate = task.getExecutionPeriod().getInitialDate();
 			final LocalDateTime finalDate = task.getExecutionPeriod().getFinalDate();
 			
 			if (initialDate.isBefore(this.getExecutionPeriod().getInitialDate())) {
-				this.getExecutionPeriod().setInitialDate(LocalDateTime.of(initialDate.getYear(), initialDate.getMonth(), initialDate.getDayOfMonth()-1,8,0));
+				this.getExecutionPeriod().setInitialDate(initialDate.minusDays(1L).withHour(8));
 			}
 			
-			if (task.getExecutionPeriod().getFinalDate().isAfter(this.getExecutionPeriod().getFinalDate())) {
-				this.getExecutionPeriod().setFinalDate(LocalDateTime.of(finalDate.getYear(), finalDate.getMonth(), finalDate.getDayOfMonth()+1,17,00));
+			if (finalDate.isAfter(this.getExecutionPeriod().getFinalDate())) {
+				this.getExecutionPeriod().setFinalDate(finalDate.plusDays(1L).withHour(17));
 			}
 			
 			this.task.add(task);
