@@ -12,7 +12,8 @@ public class ManagerWorkplanDeleteTaskServiceTest extends AcmePlannerTest {
 	/**
 	 * Sign in as a manager, list all my workplans, show the first one,
 	 * delete the first task associated to it and check that the workload
-	 * has been updated succesfully. No errors expected.
+	 * has been updated succesfully.
+	 * No errors expected.
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/workplan/deleteTaskFromWorkplan/delete-task-from-workplan-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
@@ -46,7 +47,8 @@ public class ManagerWorkplanDeleteTaskServiceTest extends AcmePlannerTest {
 	}
 	
 	/**
-	 * Sign in as a manager and try to delete a task from a workplan that I do not own. A panic is expected.
+	 * Sign in as a manager and try to delete a task from a workplan that I do not own.
+	 * Panic is expected.
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/workplan/deleteTaskFromWorkplan/delete-task-from-workplan-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
