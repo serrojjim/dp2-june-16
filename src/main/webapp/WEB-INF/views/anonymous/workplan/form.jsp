@@ -28,8 +28,8 @@
 		</th>
 	</tr>
 	</thead>
+	<jstl:forEach items = "${task}" var = "t">
 	<tr>
-		<jstl:forEach items = "${task}" var = "t">
 		<td>
 			<acme:print value="${t.title}"/>
 		</td>
@@ -39,8 +39,8 @@
 		<td>
 			<acme:print value="${t.executionPeriod.finalDate}"/>
 		</td>
-		</jstl:forEach>
 	</tr>
+	</jstl:forEach>
 	</table>
 	
 	<acme:form-return code="anonymous.workplan.form.button.return"/>
