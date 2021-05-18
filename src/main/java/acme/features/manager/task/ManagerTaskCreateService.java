@@ -95,9 +95,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	    final LocalDateTime finalDate = entity.getExecutionPeriod().getFinalDate();
 		final double dur = Duration.between(initialDate, finalDate).toMinutes();
 		
-		final boolean condition7 = entity.getWorkload()==null || entity.getWorkload().toString().isEmpty();
+		final boolean condition7 = entity.getWorkload()==null || entity.getWorkload().toString().isEmpty() || entity.getWorkload()<0;
 		if(condition7) {
-			errors.state(request, !(condition7), "workload", "Workload no puede estar vacio");
+			errors.state(request, !(condition7), "workload", "Workload no puede estar vacio ni ser negativo");
 
 		}else {
 			final int minutos2 = (int) ((double)entity.getWorkload());
@@ -117,27 +117,19 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 			}
 		}
-
 	
-		
-		
-		
-		
 
-		
-		
 		final boolean condition1 = !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
 		final boolean condition2 = !Spam1.isSpam(entity.getDescription(), this.spamRepository.findSpam());
 		final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()) && !entity.getExecutionPeriod().getInitialDate().equals(this.taskRepository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()));
 		final boolean condition4 = !finalDate.isBefore(initialDate);
-		
-		
+	
 		errors.state(request, condition1, "title", "Una task no puede contener palabras spam en su titulo");
 		errors.state(request, condition2, "description", "Una task no puede contener palabras spam en la descripción");
 		errors.state(request, condition3, "executionPeriod.initialDate", "Una task no puede empezar antes de hoy");
 		errors.state(request, condition4, "executionPeriod.finalDate", "Una task no puede terminar antes de empezar");
 
-		
+	
 		
 		
 	}
