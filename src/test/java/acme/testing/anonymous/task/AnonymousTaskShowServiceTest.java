@@ -1,5 +1,6 @@
 package acme.testing.anonymous.task;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.springframework.core.annotation.Order;
@@ -39,20 +40,33 @@ public class AnonymousTaskShowServiceTest extends AcmePlannerTest {
 
 		}
 	
-	// Wont work until super.checkPanicExists() is implemented in the framework
-//	/**
-//	 * Signs in as a anonymous, tries to show a non existing task and expect a panic.
-//	 */
-//	@ParameterizedTest
-//	@CsvFileSource(resources = "/task/anonymousShowNegative.csv", encoding = "utf-8", numLinesToSkip = 1)
-//	@Order(20)
-//	void showWorkplanManagerNegative(final int id, final int version, final String execution_period_initial_date, final String execution_period_final_date, final Boolean isPrivate, final String title,
-//		final int user_account_id, final String workload) {
-//		
-//		super.navigate("/anonymous/task/show?", "id=" + id);
-//		super.checkPanicExists();
-//		
-//	}
+	/**
+	 * Signs in as a Anonymous, tries to show an unfinished task and expect a panic.
+	 */
+	@Test
+	@Order(20)
+	void showWorkplanAnonymousNegativeFinished() {
+		
+	
+	super.navigate("/anonymous/task/show", "id=26");
+	super.checkErrorsExist();
+
+		
+	}
+	
+	/**
+	 * Signs in as a Anonymous, tries to show a non non existing task and expect a panic.
+	 */
+	@Test
+	@Order(20)
+	void showWorkplanAnonymousNegativeNonExist() {
+		
+
+	super.navigate("/anonymous/task/show", "id=245");
+	super.checkErrorsExist();
+	
+		
+	}
 	
 	
 	
