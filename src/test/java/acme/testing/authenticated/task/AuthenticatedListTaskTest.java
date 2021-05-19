@@ -19,7 +19,7 @@ public class AuthenticatedListTaskTest  extends AcmePlannerTest  {
 		@ParameterizedTest
 		@CsvFileSource(resources = "/task/listAuthenticatedTask.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(20)
-		void listMineTaskAnonymousManagerPositive(final int id, final int version,final String description, final String execution_period_initial_date
+		void listMineTaskAuthenticatedPositive(final int id, final int version,final String description, final String execution_period_initial_date
 			, final String execution_period_final_date
 			, final Boolean isPrivate, final String title,
 			final String url, final String workload,
