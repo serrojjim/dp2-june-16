@@ -13,7 +13,8 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 
 	/**
 	 * Sign in as a manager, show a workplan, modify some fields, update them
-	 * and check that every value is correct. No errors expected.
+	 * and check that every value is right. 
+	 * No errors expected.
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/workplan/update/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)

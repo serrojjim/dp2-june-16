@@ -1,12 +1,13 @@
 package acme.testing.manager.task;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.springframework.core.annotation.Order;
 
 import acme.testing.AcmePlannerTest;
 
-public class ManagerTaskShowService extends AcmePlannerTest {
+public class ManagerTaskShowServiceTest extends AcmePlannerTest {
 
 	// Test cases -------------------------------------------------------------
 
@@ -41,6 +42,34 @@ public class ManagerTaskShowService extends AcmePlannerTest {
 			super.signOut();
 		}
 	
+	
+	/**
+	 * Signs in as a manager, try to show a task that is not yours and wait for a panic.
+	 */
+	@Test
+	@Order(20)
+	void showWorkplanmanagerNegative() {
+		
+	super.signIn("Antonio", "Campuzano");
+	super.navigate("/manager/task/show", "id=21");
+	super.checkErrorsExist();
+	super.signOut();
+		
+	}
+	
+	/**
+	 * Signs in as a manager, tries to show a  non existing task and expect a panic.
+	 */
+	@Test
+	@Order(20)
+	void showWorkplanmanagerNegativeNonExist() {
+		
+	super.signIn("Antonio", "Campuzano");
+	super.navigate("/manager/task/show", "id=245");
+	super.checkErrorsExist();
+	super.signOut();
+		
+	}
 	
 	
 }

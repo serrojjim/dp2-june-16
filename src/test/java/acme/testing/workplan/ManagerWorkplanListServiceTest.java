@@ -1,6 +1,7 @@
 package acme.testing.workplan;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +43,13 @@ public class ManagerWorkplanListServiceTest extends AcmePlannerTest {
 	}
 	
 	/**
-	 * The list-mine feature has no negative tests that can be done
+	 * Try to list workplans as an anonymous principal.
+	 * Panic expected.
 	 */
-	void listMineWorkplanManagerNegative() {
+	@Test
+	public void listMineNegative() {
+			super.navigate("/manager/workplan/list", "");
+			super.checkPanicExists();
 	}
 	
 	// Ancillary methods ------------------------------------------------------
