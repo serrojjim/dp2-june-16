@@ -48,7 +48,7 @@ public class ManagerTaskShowServiceTest extends AcmePlannerTest {
 	 */
 	@Test
 	@Order(20)
-	void showWorkplanmanagerNegative() {
+	void showTaskManagerNegative() {
 		
 	super.signIn("Antonio", "Campuzano");
 	super.navigate("/manager/task/show", "id=21");
@@ -62,7 +62,7 @@ public class ManagerTaskShowServiceTest extends AcmePlannerTest {
 	 */
 	@Test
 	@Order(20)
-	void showWorkplanmanagerNegativeNonExist() {
+	void showTaskManagerNegativeNonExist() {
 		
 	super.signIn("Antonio", "Campuzano");
 	super.navigate("/manager/task/show", "id=245");
