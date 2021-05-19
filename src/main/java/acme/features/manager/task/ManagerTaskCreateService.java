@@ -97,7 +97,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		
 		final boolean condition7 = entity.getWorkload()==null || entity.getWorkload().toString().isEmpty() || entity.getWorkload()<0;
 		if(condition7) {
-			errors.state(request, !(condition7), "workload", "Workload no puede estar vacio ni ser negativo");
+			errors.state(request, !(condition7), "workload", "manager.task.form.error.workloadvacio");
 
 		}else {
 			final int minutos2 = (int) ((double)entity.getWorkload());
@@ -113,7 +113,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			if(entity.getWorkload()!=null) {
 				final boolean condition5 = minutos_totales>dur;
 				final boolean condition6 = minutos_totales<0;
-				errors.state(request, !(condition5 || condition6), "workload", "El workload tiene que ser menor que el tiempo de ejecucion y mayor que 0");
+				errors.state(request, !(condition5 || condition6), "workload", "manager.task.form.error.workloaderroneo");
 
 			}
 		}
@@ -124,12 +124,13 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()));
 		final boolean condition4 = !finalDate.isBefore(initialDate);
 	
-		errors.state(request, condition1, "title", "Una task no puede contener palabras spam en su titulo");
-		errors.state(request, condition2, "description", "Una task no puede contener palabras spam en la descripción");
-		errors.state(request, condition3, "executionPeriod.initialDate", "Una task no puede empezar antes de hoy");
-		errors.state(request, condition4, "executionPeriod.finalDate", "Una task no puede terminar antes de empezar");
 
-	
+
+		errors.state(request, condition1, "title", "manager.task.form.error.spam");
+		errors.state(request, condition2, "description", "manager.task.form.error.spam");
+		errors.state(request, condition3, "executionPeriod.initialDate", "manager.task.form.error.initialDate");
+		errors.state(request, condition4, "executionPeriod.finalDate", "manager.task.form.error.finalDate");
+
 		
 		
 	}
