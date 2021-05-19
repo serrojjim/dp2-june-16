@@ -84,7 +84,8 @@ public class ManagerTaskCreateService extends AcmePlannerTest {
 	}
 	
 	/**
-	 * Sign in as a manager, create a task with negative workload.
+	 * Sign in as a manager, create a task with more workload hours than the hours between initial
+	 * and final date.
 	 * Workload error expected.
 	 */
 	@ParameterizedTest
@@ -114,8 +115,8 @@ public class ManagerTaskCreateService extends AcmePlannerTest {
 	}
 
 	/**
-	 * Sign in as a manager, create a task with negative workload.
-	 * Workload error expected.
+	 * Sign in as a manager, create a task with spam title and description.
+	 * Title and description errors expected.
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/task/createNegativeSpamText.csv", encoding = "utf-8", numLinesToSkip = 1)
@@ -143,6 +144,11 @@ public class ManagerTaskCreateService extends AcmePlannerTest {
 	
 	}
 
+	
+	/**
+	 * Sign in as a manager, create a task with a final date before than initial date.
+	 *  final date error expected.
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/task/createNegativeFinalDate.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -170,8 +176,12 @@ public class ManagerTaskCreateService extends AcmePlannerTest {
 	
 	}
 	
+	/**
+	 * Sign in as a manager, create a task with a initial date before than actual date.
+	 *  initial date error expected.
+	 */
 	@ParameterizedTest
-	@CsvFileSource(resources = "/task/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/task/createNegativeInitialDate.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	void createTaskManagerNegativeInitialDate(final int id, final int version,final String description, final String execution_period_initial_date
 		, final String execution_period_final_date
@@ -187,8 +197,8 @@ public class ManagerTaskCreateService extends AcmePlannerTest {
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("url", url);
 		super.fillInputBoxIn("workload", workload);
-		super.fillInputBoxIn("executionPeriod.initialDate", execution_period_final_date);
-		super.fillInputBoxIn("executionPeriod.finalDate", execution_period_initial_date);
+		super.fillInputBoxIn("executionPeriod.initialDate", execution_period_initial_date);
+		super.fillInputBoxIn("executionPeriod.finalDate",execution_period_final_date );
 		super.clickOnSubmitButton("Create");
 		
 		super.checkErrorsExist();
