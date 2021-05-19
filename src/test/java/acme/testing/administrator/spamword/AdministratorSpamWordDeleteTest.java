@@ -16,7 +16,7 @@ public class AdministratorSpamWordDeleteTest extends AcmePlannerTest{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/spamWord/deletePositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void deletePositive(final int id) {
+	public void deletePositive(final int id, final int lastRowIndex) {
 		super.signIn("administrator", "administrator");
 		
 		super.clickOnMenu("Administrator", "Customisation Parameters");
@@ -24,7 +24,7 @@ public class AdministratorSpamWordDeleteTest extends AcmePlannerTest{
 		final By deleteButton = By.xpath("//*[@id=\"form\"]/table/tbody/tr["+ id + "]/td[2]/button");
 		super.clickAndWait(deleteButton);
 		
-		final By lastRow = By.xpath("//*[@id=\"form\"]/table/tbody/tr[14]");
+		final By lastRow = By.xpath("//*[@id=\"form\"]/table/tbody/tr[" + lastRowIndex + "]");
 		super.checkNotExists(lastRow);
 		
 		super.signOut();

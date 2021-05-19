@@ -16,7 +16,7 @@ public class AdministratorSpamWordCreateTest extends AcmePlannerTest{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/spamWord/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void createPositive(final String word) {
+	public void createPositive(final String word, final int lastRowIndex) {
 		super.signIn("administrator", "administrator");
 		
 		super.clickOnMenu("Administrator", "Customisation Parameters");
@@ -25,7 +25,7 @@ public class AdministratorSpamWordCreateTest extends AcmePlannerTest{
 		super.fillInputBoxIn("word", word);
 		super.clickOnSubmitButton("Create new Spam Word");
 		
-		final By newLastRow = By.xpath("//*[@id=\"form\"]/table/tbody/tr[15]");
+		final By newLastRow = By.xpath("//*[@id=\"form\"]/table/tbody/tr[" + lastRowIndex + "]");
 		super.checkExists(newLastRow);
 		
 		super.signOut();

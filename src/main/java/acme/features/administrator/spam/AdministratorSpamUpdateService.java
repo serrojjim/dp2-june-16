@@ -36,6 +36,11 @@ public class AdministratorSpamUpdateService implements AbstractUpdateService<Adm
 			assert errors != null;
 
 			request.bind(entity, errors);
+			
+			//Con la siguiente línea añadimos las spamWords al modelo para que puedan 
+			//aparecer en la tabla cuando se intenta actualizar con un valor erróneo, 
+			//ya que no se pasa desde el formulario
+			request.getModel().setAttribute("spamWords", entity.getSpamWords());
 		}
 
 		@Override
@@ -78,4 +83,5 @@ public class AdministratorSpamUpdateService implements AbstractUpdateService<Adm
 		public void onSuccess(final Request<Spam> request, final Response<Spam> response) {
 			if(request.getMethod().equals(HttpMethod.POST)) response.setView("redirect:/administrator/spam/update");
 		}
+		
 }
