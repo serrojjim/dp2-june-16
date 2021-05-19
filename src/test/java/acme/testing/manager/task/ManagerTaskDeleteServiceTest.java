@@ -43,7 +43,7 @@ public class ManagerTaskDeleteServiceTest extends AcmePlannerTest{
 	super.checkErrorsExist();
 	super.signOut();
 		
-	}
+	} 
 	
 	/**
 	 * Signs in as a manager, tries to delete a  non existing task and expect a panic.
