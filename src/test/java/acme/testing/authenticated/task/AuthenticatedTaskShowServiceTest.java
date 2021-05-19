@@ -13,7 +13,7 @@ public class AuthenticatedTaskShowServiceTest extends AcmePlannerTest {
 
 	
 	/**
-	 * Sign in as a Anonymous, create a task, list all my task, show the recently created one
+	  * Sign in as a Authneticated list and show all public and finished task
 	 * and check that every value is correct.
 	 * No errors expected.
 	 */
@@ -49,7 +49,7 @@ public class AuthenticatedTaskShowServiceTest extends AcmePlannerTest {
 	 */
 	@Test
 	@Order(20)
-	void showWorkplanAuthenticatedNegativeNonFinished() {
+	void showTaskAuthenticatedNegativeNonFinished() {
 		
 	super.signIn("Antonio", "Campuzano");
 	super.navigate("/authenticated/task/show", "id=34");
@@ -63,7 +63,7 @@ public class AuthenticatedTaskShowServiceTest extends AcmePlannerTest {
 	 */
 	@Test
 	@Order(20)
-	void showWorkplanAuthenticatedNegativeNonExist() {
+	void showTaskAuthenticatedNegativeNonExist() {
 		
 	super.signIn("Antonio", "Campuzano");
 	super.navigate("/authenticated/task/show", "id=245");
