@@ -20,7 +20,7 @@ public class ManagerButtonTest extends AcmePlannerTest{
 		
 		super.clickOnSubmitButton("Confirm");
 		
-		super.check
+		
 //		super.fillInputBoxIn("text", text);
 //		super.fillInputBoxIn("link", link);
 //		
