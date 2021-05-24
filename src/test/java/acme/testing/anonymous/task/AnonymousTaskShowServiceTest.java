@@ -13,7 +13,7 @@ public class AnonymousTaskShowServiceTest extends AcmePlannerTest {
 
 	
 	/**
-	 * Sign in as a Anonymous, create a task, list all my task, show the recently created one
+	 * Sign in as a Anonymous list and show all public and non-finished task
 	 * and check that every value is correct.
 	 * No errors expected.
 	 */
@@ -45,7 +45,7 @@ public class AnonymousTaskShowServiceTest extends AcmePlannerTest {
 	 */
 	@Test
 	@Order(20)
-	void showWorkplanAnonymousNegativeFinished() {
+	void showTaskAnonymousNegativeFinished() {
 		
 	
 	super.navigate("/anonymous/task/show", "id=26");
@@ -59,7 +59,7 @@ public class AnonymousTaskShowServiceTest extends AcmePlannerTest {
 	 */
 	@Test
 	@Order(20)
-	void showWorkplanAnonymousNegativeNonExist() {
+	void showTaskAnonymousNegativeNonExist() {
 		
 
 	super.navigate("/anonymous/task/show", "id=245");
