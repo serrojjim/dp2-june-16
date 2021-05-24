@@ -9,14 +9,14 @@
 
 	<acme:message
 		code="manager.workplan.form.label.suggested_execution_period_initial_date" />
-	<jstl:out value="${suggestedExecutionPeriod.initialDate}" />
+	<acme:print value="${suggestedExecutionPeriod.initialDate}" />
 	<acme:form-textbox
 		code="manager.workplan.form.label.execution_period_initial_date"
 		path="executionPeriod.initialDate" readonly="false" />
 
 	<acme:message
 		code="manager.workplan.form.label.suggested_execution_period_final_date" />
-	<jstl:out value="${suggestedExecutionPeriod.finalDate}" />
+	<acme:print value="${suggestedExecutionPeriod.finalDate}" />
 	<acme:form-textbox
 		code="manager.workplan.form.label.execution_period_final_date"
 		path="executionPeriod.finalDate" readonly="false" />
@@ -37,30 +37,51 @@
 			</jstl:when>
 
 			<jstl:otherwise>
-				<acme:form-submit
-					code="manager.workplan.form.button.changePrivacytoPrivate"
-					action="/manager/workplan/change_privacy?id=${id}" />
-				<br>
-				<br>
+				<acme:form-submit code="manager.workplan.form.button.changePrivacytoPrivate" action="/manager/workplan/change_privacy?id=${id}" />
+				<br><br>
 			</jstl:otherwise>
 		</jstl:choose>
 		
-		<acme:form-errors path="isPrivate"/>
-		
-		<br>
+		<acme:form-errors path="isPrivate"/><br>
 	
 		<table class="table table-sm">
 			<tr>
-				<th><acme:message
-						code="manager.workplan.form.label.tareasseleccionadas" /> <jstl:out
-						value="${workload}"></jstl:out> <acme:message
-						code="manager.workplan.form.label.horas" /></th>
+				<th>
+					<acme:message code="manager.workplan.form.label.tareasseleccionadas" />
+				 	<jstl:out value="${workload}" />
+				 	<acme:message code="manager.workplan.form.label.horas" />
+				</th>
+				<th>
+					<acme:message code="manager.workplan.list.label.execution_period_initial_date" />
+				</th>
+				<th>
+					<acme:message code="manager.workplan.list.label.execution_period_final_date" />
+				</th>
+				<th>
+					<acme:message code="manager.workplan.form.label.privacy" />
+				</th>
+				<th>
+					<acme:message code="manager.workplan.form.button.delete.actions" />
+				</th>
 			</tr>
+			
 			<jstl:forEach items="${allTasksAlreadySelected}" var="tsk">
 				<tr>
-					<td><jstl:out value="${tsk.title}"></jstl:out></td>
+					<td>
+						<acme:print value="${tsk.title}" />
+					</td>
+					<td>
+						<acme:print value="${tsk.executionPeriod.initialDate}"/>
+					</td>
+					<td>
+						<acme:print value="${tsk.executionPeriod.finalDate}"/>
+					</td>
+					<td>
+						<acme:message code="manager.workplan.form.label.${tsk.isPrivate ? 'private' : 'public'}" />
+					</td>
 					<td><acme:form-submit code="manager.workplan.form.button.delete.task"
-							action="/manager/workplan/delete_task_workplan?workplanId=${id}&taskId=${tsk.id}" /></td>
+							action="/manager/workplan/delete_task_workplan?workplanId=${id}&taskId=${tsk.id}" />
+					</td>
 				</tr>
 			</jstl:forEach>
 		</table>
