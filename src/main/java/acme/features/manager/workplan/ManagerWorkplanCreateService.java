@@ -1,4 +1,3 @@
-
 package acme.features.manager.workplan;
 
 import java.util.HashSet;
@@ -37,9 +36,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
 		assert request != null;
-
-		final String rol = request.getPrincipal().getActiveRole().getSimpleName();
-		return rol.equals("Manager");
+		return true;
 	}
 
 	@Override

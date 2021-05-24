@@ -37,9 +37,7 @@ public class ManagerWorkplanListService implements AbstractListService<Manager, 
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
 		assert request != null;
-
-		final String rol = request.getPrincipal().getActiveRole().getSimpleName();
-		return rol.equals("Manager");
+		return true;
 	}
 
 	@Override
@@ -50,13 +48,8 @@ public class ManagerWorkplanListService implements AbstractListService<Manager, 
 
 		model.setAttribute("workload", Workplan.getTotalWorkload(entity));
 
-		request.unbind(entity, model, 
-			"title", 
-			"executionPeriod.finalDate",
-			"executionPeriod.initialDate",
-			"isPrivate",
-			"task");
-		
+		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate", "isPrivate", "task");
+
 	}
 
 	@Override
