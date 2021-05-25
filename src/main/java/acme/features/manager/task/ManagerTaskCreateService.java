@@ -28,7 +28,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	@Autowired
 	private AdministratorSpamRepository	spamRepository;
 	
-	
+	 
 	
 	@Override
 	public boolean authorise(final Request<Task> request) {
