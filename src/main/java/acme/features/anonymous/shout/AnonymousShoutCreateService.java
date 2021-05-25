@@ -63,10 +63,10 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		moment = new Date(System.currentTimeMillis() - 1);
 		
 		result = new Shout();
-		result.setAuthor("John Doe");
-		result.setText("this is an example");
+		result.setAuthor("");
+		result.setText("");
 		result.setMoment(moment);
-		result.setLink("http://example5.org");
+		result.setLink("");
 		
 		return result;
 		
