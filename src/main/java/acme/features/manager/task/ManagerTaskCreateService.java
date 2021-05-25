@@ -70,8 +70,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		final UserAccount userAccount = this.taskRepository.findOneUserAccountById(userAcountId);
 
 		execution = new ExecutionPeriod();
-		execution.setInitialDate( LocalDateTime.now().plusMinutes(5));
-		execution.setFinalDate( LocalDateTime.now().plusDays(10));
+	
  
 		workplan = new Workplan();
 		workplan.setTitle("Execution prueba");
