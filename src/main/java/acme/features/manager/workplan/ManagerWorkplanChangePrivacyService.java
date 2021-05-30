@@ -9,9 +9,11 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.Spam.Spam1;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
+import acme.features.administrator.spam.AdministratorSpamRepository;
 import acme.features.manager.task.ManagerTaskRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -27,6 +29,8 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 	@Autowired
 	protected ManagerTaskRepository		taskRepository;
 
+	@Autowired
+	private AdministratorSpamRepository	spamRepository;
 
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
@@ -67,7 +71,10 @@ public class ManagerWorkplanChangePrivacyService implements AbstractDeleteServic
 		assert errors != null;
 
 		final Boolean condition1 = entity.getTaskList().stream().filter(Task::getIsPrivate).anyMatch(t -> t.getIsPrivate() && entity.getIsPrivate().equals(true));
-		errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareass privadas
+		final boolean notAllowedTitle = !entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
+
+		errors.state(request, notAllowedTitle, "title", "manager.workplan.form.error.spam");
+		errors.state(request, !condition1, "isPrivate", "manager.workplan.form.button.error"); // Para cambiar de privado a publico no puede tener tareas privadas
 
 		if (errors.hasErrors()) {
 			request.getModel().setAttribute("workload", Workplan.getTotalWorkload(entity));

@@ -11,7 +11,7 @@
 This is the Acme-Planner project of the june#16 development team.
 
 Link GitHub repository: https://github.com/serrojjim/dp2-june-16
-Link GitHub release:https://github.com/serrojjim/dp2-june-16/releases/tag/1.0.1
+Link GitHub release:https://github.com/serrojjim/dp2-june-16/releases/tag/1.1.1
 
 
 A continuación, detallaremos las distintas decisiones que hemos tomado sobre aspectos que no quedaban del todo claro en el documento de requisitos:
@@ -28,4 +28,6 @@ A continuación, detallaremos las distintas decisiones que hemos tomado sobre as
 
 -El criterio para que se publique una tarea es que en dicha tarea tanto el titulo como la descripcion no sean consideradas spam. Además se tiene
 que cumplir que la carga de trabajo de dicha tarea no supere al total de horas compredidas entre la fecha inicial y la fecha final de la tarea. Por última instancia las fecha fin tiene que ser superior a la fecha de inicio cumpliendose que la de inicio no esté en el pasado.
+
+-Los test relativos al listado de las entidades de un usuario anónimo solo han sido realizado su caso positivo, ya que consideramos que no es posible listar de forma no deseada estas funcionalidades.
 

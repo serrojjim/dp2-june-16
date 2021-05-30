@@ -1,11 +1,13 @@
 package acme.features.manager.workplan;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.Spam.Spam1;
+import acme.datatypes.ExecutionPeriod;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
@@ -54,8 +56,11 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert entity != null;
 		assert model != null;
 
+		final ExecutionPeriod suggestedExecutionPeriod = entity.getSuggestedExecutionPeriod();
+		suggestedExecutionPeriod.setInitialDate(LocalDateTime.now());
+		
 		model.setAttribute("allTasks", this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId()));
-		model.setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+		model.setAttribute("suggestedExecutionPeriod", suggestedExecutionPeriod);
 
 		request.unbind(entity, model, "title", "executionPeriod.finalDate", "executionPeriod.initialDate", "isPrivate", "task");
 	}
@@ -65,13 +70,11 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert request != null;
 
 		final Workplan result = new Workplan();
+		final int id = request.getPrincipal().getAccountId();
 
-		result.setTitle("New workplan");
+		result.setTitle("");
 		result.setIsPrivate(false);
 		result.setTask(new HashSet<Task>());
-		result.setExecutionPeriod(result.getSuggestedExecutionPeriod());
-
-		final int id = request.getPrincipal().getAccountId();
 		result.setUserAccount(this.authRepository.findOne(id));
 
 		return result;
@@ -88,9 +91,11 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 			request.getModel().setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
 		} else {
 			final boolean initialDateBeforeFinalDate = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
+			final boolean finalDateBeforeToday = entity.getExecutionPeriod().getFinalDate().isAfter(LocalDateTime.now());
 			final boolean notAllowedTitle = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
 
 			errors.state(request, initialDateBeforeFinalDate, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+			errors.state(request, finalDateBeforeToday, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
 			errors.state(request, notAllowedTitle, "title", "manager.workplan.form.error.spam");
 
 			if (errors.hasErrors()) {

@@ -35,7 +35,7 @@ public class ManagerWorkplanDeleteTaskServiceTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("executionPeriod.initialDate", execution_period_initial_date);
 		super.checkInputBoxHasValue("executionPeriod.finalDate", execution_period_final_date);
 
-		final By locator = By.xpath("//*[@id=\"form\"]/table/tbody/tr[2]/td[2]/button");
+		final By locator = By.xpath("//*[@id=\"form\"]/table/tbody/tr[2]/td[5]/button");
 		super.clickAndWait(locator);
 		
 		super.checkColumnHasValue(id, 0, title);

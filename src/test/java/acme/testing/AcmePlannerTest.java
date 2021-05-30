@@ -21,7 +21,8 @@ public abstract class AcmePlannerTest extends AcmeTest{
 		this.signOut();
 	}
 	
-	@Override
+	
+	
 	protected void signIn(final String username, final String password) {
 		assert !StringHelper.isBlank(username);
 		assert !StringHelper.isBlank(password);
@@ -36,14 +37,13 @@ public abstract class AcmePlannerTest extends AcmeTest{
 		super.checkLinkExists("Account");
 	}
 	
-	@Override
 	protected void signOut() {
 		super.navigateHome();
 		super.clickOnMenu("Sign out", null);
 		super.checkSimplePath("/master/welcome");
 	}
 	
-	@Override
+	
 	protected void signUp(final String username, final String password, final String name, final String surname, final String email) {
 		assert !StringHelper.isBlank(username);
 		assert !StringHelper.isBlank(password);
