@@ -1,5 +1,7 @@
 package acme.features.administrator.spam;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,11 +59,16 @@ public class AdministratorSpamUpdateService implements AbstractUpdateService<Adm
 		public Spam findOne(final Request<Spam> request) {
 			assert request != null;
 
-			Spam result;
+			List<Spam> result;
 
-			result = this.spamRepository.findSpam().get(0);
+			result = this.spamRepository.findSpam();
 
-			return result;
+			if(result.isEmpty()) {
+				return new Spam();
+			}else {
+				return result.get(0);
+			}
+			
 		}
 
 		@Override
