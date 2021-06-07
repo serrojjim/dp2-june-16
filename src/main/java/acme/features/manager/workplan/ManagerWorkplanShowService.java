@@ -72,10 +72,16 @@ public class ManagerWorkplanShowService implements AbstractShowService<Manager, 
 			model.setAttribute("allTasksAvailable", l);
 		}
 		
+		List<Task> allTasksAlreadySelected = myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList());
+		
 		model.setAttribute("allTasksAlreadySelected", 
 			myTasks.stream().filter(x -> x.getWorkplan().contains(entity)).collect(Collectors.toList()));
 		
-		model.setAttribute("suggestedExecutionPeriod", entity.getSuggestedExecutionPeriod());
+		model.setAttribute("suggestedExecutionPeriod.initialDate", entity.getSuggestedExecutionPeriod().getInitialDate());
+		
+		if (!allTasksAlreadySelected.isEmpty()) {
+			model.setAttribute("suggestedExecutionPeriod.finalDate", entity.getSuggestedExecutionPeriod().getInitialDate());
+		}
 		
 		request.unbind(entity, model, 
 			"title", 
