@@ -24,7 +24,7 @@ A continuación, detallaremos las distintas decisiones que hemos tomado sobre as
 
 - Para la actualización de las tareas, hemos tomado la decisión de que mientras no se cambie la fecha de inicio en la tarea, permita actualizar todos sus demás campos sin problemas. En el momento que se cambie la fecha inicio de una tarea se activará la validación de esta. Con esto evitamos el problema que ocurría al editar una tarea en la cual la fecha de inicio estaba ya en el pasado nunca pasara la validación de ese formulario, impidiendo la actualización de los demás campos.
 
-- Respecto al campo título en la entidad workplan, aunque no viene especificado en el docuemento de requisistos que lo tenga. Hemos visto conveniente la inclusión de este campo de texto ya que así permitimos que cualquier persona que use la aplicación pueda identificar a un workplan de manera sencilla.
+- Respecto al campo título en la entidad workplan, aunque no viene especificado en el docuemento de requisistos que lo tenga hemos visto conveniente la inclusión de este campo de texto ya que así permitimos que cualquier persona que use la aplicación pueda identificar a un workplan de manera sencilla.
 
 -El criterio para que un workplan esté publicado es que no contenga tareas que sean consideradas spam, que su título tampoco sea considerado spam y que el propio workplan sea público. Se permite la adición de tareas un workplan una vez está publicado, ya que si se ha realizado una mala estimación de tareas a comienzos de sprint y una tarea resulta ser demasiado grande y se necesita dividir en dos, se deberían poder modificar las tareas del workplan.
 
