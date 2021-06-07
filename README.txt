@@ -20,6 +20,8 @@ A continuación, detallaremos las distintas decisiones que hemos tomado sobre as
 
 - En cuanto a la fecha de creación de los workplan, nosotros hemos considerado oportuno que se puedan crear workplan en el pasado. Con esto, permitimos más flexibilidad a la hora de crear los workplan pudiendo añadir tareas anteriormente creadas a las que se harán en un futuro, las cuales pertenecen a un mismo plan de trabajo que se quiere crear. Vemos más conveniente que los wokplan se adapten a las tareas que contiene.
 
+- A la hora de introducir una tarea en un workplan la fecha de ejecucion del workplan se extiende automaticamente para abarcar todas las tareas. Esto se hace para facilitar la creacion de un nuevo workplan, ya que si para cada tarea que se añade tenemos que estar ampliando el execution period a mano.
+
 - Para la actualización de las tareas, hemos tomado la decisión de que mientras no se cambie la fecha de inicio en la tarea, permita actualizar todos sus demás campos sin problemas. En el momento que se cambie la fecha inicio de una tarea se activará la validación de esta. Con esto evitamos el problema que ocurría al editar una tarea en la cual la fecha de inicio estaba ya en el pasado nunca pasara la validación de ese formulario, impidiendo la actualización de los demás campos.
 
 - Respecto al campo título en la entidad workplan, aunque no viene especificado en el docuemento de requisistos que lo tenga. Hemos visto conveniente la inclusión de este campo de texto ya que así permitimos que cualquier persona que use la aplicación pueda identificar a un workplan de manera sencilla.
