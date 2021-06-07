@@ -12,6 +12,7 @@
 
 package acme.features.manager.workplan;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -21,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.components.Spam.Spam1;
+import acme.datatypes.ExecutionPeriod;
 import acme.entities.roles.Manager;
 import acme.entities.task.Task;
 import acme.entities.workplan.Workplan;
@@ -105,6 +107,31 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 			final Boolean condition0 = entity.getExecutionPeriod().getInitialDate().isBefore(entity.getExecutionPeriod().getFinalDate());
 			errors.state(request, condition0, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+			
+			
+			final Optional<ExecutionPeriod> soonestTask = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId())
+				.stream()
+				.filter(x -> x.getWorkplan().contains(entity))
+				.map(Task::getExecutionPeriod)
+				.min(Comparator.comparing(ExecutionPeriod::getInitialDate));
+			
+			final Optional<ExecutionPeriod> latestTask = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId())
+				.stream()
+				.filter(x -> x.getWorkplan().contains(entity))
+				.map(Task::getExecutionPeriod)
+				.max(Comparator.comparing(ExecutionPeriod::getFinalDate));
+			
+			
+			
+			if (soonestTask.isPresent()) {
+			final Boolean condition1 = entity.getExecutionPeriod().getInitialDate().isBefore(soonestTask.get().getInitialDate());
+			errors.state(request, condition1, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+			}
+			
+			if (latestTask.isPresent()) {
+				final Boolean condition2 = entity.getExecutionPeriod().getFinalDate().isAfter(latestTask.get().getFinalDate());
+				errors.state(request, condition2, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
+			}
 
 			if (errors.hasErrors()) {
 				final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
