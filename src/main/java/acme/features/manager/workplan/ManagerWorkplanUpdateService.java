@@ -113,27 +113,23 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 				.stream()
 				.filter(x -> x.getWorkplan().contains(entity))
 				.map(Task::getExecutionPeriod)
-				.min(Comparator.comparing(ExecutionPeriod::getInitialDate, (s1, s2) -> {
-		            return s2.compareTo(s1);
-		        }));
+				.min(Comparator.comparing(ExecutionPeriod::getInitialDate));
 			
 			final Optional<ExecutionPeriod> latestTask = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId())
 				.stream()
 				.filter(x -> x.getWorkplan().contains(entity))
 				.map(Task::getExecutionPeriod)
-				.max(Comparator.comparing(ExecutionPeriod::getFinalDate, (s1, s2) -> {
-		            return s2.compareTo(s1);
-		        }));
+				.max(Comparator.comparing(ExecutionPeriod::getFinalDate));
 			
 			
 			
 			if (soonestTask.isPresent()) {
-			final Boolean condition1 = entity.getExecutionPeriod().getInitialDate().isAfter(soonestTask.get().getInitialDate());
+			final Boolean condition1 = entity.getExecutionPeriod().getInitialDate().isBefore(soonestTask.get().getInitialDate());
 			errors.state(request, condition1, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
 			}
 			
 			if (latestTask.isPresent()) {
-				final Boolean condition2 = entity.getExecutionPeriod().getFinalDate().isBefore(latestTask.get().getFinalDate());
+				final Boolean condition2 = entity.getExecutionPeriod().getFinalDate().isAfter(latestTask.get().getFinalDate());
 				errors.state(request, condition2, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
 			}
 

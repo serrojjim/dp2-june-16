@@ -66,11 +66,11 @@ public class Workplan extends DomainEntity{
 			final LocalDateTime finalDate = task.getExecutionPeriod().getFinalDate();
 			
 			if (initialDate.isBefore(this.getExecutionPeriod().getInitialDate())) {
-				this.getExecutionPeriod().setInitialDate(initialDate.minusDays(1L).withHour(8));
+				this.getExecutionPeriod().setInitialDate(initialDate.minusDays(1L).withHour(8).withMinute(0));
 			}
 			
 			if (finalDate.isAfter(this.getExecutionPeriod().getFinalDate())) {
-				this.getExecutionPeriod().setFinalDate(finalDate.plusDays(1L).withHour(17));
+				this.getExecutionPeriod().setFinalDate(finalDate.plusDays(1L).withHour(17).withMinute(0));
 			}
 			
 			this.task.add(task);

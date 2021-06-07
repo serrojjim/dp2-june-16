@@ -33,8 +33,8 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 		super.clickOnListingRecord(id);
 
 		super.fillInputBoxIn("title", "Prueba de actualizacion");
-		super.fillInputBoxIn("executionPeriod.initialDate", "8/12/22 1:00 AM");
-		super.fillInputBoxIn("executionPeriod.finalDate", "12/12/22 2:00 AM");
+		super.fillInputBoxIn("executionPeriod.initialDate", "3/12/21 1:00 AM");
+		super.fillInputBoxIn("executionPeriod.finalDate", "12/24/22 5:30 PM");
 		
 		final By optionLocator = By.xpath(String.format("//*[@id=\"task\"]/option[2]"));
 		final WebElement option = super.locateOne(optionLocator);
@@ -43,8 +43,8 @@ public class ManagerWorkplanUpdateServiceTest extends AcmePlannerTest {
 		super.clickOnSubmitButton("Update");
 		
 		super.checkColumnHasValue(id, 0, "Prueba de actualizacion");
-		super.checkColumnHasValue(id, 1, "12/12/22 2:00 AM");
-		super.checkColumnHasValue(id, 2, "5/16/21 8:15 AM");
+		super.checkColumnHasValue(id, 1, "12/24/22 5:30 PM");
+		super.checkColumnHasValue(id, 2, "3/12/21 1:00 AM");
 		super.checkColumnHasValue(id, 3, "506.00");
 		
 		super.signOut();

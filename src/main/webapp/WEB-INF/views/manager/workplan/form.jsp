@@ -7,19 +7,17 @@
 	<acme:form-textbox code="manager.workplan.form.label.title"
 		path="title" readonly="false" />
 
-	<acme:message
-		code="manager.workplan.form.label.suggested_execution_period_initial_date" />
-	<acme:print value="${suggestedExecutionPeriod.initialDate}" />
+	<acme:message code="manager.workplan.form.label.suggested_execution_period_initial_date" />
+	<acme:print value="${suggestedExecutionPeriodInitialDate}" />
 	<acme:form-textbox
 		code="manager.workplan.form.label.execution_period_initial_date"
-		path="executionPeriod.initialDate" readonly="false" />
+		path="executionPeriod.initialDate" placeholder="manager.workplan.form.label.DatePlaceHolder" readonly="false" />
 
-	<acme:message
-		code="manager.workplan.form.label.suggested_execution_period_final_date" />
-	<acme:print value="${suggestedExecutionPeriod.finalDate}" />
+	<acme:message code="manager.workplan.form.label.suggested_execution_period_final_date" />
+	<acme:print value="${suggestedExecutionPeriodFinalDate}" />
 	<acme:form-textbox
 		code="manager.workplan.form.label.execution_period_final_date"
-		path="executionPeriod.finalDate" readonly="false" />
+		path="executionPeriod.finalDate" placeholder="manager.workplan.form.label.DatePlaceHolder" readonly="false" />
 
 	<jstl:if test="${command == 'create'}">
 		<acme:form-checkbox code="manager.workplan.form.label.isPrivate"
@@ -29,9 +27,7 @@
 	<jstl:if test="${command != 'create'}">
 		<jstl:choose>
 			<jstl:when test="${isPrivate}">
-				<acme:form-submit
-					code="manager.workplan.form.button.changePrivacytoPublic"
-					action="/manager/workplan/change_privacy?id=${id}" />
+				<acme:form-submit code="manager.workplan.form.button.changePrivacytoPublic" action="/manager/workplan/change_privacy?id=${id}" />
 				<br>
 				<br>
 			</jstl:when>
