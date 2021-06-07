@@ -26,4 +26,4 @@ manager.task.form.error.workloadvacio = Workload no puede estar vacío ni ser ne
 manager.task.form.error.workloaderroneo = El workload tiene que ser menor que el tiempo de ejecucion y mayor que 0
 manager.task.form.error.taskprivada = Una task no puede ser privada si pertenece a un workplan público
 
-manager.task.form.label.DatePlaceHolder = dd/MM/YYYY hh:mm 
+manager.task.form.label.DatePlaceHolder = dd/MM/YY hh:mm 
