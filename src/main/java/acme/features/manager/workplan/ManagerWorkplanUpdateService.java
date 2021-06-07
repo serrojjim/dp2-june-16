@@ -48,13 +48,12 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 	public boolean authorise(final Request<Workplan> request) {
 		assert request != null;
 
-		final String rol = request.getPrincipal().getActiveRole().getSimpleName();
 		final int userAcountId = request.getPrincipal().getAccountId();
 		final int taskId = request.getModel().getInteger("id");
 
 		final Optional<Workplan> workplan = this.repository.findOneWorkplanByIdAndUA(taskId, userAcountId);
 
-		return (rol.equals("Manager") && workplan.isPresent());
+		return workplan.isPresent();
 	}
 
 	@Override
@@ -95,7 +94,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 		final boolean notAllowedTitle = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
 		errors.state(request, notAllowedTitle, "title", "manager.workplan.form.error.spam");
-		
+
 		if (errors.hasErrors()) {
 			final List<Task> myTasks = this.taskRepository.findAllMyTask(request.getPrincipal().getAccountId());
 			request.getModel().setAttribute("allTasksAvailable", myTasks.stream().filter(x -> !x.getWorkplan().contains(entity)).collect(Collectors.toList()));
@@ -115,7 +114,7 @@ public class ManagerWorkplanUpdateService implements AbstractUpdateService<Manag
 
 			} else {
 				Object taskDebug = null;
-				
+
 				//Obtener la task que queremos añadir del modelo
 				try {
 					taskDebug = request.getModel().getAttribute("task");

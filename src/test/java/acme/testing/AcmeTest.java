@@ -1,7 +1,7 @@
 /*
  * AcmeTest.java
  *
- * Copyright (C) 2021 Mary Design-Testing and John Design-Testing.
+ * Copyright (C) 2012-2021 Rafael Corchuelo.
  *
  * In keeping with the traditional purpose of furthering education and research, it is
  * the policy of the copyright owner to permit non-commercial use and redistribution of
@@ -52,13 +52,17 @@ public abstract class AcmeTest extends AbstractTest {
 	}
 
 	protected void checkPanicExists() {
-		By locator = By.xpath(String.format("/html/body/div[2]/div/h1[@id='unexpected-error']"));
-		assert super.exists(locator) : "Errors were expected in current query";
+		By locator;
+
+		locator = By.xpath("//h1[normalize-space() = 'Unexpected error']");
+		assert super.exists(locator) : "Action didn't result in panic";		
 	}
 
 	protected void checkNotPanicExists() {
-		By locator = By.xpath(String.format("/html/body/div[2]/div/h1[@id='unexpected-error']"));
-		assert !super.exists(locator) : "Errors were not expected in current query";
+		By locator;
+
+		locator = By.xpath("h1[normalize-space() = 'Unexpected error'");
+		assert !super.exists(locator) : "Action resulted in panic";
 	}
 
 	protected void checkErrorsExist() {
@@ -76,7 +80,7 @@ public abstract class AcmeTest extends AbstractTest {
 		String xpath;
 		By locator;
 
-		xpath = String.format("//div[@class='form-group'][input[@id='%s'] and div[@class='text-danger']]", name);
+		xpath = String.format("//div[@class='form-group'][.//*[@id='%s'] and .//div[@class='text-danger']]", name);
 		locator = By.xpath(xpath);
 		assert super.exists(locator) : String.format("No errors found in input box '%s'", name);
 	}
@@ -96,7 +100,7 @@ public abstract class AcmeTest extends AbstractTest {
 		String xpath;
 		By inputGroupLocator;
 
-		xpath = String.format("//div[@class='form-group'][input[@id='%s'] and div[@class='text-danger']]", name);
+		xpath = String.format("//div[@class='form-group'][.//*[@id='%s'] and .//div[@class='text-danger']]", name);
 		inputGroupLocator = By.xpath(xpath);
 		assert !super.exists(inputGroupLocator) : String.format("Unexpected errors in input box '%s'", name);
 	}
@@ -144,7 +148,7 @@ public abstract class AcmeTest extends AbstractTest {
 		contents = (contents == null ? "" : contents.trim());
 		value = (expectedValue != null ? expectedValue.trim() : "");
 
-		assert contents.equals(value) : String.format("Expected value '%s' in input box '%s', but '%s' was found", contents, name, value);
+		assert contents.equals(value) : String.format("Expected value '%s' in input box '%s', but '%s' was found", value, name, contents);
 	}
 
 	protected void checkColumnHasValue(final int recordIndex, final int attributeIndex, final String expectedValue) {
@@ -164,14 +168,14 @@ public abstract class AcmeTest extends AbstractTest {
 		else {
 			toggle = row.get(0);
 			toggle.click();
-			contents = (String) this.executor.executeScript("return arguments[0].innerText;", attribute);
+			contents = (String) super.executor.executeScript("return arguments[0].innerText;", attribute);
 			toggle.click();
 		}
 
 		contents = (contents == null ? "" : contents.trim());
 		value = (expectedValue != null ? expectedValue.trim() : "");
 
-		assert contents.equals(value) : String.format("Expected value '%s' in attribute %d of record %d, but found '%s'", contents, attributeIndex, recordIndex, value);
+		assert contents.equals(value) : String.format("Expected value '%s' in attribute %d of record %d, but found '%s'", value, attributeIndex, recordIndex, contents);
 	}
 
 	// Form-filling methods ---------------------------------------------------
@@ -201,12 +205,12 @@ public abstract class AcmeTest extends AbstractTest {
 			case "hidden":
 				proxyXpath = String.format("//input[@name='%s$proxy' and @type='checkbox']", name);
 				proxyLocator = By.xpath(proxyXpath);
-				assert value == null || value == "true" || value == "false" : String.format("Input box '%s' cannot be set to '%s'", name, value);
+				assert value == null || value.equals("true") || value.equals("false") : String.format("Input box '%s' cannot be set to '%s'", name, value);
 				assert super.exists(proxyLocator) : String.format("Cannot find proxy for input box '%s'", name);
 				inputProxy = super.locateOne(proxyLocator);
-				if (inputProxy.getAttribute("checked") != null && (value == null || value == "false"))
+				if (inputProxy.getAttribute("checked") != null && (value == null || value.equals("false")))
 					inputProxy.click();
-				else if (inputProxy.getAttribute("checked") == null && value == "true")
+				else if (inputProxy.getAttribute("checked") == null && value.equals("true"))
 					inputProxy.click();
 				break;
 			default:
@@ -244,7 +248,7 @@ public abstract class AcmeTest extends AbstractTest {
 			}
 		} catch (final Throwable oops) {
 			// INFO: Can silently ignore the exception here.
-			// INFO+ Sometimes, the toggle get's unexpectedly stale.
+			// INFO+ Sometimes, the toggle gets stale unexpectedly.
 		}
 
 		headerLocator = By.xpath(String.format("//div[@id='mainMenu']/ul/li/a[normalize-space()='%s']", header));
@@ -255,7 +259,7 @@ public abstract class AcmeTest extends AbstractTest {
 				super.clickAndGo(headerLocator);
 			} catch (final Throwable oops) {
 				// INFO: Can silently ignore the exception here.
-				// INFO+ Sometimes, the toggle get's unexpectedly stale
+				// INFO+ Sometimes, the toggle gets stale unexpectedly
 				// INFO+ and that has an impact on the main menu.
 			} 
 			optionLocator = By.xpath(String.format("//div[@id='mainMenu']/ul/li[a[normalize-space()='%s']]/div[contains(@class, 'dropdown-menu')]/a[normalize-space()='%s']", header, option));
@@ -337,33 +341,6 @@ public abstract class AcmeTest extends AbstractTest {
 		result = row.findElements(columnLocator);
 
 		return result;
-	}
-	
-	protected void signIn(final String username, final String password) {
-		super.navigateHome();
-		super.clickAndGo(By.linkText("Sign in"));
-		super.fill(By.id("username"), username);
-		super.fill(By.id("password"), password);
-		super.clickAndGo(By.id("remember$proxy"));
-		super.clickAndGo(By.className("btn-primary"));
-	}
-
-	protected void signOut() {
-		super.navigateHome();
-		super.clickAndGo(By.linkText("Sign out"));
-	}
-
-	protected void signUp(final String username, final String password, final String name, final String surname, final String email) {
-		super.navigateHome();
-		super.clickAndGo(By.linkText("Sign up"));
-		super.fill(By.id("username"), username);
-		super.fill(By.id("password"), password);
-		super.fill(By.id("confirmation"), password);
-		super.fill(By.id("identity.name"), name);
-		super.fill(By.id("identity.surname"), surname);
-		super.fill(By.id("identity.email"), email);
-		super.clickAndGo(By.id("accept$proxy"));
-		super.clickAndGo(By.className("btn-primary"));
 	}
 
 }

@@ -1,4 +1,3 @@
-
 package acme.components.Spam;
 
 import java.util.List;
@@ -22,16 +21,17 @@ public class Spam1 {
 	}
 
 	public static boolean isSpam(final String text, final List<Spam> spam) {
-		if (StringHelper.isBlank(text)) {
+		if (StringHelper.isBlank(text) || spam.isEmpty()) {
 			return false;
 		}
-		
+
 		boolean salida = true;
 		final StringTokenizer st = new StringTokenizer(text);
-		final List<SpamWord> palabras = spam.get(0).getSpamWords().stream().collect(Collectors.toList());
 
 		String texto = text;
 		Double contador = 0.0;
+
+		final List<SpamWord> palabras = spam.get(0).getSpamWords().stream().collect(Collectors.toList());
 
 		for (int i = 0; i < palabras.size(); i++) {
 			final String palabra = palabras.get(i).getWord();

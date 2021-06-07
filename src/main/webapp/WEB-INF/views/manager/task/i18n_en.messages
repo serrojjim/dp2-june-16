@@ -26,3 +26,5 @@ manager.task.form.error.spam = A task must not contain that amount of spam words
 manager.task.form.error.workloadvacio = Workload cant be empty or negative
 manager.task.form.error.workloaderroneo = The workload has to be less than the execution time and greater than 0
 manager.task.form.error.taskprivada = A task cannot be private if it belongs to a public workplan
+
+manager.task.form.label.DatePlaceHolder = MM/dd/YY hh:mm AM/PM

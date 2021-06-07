@@ -11,7 +11,7 @@
 This is the Acme-Planner project of the june#16 development team.
 
 Link GitHub repository: https://github.com/serrojjim/dp2-june-16
-Link GitHub release:https://github.com/serrojjim/dp2-june-16/releases/tag/1.0.1
+Link GitHub release:https://github.com/serrojjim/dp2-june-16/releases/tag/1.1.3
 
 
 A continuación, detallaremos las distintas decisiones que hemos tomado sobre aspectos que no quedaban del todo claro en el documento de requisitos:
@@ -20,12 +20,16 @@ A continuación, detallaremos las distintas decisiones que hemos tomado sobre as
 
 - En cuanto a la fecha de creación de los workplan, nosotros hemos considerado oportuno que se puedan crear workplan en el pasado. Con esto, permitimos más flexibilidad a la hora de crear los workplan pudiendo añadir tareas anteriormente creadas a las que se harán en un futuro, las cuales pertenecen a un mismo plan de trabajo que se quiere crear. Vemos más conveniente que los wokplan se adapten a las tareas que contiene.
 
+- A la hora de introducir una tarea en un workplan la fecha de ejecucion del workplan se extiende automaticamente para abarcar todas las tareas. Esto se hace para facilitar la creacion de un nuevo workplan, ya que si para cada tarea que se añade tenemos que estar ampliando el execution period a mano.
+
 - Para la actualización de las tareas, hemos tomado la decisión de que mientras no se cambie la fecha de inicio en la tarea, permita actualizar todos sus demás campos sin problemas. En el momento que se cambie la fecha inicio de una tarea se activará la validación de esta. Con esto evitamos el problema que ocurría al editar una tarea en la cual la fecha de inicio estaba ya en el pasado nunca pasara la validación de ese formulario, impidiendo la actualización de los demás campos.
 
-- Respecto al campo título en la entidad workplan, aunque no viene especificado en el docuemento de requisistos que lo tenga. Hemos visto conveniente la inclusión de este campo de texto ya que así permitimos que cualquier persona que use la aplicación pueda identificar a un workplan de manera sencilla.
+- Respecto al campo título en la entidad workplan, aunque no viene especificado en el docuemento de requisistos que lo tenga hemos visto conveniente la inclusión de este campo de texto ya que así permitimos que cualquier persona que use la aplicación pueda identificar a un workplan de manera sencilla.
 
 -El criterio para que un workplan esté publicado es que no contenga tareas que sean consideradas spam, que su título tampoco sea considerado spam y que el propio workplan sea público. Se permite la adición de tareas un workplan una vez está publicado, ya que si se ha realizado una mala estimación de tareas a comienzos de sprint y una tarea resulta ser demasiado grande y se necesita dividir en dos, se deberían poder modificar las tareas del workplan.
 
 -El criterio para que se publique una tarea es que en dicha tarea tanto el titulo como la descripcion no sean consideradas spam. Además se tiene
 que cumplir que la carga de trabajo de dicha tarea no supere al total de horas compredidas entre la fecha inicial y la fecha final de la tarea. Por última instancia las fecha fin tiene que ser superior a la fecha de inicio cumpliendose que la de inicio no esté en el pasado.
+
+-Los test relativos al listado de las entidades de un usuario anónimo solo han sido realizado su caso positivo, ya que consideramos que no es posible listar de forma no deseada estas funcionalidades.
 
