@@ -135,7 +135,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 		errors.state(request, condition1, "title", "manager.task.form.error.spam");
 		errors.state(request, condition2, "description", "manager.task.form.error.spam");
-		errors.state(request, condition3, "executionPeriod.initialDate", "manager.task.form.error.initialDate");
+		errors.state(request, condition3, "executionPeriod.initialDate", "manager.task.form.error.initialDateBeforeToday");
 		errors.state(request, condition4, "executionPeriod.finalDate", "manager.task.form.error.finalDate");
 
 		}

@@ -20,6 +20,7 @@ manager.task.form.label.isFinished = Is finished
 manager.task.form.label.workload = Workload
 manager.task.form.label.isPrivate = Private
 
+manager.task.form.error.initialDateBeforeToday = The initial date must be after the current date
 manager.task.form.error.initialDate = The initial date must be previous to the final date
 manager.task.form.error.finalDate = The final date must be after the initial date
 manager.task.form.error.spam = A task must not contain that amount of spam words

@@ -19,6 +19,7 @@ manager.task.form.label.isFinished = Acabada
 manager.task.form.label.workload = Carga de trabajo
 manager.task.form.label.isPrivate = Privada
 
+manager.task.form.error.initialDateBeforeToday = La fecha de inicio debe ser posterior a la fecha actual
 manager.task.form.error.initialDate = La fecha de inicio debe ser previa a la fecha de fin
 manager.task.form.error.finalDate = La fecha de fin debe ser posterior a la fecha de inicio
 manager.task.form.error.spam = Una tarea no puede tener tal cantidad de palabras prohibidas
