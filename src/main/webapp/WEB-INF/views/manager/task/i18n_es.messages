@@ -19,14 +19,11 @@ manager.task.form.label.isFinished = Acabada
 manager.task.form.label.workload = Carga de trabajo
 manager.task.form.label.isPrivate = Privada
 
-manager.task.form.error.initialDateBeforeToday = La fecha de inicio debe ser posterior a la fecha actual
 manager.task.form.error.initialDate = La fecha de inicio debe ser previa a la fecha de fin
 manager.task.form.error.finalDate = La fecha de fin debe ser posterior a la fecha de inicio
 manager.task.form.error.spam = Una tarea no puede tener tal cantidad de palabras prohibidas
 manager.task.form.error.workloadvacio = Workload no puede estar vacío ni ser negativo
 manager.task.form.error.workloaderroneo = El workload tiene que ser menor que el tiempo de ejecucion y mayor que 0
-manager.task.form.error.workloaderroneohoras = Las horas del workload deben comprender entre 0 y 99 ambos inclusive
-manager.task.form.error.workloaderroneominutos = Los minutos del workload deben comprender entre 0 y 59 ambos inclusive
 manager.task.form.error.taskprivada = Una task no puede ser privada si pertenece a un workplan público
 
 manager.task.form.label.DatePlaceHolder = dd/MM/YY hh:mm 

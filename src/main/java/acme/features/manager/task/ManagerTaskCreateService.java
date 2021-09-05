@@ -101,26 +101,20 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			errors.state(request, !(condition7), "workload", "manager.task.form.error.workloadvacio");
 
 		}else {
-			final int horas = (int) ((double)entity.getWorkload()); //Horas
+			final int minutos2 = (int) ((double)entity.getWorkload());
 			
 
-			final double minutosfeos = entity.getWorkload() - horas; //Minutos
+			final double minutosC = entity.getWorkload() - minutos2;
 			
-			final int horas2 = (int) (entity.getWorkload() -minutosfeos);
+			final int minutos = (int) (entity.getWorkload() -minutosC);
 
 			
-			final double minutos_totales = (horas2*60 +minutosfeos*100);
+			final double minutos_totales = (minutos*60 +minutosC*100);
 			
 			if(entity.getWorkload()!=null) {
 				final boolean condition5 = minutos_totales>dur;
 				final boolean condition6 = minutos_totales<0;
-				final boolean condition8 = horas < 0 || horas > 99;
-				final boolean condition9 = (minutosfeos*100) < 0 || (minutosfeos*100) > 59 ;
-
 				errors.state(request, !(condition5 || condition6), "workload", "manager.task.form.error.workloaderroneo");
-				errors.state(request, !(condition8), "workload", "manager.task.form.error.workloaderroneohoras");
-				errors.state(request, !(condition9), "workload", "manager.task.form.error.workloaderroneominutos");
-
 
 			}
 		}
@@ -135,7 +129,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 		errors.state(request, condition1, "title", "manager.task.form.error.spam");
 		errors.state(request, condition2, "description", "manager.task.form.error.spam");
-		errors.state(request, condition3, "executionPeriod.initialDate", "manager.task.form.error.initialDateBeforeToday");
+		errors.state(request, condition3, "executionPeriod.initialDate", "manager.task.form.error.initialDate");
 		errors.state(request, condition4, "executionPeriod.finalDate", "manager.task.form.error.finalDate");
 
 		}
