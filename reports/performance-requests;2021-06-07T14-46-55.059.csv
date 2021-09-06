@@ -1,0 +1,13 @@
+timestamp,simple-path,time
+2021-06-07 14:47:02.43,/master/welcome,567
+2021-06-07 14:47:02.935,/master/welcome,439
+2021-06-07 14:47:03.705,/master/sign-in,607
+2021-06-07 14:47:05.021,/master/welcome,608
+2021-06-07 14:47:07.33,/master/welcome,327
+2021-06-07 14:47:08.066,/master/welcome,608
+2021-06-07 14:47:08.7,/master/welcome,451
+2021-06-07 14:47:09.171,/master/welcome,396
+2021-06-07 14:47:10.041,/master/sign-in,604
+2021-06-07 14:47:11.398,/master/welcome,595
+2021-06-07 14:47:12.21,/manager/workplan/list,595
+2021-06-07 14:47:40.288,/manager/workplan/show,1107

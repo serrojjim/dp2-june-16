@@ -71,8 +71,8 @@
 	</bean>
 
 	<bean id="noFinalizado3" class="acme.datatypes.ExecutionPeriod">
-		<property name="initialDate" value="09/12/22 11:00 AM" />
-		<property name="finalDate" value="08/12/22 7:00 AM" />
+		<property name="initialDate" value="08/12/22 7:00 AM" />
+		<property name="finalDate" value="09/12/22 11:00 AM" />
 	</bean>
 
 	<bean id="noFinalizado4" class="acme.datatypes.ExecutionPeriod">
