@@ -1,0 +1,13 @@
+timestamp,test-class,test-method,time,description,result
+2021-09-06 18:19:44.561,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createPositive,5031,"[1] author=Lucia Nieto, text=¡soy una super programadora!, link=http://lucianieto.org",OK
+2021-09-06 18:19:49.022,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createPositive,4001,"[2] author=Jose Luis Garcia, text=¡me encanta el software!, link=null",OK
+2021-09-06 18:19:53.473,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createPositive,4030,"[3] author=Antonio Buendia, text=Diseño y pruebas es mi asignatura favorita, link=http://antonio.org",OK
+2021-09-06 18:19:57.936,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createPositive,3981,"[4] author=Manuela Gomez, text=soy analista, link=null",OK
+2021-09-06 18:20:02.327,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createPositive,3955,"[5] author=Joaquin Neva, text=¡Soy manager desde hace 10 años!, link=null",OK
+2021-09-06 18:20:06.876,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createPositive,4095,"[6] author=Francisco Lopez, text=Mi pasión es la mezcla software-hardware, link=null",OK
+2021-09-06 18:20:09.261,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,1897,"[1] author=sex sex sex, text=sex sex sex, link=http://lucianieto.org",OK
+2021-09-06 18:20:11.5,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,1801,"[2] author=Jose Luis Garcia, text=null, link=null",OK
+2021-09-06 18:20:13.756,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,1831,"[3] author=, text=Diseño y pruebas es mi asignatura favorita, link=http://antonio.org",OK
+2021-09-06 18:20:16.019,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,1824,"[4] author=millón de dolares, text=soy analista, link=null",OK
+2021-09-06 18:20:18.227,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,1796,"[5] author=Joaquin Neva, text=sex sex sex, link=null",OK
+2021-09-06 18:20:20.535,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,1884,"[6] author=Francisco Lopez, text=Mi pasión es la mezcla software-hardware, link=hhtp",OK
