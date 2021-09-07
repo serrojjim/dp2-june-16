@@ -14,6 +14,7 @@ manager.workplan.form.button.changePrivacytoPrivate = Change privacy to private
 manager.workplan.form.button.error = Remember, a public workplan cannot contain private tasks!
 
 manager.workplan.form.error.initialDate = The workplan must start before the initial date of the earliest task
+manager.workplan.form.error.initialDateCreation = The initial date must be before the final date
 manager.workplan.form.error.finalDate = The workplan must end after today
 manager.workplan.form.error.spam = A workplan must not contain that amount of spam words
 

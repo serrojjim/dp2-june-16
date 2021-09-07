@@ -14,6 +14,7 @@ manager.workplan.form.button.changePrivacytoPrivate = Cambiar privacidad actual 
 manager.workplan.form.button.error = Recuerda, un plan de trabajo publico no puede contener tareas privadas 
 
 manager.workplan.form.error.initialDate = El plan de trabajo debe tener una fecha de inicio anterior a la de la tarea más temprana
+manager.workplan.form.error.initialDateCreation = La fecha inicial tiene que ser anterior a la fecha final
 manager.workplan.form.error.finalDate = El plan de trabajo debe tener una fecha de fin posterior a la de la tarea más tardía
 manager.workplan.form.error.spam = Un plan de trabajo no puede tener tal cantidad de palabras prohibidas
 

@@ -15,6 +15,8 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
+
 import acme.components.Spam.Spam1;
 import acme.datatypes.ExecutionPeriod;
 import acme.entities.spam.Spam;
@@ -37,6 +39,7 @@ public class Workplan extends DomainEntity{
 	// Attributes -------------------------------------------------------------
 
 		@NotBlank
+		@Length(min = 1, max = 80)
 		protected String			title;
 		
 		@NotNull

@@ -107,20 +107,24 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			errors.state(request, !(condition7), "workload", "manager.task.form.error.workloadvacio");
 
 		}else {
-			final int minutos2 = (int) ((double)entity.getWorkload());
-			
+			final int horas = (int) ((double)entity.getWorkload()); //Horas			
 
-			final double minutosC = entity.getWorkload() - minutos2;
+			final double minutosfeos = entity.getWorkload() - horas; //Minutos
 			
-			final int minutos = (int) (entity.getWorkload() -minutosC);
+			final int horas2 = (int) (entity.getWorkload() -minutosfeos);
 
 			
-			final double minutos_totales = (minutos*60 +minutosC*100);
+			final double minutos_totales = (horas2*60 +minutosfeos*100);
 			
 			if(entity.getWorkload()!=null) {
 				final boolean condition5 = minutos_totales>dur;
 				final boolean condition6 = minutos_totales<0;
+				final boolean condition8 = horas < 0 || horas > 99;
+				final boolean condition9 = (minutosfeos*100) < 0 || (minutosfeos*100) > 59 ;
+
 				errors.state(request, !(condition5 || condition6), "workload", "manager.task.form.error.workloaderroneo");
+				errors.state(request, !(condition8), "workload", "manager.task.form.error.workloaderroneohoras");
+				errors.state(request, !(condition9), "workload", "manager.task.form.error.workloaderroneominutos");
 
 			}
 		}
@@ -138,8 +142,9 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		if(this.repository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()!=null) {
 			final boolean condition3 = !(initialDate.isBefore(LocalDateTime.now()) && !entity.getExecutionPeriod().getInitialDate().equals(this.repository.findTaskById(entity.getId()).getExecutionPeriod().getInitialDate()));
+			final boolean condition10 = !(initialDate.isBefore(LocalDateTime.now()));
 			errors.state(request, condition3, "executionPeriod.initialDate", "manager.task.form.error.initialDate");
-
+			errors.state(request, condition10, "executionPeriod.initialDate", "manager.task.form.error.initialDateBeforeToday");
 		}
 		final boolean condition4 = !finalDate.isBefore(initialDate);
 		

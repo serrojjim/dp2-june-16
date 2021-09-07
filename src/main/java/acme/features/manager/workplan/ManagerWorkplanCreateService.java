@@ -94,7 +94,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 			final boolean finalDateBeforeToday = entity.getExecutionPeriod().getFinalDate().isAfter(LocalDateTime.now());
 			final boolean notAllowedTitle = entity.getIsPrivate() || !Spam1.isSpam(entity.getTitle(), this.spamRepository.findSpam());
 
-			errors.state(request, initialDateBeforeFinalDate, "executionPeriod.initialDate", "manager.workplan.form.error.initialDate");
+			errors.state(request, initialDateBeforeFinalDate, "executionPeriod.initialDate", "manager.workplan.form.error.initialDateCreation");
 			errors.state(request, finalDateBeforeToday, "executionPeriod.finalDate", "manager.workplan.form.error.finalDate");
 			errors.state(request, notAllowedTitle, "title", "manager.workplan.form.error.spam");
 
