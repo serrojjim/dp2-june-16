@@ -47,4 +47,15 @@ public class Dashboard implements Serializable {
 	Integer totalNumberOfWorkplans;
 	Long totalNumberOfPublishedWorkplans;
 	Long totalNumberOfNonPublishedWorkplans;
+	
+	Double ratioShoutIsSergiolo5;
+	Double ratioShoutIsBudgetZero;
+	
+	Double averageMoneytIsEur;
+	Double averageMoneytIsUsd;
+	Double averageMoneytIsGbp;
+	Double desviationMoneytIsEur;
+	Double desviationMoneytIsUsd;
+	Double desviationMoneytIsGbp;
+
 }

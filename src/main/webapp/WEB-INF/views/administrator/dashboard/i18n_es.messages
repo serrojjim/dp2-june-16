@@ -1,5 +1,6 @@
 administrator.dashboard.entities.title.show = Panel de indicadores
 
+administrator.dashboard.entities.title.exam-indicators = Indicadores Control Check
 administrator.dashboard.entities.title.general-indicators = Indicadores generales
 
 administrator.dashboard.entities.title.task-indicators = Indicadores sobre tareas

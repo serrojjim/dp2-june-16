@@ -40,7 +40,12 @@
 		value="<acme:print value="${requestScope[path]}"/>"
 		type="text"
 		class="form-control"
-		placeHolder="${placeholder}"
+		<jstl:if test="${placeholder != null}">
+       	placeholder="<acme:message code="${placeholder}"/>"
+       	</jstl:if>
+       	<jstl:if test="${placeholder == null}">
+       	placeholder=""
+       	</jstl:if>
 		<jstl:if test="${readonly}">
        		readonly
        	</jstl:if>

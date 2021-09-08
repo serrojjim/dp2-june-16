@@ -24,3 +24,27 @@ anonymous.shout.list.label.link = Información
 
 anonymous.shout.form.error.author = Nombre de Autor con Spam
 anonymous.shout.form.error.text = Este texto es Spam
+
+#examen
+anonymous.shout.form.error.money = La moneda debe ser EUR ó USD
+anonymous.shout.form.label.sergiolo4 = Sergiolo4ESP
+anonymous.shout.form.label.sergiolo2 = Sergiolo2ESP
+anonymous.shout.form.label.sergiolo5 = Sergiolo5ESP
+anonymous.shout.form.label.sergiolo3 = Sergiolo3ESP
+
+anonymous.shout.list.label.sergiolo4 = Sergiolo4ESP
+anonymous.shout.list.label.sergiolo2 = Sergiolo2ESP
+anonymous.shout.list.label.sergiolo5 = Sergiolo5ESP
+anonymous.shout.list.label.sergiolo3 = Sergiolo3ESP
+
+anonymous.shout.form.placeholder.sergiolo4 = 24EUR
+anonymous.shout.form.placeholder.sergiolo2 = AAAA:yy:mmdd, la fecha debe ser el día de hoy
+anonymous.shout.form.placeholder.segiolo3 = 17/05/21 10:15
+anonymous.shout.form.placeholder.text = Esto es un texto de ejemplo!
+
+
+anonymous.shout.form.error.formatodia = El dia no coincide con el dia de hoy
+anonymous.shout.form.error.formatomes=El mes no coincide con el mes de hoy
+anonymous.shout.form.error.formatoaño=El año no coincide con el año de hoy
+
+anonymous.shout.form.error.segiolo3 = El plazo debe ser 1 semana mas que la creación del shout.(Día de hoy)

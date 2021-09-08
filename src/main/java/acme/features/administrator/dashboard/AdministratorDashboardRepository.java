@@ -12,6 +12,27 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository{
 	
+	
+	//About exam
+	
+		@Query("SELECT COUNT(t) FROM Shout t where t.sergiolo1.sergiolo5 = true")
+		Double numberOfShoutIsSergiolo5();
+		
+		
+		@Query("SELECT COUNT(t) FROM Shout t")
+		Double numberOfShout();
+		
+		@Query("SELECT AVG(s.sergiolo1.sergiolo4.amount) FROM Shout s where s.sergiolo1.sergiolo4.currency= ?1")
+		Double averageOfShoutMoney(String currency);
+		
+
+		@Query("SELECT STDDEV(s.sergiolo1.sergiolo4.amount) FROM Shout s where s.sergiolo1.sergiolo4.currency= ?1")
+		Double desviationOfShoutMoney(String currency);
+		
+		@Query("SELECT COUNT(t) FROM Shout t where t.sergiolo1.sergiolo4.amount = 0")
+		Double numberOfShoutIsBudgetZero();
+		
+	
 	//About tasks
 
 	@Query("SELECT COUNT(t) FROM Task t where t.isPrivate = false")

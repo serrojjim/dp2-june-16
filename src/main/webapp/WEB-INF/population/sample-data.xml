@@ -787,6 +787,33 @@
 		<property name="text" value="Hi 2020" />
 		<property name="link" value="http://ejemplo12.com" />
 	</bean>
+	
+	
+	<!-- ShoutExam -->
+	
+		<bean id="shoutexamen" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/09/06 10:15" />
+		<property name="author" value="Sergio Rojas" />
+		<property name="text" value="Exam shout!" />
+		<property name="link" value="http://examshout.com" />
+		<property name="sergiolo1" ref="sergiolo1examen" />
+		</bean>
+			
+		<bean id="sergiolo1examen" class="acme.entities.sergiolo1.Sergiolo1">
+		<property name="sergiolo2" value="ZZAA:21:0908" />
+		<property name="sergiolo3" value="07/11/22 10:15 AM" />
+		<property name="sergiolo4" ref="sergiolo4exam" />
+		<property name="sergiolo5" value="true" />
+		<property name="shout" ref="shoutexamen" />
+		</bean>
+		
+		
+		
+		<bean id="sergiolo4exam" class="acme.framework.datatypes.Money">
+		<property name="amount" value="777" />
+		<property name="currency" value="EUR" />
+		</bean>
+	
 
 	<!-- UserAccount -->
 

@@ -41,6 +41,88 @@
 </style>
 
 <h3>
+		<acme:message code="administrator.dashboard.entities.title.exam-indicators"/>
+</h3>
+
+<table class="table table-sm">
+		
+	<tr>
+		<th scope="row">
+			<acme:message code="the ratio of shouts whose sergiolo1 were flagged as important"/>
+		</th>
+		<td>
+			<acme:print value="${ratioShoutIsSergiolo5}"/>
+		</td>
+	</tr>
+	
+		<tr>
+		<th scope="row">
+			<acme:message code="the ratio of shouts whose sergiolo1 have budget zero"/>
+		</th>
+		<td>
+			<acme:print value="${ratioShoutIsBudgetZero}"/>
+		</td>
+	</tr>
+	
+		
+	
+		<tr>
+		<th scope="row">
+			<acme:message code="Average Euro"/>
+		</th>
+		<td>
+			<acme:print value="${averageMoneytIsEur}"/>
+		</td>
+	</tr>
+	
+		<tr>
+		<th scope="row">
+			<acme:message code="Average Libra"/>
+		</th>
+		<td>
+			<acme:print value="${averageMoneytIsUsd}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="Average GBP"/>
+		</th>
+		<td>
+			<acme:print value="${averageMoneytIsGbp}"/>
+		</td>
+	</tr>
+
+
+	<tr>
+		<th scope="row">
+			<acme:message code="Desviation Euro"/>
+		</th>
+		<td>
+			<acme:print value="${desviationMoneytIsEur}"/>
+		</td>
+	</tr>
+	
+		<tr>
+		<th scope="row">
+			<acme:message code="Desviation Libra"/>
+		</th>
+		<td>
+			<acme:print value="${desviationMoneytIsUsd}"/>
+		</td>
+	</tr>
+	
+		<tr>
+		<th scope="row">
+			<acme:message code="Desviation GBP"/>
+		</th>
+		<td>
+			<acme:print value="${desviationMoneytIsGbp}"/>
+		</td>
+	</tr>
+</table>
+
+<h3>
 		<acme:message code="administrator.dashboard.entities.title.task-indicators"/>
 </h3>
 

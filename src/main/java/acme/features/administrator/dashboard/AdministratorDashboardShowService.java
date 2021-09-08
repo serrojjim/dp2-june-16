@@ -69,7 +69,18 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 			"totalNumberOfWorkplans",
 			"totalNumberOfPublishedWorkplans",
-			"totalNumberOfNonPublishedWorkplans");
+			"totalNumberOfNonPublishedWorkplans",
+			
+			
+			"ratioShoutIsSergiolo5",
+			"ratioShoutIsBudgetZero",
+			"averageMoneytIsEur",
+			"averageMoneytIsUsd",
+			"averageMoneytIsGbp",
+			"desviationMoneytIsEur",
+			"desviationMoneytIsUsd",
+			"desviationMoneytIsGbp");
+			
 	}
 
 	@Override
@@ -135,6 +146,40 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 		if (numberOfTasks > 0)
 			dvtExecutionPeriodTasks = Math.sqrt(dvtExecutionPeriodTasks / numberOfTasks);
+		
+		
+		//Examen
+		
+				final Double numberOfShouts = this.repository.numberOfShout();
+				final Double numberOfShoutsIsImportant = this.repository.numberOfShoutIsSergiolo5();
+				
+				result.setRatioShoutIsSergiolo5(numberOfShoutsIsImportant/numberOfShouts);
+				
+				
+				final Double numberOfShoutsIsBudgetZero = this.repository.numberOfShoutIsBudgetZero();
+				
+				result.setRatioShoutIsBudgetZero(numberOfShoutsIsBudgetZero/numberOfShouts);
+				
+				final Double averageMoneytIsEur = this.repository.averageOfShoutMoney("EUR");
+				final Double averageMoneytIsLibr = this.repository.averageOfShoutMoney("USD");
+				final Double averageMoneytIsGbp = this.repository.averageOfShoutMoney("GBP");
+
+
+				result.setAverageMoneytIsEur(averageMoneytIsEur);
+				result.setAverageMoneytIsUsd(averageMoneytIsLibr);
+				result.setAverageMoneytIsGbp(averageMoneytIsGbp);
+
+				
+
+				final Double desviationMoneytIsEur = this.repository.desviationOfShoutMoney("EUR");
+				final Double desviationMoneytIsLibr = this.repository.desviationOfShoutMoney("USD");
+				final Double desviationMoneytIsGbp = this.repository.desviationOfShoutMoney("GBP");
+
+
+				result.setDesviationMoneytIsEur(desviationMoneytIsEur);
+				result.setDesviationMoneytIsUsd(desviationMoneytIsLibr);
+				result.setDesviationMoneytIsGbp(desviationMoneytIsGbp);
+
 
 		result.setNumberOfPublicTasks(this.repository.numberOfPublicTasks());
 		result.setNumberOfPrivateTasks(this.repository.numberOfPrivateTasks());
