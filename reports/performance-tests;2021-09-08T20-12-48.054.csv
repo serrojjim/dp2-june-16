@@ -1,0 +1,4 @@
+timestamp,test-class,test-method,time,description,result
+2021-09-08 20:13:02.663,acme.testing.controlCheck.AnonymousShoutCreateTest,createNegativeSergiolo2,2324,"[1] author=test sample1, text=text for test sample1, link=http://this.is.a.link.for.test.sample1, sergiolo2=negative format, sergiolo4=230 EUR",OK
+2021-09-08 20:13:07.877,acme.testing.controlCheck.AnonymousShoutCreateTest,createPositive,4825,"[1] author=Lucia, text=¡soy una super programadora!, link=http://lucianieto.org, sergiolo2=/03/aa, sergiolo4=EUR 200.00, sergiolo5=true, index=0",OK
+2021-09-08 20:13:13.307,acme.testing.controlCheck.AnonymousShoutCreateTest,createPositive,5038,"[2] author=Antonio, text=¡hola!, link=http://google.org, sergiolo2=/03/bb, sergiolo4=USD 200.00, sergiolo5=false, index=0",OK

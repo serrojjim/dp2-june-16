@@ -1,0 +1,7 @@
+timestamp,test-class,test-method,time,description,result
+2021-09-08 20:14:35.969,acme.testing.controlCheck.AnonymousShoutCreateTest,createNegativeSergiolo2,2334,"[1] author=test sample1, text=text for test sample1, link=http://this.is.a.link.for.test.sample1, sergiolo2=negative format, sergiolo4=230 EUR",OK
+2021-09-08 20:14:38.763,acme.testing.controlCheck.AnonymousShoutCreateTest,createNegativeSergiolo2,2388,"[2] author=test sample1, text=text for test sample1, link=http://this.is.a.link.for.test.sample1, sergiolo2=2222222, sergiolo4=230 EUR",OK
+2021-09-08 20:14:41.389,acme.testing.controlCheck.AnonymousShoutCreateTest,createNegativeSergiolo2,2246,"[3] author=test sample1, text=text for test sample1, link=http://this.is.a.link.for.test.sample1, sergiolo2=212121/xx/aa, sergiolo4=230 EUR",OK
+2021-09-08 20:14:44.057,acme.testing.controlCheck.AnonymousShoutCreateTest,createNegativeSergiolo2,2275,"[4] author=test sample1, text=text for test sample1, link=http://this.is.a.link.for.test.sample1, sergiolo2=210901/xx/aa, sergiolo4=230 EUR",OK
+2021-09-08 20:14:49.3,acme.testing.controlCheck.AnonymousShoutCreateTest,createPositive,4869,"[1] author=Lucia, text=¡soy una super programadora!, link=http://lucianieto.org, sergiolo2=/03/aa, sergiolo4=EUR 200.00, sergiolo5=true, index=0",OK
+2021-09-08 20:14:54.222,acme.testing.controlCheck.AnonymousShoutCreateTest,createPositive,4566,"[2] author=Antonio, text=¡hola!, link=http://google.org, sergiolo2=/03/bb, sergiolo4=USD 200.00, sergiolo5=false, index=0",OK

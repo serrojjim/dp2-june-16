@@ -1,0 +1,3 @@
+timestamp,test-class,test-method,time,description,result
+2021-09-08 20:37:13.677,acme.testing.controlCheck.DashboardShowTest,showPositive,34086,"showPositive()",Element 'By.xpath: /html/body/div[2]/div/table[3]/tbody/tr[1]/td[normalize-space(text()) = '14']' is expected
+2021-09-08 20:37:14.579,acme.testing.controlCheck.DashboardShowTest,showNegative,446,"showNegative()",OK

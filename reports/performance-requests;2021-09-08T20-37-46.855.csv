@@ -1,0 +1,14 @@
+timestamp,simple-path,time
+2021-09-08 20:37:52.493,/master/welcome,497
+2021-09-08 20:37:52.873,/master/welcome,322
+2021-09-08 20:37:53.601,/master/sign-in,588
+2021-09-08 20:37:54.885,/master/welcome,593
+2021-09-08 20:37:57.139,/master/welcome,310
+2021-09-08 20:37:57.855,/master/welcome,606
+2021-09-08 20:37:58.241,/master/welcome,312
+2021-09-08 20:37:58.593,/master/welcome,326
+2021-09-08 20:37:59.369,/master/sign-in,590
+2021-09-08 20:38:00.704,/master/welcome,588
+2021-09-08 20:38:01.536,/administrator/dashboard/show,587
+2021-09-08 20:38:32.18,/master/welcome,371
+2021-09-08 20:38:32.615,/administrator/dashboard/show,399
