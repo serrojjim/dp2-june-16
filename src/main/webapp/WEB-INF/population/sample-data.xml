@@ -699,6 +699,8 @@
 		<property name="author" value="Antonio Campuzano" />
 		<property name="text" value="I'm the creator!" />
 		<property name="link" value="http://ejemplo1.com" />
+		<property name="sergiolo1" ref="sergiolo11" />
+		
 	</bean>
 
 	<bean id="shout2" class="acme.entities.shouts.Shout">
@@ -706,13 +708,17 @@
 		<property name="author" value="Miguel Ángel Valverde" />
 		<property name="text" value="I'm the master of my Team!" />
 		<property name="link" value="http://ejemplo2.com" />
+		<property name="sergiolo1" ref="sergiolo12" />
+		
 	</bean>
 
 	<bean id="shout3" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2021/08/15 02:48" />
 		<property name="author" value="Diego Plaza" />
 		<property name="text" value="I'm developer!" />
-		<property name="link" value="http://ejemplo3.com" />
+		<property name="link" value="http://ejemplo3.com" />				
+		<property name="sergiolo1" ref="sergiolo13" />
+		
 	</bean>
 
 	<bean id="shout4" class="acme.entities.shouts.Shout">
@@ -722,6 +728,8 @@
 		<property name="link">
 			<null />
 		</property>
+		<property name="sergiolo1" ref="sergiolo14" />
+		
 	</bean>
 
 	<bean id="shout5" class="acme.entities.shouts.Shout">
@@ -738,6 +746,8 @@
 		<property name="link">
 			<null />
 		</property>
+		<property name="sergiolo1" ref="sergiolo15" />
+		
 	</bean>
 
 	<bean id="shout7" class="acme.entities.shouts.Shout">
@@ -787,7 +797,79 @@
 		<property name="text" value="Hi 2020" />
 		<property name="link" value="http://ejemplo12.com" />
 	</bean>
-
+	
+	
+	
+	<!-- Sergiolo1 -->
+	<bean id="sergiolo11" class="acme.entities.sergiolo1.Sergiolo1">
+		<property name="sergiolo2" value="210809/00/1a" />
+		<property name="sergiolo3" value="04/12/21 10:15 AM" />
+		<property name="sergiolo4" ref="budget1" />
+		<property name="sergiolo5" value="true" />
+		
+		<property name="Shout" ref="shout1" />
+		
+	</bean>
+	
+	<bean id="sergiolo12" class="acme.entities.sergiolo1.Sergiolo1">
+		<property name="sergiolo2" value="210809/00/1b" />
+		<property name="sergiolo3" value="04/12/21 10:15 AM" />
+		<property name="sergiolo4" ref="budget1" />
+		<property name="sergiolo5" value="true" />
+		
+		<property name="Shout" ref="shout2" />
+		</bean>
+		
+		
+		<bean id="sergiolo13" class="acme.entities.sergiolo1.Sergiolo1">
+		<property name="sergiolo2" value="210809/00/1c" />
+		<property name="sergiolo3" value="07/12/21 10:15 AM" />
+		<property name="sergiolo4" ref="budget2" />
+		<property name="sergiolo5" value="true" />
+		
+		<property name="Shout" ref="shout3" />
+		</bean>
+		
+		<bean id="sergiolo14" class="acme.entities.sergiolo1.Sergiolo1">
+		<property name="sergiolo2" value="210809/00/1d" />
+		<property name="sergiolo3" value="07/12/21 10:15 AM" />
+		<property name="sergiolo4" ref="budget3" />
+		<property name="sergiolo5" value="false" />
+		
+		<property name="Shout" ref="shout4" />
+		</bean>
+		
+		
+		
+		<bean id="sergiolo15" class="acme.entities.sergiolo1.Sergiolo1">
+		<property name="sergiolo2" value="210809/00/1e" />
+		<property name="sergiolo3" value="07/12/21 10:15 AM" />
+		<property name="sergiolo4" ref="budget4" />
+		<property name="sergiolo5" value="false" />
+		
+		<property name="Shout" ref="shout5" />
+		</bean>
+		
+		
+		
+		<bean id="budget1" class="acme.framework.datatypes.Money">
+		<property name="amount" value="266" />
+		<property name="currency" value="EUR" />
+		</bean>
+		
+		
+		<bean id="budget2" class="acme.framework.datatypes.Money">
+		<property name="amount" value="1231" />
+		<property name="currency" value="EUR" />
+		</bean>
+			<bean id="budget3" class="acme.framework.datatypes.Money">
+		<property name="amount" value="221" />
+		<property name="currency" value="USD" />
+		</bean>
+			<bean id="budget4" class="acme.framework.datatypes.Money">
+		<property name="amount" value="256" />
+		<property name="currency" value="USD" />
+		</bean>
 	<!-- UserAccount -->
 
 	<bean name="managerAntonio"

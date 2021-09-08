@@ -49,3 +49,4 @@ administrator.dashboard.entities.label.sergiolo1.deviation.gbp = Deviation of sh
 administrator.dashboard.entities.label.sergiolo1.deviation.usd = Deviation of shouts with Sergiolo4 currency as USD
 
 administrator.dashboard.entities.label.sergiolo1.ratio.zero = Ratio  of shouts whose Sergiolo4 bugdet is zero
+administrator.dashboard.entities.title.sergiolo1 = Sergiolo1 indicators

@@ -207,8 +207,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	
 		
 		result.setDvtSergiolo1_1(this.repository.deviationOfCurrency("EUR"));
-		result.setDvtSergiolo1_2(this.repository.deviationOfCurrency("EUR"));
-		result.setDvtSergiolo1_3(this.repository.deviationOfCurrency("EUR"));
+		result.setDvtSergiolo1_2(this.repository.deviationOfCurrency("USD"));
+		result.setDvtSergiolo1_3(this.repository.deviationOfCurrency("GBP"));
 
 		
 		

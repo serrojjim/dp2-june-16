@@ -45,7 +45,7 @@
 
 
 <h3>
-		<acme:message code="administrator.dashboard.entities.title.task-indicators"/>
+		<acme:message code="administrator.dashboard.entities.title.sergiolo1"/>
 </h3>
 <table class="table table-sm">
 		<tr>
@@ -98,7 +98,7 @@
 			<acme:message code="administrator.dashboard.entities.label.sergiolo1.deviation.usd"/>
 		</th>
 		<td>
-			<acme:print value="${dvtSergiolo1_1}"/>
+			<acme:print value="${dvtSergiolo1_2}"/>
 		</td>
 	</tr>
 	<tr>
@@ -106,7 +106,7 @@
 			<acme:message code="administrator.dashboard.entities.label.sergiolo1.deviation.gbp"/>
 		</th>
 		<td>
-			<acme:print value="${dvtSergiolo1_1}"/>
+			<acme:print value="${dvtSergiolo1_3}"/>
 		</td>
 	</tr>
 	<tr>

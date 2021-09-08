@@ -52,4 +52,5 @@ administrator.dashboard.entities.label.sergiolo1.deviation.gbp = Desviacion de g
 administrator.dashboard.entities.label.sergiolo1.deviation.usd = Desviacion de gritos con Sergiolo4 como USD
 
 administrator.dashboard.entities.label.sergiolo1.ratio.zero = Ratio de gritos cuyo Sergiolo4 budget es cero
+administrator.dashboard.entities.title.sergiolo1 = Indicadores sobre Sergiolo1
 
