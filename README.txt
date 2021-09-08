@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-This is the Acme-Planner project of the june#16 development team.
+This is the Acme Work-Plans project of the september#13 development team.
 
 Link GitHub repository: https://github.com/serrojjim/dp2-june-16
 Link GitHub release:https://github.com/serrojjim/dp2-june-16/releases/tag/1.1.3
