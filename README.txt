@@ -32,5 +32,8 @@ A continuación, detallaremos las distintas decisiones que hemos tomado sobre as
 que cumplir que la carga de trabajo de dicha tarea no supere al total de horas compredidas entre la fecha inicial y la fecha final de la tarea. Por última instancia las fecha fin tiene que ser superior a la fecha de inicio cumpliendose que la de inicio no esté en el pasado.
 
 - Los test relativos al listado de las entidades de un usuario anónimo solo han sido realizado su caso positivo, ya que consideramos que no es posible listar de forma no deseada estas funcionalidades.
- 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Septiembre:
+
 - Con respecto al nuevo requisito para los workplans incorporado para septiembre: "if the lower bound is not possible, then the system must suggest the start moment of the earliest task.", en la aplicación está permitido crear un workplan en el pasado, por tanto, no hay ningún caso en que el límite inferior no sea posible, y por tanto, nunca se deberá realizar una sugerencia distinta a la que ya hay implementada.
