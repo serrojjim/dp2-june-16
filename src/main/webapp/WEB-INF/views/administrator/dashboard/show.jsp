@@ -40,6 +40,85 @@
 	}
 </style>
 
+
+
+
+
+<h3>
+		<acme:message code="administrator.dashboard.entities.title.task-indicators"/>
+</h3>
+<table class="table table-sm">
+		<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.sergiolo1.sergiolo5"/>
+		</th>
+		<td>
+			<acme:print value="${ratioFlaggedAsImportant}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.sergiolo1.average.eur"/>
+		</th>
+		<td>
+			<acme:print value="${avgSergiolo1_1}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.sergiolo1.average.usd"/>
+		</th>
+		<td>
+			<acme:print value="${avgSergiolo1_2}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.sergiolo1.average.gbp"/>
+		</th>
+		<td>
+			<acme:print value="${avgSergiolo1_3}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.sergiolo1.deviation.eur"/>
+		</th>
+		<td>
+			<acme:print value="${dvtSergiolo1_1}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.sergiolo1.deviation.usd"/>
+		</th>
+		<td>
+			<acme:print value="${dvtSergiolo1_1}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.sergiolo1.deviation.gbp"/>
+		</th>
+		<td>
+			<acme:print value="${dvtSergiolo1_1}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.sergiolo1.ratio.zero"/>
+		</th>
+		<td>
+			<acme:print value="${ratioZero}"/>
+		</td>
+	</tr>
+	</table> 
+
 <h3>
 		<acme:message code="administrator.dashboard.entities.title.task-indicators"/>
 </h3>

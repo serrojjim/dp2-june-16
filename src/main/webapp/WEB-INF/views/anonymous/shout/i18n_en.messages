@@ -20,8 +20,15 @@ anonymous.shout.list.label.author = Author
 anonymous.shout.list.label.text = Text
 anonymous.shout.list.label.link = Info
 
-
+anonymous.shout.form.label.sergiolo2 = Sergiolo2
+anonymous.shout.form.label.sergiolo3 = Sergiolo3
+anonymous.shout.form.label.sergiolo3.fecha = MM/dd/YY 10:00 PM/AM
+anonymous.shout.form.label.sergiolo4 = Sergiolo4
+anonymous.shout.form.label.sergiolo5 = Sergiolo5
 
 
 anonymous.shout.form.error.author = Author's name contains Spam
 anonymous.shout.form.error.text = This text contains Spam
+anonymous.shout.form.error.sergiolo4 = Sergiolo4 must be EUR, USD or GBP
+anonymous.shout.form.error.sergiolo3 = Sergiolo3 must be at least one week after the moment when the shout is created
+anonymous.shout.form.error.sergiolo2 = Sergiolo2 must be unique and the date must be today. The pattern is YYmmdd/xx/xx

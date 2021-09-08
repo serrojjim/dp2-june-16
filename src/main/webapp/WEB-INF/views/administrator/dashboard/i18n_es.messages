@@ -42,3 +42,14 @@ administrator.dashboard.entities.label.numberOfNonPublishedWorkPlans = Planes de
 
 administrator.dashboard.entities.title.application-statuses = Estado de la aplicación
 administrator.dashboard.entities.title.figcaption = Un diagrama de barras que muestra información acerca de la cantidad de planes de trabajo
+
+administrator.dashboard.entities.label.sergiolo1.sergiolo5 = Ratio de gritos marcados como Sergiolo2
+administrator.dashboard.entities.label.sergiolo1.average.eur = Media de gritos con Sergiolo4 como EUR
+administrator.dashboard.entities.label.sergiolo1.average.gbp = Media de gritos con Sergiolo4 como GBP
+administrator.dashboard.entities.label.sergiolo1.average.usd = Media de gritos con Sergiolo4 como USD
+administrator.dashboard.entities.label.sergiolo1.deviation.eur = Desviacion de gritos con Sergiolo4 como USD
+administrator.dashboard.entities.label.sergiolo1.deviation.gbp = Desviacion de gritos con Sergiolo4 como USD
+administrator.dashboard.entities.label.sergiolo1.deviation.usd = Desviacion de gritos con Sergiolo4 como USD
+
+administrator.dashboard.entities.label.sergiolo1.ratio.zero = Ratio de gritos cuyo Sergiolo4 budget es cero
+

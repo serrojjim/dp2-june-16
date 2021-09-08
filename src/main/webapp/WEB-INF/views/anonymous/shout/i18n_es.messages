@@ -20,7 +20,14 @@ anonymous.shout.list.label.author = Autor
 anonymous.shout.list.label.text = Texto
 anonymous.shout.list.label.link = Información
 
-
+anonymous.shout.form.label.sergiolo2 = Sergiolo2
+anonymous.shout.form.label.sergiolo3 = Sergiolo3
+anonymous.shout.form.label.sergiolo3.fecha = dd/MM/YY 10:00
+anonymous.shout.form.label.sergiolo4 = Sergiolo4
+anonymous.shout.form.label.sergiolo5 = Sergiolo5
 
 anonymous.shout.form.error.author = Nombre de Autor con Spam
 anonymous.shout.form.error.text = Este texto es Spam
+anonymous.shout.form.error.sergiolo4 = Sergiolo4 debe ser EUR, USD o GBP
+anonymous.shout.form.error.sergiolo3 = Sergiolo3 debe ser al menos una semana posterior a la fecha de creacion del shout
+anonymous.shout.form.error.sergiolo2 = Sergiolo2 debe ser unico y la fecha debe de ser la de hoy El patron es YYmmdd/xx/xx

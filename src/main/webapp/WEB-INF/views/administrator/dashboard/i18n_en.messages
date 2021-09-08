@@ -39,3 +39,13 @@ administrator.dashboard.entities.label.numberOfNonPublishedWorkPlans = Non-publi
 
 administrator.dashboard.entities.title.application-statuses = Application statuses
 administrator.dashboard.entities.title.figcaption = A bar diagram that shows information about the amount of workplans
+
+administrator.dashboard.entities.label.sergiolo1.sergiolo5 = Ratio of shouts flagged as Sergiolo2
+administrator.dashboard.entities.label.sergiolo1.average.eur = Average of shouts with Sergiolo4 currency as EUR
+administrator.dashboard.entities.label.sergiolo1.average.gbp = Average of shouts with Sergiolo4 currency as GBP
+administrator.dashboard.entities.label.sergiolo1.average.usd = Average of shouts with Sergiolo4 currency as USD
+administrator.dashboard.entities.label.sergiolo1.deviation.eur = Deviation of shouts with Sergiolo4 currency as EUR
+administrator.dashboard.entities.label.sergiolo1.deviation.gbp = Deviation of shouts with Sergiolo4 currency as GBP
+administrator.dashboard.entities.label.sergiolo1.deviation.usd = Deviation of shouts with Sergiolo4 currency as USD
+
+administrator.dashboard.entities.label.sergiolo1.ratio.zero = Ratio  of shouts whose Sergiolo4 bugdet is zero

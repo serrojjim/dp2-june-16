@@ -69,7 +69,17 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 			"totalNumberOfWorkplans",
 			"totalNumberOfPublishedWorkplans",
-			"totalNumberOfNonPublishedWorkplans");
+			"totalNumberOfNonPublishedWorkplans",
+			
+			
+			"ratioFlaggedAsImportant",
+			"avgSergiolo1_1",
+			"avgSergiolo1_2",
+			"avgSergiolo1_3",
+			"dvtSergiolo1_1",
+			"dvtSergiolo1_2",
+			"dvtSergiolo1_3",	
+			"ratioZero");
 	}
 
 	@Override
@@ -176,6 +186,37 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setTotalNumberOfPublishedWorkplans(totalNumberOfPublishedWorkplans);
 		result.setTotalNumberOfNonPublishedWorkplans(numberOfWorkplans - totalNumberOfPublishedWorkplans);
 
+		
+		
+		
+		//EXAMEN
+		
+		Double ratioFlaggedAsImportant=0.;	
+		
+		ratioFlaggedAsImportant = (this.repository.numberOfShoutFlagged()/this.repository.numberOfShout())*100;
+		
+		Double budgetZero=0.;	
+
+		budgetZero = (this.repository.numberOfShoutPamountZero()/this.repository.numberOfShout())*100;
+
+		result.setRatioFlaggedAsImportant(ratioFlaggedAsImportant);
+		
+		result.setAvgSergiolo1_1(this.repository.avgOfShoutsWithCurrency("EUR"));
+		result.setAvgSergiolo1_2(this.repository.avgOfShoutsWithCurrency("USD"));
+		result.setAvgSergiolo1_3(this.repository.avgOfShoutsWithCurrency("GBP"));
+	
+		
+		result.setDvtSergiolo1_1(this.repository.deviationOfCurrency("EUR"));
+		result.setDvtSergiolo1_2(this.repository.deviationOfCurrency("EUR"));
+		result.setDvtSergiolo1_3(this.repository.deviationOfCurrency("EUR"));
+
+		
+		
+		
+		result.setTotalNumberOfWorkplans(numberOfWorkplans);
+
+		result.setRatioZero(budgetZero);
+		
 		return result;
 	}
 
