@@ -1,0 +1,5 @@
+author,text,link,sergiolo2,sergiolo4
+test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,negative format,230 EUR
+test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,2222222,230 EUR
+test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,212121/xx/aa,230 EUR
+test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,210901/xx/aa,230 EUR

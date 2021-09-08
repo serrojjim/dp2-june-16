@@ -1,0 +1,6 @@
+author,text,link,sergiolo4,sergiolo4
+test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,negative test
+test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,xxxx
+test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,xxx EUR
+test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,.2.2 EUR
+test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,null
