@@ -1,6 +1,0 @@
-timestamp,test-class,test-method,time,description,result
-2021-09-08 20:20:41.844,acme.testing.controlCheck.AnonymousShoutCreateTest,createNegativeSergiolo2,2334,"[1] author=test sample1, text=text for test sample1, link=http://this.is.a.link.for.test.sample1, sergiolo2=negative format, sergiolo4=230 EUR",OK
-2021-09-08 20:20:44.637,acme.testing.controlCheck.AnonymousShoutCreateTest,createNegativeSergiolo2,2389,"[2] author=test sample1, text=text for test sample1, link=http://this.is.a.link.for.test.sample1, sergiolo2=2222222, sergiolo4=230 EUR",OK
-2021-09-08 20:20:47.296,acme.testing.controlCheck.AnonymousShoutCreateTest,createNegativeSergiolo2,2269,"[3] author=test sample1, text=text for test sample1, link=http://this.is.a.link.for.test.sample1, sergiolo2=212121/xx/aa, sergiolo4=230 EUR",OK
-2021-09-08 20:20:50.082,acme.testing.controlCheck.AnonymousShoutCreateTest,createNegativeSergiolo2,2398,"[4] author=test sample1, text=text for test sample1, link=http://this.is.a.link.for.test.sample1, sergiolo2=210901/xx/aa, sergiolo4=230 EUR",OK
-2021-09-08 20:20:59.588,acme.testing.controlCheck.AnonymousShoutCreateTest,createNegativeSergiolo3,9103,"[1] author=test sample1, text=text for test sample1, link=http://this.is.a.link.for.test.sample1, sergiolo4=230 EUR, sergiolo3=10/10/10 10:00 PM",No errors found in input box 'sergiolo1.sergiolo2'

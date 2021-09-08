@@ -1,3 +1,0 @@
-timestamp,test-class,test-method,time,description,result
-2021-09-08 19:53:50.009,acme.testing.controlCheck.AnonymousShoutCreateTest,createPositive,31712,"[1] author=Lucia, text=¡soy una super programadora!, link=http://lucianieto.org, sergiolo2=/03/aa, sergiolo4=EUR 200.00, sergiolo5=true, index=0",OK
-2021-09-08 19:53:56.839,acme.testing.controlCheck.AnonymousShoutCreateTest,createPositive,6350,"[2] author=Antonio, text=¡hola!, link=http://google.org, sergiolo2=/03/bb, sergiolo4=USD 200.00, sergiolo5=false, index=0",OK
