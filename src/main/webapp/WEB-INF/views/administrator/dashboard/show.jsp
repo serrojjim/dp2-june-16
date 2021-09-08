@@ -48,7 +48,7 @@
 		
 	<tr>
 		<th scope="row">
-			<acme:message code="the ratio of shouts whose sergiolo1 were flagged as important"/>
+			<acme:message code="The ratio of shouts whose sergiolo1 were flagged as sergiolo5"/>
 		</th>
 		<td>
 			<acme:print value="${ratioShoutIsSergiolo5}"/>
@@ -57,7 +57,7 @@
 	
 		<tr>
 		<th scope="row">
-			<acme:message code="the ratio of shouts whose sergiolo1 have budget zero"/>
+			<acme:message code="The ratio of shouts whose sergiolo1 have budget zero"/>
 		</th>
 		<td>
 			<acme:print value="${ratioShoutIsBudgetZero}"/>
@@ -68,7 +68,7 @@
 	
 		<tr>
 		<th scope="row">
-			<acme:message code="Average Euro"/>
+			<acme:message code="Average EUR"/>
 		</th>
 		<td>
 			<acme:print value="${averageMoneytIsEur}"/>
@@ -77,7 +77,7 @@
 	
 		<tr>
 		<th scope="row">
-			<acme:message code="Average Libra"/>
+			<acme:message code="Average USD"/>
 		</th>
 		<td>
 			<acme:print value="${averageMoneytIsUsd}"/>
@@ -96,7 +96,7 @@
 
 	<tr>
 		<th scope="row">
-			<acme:message code="Desviation Euro"/>
+			<acme:message code="Desviation EUR"/>
 		</th>
 		<td>
 			<acme:print value="${desviationMoneytIsEur}"/>
@@ -105,7 +105,7 @@
 	
 		<tr>
 		<th scope="row">
-			<acme:message code="Desviation Libra"/>
+			<acme:message code="Desviation USD"/>
 		</th>
 		<td>
 			<acme:print value="${desviationMoneytIsUsd}"/>

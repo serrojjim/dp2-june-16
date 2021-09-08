@@ -116,7 +116,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			errors.state(request, condition7, "sergiolo1.sergiolo3", "anonymous.shout.form.error.sergiolo3");	
 			
 			final boolean esunico = this.shoutRepository.obtenerSergiolo2().stream().noneMatch(x -> x.equals(entity.getSergiolo1().getSergiolo2()));
-			errors.state(request, esunico, "sergiolo1.sergiolo2", "Ya está en uso, utiliza uno diferente.");
+			errors.state(request, esunico, "sergiolo1.sergiolo2", "Ya está en uso, utiliza uno diferente");
 			
 		if(!entity.getAuthor().isEmpty()) {
 		final boolean condition1 =  !Spam1.isSpam(entity.getAuthor(), this.spamRepository.findSpam());
