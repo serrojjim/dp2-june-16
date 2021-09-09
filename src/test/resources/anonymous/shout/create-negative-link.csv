@@ -1,5 +1,5 @@
 author,text,link,sergiolo4
 test sample1,text for test sample1,this is not a link,22 EUR
 test sample2,text for test sample2,hsdatt1p://t1his123is3112.a.link123.for.test.sample2,32 GBP
-test sample2,text for test sample2,http//this.is.not.a.correct.link,32 GBP
-test sample2,text for test sample2,this.is.not.a.correct.link,32 GBP
+test sample3,text for test sample3,http//this.is.not.a.correct.link,32 GBP
+test sample4,text for test sample4,this.is.not.a.correct.link,32 GBP
