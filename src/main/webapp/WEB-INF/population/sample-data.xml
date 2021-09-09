@@ -737,6 +737,8 @@
 		<property name="author" value="John Jonhns" />
 		<property name="text" value="I'm an alien" />
 		<property name="link" value="http://ejemplo5.com" />
+		<property name="sergiolo1" ref="sergiolo16" />
+		
 	</bean>
 
 	<bean id="shout6" class="acme.entities.shouts.Shout">
@@ -804,7 +806,14 @@
 		<property name="Shout" ref="shout5" />
 		</bean>
 		
+		<bean id="sergiolo16" class="acme.entities.sergiolo1.Sergiolo1">
+		<property name="sergiolo2" value="210809/00/1f" />
+		<property name="sergiolo3" value="01/12/21 10:15 AM" />
+		<property name="sergiolo4" ref="budget4" />
+		<property name="sergiolo5" value="false" />
 		
+		<property name="Shout" ref="shout6" />
+		</bean>
 		
 		<bean id="budget1" class="acme.framework.datatypes.Money">
 		<property name="amount" value="266" />

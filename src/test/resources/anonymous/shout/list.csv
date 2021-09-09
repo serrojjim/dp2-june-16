@@ -1,7 +1,7 @@
-recordIndex,author,link,moment,text
-3,Miguel Ángel Valverde,http://ejemplo2.com,2021/09/07 10:38,I'm the master of my Team!
-0,Antonio Campuzano,http://ejemplo1.com,2021/09/08 10:15,I'm the creator!
-1,Ale Ruiz,,2021/09/08 09:49,I'm developer!
-4,John Doe,,2021/09/07 09:39,I'm developer!
-5,Diego Plaza,http://ejemplo3.com,2021/09/07 02:48,I'm developer!
-2,John Jonhns,http://ejemplo5.com,2021/09/07 13:19,I'm an alien
+recordIndex,author,link,moment,text,sergiolo2,sergiolo3,sergiolo4,sergiolo5
+0,Antonio Campuzano,http://ejemplo1.com,2021/09/08 10:15,I'm the creator!,210809/00/1a,4/12/21 10:15 AM,EUR 266.00,true
+3,Miguel Ángel Valverde,http://ejemplo2.com,2021/09/07 10:38,I'm the master of my Team!,210809/00/1b,4/12/21 10:15 AM,EUR 266.00,true
+5,Diego Plaza,http://ejemplo3.com,2021/09/07 02:48,I'm developer!,210809/00/1c,7/12/21 10:15 AM,"EUR 1,231.00",true
+4,John Doe,,2021/09/07 09:39,I'm developer!,210809/00/1d,7/12/21 10:15 AM,USD 221.00,false
+1,Ale Ruiz,,2021/09/08 09:49,I'm developer!,210809/00/1e,7/12/21 10:15 AM,GBP 0.00,false
+2,John Jonhns,http://ejemplo5.com,2021/09/07 13:19,I'm an alien,210809/00/1f,1/12/21 10:15 AM,GBP 0.00,false
