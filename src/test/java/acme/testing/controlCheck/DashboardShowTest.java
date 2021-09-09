@@ -21,21 +21,15 @@ public class DashboardShowTest extends AcmePlannerTest {
 
 		super.clickOnMenu("Administrator", "Dashboard");
 
-		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[1]/td[normalize-space(text()) = '25.00']"));
+		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[1]/td[normalize-space(text()) = '50.00']"));
 		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[2]/td[normalize-space(text()) = '587.67']"));
 		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[3]/td[normalize-space(text()) = '221.00']"));
 		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[4]/td[normalize-space(text()) = '0.00']"));
 		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[5]/td[normalize-space(text()) = '454.91']"));
 		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[6]/td[normalize-space(text()) = '0.00']"));
 		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[7]/td[normalize-space(text()) = '0.00']"));
-		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[8]/td[normalize-space(text()) = '8.33']"));
+		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[8]/td[normalize-space(text()) = '16.67']"));
 
-//		super.checkExists(By.xpath("/html/body/div[2]/div/table[2]/tbody/tr[1]/td[normalize-space(text()) = '50.00']"));
-//		super.checkExists(By.xpath("/html/body/div[2]/div/table[2]/tbody/tr[2]/td[normalize-space(text()) = '748.50']"));
-//		super.checkExists(By.xpath("/html/body/div[2]/div/table[2]/tbody/tr[3]/td[normalize-space(text()) = '238.50']"));
-//		super.checkExists(By.xpath("/html/body/div[2]/div/table[2]/tbody/tr[4]/td[normalize-space(text()) = '482.50']"));
-//		super.checkExists(By.xpath("/html/body/div[2]/div/table[2]/tbody/tr[5]/td[normalize-space(text()) = '17.50']"));
-//		super.checkExists(By.xpath("/html/body/div[2]/div/table[2]/tbody/tr[6]/td[normalize-space(text()) = '0.00']"));
 
 		
 		super.checkExists(By.xpath("/html/body/div[2]/div/table[2]/tbody/tr[1]/td[normalize-space(text()) = '14']"));
