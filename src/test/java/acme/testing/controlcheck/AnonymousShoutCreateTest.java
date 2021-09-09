@@ -264,7 +264,7 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest{
 	
 	//Con esto automatizo que la fecha del momento siempre sea una semana a la fecha de creación
 	public String obtenerFechaActualPlusWeek() {
-		final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/YY HH:mm a");
+		final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/YY h:mm a");
 		final LocalDateTime fechaactual = LocalDateTime.now().plusDays(10);
 		final String fecha = fechaactual.format(formatter); 
 		return fecha;
