@@ -8,7 +8,7 @@ public abstract class AcmePlannerTest extends AcmeTest{
 	@Override
 	@BeforeAll
 	public void beforeAll() {
-		super.setHeadless(true);
+		super.setHeadless(false);
 		super.beforeAll();
 		
 		super.setBaseCamp("http", "localhost", "8080", "/Acme-Work-Plans", "/master/welcome", "?language=en&debug=true");
