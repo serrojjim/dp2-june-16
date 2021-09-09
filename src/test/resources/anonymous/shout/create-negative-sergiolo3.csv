@@ -1,5 +1,5 @@
 author,text,link,sergiolo4,sergiolo3
 test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,230 EUR,10/10/10 10:00 PM
-test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,230 EUR,10/10/10 10:00PM
-test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,230 EUR,negative test
-test sample1,text for test sample1,http://this.is.a.link.for.test.sample1,230 EUR,08/09/2026 14:35
+test sample2,text for test sample2,http://this.is.a.link.for.test.sample2,230 EUR,10/10/10 10:00PM
+test sample3,text for test sample3,http://this.is.a.link.for.test.sample3,230 EUR,negative test
+test sample4,text for test sample4,http://this.is.a.link.for.test.sample4,230 EUR,08/09/2026 14:35
