@@ -28,25 +28,25 @@ anonymous.shout.form.error.text = This text contains Spam
 
 
 ##EXAM
-anonymous.shout.form.error.sergiolo4 = The currency must be EUR, USD or GBP
+anonymous.shout.form.error.budget = The currency must be EUR, USD or GBP
 
-anonymous.shout.form.label.sergiolo4 = Sergiolo4
-anonymous.shout.form.label.sergiolo2 = Sergiolo2
-anonymous.shout.form.label.sergiolo5 = Sergiolo5
-anonymous.shout.form.label.sergiolo3 = Sergiolo3
+anonymous.shout.form.label.budget = Budget
+anonymous.shout.form.label.identification = Identification
+anonymous.shout.form.label.important = Important
+anonymous.shout.form.label.deadline = Deadline
 
-anonymous.shout.list.label.sergiolo4 = Sergiolo4
-anonymous.shout.list.label.sergiolo2 = Sergiolo2
-anonymous.shout.list.label.sergiolo5 = Sergiolo5
-anonymous.shout.list.label.sergiolo3 = Sergiolo3
+anonymous.shout.list.label.budget = Budget
+anonymous.shout.list.label.identification = Identification
+anonymous.shout.list.label.important = Important
+anonymous.shout.list.label.deadline = Deadline
 
-anonymous.shout.form.placeholder.sergiolo4 = 24USD
-anonymous.shout.form.placeholder.sergiolo2 = AAAA:yy:mmdd, the date must be the date of today.
-anonymous.shout.form.placeholder.sergiolo3 = 05/17/21 10:15 AM
+anonymous.shout.form.placeholder.budget = 24USD
+anonymous.shout.form.placeholder.identification = AAAAA-dd/MM/yy, the date must be the date of today.
+anonymous.shout.form.placeholder.deadline = 05/17/21 10:15 AM
 anonymous.shout.form.placeholder.text = This is an example text!
 
 anonymous.shout.form.error.formatodia = Must be the actual date.
 anonymous.shout.form.error.formatomes=Must be the actual date.
 anonymous.shout.form.error.formatoaño=Must be the actual date.
 
-anonymous.shout.form.error.sergiolo3 = The sergiolo3 must be 1 week ahead.
+anonymous.shout.form.error.deadline = The deadline must be 1 week ahead.

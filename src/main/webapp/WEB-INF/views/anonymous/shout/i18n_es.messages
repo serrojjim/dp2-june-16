@@ -26,19 +26,19 @@ anonymous.shout.form.error.author = Nombre de Autor con Spam
 anonymous.shout.form.error.text = Este texto es Spam
 
 #examen
-anonymous.shout.form.error.money = La moneda debe ser EUR ó USD
-anonymous.shout.form.label.sergiolo4 = Sergiolo4ESP
-anonymous.shout.form.label.sergiolo2 = Sergiolo2ESP
-anonymous.shout.form.label.sergiolo5 = Sergiolo5ESP
-anonymous.shout.form.label.sergiolo3 = Sergiolo3ESP
+anonymous.shout.form.error.money = La moneda debe ser EUR, USD o GBP
+anonymous.shout.form.label.budget = Presupuesto
+anonymous.shout.form.label.identification = Identificacion
+anonymous.shout.form.label.important = Importante
+anonymous.shout.form.label.deadline = Fecha Limite
 
-anonymous.shout.list.label.sergiolo4 = Sergiolo4ESP
-anonymous.shout.list.label.sergiolo2 = Sergiolo2ESP
-anonymous.shout.list.label.sergiolo5 = Sergiolo5ESP
-anonymous.shout.list.label.sergiolo3 = Sergiolo3ESP
+anonymous.shout.list.label.budget = Presupuesto
+anonymous.shout.list.label.identification = Identificacion
+anonymous.shout.list.label.important = Importante
+anonymous.shout.list.label.deadline = Fecha Limite
 
-anonymous.shout.form.placeholder.sergiolo4 = 24EUR
-anonymous.shout.form.placeholder.sergiolo2 = AAAA:yy:mmdd, la fecha debe ser el día de hoy
+anonymous.shout.form.placeholder.budget = 24EUR
+anonymous.shout.form.placeholder.identification = AAAAA-dd/MM/yy, la fecha debe ser el día de hoy
 anonymous.shout.form.placeholder.segiolo3 = 17/05/21 10:15
 anonymous.shout.form.placeholder.text = Esto es un texto de ejemplo!
 

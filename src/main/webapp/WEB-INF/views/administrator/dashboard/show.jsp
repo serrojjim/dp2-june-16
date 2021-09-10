@@ -48,16 +48,16 @@
 		
 	<tr>
 		<th scope="row">
-			<acme:message code="The ratio of shouts whose sergiolo1 were flagged as sergiolo5"/>
+			<acme:message code="The ratio of shouts whose mocke were flagged as important"/>
 		</th>
 		<td>
-			<acme:print value="${ratioShoutIsSergiolo5}"/>
+			<acme:print value="${ratioShoutIsImportant}"/>
 		</td>
 	</tr>
 	
 		<tr>
 		<th scope="row">
-			<acme:message code="The ratio of shouts whose sergiolo1 have budget zero"/>
+			<acme:message code="The ratio of shouts whose mocke have budget zero"/>
 		</th>
 		<td>
 			<acme:print value="${ratioShoutIsBudgetZero}"/>

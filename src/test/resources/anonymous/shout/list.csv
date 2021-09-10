@@ -1,7 +1,7 @@
-recordIndex,author,link,moment,text,sergiolo3,sergiolo5,sergiolo2,sergiolo4
-0,Sergio Rojas,http://examshout.com,2021/09/08 10:15,Exam shout!,7/11/22 10:15 AM,true,ZZAA:21:0908,EUR 777.00
-1,Mariano Torrado,http://examshout4.com,2021/09/08 10:15,Exam shout 4!,7/11/22 10:15 AM,false,ZZAJ:21:0908,EUR 333.00
-2,Alvaro Cortes,http://examshout6.com,2021/09/08 10:15,Exam shout 6!,7/11/22 10:15 AM,true,ZZAM:21:0908,USD 0.00
-3,Antonio Campuzano,http://examshout2.com,2021/09/07 10:15,Exam shout 2!,7/11/22 10:15 AM,false,ZZAS:21:0908,GBP 777.00
-4,Mariano Torrado,http://examshout3.com,2021/09/07 10:15,Exam shout 3!,7/11/22 10:15 AM,true,ZZAV:21:0908,USD 777.00
-5,Alvaro Cortes,http://examshout5.com,2021/09/06 10:15,Exam shout 5!,7/11/22 10:15 AM,true,ZZAC:21:0908,GBP 333.00
+recordIndex,author,link,moment,text,deadline,important,identification,budget
+0,Sergio Rojas,http://examshout.com,2021/09/08 10:15,Exam shout!,7/11/22 10:15 AM,true,AAAAA-10/09/21,EUR 777.00
+1,Mariano Torrado,http://examshout4.com,2021/09/08 10:15,Exam shout 4!,7/11/22 10:15 AM,false,AAAAD-10/09/21,EUR 333.00
+2,Alvaro Cortes,http://examshout6.com,2021/09/08 10:15,Exam shout 6!,7/11/22 10:15 AM,true,AAAAF-10/09/21,USD 0.00
+3,Antonio Campuzano,http://examshout2.com,2021/09/07 10:15,Exam shout 2!,7/11/22 10:15 AM,false,AAAAB-10/09/21,GBP 777.00
+4,Mariano Torrado,http://examshout3.com,2021/09/07 10:15,Exam shout 3!,7/11/22 10:15 AM,true,AAAAC-10/09/21,USD 777.00
+5,Alvaro Cortes,http://examshout5.com,2021/09/06 10:15,Exam shout 5!,7/11/22 10:15 AM,true,AAAAE-10/09/21,GBP 333.00

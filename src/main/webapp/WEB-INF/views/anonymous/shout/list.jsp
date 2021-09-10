@@ -9,9 +9,9 @@
 	<acme:list-column code="anonymous.shout.list.label.text" path="text" width="20%"/>
 	<acme:list-column code="anonymous.shout.list.label.link" path="link" width="20%"/>
 	
-	<acme:list-column code="anonymous.shout.list.label.sergiolo3" path="sergiolo1.sergiolo3" width="15%"/>
-	<acme:list-column code="anonymous.shout.list.label.sergiolo5" path="sergiolo1.sergiolo5" width="5%"/>
-	<acme:list-column code="anonymous.shout.list.label.sergiolo2" path="sergiolo1.sergiolo2" width="20%"/>
-	<acme:list-column code="anonymous.shout.list.label.sergiolo4" path="sergiolo1.sergiolo4" />
+	<acme:list-column code="anonymous.shout.list.label.deadline" path="mocke.deadline" width="15%"/>
+	<acme:list-column code="anonymous.shout.list.label.important" path="mocke.important" width="5%"/>
+	<acme:list-column code="anonymous.shout.list.label.identification" path="mocke.identification" width="20%"/>
+	<acme:list-column code="anonymous.shout.list.label.budget" path="mocke.budget" />
 
 </acme:list>

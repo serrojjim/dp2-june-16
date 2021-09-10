@@ -15,21 +15,21 @@ public interface AdministratorDashboardRepository extends AbstractRepository{
 	
 	//About exam
 	
-		@Query("SELECT COUNT(t) FROM Shout t where t.sergiolo1.sergiolo5 = true")
-		Double numberOfShoutIsSergiolo5();
+		@Query("SELECT COUNT(t) FROM Shout t where t.mocke.important = true")
+		Double numberOfShoutIsImportant();
 		
 		
 		@Query("SELECT COUNT(t) FROM Shout t")
 		Double numberOfShout();
 		
-		@Query("SELECT AVG(s.sergiolo1.sergiolo4.amount) FROM Shout s where s.sergiolo1.sergiolo4.currency= ?1")
+		@Query("SELECT AVG(s.mocke.budget.amount) FROM Shout s where s.mocke.budget.currency= ?1")
 		Double averageOfShoutMoney(String currency);
 		
 
-		@Query("SELECT STDDEV(s.sergiolo1.sergiolo4.amount) FROM Shout s where s.sergiolo1.sergiolo4.currency= ?1")
+		@Query("SELECT STDDEV(s.mocke.budget.amount) FROM Shout s where s.mocke.budget.currency= ?1")
 		Double desviationOfShoutMoney(String currency);
 		
-		@Query("SELECT COUNT(t) FROM Shout t where t.sergiolo1.sergiolo4.amount = 0")
+		@Query("SELECT COUNT(t) FROM Shout t where t.mocke.budget.amount = 0")
 		Double numberOfShoutIsBudgetZero();
 		
 	

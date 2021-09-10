@@ -52,7 +52,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "author", "text", "link","sergiolo1.sergiolo2","sergiolo1.sergiolo3", "sergiolo1.sergiolo4","sergiolo1.sergiolo5");
+		request.unbind(entity, model, "author", "text", "link","mocke.identification","mocke.deadline", "mocke.budget","mocke.important");
 	}
 	
 	@Override
@@ -81,15 +81,17 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert errors != null;
 		if(!errors.hasErrors()) {
 			
-			final boolean condition3 =  !entity.getSergiolo1().getSergiolo4().getCurrency().equals("EUR") && !entity.getSergiolo1().getSergiolo4().getCurrency().equals("USD")  && !entity.getSergiolo1().getSergiolo4().getCurrency().equals("GBP") ;
+			final boolean condition3 =  !entity.getMocke().getBudget().getCurrency().equals("EUR") && !entity.getMocke().getBudget().getCurrency().equals("USD")  && !entity.getMocke().getBudget().getCurrency().equals("GBP") ;
 
-			errors.state(request, !condition3, "sergiolo1.sergiolo4", "anonymous.shout.form.error.sergiolo4");
+			errors.state(request, !condition3, "mocke.budget", "anonymous.shout.form.error.budget");
 
-			final String[] parts =entity.getSergiolo1().getSergiolo2().split(":"); //espliteopor : y obtendo dias, mes y año
-			
-			final int dia = Integer.parseInt(parts[2].substring(2));
-			final int mes = Integer.parseInt(parts[2].substring(0,2));
-			
+			final String[] parts2 =entity.getMocke().getIdentification().split("-"); //espliteopor - y obtendo dos partes
+			final String[] parts =parts2[1].split("/"); //espliteopor / y obtendo dia,mes y año
+			//AAAAA-dd/MM/YY
+			final int dia = Integer.parseInt(parts[0]);
+			final int mes = Integer.parseInt(parts[1]);
+			final int ano = Integer.parseInt(parts[2]);
+
 			final int mesactual = LocalDateTime.now().getMonthValue();
 			final int diaactual = LocalDateTime.now().getDayOfMonth();
 
@@ -97,26 +99,25 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			
 			final boolean condition5 = dia == diaactual;
 			
-			final String añoactual =String.valueOf(LocalDateTime.now().getYear());
-			final int añoactual2digits  = Integer.parseInt(añoactual.substring(2));
-			final int añoentrada = Integer.parseInt(parts[1]);
-			final boolean condition6 =añoentrada==añoactual2digits;
+			final String anoactual =String.valueOf(LocalDateTime.now().getYear());
+			final int anoactual2digits  = Integer.parseInt(anoactual.substring(2));
+			final boolean condition6 =ano==anoactual2digits;
 
-			errors.state(request, condition4, "sergiolo1.sergiolo2", "anonymous.shout.form.error.formatomes");
-			errors.state(request, condition5, "sergiolo1.sergiolo2", "anonymous.shout.form.error.formatodia");
-			errors.state(request, condition6, "sergiolo1.sergiolo2", "anonymous.shout.form.error.formatoaño");
+			errors.state(request, condition4, "mocke.identification", "anonymous.shout.form.error.formatomes");
+			errors.state(request, condition5, "mocke.identification", "anonymous.shout.form.error.formatodia");
+			errors.state(request, condition6, "mocke.identification", "anonymous.shout.form.error.formatoaño");
 
 			
 			final LocalDateTime fechaactual = LocalDateTime.now(); //Fecha de creación de shout
-			final LocalDateTime deadlineentrada = entity.getSergiolo1().getSergiolo3();
+			final LocalDateTime deadlineentrada = entity.getMocke().getDeadline();
 			
 			
 			final boolean condition7 = ChronoUnit.DAYS.between(fechaactual, deadlineentrada)>=7;
 
-			errors.state(request, condition7, "sergiolo1.sergiolo3", "anonymous.shout.form.error.sergiolo3");	
+			errors.state(request, condition7, "mocke.deadline", "anonymous.shout.form.error.deadline");	
 			
-			final boolean esunico = this.shoutRepository.obtenerSergiolo2().stream().noneMatch(x -> x.equalsIgnoreCase(entity.getSergiolo1().getSergiolo2()));
-			errors.state(request, esunico, "sergiolo1.sergiolo2", "Ya está en uso, utiliza uno diferente");
+			final boolean esunico = this.shoutRepository.obtenerIdentification().stream().noneMatch(x -> x.equalsIgnoreCase(entity.getMocke().getIdentification()));
+			errors.state(request, esunico, "mocke.identification", "Ya está en uso, utiliza uno diferente");
 			
 		if(!entity.getAuthor().isEmpty()) {
 		final boolean condition1 =  !Spam1.isSpam(entity.getAuthor(), this.spamRepository.findSpam());

@@ -1,6 +1,12 @@
-author,text,link,sergiolo4,sergiolo5
+author,text,link,budget,important
 Mariano Manuel,¡soy una super programadora!,nosoyunenlace,EUR 23.00,true
 Lucia Nieto,¡soy una super programadora!,hvgbhp://lucianieto,USD 23.00,false
 Maria Nieto,¡soy una super programadora!,lucianieto.org,USD 23.00,false
-
-
+Maria Nieto,¡soy una super programadora!,lucianieto.es,USD 23.00,false
+Maria Nieto,¡soy una super programadora!,lucianieto.net,USD 23.00,false
+Maria Nieto,¡soy una super programadora!,www.lucianieto.org,USD 23.00,false
+Maria Nieto,¡soy una super programadora!,http//lucianieto.org,USD 23.00,false
+Maria Nieto,¡soy una super programadora!,http/lucianieto.org,USD 23.00,false
+Maria Nieto,¡soy una super programadora!,asd,USD 23.00,false
+Maria Nieto,¡soy una super programadora!,htttp:lucianieto.org,USD 23.00,false
+Maria Nieto,¡soy una super programadora!,http.lucianieto.org,USD 23.00,false

@@ -1,4 +1,4 @@
-package acme.entities.sergiolo1;
+package acme.entities.mocke;
 
 import java.time.LocalDateTime;
 
@@ -20,26 +20,26 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Sergiolo1 extends DomainEntity {
+public class Mocke extends DomainEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
 	@NotNull
-	protected LocalDateTime				sergiolo3;
+	protected LocalDateTime				deadline;
 
 	@Column(unique = true)
-	@NotBlank
-	@Pattern(regexp="^\\w{2,4}:[0-9]{2}:[0-9]{4}$",message="pattern must be AAAA:yy:mmdd, must be the date of today")  // ^\w{2,4}:yy:mmdd$
-	protected String			sergiolo2;
+	@NotBlank 
+	@Pattern(regexp="^\\w{5}-[0-9]{2}/[0-9]{2}/[0-9]{2}$",message="pattern must be AAAAA-dd/MM/YY, must be the date of today, A must be alphanumeric")  // ^\w{2,4}:yy:mmdd$
+	protected String			identification;
 
 	@NotNull
 	@Valid
-	protected Money			sergiolo4;
+	protected Money			budget;
 
 	@NotNull
-	protected Boolean			sergiolo5;
+	protected Boolean			important;
 	
-	@OneToOne(mappedBy="sergiolo1", cascade=CascadeType.ALL)
+	@OneToOne(mappedBy="mocke", cascade=CascadeType.ALL)
 	protected Shout shout;
 
 }

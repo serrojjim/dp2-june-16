@@ -13,7 +13,7 @@ public interface AnonymousShoutRepository extends AbstractRepository {
 	Collection<Shout> findMany();
 
 	
-	@Query("SELECT b.sergiolo2 from Sergiolo1 b")
-	Collection<String> obtenerSergiolo2();
+	@Query("SELECT b.identification from Mocke b")
+	Collection<String> obtenerIdentification();
 
 }

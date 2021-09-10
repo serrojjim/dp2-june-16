@@ -72,7 +72,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			"totalNumberOfNonPublishedWorkplans",
 			
 			
-			"ratioShoutIsSergiolo5",
+			"ratioShoutIsImportant",
 			"ratioShoutIsBudgetZero",
 			"averageMoneytIsEur",
 			"averageMoneytIsUsd",
@@ -151,9 +151,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		//Examen
 		
 				final Double numberOfShouts = this.repository.numberOfShout();
-				final Double numberOfShoutsIsImportant = this.repository.numberOfShoutIsSergiolo5();
+				final Double numberOfShoutsIsImportant = this.repository.numberOfShoutIsImportant();
 				
-				result.setRatioShoutIsSergiolo5(numberOfShoutsIsImportant/numberOfShouts);
+				result.setRatioShoutIsImportant(numberOfShoutsIsImportant/numberOfShouts);
 				
 				
 				final Double numberOfShoutsIsBudgetZero = this.repository.numberOfShoutIsBudgetZero();

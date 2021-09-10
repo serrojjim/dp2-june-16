@@ -16,7 +16,7 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.sergiolo1.Sergiolo1;
+import acme.entities.mocke.Mocke;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -46,6 +46,6 @@ public class Shout extends DomainEntity {
 	
 	@Valid
 	@OneToOne(cascade=CascadeType.ALL)
-	protected Sergiolo1 sergiolo1;
+	protected Mocke mocke;
 
 }

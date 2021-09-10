@@ -703,18 +703,18 @@
 		<property name="author" value="Sergio Rojas" />
 		<property name="text" value="Exam shout!" />
 		<property name="link" value="http://examshout.com" />
-		<property name="sergiolo1" ref="sergiolo1examen" />
+		<property name="mocke" ref="mockeexamen" />
 		</bean>
 			
-		<bean id="sergiolo1examen" class="acme.entities.sergiolo1.Sergiolo1">
-		<property name="sergiolo2" value="ZZAA:21:0908" />
-		<property name="sergiolo3" value="07/11/22 10:15 AM" />
-		<property name="sergiolo4" ref="sergiolo4exam" />
-		<property name="sergiolo5" value="true" />
+		<bean id="mockeexamen" class="acme.entities.mocke.Mocke">
+		<property name="identification" value="AAAAA-10/09/21" />
+		<property name="deadline" value="07/11/22 10:15 AM" />
+		<property name="budget" ref="budgetexam" />
+		<property name="important" value="true" />
 		<property name="shout" ref="shoutexamen" />
 		</bean>
 		
-		<bean id="sergiolo4exam" class="acme.framework.datatypes.Money">
+		<bean id="budgetexam" class="acme.framework.datatypes.Money">
 		<property name="amount" value="777" />
 		<property name="currency" value="EUR" />
 		</bean>
@@ -727,18 +727,18 @@
 		<property name="author" value="Antonio Campuzano" />
 		<property name="text" value="Exam shout 2!" />
 		<property name="link" value="http://examshout2.com" />
-		<property name="sergiolo1" ref="sergiolo1examen2" />
+		<property name="mocke" ref="mockeexamen2" />
 		</bean>
 			
-		<bean id="sergiolo1examen2" class="acme.entities.sergiolo1.Sergiolo1">
-		<property name="sergiolo2" value="ZZAS:21:0908" />
-		<property name="sergiolo3" value="07/11/22 10:15 AM" />
-		<property name="sergiolo4" ref="sergiolo4exam2" />
-		<property name="sergiolo5" value="false" />
+		<bean id="mockeexamen2" class="acme.entities.mocke.Mocke">
+		<property name="identification" value="AAAAB-10/09/21" />
+		<property name="deadline" value="07/11/22 10:15 AM" />
+		<property name="budget" ref="budgetexam2" />
+		<property name="important" value="false" />
 		<property name="shout" ref="shoutexamen2" />
 		</bean>
 		
-		<bean id="sergiolo4exam2" class="acme.framework.datatypes.Money">
+		<bean id="budgetexam2" class="acme.framework.datatypes.Money">
 		<property name="amount" value="777" />
 		<property name="currency" value="GBP" />
 		</bean>
@@ -751,18 +751,18 @@
 		<property name="author" value="Mariano Torrado" />
 		<property name="text" value="Exam shout 3!" />
 		<property name="link" value="http://examshout3.com" />
-		<property name="sergiolo1" ref="sergiolo1examen3" />
+		<property name="mocke" ref="mockeexamen3" />
 		</bean>
 			
-		<bean id="sergiolo1examen3" class="acme.entities.sergiolo1.Sergiolo1">
-		<property name="sergiolo2" value="ZZAV:21:0908" />
-		<property name="sergiolo3" value="07/11/22 10:15 AM" />
-		<property name="sergiolo4" ref="sergiolo4exam3" />
-		<property name="sergiolo5" value="true" />
+		<bean id="mockeexamen3" class="acme.entities.mocke.Mocke">
+		<property name="identification" value="AAAAC-10/09/21" />
+		<property name="deadline" value="07/11/22 10:15 AM" />
+		<property name="budget" ref="budgetexam3" />
+		<property name="important" value="true" />
 		<property name="shout" ref="shoutexamen3" />
 		</bean>
 		
-		<bean id="sergiolo4exam3" class="acme.framework.datatypes.Money">
+		<bean id="budgetexam3" class="acme.framework.datatypes.Money">
 		<property name="amount" value="777" />
 		<property name="currency" value="USD" />
 		</bean>
@@ -774,18 +774,18 @@
 		<property name="author" value="Mariano Torrado" />
 		<property name="text" value="Exam shout 4!" />
 		<property name="link" value="http://examshout4.com" />
-		<property name="sergiolo1" ref="sergiolo1examen4" />
+		<property name="mocke" ref="mockeexamen4" />
 		</bean>
 			
-		<bean id="sergiolo1examen4" class="acme.entities.sergiolo1.Sergiolo1">
-		<property name="sergiolo2" value="ZZAJ:21:0908" />
-		<property name="sergiolo3" value="07/11/22 10:15 AM" />
-		<property name="sergiolo4" ref="sergiolo4exam4" />
-		<property name="sergiolo5" value="false" />
+		<bean id="mockeexamen4" class="acme.entities.mocke.Mocke">
+		<property name="identification" value="AAAAD-10/09/21" />
+		<property name="deadline" value="07/11/22 10:15 AM" />
+		<property name="budget" ref="budgetexam4" />
+		<property name="important" value="false" />
 		<property name="shout" ref="shoutexamen4" />
 		</bean>
 		
-		<bean id="sergiolo4exam4" class="acme.framework.datatypes.Money">
+		<bean id="budgetexam4" class="acme.framework.datatypes.Money">
 		<property name="amount" value="333" />
 		<property name="currency" value="EUR" />
 		</bean>
@@ -797,18 +797,18 @@
 		<property name="author" value="Alvaro Cortes" />
 		<property name="text" value="Exam shout 5!" />
 		<property name="link" value="http://examshout5.com" />
-		<property name="sergiolo1" ref="sergiolo1examen5" />
+		<property name="mocke" ref="mockeexamen5" />
 		</bean>
 			
-		<bean id="sergiolo1examen5" class="acme.entities.sergiolo1.Sergiolo1">
-		<property name="sergiolo2" value="ZZAC:21:0908" />
-		<property name="sergiolo3" value="07/11/22 10:15 AM" />
-		<property name="sergiolo4" ref="sergiolo4exam5" />
-		<property name="sergiolo5" value="true" />
+		<bean id="mockeexamen5" class="acme.entities.mocke.Mocke">
+		<property name="identification" value="AAAAE-10/09/21" />
+		<property name="deadline" value="07/11/22 10:15 AM" />
+		<property name="budget" ref="budgetexam5" />
+		<property name="important" value="true" />
 		<property name="shout" ref="shoutexamen5" />
 		</bean>
 		
-		<bean id="sergiolo4exam5" class="acme.framework.datatypes.Money">
+		<bean id="budgetexam5" class="acme.framework.datatypes.Money">
 		<property name="amount" value="333" />
 		<property name="currency" value="GBP" />
 		</bean>
@@ -819,18 +819,18 @@
 		<property name="author" value="Alvaro Cortes" />
 		<property name="text" value="Exam shout 6!" />
 		<property name="link" value="http://examshout6.com" />
-		<property name="sergiolo1" ref="sergiolo1examen6" />
+		<property name="mocke" ref="mockeexamen6" />
 		</bean>
 			
-		<bean id="sergiolo1examen6" class="acme.entities.sergiolo1.Sergiolo1">
-		<property name="sergiolo2" value="ZZAM:21:0908" />
-		<property name="sergiolo3" value="07/11/22 10:15 AM" />
-		<property name="sergiolo4" ref="sergiolo4exam6" />
-		<property name="sergiolo5" value="true" />
+		<bean id="mockeexamen6" class="acme.entities.mocke.Mocke">
+		<property name="identification" value="AAAAF-10/09/21" />
+		<property name="deadline" value="07/11/22 10:15 AM" />
+		<property name="budget" ref="budgetexam6" />
+		<property name="important" value="true" />
 		<property name="shout" ref="shoutexamen6" />
 		</bean>
 		
-		<bean id="sergiolo4exam6" class="acme.framework.datatypes.Money">
+		<bean id="budgetexam6" class="acme.framework.datatypes.Money">
 		<property name="amount" value="0" />
 		<property name="currency" value="USD" />
 		</bean>

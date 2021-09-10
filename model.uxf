@@ -289,7 +289,7 @@ Shout
 + author: String {NotBlank, Length(5, 25)}
 + text: String {NotBlank, Length(1, 100)}
 + url: String {Url}
-+ sergiolo1: Sergiolo1 {Valid}
++ mocke: Mocke {Valid}
 
 
 </panel_attributes>
@@ -639,12 +639,12 @@ bg=blue</panel_attributes>
       <h>99</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Sergiolo1
+Mocke
 --
-+ sergiolo3: LocalDateTime{NotNull}
-+ sergiolo2: String {NotBlank, Pattern}
-+ sergiolo4: Money {NotNull, Valid}
-+ sergiolo5: Boolean {NotNull}
++ deadline: LocalDateTime{NotNull}
++ identification: String {NotBlank, Pattern}
++ budget: Money {NotNull, Valid}
++ important: Boolean {NotNull}
 
 
 
